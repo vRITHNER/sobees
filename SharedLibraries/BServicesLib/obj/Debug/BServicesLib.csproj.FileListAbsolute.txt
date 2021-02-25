@@ -1,0 +1,10 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BServicesLib.dll.config
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BServicesLib.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BServicesLib.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BServicesLib\obj\Debug\BServicesLib.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BServicesLib\obj\Debug\Sobees.Library.BServicesLib.Properties.Resources.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BServicesLib\obj\Debug\BServicesLib.csproj.GenerateResource.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BServicesLib\obj\Debug\BServicesLib.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BServicesLib\obj\Debug\BServicesLib.csproj.CopyComplete
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BServicesLib\obj\Debug\Sobees.Library.BServicesLib.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BServicesLib\obj\Debug\Sobees.Library.BServicesLib.pdb

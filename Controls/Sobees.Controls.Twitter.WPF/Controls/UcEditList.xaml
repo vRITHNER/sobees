@@ -1,0 +1,81 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="Sobees.Controls.Twitter.Controls.UcEditList"
+             mc:Ignorable="d">
+  <UserControl.Resources>
+  	<ResourceDictionary>
+  		<ResourceDictionary.MergedDictionaries>
+  			
+  			<ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml"/>
+  			
+  		</ResourceDictionary.MergedDictionaries>
+  		<DataTemplate x:Key="dtFriend">
+  			<WrapPanel Orientation="Horizontal">
+  				<Image x:Name="imgAvatar"
+  					Margin="0,0,5,0"
+  					Source="{Binding ProfileImgUrl, FallbackValue=http://s.twimg.com/a/1257878623/images/default_profile_0_normal.png}"
+  					VerticalAlignment="Center"
+  					Width="15"
+  					Height="15" />
+  				<TextBlock x:Name="txtBlFriendName"
+  					Margin="0,0,2,0"
+  					Text="{Binding NickName, FallbackValue=Mickey}"
+  					VerticalAlignment="Center" 
+  					Style="{DynamicResource TxtblStyleItemContent}" />
+  				<TextBlock x:Name="deco"
+  					VerticalAlignment="Center"
+  					Text="(" 
+  					Style="{DynamicResource TxtblStyleItemContentH2}" />
+  				<TextBlock x:Name="txtBlFriendNameFull"
+  					Margin="0"
+  					Text="{Binding Name, FallbackValue=Mickey_Mouse}"
+  					VerticalAlignment="Center"
+  					Style="{DynamicResource TxtblStyleItemContentH2}" />
+  				<TextBlock x:Name="deco2"
+  					VerticalAlignment="Center"
+  					Text=")"
+  					Margin="0,0,5,0"
+  					Style="{DynamicResource TxtblStyleItemContentH2}" />
+  				<Button Command="{Binding DataContext.DeleteCommand, ElementName=lstFriends}"
+  					CommandParameter="{Binding}"
+  					VerticalAlignment="Center"
+  					ToolTip="Delete"
+  					Margin="0,0,2,0" 
+					Style="{DynamicResource BtnStyleFooterItem}" 
+					Content="Delete" FontSize="9.333"/>
+  			</WrapPanel>
+  		</DataTemplate>
+  	</ResourceDictionary>
+  </UserControl.Resources>
+  
+  <DockPanel Visibility="{Binding EditVisibility}" Margin="5">
+		<ListBox x:Name="lstFriends"
+			ItemsSource="{Binding ListMembers}"
+			SelectionMode="Single"
+			ItemTemplate="{StaticResource dtFriend}" DockPanel.Dock="Top" Style="{DynamicResource ListBoxStyleDeck}" MaxHeight="200" />
+  	<WrapPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="0,5,0,0">
+  		<TextBlock
+  			Text="Add user:"
+  			TextWrapping="Wrap" Style="{DynamicResource TxtblStyleItemContent}" d:LayoutOverrides="VerticalAlignment" />
+  		<TextBlock Text="{Binding ErrorMsg}"
+  			Visibility="{Binding ErrorMsgVisibility}" 
+  			Style="{DynamicResource TxtblStyleItemContent}" Margin="5,0,0,0" />
+  	</WrapPanel>
+  	<Grid DockPanel.Dock="Top">
+  		<Grid.ColumnDefinitions>
+  			<ColumnDefinition/>
+  			<ColumnDefinition Width="Auto"/>
+  		</Grid.ColumnDefinitions>
+  		<TextBox x:Name="txtUserName"
+  			Text="{Binding UserToAdd, UpdateSourceTrigger=PropertyChanged}"
+  			TextChanged="TxtTweetTextChanged"
+  			PreviewKeyDown="TxtTweetPreviewKeyDown"
+  			Tag="{Binding Friends}" d:LayoutOverrides="Height" Unloaded="txtUserName_Unloaded" />
+  		<Button x:Name="btnAddUser"
+  			Command="{Binding AddUserCommand}"
+  			Content="Add"
+  			Foreground="White" d:LayoutOverrides="Width, Height" Grid.Column="1" />
+  	</Grid>
+	</DockPanel>
+	
+</UserControl>

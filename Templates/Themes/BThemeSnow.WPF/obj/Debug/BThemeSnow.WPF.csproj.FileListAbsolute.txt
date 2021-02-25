@@ -1,0 +1,11 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Output\Debug\Themes\Sobees.Themes.BThemeSnow.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Output\Debug\Themes\Sobees.Themes.BThemeSnow.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeSnow.WPF\obj\Debug\BThemeSnow.WPF.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeSnow.WPF\obj\Debug\ThemeSnow.baml
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeSnow.WPF\obj\Debug\Sobees.Themes.BThemeSnow_MarkupCompile.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeSnow.WPF\obj\Debug\Sobees.Themes.BThemeSnow.g.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeSnow.WPF\obj\Debug\Sobees.Themes.BThemeSnow.Properties.Resources.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeSnow.WPF\obj\Debug\BThemeSnow.WPF.csproj.GenerateResource.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeSnow.WPF\obj\Debug\BThemeSnow.WPF.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeSnow.WPF\obj\Debug\Sobees.Themes.BThemeSnow.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeSnow.WPF\obj\Debug\Sobees.Themes.BThemeSnow.pdb

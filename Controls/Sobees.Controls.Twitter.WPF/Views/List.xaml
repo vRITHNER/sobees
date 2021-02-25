@@ -1,0 +1,110 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Controls="clr-namespace:Sobees.Controls.Twitter.Controls"
+             xmlns:Templates="clr-namespace:Sobees.Controls.Twitter.Templates"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             x:Class="Sobees.Controls.Twitter.Views.List"
+             Background="{DynamicResource Level2ItemBg}"
+             d:DesignWidth="370.857"
+             d:DesignHeight="544.48">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+
+      </ResourceDictionary.MergedDictionaries>
+      <DataTemplate x:Key="dtList">
+        <Templates:DtList2 />
+      </DataTemplate>
+
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <Grid>
+      <DockPanel LastChildFill="True"
+                 x:Name="dcPList">
+        <Grid Margin="5,5,5,0"
+              VerticalAlignment="Top"
+              DockPanel.Dock="Top">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"
+                           MinHeight="15.96" />
+          </Grid.RowDefinitions>
+          <TextBlock Style="{DynamicResource TxtblStyleItemTitle}"
+                     Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblEditLists}"
+                     TextWrapping="Wrap"
+                     VerticalAlignment="Center"
+                     Grid.ColumnSpan="2"
+                     Grid.Row="1" />
+          <Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblCreateNewList}"
+                  Command="{Binding ShowcreateListCommand}"
+                  Grid.Column="1"
+                  FontSize="10.667" />
+        </Grid>
+        <Separator DockPanel.Dock="Top"
+                   Style="{DynamicResource SeparatorStyleLevel2}"
+                   Margin="0,5,0,10" />
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Bottom"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,10,10">
+          <Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnSave}"
+                  Command="{Binding SaveCommand}"
+                  Margin="0,0,10,0" />
+          <Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCancel}"
+                  Command="{Binding CancelCommand}" />
+        </StackPanel>
+                <ListBox x:Name="lstLists"
+                 ItemsSource="{Binding TwitterList}"
+                 ItemTemplate="{StaticResource dtList}"
+                 SelectedIndex="{Binding CurrentIndexListSelected}"
+                 Margin="5,0"
+                 MaxHeight="300"
+                 MinHeight="100"
+                 Style="{DynamicResource ListBoxStyleDeck}"
+                 DockPanel.Dock="Top" 
+				 Foreground="{DynamicResource Level2ContentForeground}" >
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding FullName}" Value="">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                                <Separator HorizontalAlignment="Stretch" IsEnabled="False"/>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+                </ListBox>
+                    <Separator DockPanel.Dock="Top"
+                   Style="{DynamicResource SeparatorStyleLevel2}"
+                   Margin="0,10"
+                   Visibility="{Binding DetailsViewVisibility}" />
+        <Controls:UcListDetails DockPanel.Dock="Top"
+                                Visibility="{Binding DetailsViewVisibility}" />
+        <Separator DockPanel.Dock="Top"
+                   Style="{DynamicResource SeparatorStyleLevel2}"
+                   Margin="0,10"
+                   Visibility="{Binding DetailsViewVisibility}" />
+      </DockPanel>
+
+      <Controls:UcNewList Visibility="{Binding CreateNewListVisibility}"
+                          d:IsHidden="True" />
+
+    </Grid>
+  </ScrollViewer>
+</UserControl>

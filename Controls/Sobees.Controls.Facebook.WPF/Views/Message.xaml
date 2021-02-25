@@ -1,0 +1,37 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:customControls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             xmlns:templates="clr-namespace:Sobees.Controls.Facebook.Templates"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             x:Class="Sobees.Controls.Facebook.Views.Message"
+             mc:Ignorable="d"
+             d:DesignWidth="103.43"
+             d:DesignHeight="80.3"
+             Background="{DynamicResource Level2ServiceBg}">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+
+      </ResourceDictionary.MergedDictionaries>
+      <DataTemplate x:Key="DtMessage">
+        <templates:DtMessage />
+      </DataTemplate>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <DockPanel>
+      <Button x:Name="btnClose"
+              DockPanel.Dock="Top"
+              Command="{Binding CloseCommand}"
+              Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtBackToMails}" />
+      <customControls:BListBox x:Name="lstMessage"
+                               ItemsSource="{Binding Messages}"
+                               ItemTemplate="{StaticResource DtMessage}"
+                               Style="{DynamicResource ListBoxStyleDeck}"
+                               ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+    </DockPanel>
+  </ScrollViewer>
+</UserControl>

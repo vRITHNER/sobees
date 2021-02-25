@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="Sobees.Controls.TwitterSearch.Templates.DtTweetConversation2"
+						 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+						 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						 xmlns:Converters="clr-namespace:Sobees.Controls.TwitterSearch.Converters"
+						 xmlns:Cls="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure"
+						 xmlns:CustomControls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+						 xmlns:Cache="clr-namespace:Sobees.Infrastructure.Cache;assembly=Sobees.Infrastructure"
+						 xmlns:Converters1="clr-namespace:Sobees.Controls.Twitter.Converters">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+				<ResourceDictionary Source="/Sobees.Templates;Component/Icon.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<Cls:NullVisibilityConverter x:Key="nullVisibilityConverter" />
+			<Cls:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+			<Cls:RelativeTimeConverter x:Key="relativeTimeConverter" />
+			<Converters1:BackgroundTypeConverter x:Key="backgroundTypeConverter" />
+			<Style TargetType="{x:Type Hyperlink}">
+				<Setter Property="Foreground"
+								Value="{DynamicResource BubbleConversationForegroundFooter}" />
+				<Setter Property="TextBlock.TextDecorations"
+								Value="{x:Null}" />
+				<Style.Triggers>
+					<Trigger Property="IsMouseOver"
+									 Value="True">
+						<Setter Property="Foreground"
+										Value="{DynamicResource BubbleConversationForegroundFooter}" />
+						<Setter Property="TextBlock.TextDecorations"
+										Value="Underline" />
+
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid Margin="0,0,0,0">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+
+		<ContentControl Style="{DynamicResource ContentControlStyleAvatar}"
+										Grid.Column="1">
+			<Grid>
+				<Cache:BImage BCacheImage="{Binding User.ProfileImgUrl}"
+											ImageKind="Small" />
+				<Rectangle Fill="#FF222222"
+									 Visibility="{Binding RetweeterUser, Converter={StaticResource nullVisibilityConverter}}" />
+				<Cache:BImage BCacheImage="{Binding User.ProfileImgUrl}"
+											ImageKind="Small"
+											Width="35"
+											Height="35"
+											Visibility="{Binding RetweeterUser, Converter={StaticResource nullVisibilityConverter}}"
+											HorizontalAlignment="Left"
+											VerticalAlignment="Top" />
+				<Cache:BImage BCacheImage="{Binding RetweeterUser.ProfileImgUrl}"
+											ImageKind="Small"
+											Visibility="{Binding RetweeterUser, Converter={StaticResource nullVisibilityConverter}}"
+											HorizontalAlignment="Right"
+											VerticalAlignment="Bottom"
+											Width="25"
+											Height="25" />
+				<ContentControl x:Name="ccAvatar"
+												Width="47"
+												Height="47"
+												Visibility="Collapsed" />
+			</Grid>
+		</ContentControl >
+		<Grid Grid.Column="0">
+			<Border Style="{DynamicResource BorderStyleTwitterConversationBubble}" />
+			<Path HorizontalAlignment="Right"
+						Margin="0,11,-10,0"
+						VerticalAlignment="Top"
+						Style="{DynamicResource PathStyleTwitterConversation}"
+						RenderTransformOrigin="0.5,0.5">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform />
+						<SkewTransform />
+						<RotateTransform />
+						<TranslateTransform />
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			<DockPanel Margin="5">
+				<DockPanel.ContextMenu>
+					<ContextMenu x:Name="cm"
+											 StaysOpen="true"
+											 Background="Cornsilk">
+
+						<MenuItem Header="Copy"
+											Click="CopyItem">
+
+						</MenuItem>
+					</ContextMenu>
+				</DockPanel.ContextMenu>
+
+				<WrapPanel DockPanel.Dock="Top"
+									 Orientation="Horizontal">
+					<Button x:Name="btnUserName"
+									Content="{Binding User.NickName}"
+									Command="{Binding DataContext.GoToWebCommand, ElementName=LstTweets}"
+									CommandParameter="{Binding User.ProfileUrl}"
+									Style="{DynamicResource BtnStyleTitleItem}"
+									Foreground="{DynamicResource BubbleConversationForegroundTitle}" />
+					<Path x:Name="decoToUserName"
+								Visibility="{Binding ToUser, Converter={StaticResource nullVisibilityConverter}}"
+								Style="{DynamicResource PathStyleToUser}"
+								Fill="{DynamicResource BubbleConversationForegroundTitle}" />
+					<Button x:Name="btnToUserName"
+									Content="{Binding ToUser.NickName}"
+									Visibility="{Binding ToUser, Converter={StaticResource nullVisibilityConverter}}"
+									Command="{Binding DataContext.GoToWebCommand, ElementName=LstTweets}"
+									CommandParameter="{Binding ToUser.ProfileUrl}"
+									Style="{DynamicResource BtnStyleTitleItem}"
+									Foreground="{DynamicResource BubbleConversationForegroundTitle}" />
+					<Path x:Name="decoToRetweetName"
+								Style="{DynamicResource PathStyleRetweet}"
+								Visibility="{Binding RetweeterUser, Converter={StaticResource nullVisibilityConverter}}"
+								Fill="{DynamicResource BubbleConversationForegroundTitle}" />
+					<Button x:Name="btnToRetweeterName"
+									Content="{Binding RetweeterUser.NickName}"
+									Visibility="{Binding RetweeterUser, Converter={StaticResource nullVisibilityConverter}}"
+									Command="{Binding DataContext.GoToWebCommand, ElementName=LstTweets}"
+									CommandParameter="{Binding RetweeterUser.ProfileUrl}"
+									Style="{DynamicResource BtnStyleTitleItem}"
+									Foreground="{DynamicResource BubbleConversationForegroundTitle}" />
+				</WrapPanel>
+				<CustomControls:BLinkTweetTextBlock x:Name="txtBlContent"
+																						BText="{Binding Title}"
+																						DockPanel.Dock="Top"
+																						Style="{DynamicResource TxtblStyleItemContent}"
+																						Foreground="{DynamicResource BubbleConversationForegroundContent}" />
+				<Button x:Name="btnDate"
+								Content="{Binding PubDate, Converter={StaticResource relativeTimeConverter}, FallbackValue=18 mai 1789}"
+								Command="{Binding DataContext.GoToTweetCommand, ElementName=LstTweets}"
+								CommandParameter="{Binding}"
+								Style="{DynamicResource BtnStyleFooterItem}"
+								Foreground="{DynamicResource BubbleConversationForegroundFooter}" />
+				<Path x:Name="pathLogoType"
+							DockPanel.Dock="Bottom"
+							Style="{Binding PostType, Converter={StaticResource backgroundTypeConverter}}" />
+			</DockPanel>
+		</Grid>
+	</Grid>
+</UserControl>

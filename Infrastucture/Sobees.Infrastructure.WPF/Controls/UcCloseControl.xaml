@@ -1,0 +1,27 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="Sobees.Infrastructure.Controls.UcCloseControl"
+    Background="{DynamicResource BgTransparentBlack}" mc:Ignorable="d" d:DesignWidth="301.907" d:DesignHeight="190.26">
+  
+	<Border  Style="{DynamicResource BorderStyleMsgWindowInService}">
+		<DockPanel>
+			<TextBlock
+				Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=textBlockSureClosing}"
+				 Margin="0,0,0,10" DockPanel.Dock="Top" 
+				 Style="{DynamicResource TxtblStyleItemContent}" FontSize="16" />
+			<StackPanel
+				Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Top">
+				<Button x:Name="btnClose"
+					Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnOk}"
+					Margin="0,0,5,0"
+					ToolTip="Close service"
+					Command="{Binding CloseCommand}"
+                  />
+				<Button x:Name="btnCancel"
+					Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCancel}" Command="{Binding CancelCloseCommand}" />
+			</StackPanel>
+		</DockPanel>
+	</Border>
+   
+</UserControl>

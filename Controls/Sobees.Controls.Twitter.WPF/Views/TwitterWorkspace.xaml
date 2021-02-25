@@ -1,0 +1,43 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             xmlns:templates="clr-namespace:Sobees.Controls.Twitter.Templates"
+             xmlns:controls1="clr-namespace:Sobees.Controls.Twitter.Controls"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Cls="clr-namespace:Sobees.Controls.Twitter.Cls"
+             x:Class="Sobees.Controls.Twitter.Views.TwitterWorkspace"
+             mc:Ignorable="d"
+             d:DesignWidth="185"
+             d:DesignHeight="100">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <DataTemplate x:Key="dtTweet">
+        <Cls:TweetTemplateSelector Content="{Binding}" />
+      </DataTemplate>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid x:Name="grTwitterDetail">
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <controls:BListBox x:Name="LstTweets"
+                       VirtualizingStackPanel.IsVirtualizing="True"
+                       ItemsSource="{Binding TweetsShow}"
+                       ItemTemplate="{StaticResource dtTweet}"
+                       SelectedIndex="{Binding SelectedTweetIndex}"
+                       Style="{StaticResource ListBoxStyleDeck}" />
+
+    <controls:UcNoDataToDisplay Grid.Row="0"
+                                Visibility="{Binding IsAnyDataVisibility}" />
+    <controls1:UcTweetDetails Visibility="{Binding TweetsDetailsVisibility,FallbackValue=Collapsed}"
+                              DockPanel.Dock="Bottom"
+                              Grid.Row="1" />
+  </Grid>
+</UserControl>

@@ -1,0 +1,159 @@
+﻿<UserControl x:Class="Sobees.Controls.Facebook.Templates.DtEventsExpended"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:templates="clr-namespace:Sobees.Controls.Facebook.Templates">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+    <templates:DtEvents />
+    <StackPanel x:Name="stkItemTitle"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                Margin="0,5,0,0">
+
+      <DockPanel HorizontalAlignment="Left">
+
+        <Image Source="{Binding PictureBig, IsAsync=True}"
+               Width="47"
+               Stretch="Fill"
+               HorizontalAlignment="Left" Margin="0,0,5,0" />
+        <StackPanel>
+          <TextBlock Text="{Binding TagLine}" x:Name="txtEvTagLine" Style="{DynamicResource TxtblStyleItemContent}" />
+          <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBlock Text="{Binding Members.attending.Length}" x:Name="txtEvPa"
+                       Style="{DynamicResource TxtblStyleItemTitle}" FontSize="18.667" />
+            <TextBlock Text=" participants" x:Name="txtPa" Style="{DynamicResource TxtblStyleItemContent}" />
+          </StackPanel>
+        </StackPanel>
+
+
+      </DockPanel>
+
+      <Grid Margin="0,5,0,0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"
+                            MaxWidth="50" />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="Host : "
+                   x:Name="txtOrganisateur" />
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="{Binding Host}"
+                   x:Name="txtEvOrganisateur"
+                   Grid.Column="1" />
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="Type : "
+                   x:Name="txtType"
+                   Grid.Row="1" />
+        <StackPanel Orientation="Horizontal"
+                    Grid.Column="1"
+                    Grid.Row="1">
+          <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                     Text="{Binding EventType}"
+                     x:Name="txtEvType" />
+          <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                     Text=" - " />
+          <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                     Text="{Binding EventSubType}"
+                     x:Name="txtEvSubType" />
+        </StackPanel>
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="End time : "
+                   x:Name="txtHdF"
+                   Grid.Row="2" />
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="{Binding EndTime}"
+                   x:Name="txtEvHdF"
+                   Grid.Column="1"
+                   Grid.Row="2" />
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="Location : "
+                   x:Name="txtLieu"
+                   Grid.Row="3" />
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="{Binding Location}"
+                   x:Name="txtEvLieu"
+                   Grid.Column="1"
+                   Grid.Row="3" />
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="Street : "
+                   x:Name="txtAd"
+                   Grid.Row="4" />
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="{Binding Venue.Street}"
+                   x:Name="txtEvAd"
+                   Grid.Column="1"
+                   Grid.Row="4" />
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="City : "
+                   x:Name="txtV"
+                   Grid.Row="5" />
+        <StackPanel Orientation="Horizontal"
+                    Grid.Column="1"
+                    Grid.Row="5">
+          <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                     Text="{Binding Venue.City}"
+                     x:Name="txtEvV" />
+          <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                     Text=" , " />
+          <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                     Text="{Binding Venue.Country}"
+                     x:Name="txtEvCi" />
+        </StackPanel>
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="Content : "
+                   x:Name="txtDe"
+                   Grid.Row="6" />
+        <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                   Text="{Binding Description}"
+                   x:Name="txtEvDe"
+                   Grid.Column="1"
+                   Grid.Row="6" />
+      </Grid>
+
+
+      <!--<
+          <Button x:Name="txtblAttachementName"
+                           TargetName="_blank"
+                           NavigateUri="{Binding Attachement.Href}"
+                           Cursor="Hand"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Foreground="{DynamicResource Level2ContentForeground}"
+                           Visibility="{Binding Converter={StaticResource txtblAttachementNameVisibilityConverter}}"
+                           Content="{Binding Attachement.Name}" />
+
+
+          <TextBlock TextWrapping="Wrap"
+                     Style="{DynamicResource TextBlockStyleItemContent}"
+                     Text="{Binding Attachement.Caption}"
+                     Visibility="{Binding Converter={StaticResource txtblAttachementCaptionVisibilityConverter}}"
+                     x:Name="txtblAttachementCaption" />
+          <TextBlock TextWrapping="Wrap"
+                     Style="{DynamicResource TextBlockStyleItemContent}"
+                     Text="{Binding Converter={StaticResource facebookAppDescriptionConverter}}"
+                     Visibility="{Binding Converter={StaticResource txtblAttachementDescriptionVisibilityConverter}}"
+                     x:Name="txtblAttachementDescription" />
+
+-->
+
+    </StackPanel>
+  </StackPanel>
+</UserControl>

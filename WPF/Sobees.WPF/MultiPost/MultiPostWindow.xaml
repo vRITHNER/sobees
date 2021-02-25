@@ -1,0 +1,21 @@
+﻿<Glass:GlassWindow x:Class="Sobees.MultiPost.MultiPostWindow"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   mc:Ignorable="d"
+                   Icon="/Resources/Images/iconSobees.png"
+                   xmlns:Views="clr-namespace:Sobees.Views"
+                   xmlns:Glass="clr-namespace:Sobees.Glass"
+                   xmlns:Windows="clr-namespace:Sobees.Windows"
+                   Windows:WindowSettings.Save="true"
+                   Width="550"
+                   Height="450">
+
+    <Grid x:Name="grMain"
+          Margin="0,0,0,0">
+    
+    <Views:MultiPostControl />
+    </Grid>
+
+</Glass:GlassWindow>

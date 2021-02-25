@@ -1,0 +1,11 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Output\Debug\Themes\Sobees.Themes.BThemeBlack.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Output\Debug\Themes\Sobees.Themes.BThemeBlack.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeBlack.WPF\obj\Debug\BThemeBlack.WPF.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeBlack.WPF\obj\Debug\ThemeBlack.baml
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeBlack.WPF\obj\Debug\Sobees.Themes.BThemeBlack_MarkupCompile.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeBlack.WPF\obj\Debug\Sobees.Themes.BThemeBlack.g.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeBlack.WPF\obj\Debug\Sobees.Themes.BThemeBlack.Properties.Resources.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeBlack.WPF\obj\Debug\BThemeBlack.WPF.csproj.GenerateResource.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeBlack.WPF\obj\Debug\BThemeBlack.WPF.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeBlack.WPF\obj\Debug\Sobees.Themes.BThemeBlack.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeBlack.WPF\obj\Debug\Sobees.Themes.BThemeBlack.pdb

@@ -1,0 +1,8 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\WpfDragDropLib.dll.config
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\WpfDragDropLib.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\WpfDragDropLib.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BDragDropLib\WpfDragDropLib\obj\Debug\BDragDropLib.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BDragDropLib\WpfDragDropLib\obj\Debug\BDragDropLib.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BDragDropLib\WpfDragDropLib\obj\Debug\BDragDropLib.csproj.CopyComplete
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BDragDropLib\WpfDragDropLib\obj\Debug\WpfDragDropLib.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BDragDropLib\WpfDragDropLib\obj\Debug\WpfDragDropLib.pdb

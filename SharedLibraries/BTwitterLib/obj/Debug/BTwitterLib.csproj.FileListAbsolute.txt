@@ -1,0 +1,11 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BTwitterLib.dll.config
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BTwitterLib.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BTwitterLib.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BTwitterLib\obj\Debug\BTwitterLib.csproj.App.config
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BTwitterLib\obj\Debug\BTwitterLib.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BTwitterLib\obj\Debug\Sobees.Library.BTwitterLib.TwitterResources.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BTwitterLib\obj\Debug\BTwitterLib.csproj.GenerateResource.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BTwitterLib\obj\Debug\BTwitterLib.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BTwitterLib\obj\Debug\BTwitterLib.csproj.CopyComplete
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BTwitterLib\obj\Debug\Sobees.Library.BTwitterLib.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BTwitterLib\obj\Debug\Sobees.Library.BTwitterLib.pdb

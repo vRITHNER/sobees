@@ -1,0 +1,297 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d">
+  <Style x:Key="TxtblFBCommentTitle"
+         TargetType="{x:Type TextBlock}">
+    <Setter Property="Foreground"
+            Value="{DynamicResource FBCommentForegroundH1}" />
+    <Setter Property="TextWrapping"
+            Value="Wrap" />
+    <Setter Property="VerticalAlignment"
+            Value="Top" />
+    <Setter Property="FontSize"
+            Value="9.333" />
+  </Style>
+  <Style x:Key="TxtblFBCommentContent"
+         TargetType="{x:Type TextBlock}">
+    <Setter Property="Foreground"
+            Value="{DynamicResource FBCommentForeground}" />
+    <Setter Property="TextWrapping"
+            Value="Wrap" />
+    <Setter Property="VerticalAlignment"
+            Value="Top" />
+  </Style>
+  <Style x:Key="TxtblFBCommentFooter"
+         TargetType="{x:Type TextBlock}">
+    <Setter Property="Foreground"
+            Value="{DynamicResource FBCommentForeground}" />
+    <Setter Property="TextWrapping"
+            Value="Wrap" />
+    <Setter Property="VerticalAlignment"
+            Value="Center" />
+    <Setter Property="FontSize"
+            Value="10.667" />
+  </Style>
+  <Style x:Key="BtnFBTitleItem"
+         TargetType="{x:Type Button}">
+    <Setter Property="Padding"
+            Value="0,0,0,0" />
+    <Setter Property="Cursor"
+            Value="Hand" />
+    <Setter Property="Foreground"
+            Value="{DynamicResource FBCommentForegroundH1}" />
+    <Setter Property="Focusable"
+            Value="False" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualStateGroup.Transitions>
+                  <VisualTransition GeneratedDuration="00:00:00.2000000" />
+                </VisualStateGroup.Transitions>
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                   Duration="00:00:00.0010000"
+                                                   Storyboard.TargetName="border"
+                                                   Storyboard.TargetProperty="(UIElement.Opacity)">
+                      <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                            Value="1" />
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                   Duration="00:00:00.0010000"
+                                                   Storyboard.TargetName="txtNrm"
+                                                   Storyboard.TargetProperty="(UIElement.Opacity)">
+                      <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                            Value="0" />
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                   Duration="00:00:00.0010000"
+                                                   Storyboard.TargetName="txtOver"
+                                                   Storyboard.TargetProperty="(UIElement.Opacity)">
+                      <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                            Value="1" />
+                    </DoubleAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Normal" />
+                <VisualState x:Name="Pressed" />
+                <VisualState x:Name="Disabled" />
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="border"
+                    BorderThickness="0,0,0,1"
+                    Opacity="0"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="3"
+                    Margin="-2,-1" />
+            <TextBlock x:Name="txtNrm"
+                       Text="{TemplateBinding Content}"
+                       TextWrapping="Wrap"
+                       Foreground="{TemplateBinding Foreground}" />
+            <TextBlock x:Name="txtOver"
+                       Text="{TemplateBinding Content}"
+                       TextWrapping="Wrap"
+                       Opacity="0"
+                       Foreground="{TemplateBinding BorderBrush}" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Background"
+            Value="{DynamicResource Level2TitleBackgroundOver}" />
+    <Setter Property="BorderBrush"
+            Value="{DynamicResource Level2TitleForegroundOver}" />
+    <Setter Property="HorizontalAlignment"
+            Value="Left" />
+    <Setter Property="VerticalAlignment"
+            Value="Top" />
+    <Setter Property="FontWeight"
+            Value="Bold" />
+  </Style>
+  <Style x:Key="BtnCommentFacebook"
+         TargetType="{x:Type Button}">
+    <Setter Property="HorizontalContentAlignment"
+            Value="Center" />
+    <Setter Property="VerticalContentAlignment"
+            Value="Center" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Grid Background="{DynamicResource FBCommentBrush}">
+            <Border x:Name="border"
+                    d:LayoutOverrides="Width"
+                    Background="#16000000"
+                    Opacity="0" />
+            <StackPanel x:Name="stackPanel"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch"
+                        Margin="5,0,0,0">
+              <Path Stretch="Fill"
+                    Stroke="#FF475E86"
+                    Height="13.7"
+                    RenderTransformOrigin="0.5,0.499999523162842"
+                    Data="M38.334,13.25 C38.334,20.567774 31.128052,26.255686 20.54241,26.255686 C20.079714,28.931057 13.951518,33.625767 9.5834999,33.659439 C11.578462,30.937641 11.135115,25.129704 9.2285557,24.386349 C3.993125,22.304588 0,18.48694 0,13.25 C0,5.9322271 8.581358,0 19.167,0 C29.752642,0 38.334,5.9322271 38.334,13.25 z"
+                    Width="14.2"
+                    Fill="#FFFFFFFF"
+                    Margin="0,0,3,0"
+                    StrokeThickness="0.5" />
+              <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                RecognizesAccessKey="True"
+                                VerticalAlignment="Center" />
+              <Path Fill="{DynamicResource FBCommentForeground}"
+                    Stretch="Fill"
+                    StrokeThickness="0.5"
+                    Width="8"
+                    Height="8"
+                    RenderTransformOrigin="0.310174407020283,0.68987827964574"
+                    SnapsToDevicePixels="True"
+                    Data="M0,2.4870409 L1.6253818,2.4870409 1.6253818,4.9240596 4.0630002,4.9240596 4.0630002,6.5490408 1.6253818,6.5490408 0,6.5490408 0,4.9240596 z M2.486541,0 L4.1119227,0 4.1119227,2.4376186 6.549541,2.4376186 6.549541,4.063 4.1119227,4.063 2.486541,4.063 2.486541,2.4376186 z"
+                    Margin="9,1,0,0">
+                <Path.RenderTransform>
+                  <TransformGroup>
+                    <ScaleTransform ScaleX="1"
+                                    ScaleY="1" />
+                    <SkewTransform AngleX="0"
+                                   AngleY="0" />
+                    <RotateTransform Angle="-45" />
+                    <TranslateTransform X="0"
+                                        Y="0" />
+                  </TransformGroup>
+                </Path.RenderTransform>
+              </Path>
+            </StackPanel>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver"
+                     Value="True">
+              <Setter Property="Opacity"
+                      TargetName="border"
+                      Value="1" />
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused"
+                     Value="true" />
+            <Trigger Property="ToggleButton.IsChecked"
+                     Value="true" />
+            <Trigger Property="IsEnabled"
+                     Value="false">
+              <Setter Property="Foreground"
+                      Value="#ADADAD" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="FontSize"
+            Value="11" />
+    <Setter Property="Foreground"
+            Value="{DynamicResource FBCommentForeground}" />
+    <Setter Property="Height"
+            Value="20" />
+  </Style>
+  <Style x:Key="BtnShowAllComments"
+         TargetType="{x:Type Button}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Grid>
+            <Border x:Name="border"
+                    Background="#1E000000"
+                    d:LayoutOverrides="Width, Height"
+                    Opacity="0" />
+            <Path x:Name="path"
+                  Fill="{DynamicResource FBCommentForeground}"
+                  Stretch="Fill"
+                  StrokeThickness="0.5"
+                  Width="8"
+                  Height="8"
+                  RenderTransformOrigin="0.310174407020283,0.68987827964574"
+                  SnapsToDevicePixels="True"
+                  Data="M0,2.4870409 L1.6253818,2.4870409 1.6253818,4.9240596 4.0630002,4.9240596 4.0630002,6.5490408 1.6253818,6.5490408 0,6.5490408 0,4.9240596 z M2.486541,0 L4.1119227,0 4.1119227,2.4376186 6.549541,2.4376186 6.549541,4.063 4.1119227,4.063 2.486541,4.063 2.486541,2.4376186 z"
+                  HorizontalAlignment="Center"
+                  Margin="0,13.5">
+              <Path.RenderTransform>
+                <TransformGroup>
+                  <ScaleTransform ScaleX="1"
+                                  ScaleY="1" />
+                  <SkewTransform AngleX="0"
+                                 AngleY="0" />
+                  <RotateTransform Angle="-45" />
+                  <TranslateTransform X="0"
+                                      Y="0" />
+                </TransformGroup>
+              </Path.RenderTransform>
+            </Path>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver"
+                     Value="True">
+              <Setter Property="Opacity"
+                      TargetName="border"
+                      Value="1" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="HorizontalAlignment"
+            Value="Stretch" />
+  </Style>
+  <Style x:Key="ListBoxStyleFBComment"
+         TargetType="{x:Type ListBox}">
+    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+            Value="Disabled" />
+    <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+            Value="Auto" />
+    <Setter Property="ScrollViewer.CanContentScroll"
+            Value="true" />
+    <Setter Property="VerticalContentAlignment"
+            Value="Center" />
+    <Setter Property="Background"
+            Value="{x:Null}" />
+    <Setter Property="BorderBrush"
+            Value="{x:Null}" />
+    <Setter Property="BorderThickness"
+            Value="0" />
+    <Setter Property="MaxHeight"
+            Value="250" />
+    <Setter Property="Padding"
+            Value="0" />
+    <Setter Property="Margin"
+            Value="0,5,0,0" />
+  </Style>
+  <Style x:Key="ListBoxItemStyleFBComment"
+         TargetType="{x:Type ListBoxItem}">
+    <Setter Property="Background"
+            Value="Transparent" />
+    <Setter Property="HorizontalContentAlignment"
+            Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+    <Setter Property="VerticalContentAlignment"
+            Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+    <Setter Property="Padding"
+            Value="2,0,0,0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+          <Border x:Name="Bd"
+                  SnapsToDevicePixels="true"
+                  Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  Padding="{TemplateBinding Padding}">
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Margin"
+            Value="0,0,0,7" />
+  </Style>
+</ResourceDictionary>

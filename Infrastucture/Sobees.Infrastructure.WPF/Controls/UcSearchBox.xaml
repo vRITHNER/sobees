@@ -1,0 +1,121 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:CustomControls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib" x:Class="Sobees.Infrastructure.Controls.UcSearchBox"
+             mc:Ignorable="d"
+             d:DesignWidth="228">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+       
+        <ResourceDictionary Source="/Sobees.Templates;Component/Icon.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/Geometry.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+
+      <Style x:Key="TextBoxStyleInput"
+             TargetType="{x:Type TextBox}">
+        <Setter Property="AllowDrop"
+                Value="true" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type TextBox}">
+              <Grid>
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver" />
+                    <VisualState x:Name="Disabled" />
+                    <VisualState x:Name="ReadOnly" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="FocusStates">
+                    <VisualStateGroup.Transitions>
+                      <VisualTransition GeneratedDuration="00:00:00.3000000"
+                                        To="Focused" />
+                      <VisualTransition From="Focused"
+                                        GeneratedDuration="00:00:00.3000000" />
+                    </VisualStateGroup.Transitions>
+                    <VisualState x:Name="Focused">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                       Duration="00:00:00.0010000"
+                                                       Storyboard.TargetName="BorderFocused"
+                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                Value="1" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unfocused" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="ValidationStates">
+                    <VisualState x:Name="Valid" />
+                    <VisualState x:Name="InvalidUnfocused" />
+                    <VisualState x:Name="InvalidFocused" />
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border x:Name="Border"
+                        Opacity="1"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{DynamicResource BrushTextBoxBg}"
+                        BorderBrush="{DynamicResource BrushTextBoxBorder}"
+                        CornerRadius="9" />
+                <Border x:Name="BorderFocused"
+                        Opacity="0"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{DynamicResource BrushTextBoxBgFocused}"
+                        BorderBrush="{DynamicResource BrushTextBoxBorderFocused}"
+                        CornerRadius="9" />
+                <Path Stretch="Fill"
+                      Style="{StaticResource PathStyleNewSearch}"
+                      Fill="#FFA3A3A3"
+                      HorizontalAlignment="Left"
+                      Width="12"
+                      Height="12"
+                      Margin="6,3,0,2" />
+                <ScrollViewer x:Name="PART_ContentHost"
+                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalContentAlignment="Center"
+                              Padding="18,3,1,3" />
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="Padding"
+                Value="20,2,1,2" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Stretch" />
+        <Setter Property="Margin" Value="0,0,0,1"/>
+      </Style>
+
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Border Padding="5,0,5,4">
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <TextBox x:Name="txtKeywords1"
+                               Text="{Binding StringSearch, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                               KeyDown="txtKeywords1_KeyDown"
+                               FontSize="13.333"
+                               Style="{DynamicResource TextBoxStyleInput}"
+                               Margin="0,0,-10,0" />
+      <Button x:Name="btnSendKeywords"
+              Command="{Binding SaveKeywordsCommand}"
+              IsEnabled="False"
+              Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=rdTabSearch}"
+              Foreground="#FFF6F6F6"
+              Style="{DynamicResource BtnValidText}"
+              HorizontalAlignment="Right"
+              d:LayoutOverrides="Height"
+              Grid.Column="1" FontSize="10" />
+    </Grid>
+  </Border>
+</UserControl>

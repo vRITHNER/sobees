@@ -1,0 +1,69 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:commands="clr-namespace:Sobees.Infrastructure.Commands;assembly=Sobees.Infrastructure"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cls="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure"
+             x:Class="Sobees.Controls.Facebook.Templates.DtEvent"
+             mc:Ignorable="d">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/TemplateListeImage.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <DataTemplate x:Key="DtAttachProperties">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="{Binding Name}"
+                     Style="{DynamicResource TxtblStyleItemContentH2}" />
+          <TextBlock Text=": "
+                     Style="{DynamicResource TxtblStyleItemContentH2}" />
+          <TextBlock Text="{Binding Text}"
+                     Style="{DynamicResource TxtblStyleItemContentH2}" />
+        </StackPanel>
+      </DataTemplate>
+      <cls:NullVisibilityConverter x:Key="NullVisibilityConverter" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <DockPanel HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch">
+
+    <Button x:Name="button"
+            Command="{Binding DataContext.GoToWebCommand, ElementName=lstFacebook}"
+            CommandParameter="{Binding Attachement.Medias[0].Href}"
+            DockPanel.Dock="Top"
+            Style="{DynamicResource BtnAnimatedItemImage}">
+      <Image x:Name="image"
+             Source="{Binding Attachement.Medias[0].Src, IsAsync=True}"
+             Width="150" />
+    </Button>
+    <Button Content="{Binding Attachement.Name}"
+            x:Name="ImagePhoto"
+            Command="{Binding DataContext.GoToWebCommand, ElementName=lstFacebook}"
+            CommandParameter="{Binding Attachement.Href}"
+            DockPanel.Dock="Top"
+            Style="{DynamicResource BtnStyleContentItem}" />
+    <TextBlock x:Name="txtblSource"
+               Visibility="{Binding Attachement.Caption, Converter={StaticResource NullVisibilityConverter}}"
+               Style="{DynamicResource TxtblStyleItemContent}"
+               DockPanel.Dock="Top">
+      <InlineUIContainer>
+        <ContentPresenter Content="{Binding Attachement.Caption}" />
+      </InlineUIContainer>
+    </TextBlock>
+    <TextBlock x:Name="txtblDescription"
+               Visibility="{Binding Attachement.Description, Converter={StaticResource NullVisibilityConverter}}"
+               Text="{Binding Attachement.Description}"
+               Style="{DynamicResource TxtblStyleItemContent}"
+               DockPanel.Dock="Top" />
+    <ListView ItemsSource="{Binding Attachement.Properties}"
+              ItemTemplate="{StaticResource DtAttachProperties}"
+              commands:BCommandManager.Command="{Binding DataContext.OnMouseScrollCommand, ElementName=lstFacebook}"
+              commands:BCommandManager.CommandEventName="PreviewMouseWheel"
+              Style="{DynamicResource ListViewStyleImage}"
+              DockPanel.Dock="Top"
+              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+              ItemContainerStyle="{DynamicResource ListViewItemNoStyle}" />
+
+  </DockPanel>
+</UserControl>

@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="Sobees.Sync.Views.UcWaiting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+    >
+    <StackPanel>
+    <Controls:UcWaiting IsAnimating="{Binding IsWaiting}" BorderBrush="{DynamicResource BrushWaiting}"/>
+    <Button Content="I'm connected! Try to get me!" Command="{Binding VerifyConnectionCommand}" />
+    <Button Content="Back" Command="{Binding GoBackCommand}" />
+    <Button Content="Cancel" Command="{Binding CloseCommand}" />
+  </StackPanel>
+</UserControl>

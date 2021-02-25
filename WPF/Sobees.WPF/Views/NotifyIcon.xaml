@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="Sobees.Views.NotifyIcon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Commands="clr-namespace:Sobees.Infrastructure.Commands;assembly=Sobees.Infrastructure"
+             xmlns:NotifyIcon="clr-namespace:Sobees.Infrastructure.NotifyIcon;assembly=Sobees.Infrastructure">
+  <UserControl.Resources>
+    <Style x:Key="NotifyStyleIcon"
+           TargetType="ToolTip">
+      <Setter Property="OverridesDefaultStyle"
+              Value="true" />
+      <Setter Property="Foreground"
+              Value="{DynamicResource tooltipForeground}" />
+      <Setter Property="FontSize"
+              Value="11" />
+      <Setter Property="MaxWidth"
+              Value="120" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="ToolTip">
+            <Border BorderThickness="{DynamicResource tooltipBorderThicknessExt}"
+                    BorderBrush="{DynamicResource tooltipBorderExt}"
+                    CornerRadius="{DynamicResource tooltipCornerRadiusExt}">
+              <Border BorderBrush="{DynamicResource tooltipBorderInt}"
+                      BorderThickness="{DynamicResource tooltipBorderThicknessInt}"
+                      CornerRadius="{DynamicResource tooltipCornerRadiusInt}"
+                      Background="{DynamicResource tooltipBg}">
+                <ContentPresenter Margin="{DynamicResource tooltipMargin}"/>
+              </Border>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Resources>
+    <NotifyIcon:TaskbarIcon x:Name="tskI"
+                            IconSource="../Resources/Icons/sobees.ico"
+                            DoubleClickCommand="{Binding DoubleClickCommand}"
+                            Commands:BCommandManager.CommandEventName="Loaded"
+                            Commands:BCommandManager.Command="{Binding SetTaskbarIconCommand}">
+        <NotifyIcon:TaskbarIcon.TrayToolTip>
+      <Border Background="{DynamicResource tooltipBg}"
+              BorderThickness="0"
+                    CornerRadius="4">
+                <TextBlock x:Name="tskIText"
+                           Margin="5,2,5,2"
+                           Text="{Binding IconText}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+            </Border>
+        </NotifyIcon:TaskbarIcon.TrayToolTip>
+        <NotifyIcon:TaskbarIcon.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="{Binding TextShowMenu}"
+                          Command="{Binding ShowSobeesCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="../Resources/Icons/sobees.ico"
+                               Width="17"
+                               Height="17" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="{Binding TextOpenMultiPost}"
+                          Command="{Binding ShowMultiPostCommand}" />
+                <MenuItem Header="{Binding TextMinimizeMenu}"
+                          Command="{Binding MinimizeSobeesToTrayCommand}" />
+                <Separator />
+                <MenuItem Header="{Binding TextExitMenu}"
+                          Command="{Binding ExitSobeesCommand}">
+                    <MenuItem.Icon>
+                        <Path Fill="#FF242424"
+                              Stretch="Fill"
+                              Width="10"
+                              Height="10"
+                              RenderTransformOrigin="0.5,0.5"
+                              Data="M3.125,0 L5.125,0 5.125,3.125 8.25,3.125 8.25,5.125 5.125,5.125 5.125,8.25 3.125,8.25 3.125,5.125 0,5.125 0,3.125 3.125,3.125 3.125,0 z">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1"
+                                                    ScaleY="1" />
+                                    <SkewTransform AngleX="0"
+                                                   AngleY="0" />
+                                    <RotateTransform Angle="-45" />
+                                    <TranslateTransform X="0"
+                                                        Y="0" />
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </ContextMenu>
+        </NotifyIcon:TaskbarIcon.ContextMenu>
+    </NotifyIcon:TaskbarIcon>
+</UserControl>

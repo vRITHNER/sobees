@@ -1,0 +1,129 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:Commands="clr-namespace:Sobees.Infrastructure.Commands;assembly=Sobees.Infrastructure"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="Sobees.Settings.Views.UcGeneral"
+             mc:Ignorable="d"
+             d:DesignWidth="353.477"
+             d:DesignHeight="304.88">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/TemplateSettings.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <DataTemplate x:Key="dtLanguage">
+        <TextBlock Text="{Binding Name}" />
+      </DataTemplate>
+    </ResourceDictionary>
+
+  </UserControl.Resources>
+  <Grid>
+
+    <DockPanel x:Name="grdSettingsTabItemGeneral2"
+               HorizontalAlignment="Stretch"
+               VerticalAlignment="Stretch">
+      <StackPanel Orientation="Horizontal"
+                  DockPanel.Dock="Top">
+        <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblLanguage}"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center"
+                   Margin="0,0,10,0" />
+        <ComboBox x:Name="comboLanguage"
+                  Width="120"
+                  ItemsSource="{Binding Languages}"
+                  ItemTemplate="{StaticResource dtLanguage}"
+                  SelectedItem="{Binding SelectedLanguage}"
+                  VerticalAlignment="Bottom"
+                  VerticalContentAlignment="Center" />
+      </StackPanel>
+      <Separator DockPanel.Dock="Top" />
+      <StackPanel Orientation="Horizontal"
+                  VerticalAlignment="Top"
+                  DockPanel.Dock="Top">
+        <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblVisualStyle}"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center"
+                   Margin="0,0,10,0" />
+        <StackPanel x:Name="spThemes"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center">
+          <ComboBox Width="120"
+                    ItemsSource="{Binding Themes}"
+                    SelectedIndex="{Binding ThemeSelectedIndex}"
+                    Commands:BCommandManager.Command="{Binding ChangeThemeCommand}"
+                    Commands:BCommandManager.CommandEventName="SelectionChanged"
+                    VerticalContentAlignment="Center" />
+        </StackPanel>
+      </StackPanel>
+      <Separator DockPanel.Dock="Top" />
+      <StackPanel Orientation="Horizontal"
+                  VerticalAlignment="Top"
+                  DockPanel.Dock="Top">
+        <TextBlock x:Name="spView"
+                   Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblSwitchTabColumn}"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center"
+                   Margin="0,0,10,0" />
+        <ToggleButton IsChecked="{Binding ViewState, Mode=TwoWay}"
+                      x:Name="tbViewState"
+                      Width="86"
+                      Height="26"
+                      VerticalAlignment="Center"
+                      Style="{DynamicResource BtntChangeViewTwitter}" />
+      </StackPanel>
+      <Separator DockPanel.Dock="Top" />
+      <StackPanel Orientation="Horizontal"
+                  VerticalAlignment="Top"
+                  DockPanel.Dock="Top">
+        <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtFontSize}"
+                   Margin="0,0,5,0"
+                   VerticalAlignment="Center" />
+        <Slider x:Name="slFontSize"
+                Value="{Binding FontSizeValue}"
+                Minimum="8"
+                Maximum="20"
+                ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtFontSize}"
+                Style="{DynamicResource SliderStyleSettingsTime}" />
+      </StackPanel>
+      <Separator DockPanel.Dock="Top" />
+        
+      <CheckBox x:Name="ckbRunAtStartup"
+                IsChecked="{Binding RunAtStartup}"
+                Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=ckbRunAtStartup}"
+                DockPanel.Dock="Top" />
+      <Separator DockPanel.Dock="Top" />
+
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top">
+
+                <CheckBox x:Name="ckbDisableAds"
+                          IsChecked="{Binding DisableAds}"
+                          IsEnabled="True"
+                          Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=ckbDisableAds}"
+                          DockPanel.Dock="Top" />
+
+                <!--<TextBlock Text="Only in Premium Version" VerticalAlignment="Center" Margin="5,0,0,0" />-->
+
+            </StackPanel>
+            <Separator DockPanel.Dock="Top" />
+
+            <CheckBox x:Name="ckbUseGlobalFilter"
+                IsChecked="{Binding ShowGlobalFilter}"
+                Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=ckbUseGlobalFilter}"
+                DockPanel.Dock="Top" />
+      <Separator DockPanel.Dock="Top" />
+      <CheckBox x:Name="ckbAlerts_Copy"
+                IsChecked="{Binding AlertsEnabled}"
+                Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=ckbAlerts}"
+                DockPanel.Dock="Top" />
+      <Separator DockPanel.Dock="Top" />
+      <CheckBox x:Name="ckbMinimizeWindowInTray"
+                IsChecked="{Binding MinimizeWindowInTray}"
+                Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnMinimizeToTray}"
+                DockPanel.Dock="Top" />
+      <Separator DockPanel.Dock="Top" />
+    </DockPanel>
+  </Grid>
+</UserControl>

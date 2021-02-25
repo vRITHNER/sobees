@@ -1,0 +1,67 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Sobees.ViewModel"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:shell="clr-namespace:Microsoft.WindowsAPICodePack.Taskbar;assembly=Microsoft.WindowsAPICodePack.Shell"
+             mc:Ignorable="d"
+             x:Class="Sobees.SobeesApplication"
+             ShutdownMode="OnMainWindowClose"
+             DispatcherUnhandledException="ApplicationDispatcherUnhandledException">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Themes/ThemeClassical.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/TemplatesGeneric.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/Icon.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <sys:Double x:Key="MyFontSize">12</sys:Double>
+      <sys:Double x:Key="MyFontSizeBigger">12</sys:Double>
+      <sys:Double x:Key="MyFontSizeSmaller">10</sys:Double>
+
+      <TextBlock x:Key="JumpTask0Text"
+                 Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=JumpListPostStatus}"></TextBlock>
+
+      <TextBlock x:Key="JumpTask1Text"
+                 Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=JumpListSettings}"></TextBlock>
+
+      <TextBlock x:Key="JumpTask2Text"
+                 Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=JumpListHelp}"></TextBlock>
+
+      <TextBlock x:Key="JumpTask3Text"
+                 Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=JumpListGoToWhatsNew}"></TextBlock>
+
+      <JumpList x:Key="MainJumpList">
+        <JumpTask  x:Name="JumpTask0" Title="Post a new Status Update..."
+                  Arguments="JumpListPostStatus"
+                  IconResourceIndex="0" />
+        <JumpTask />
+
+        <JumpTask Title="Help"
+                  ApplicationPath="%SYSTEMROOT%\explorer.exe"
+                  Arguments="http://feedback.sobees.com/pages/17279"
+                  IconResourceIndex="-1" />
+
+        <JumpTask Title="What's new"
+                  ApplicationPath="%SYSTEMROOT%\explorer.exe"
+                  Arguments="http://www.sobees.com/sobees-updates"
+                  IconResourceIndex="-1" />
+
+        <JumpTask Title="Go to sobees.com"
+                  ApplicationPath="%SYSTEMROOT%\explorer.exe"
+                  Arguments="http://www.sobees.com"
+                  IconResourceIndex="-1" />
+      </JumpList>
+
+      <!--Global View Model Locator -->
+      <viewModel:BViewModelLocator x:Key="Locator"
+                                   d:IsDataSource="True" />
+
+
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
+    

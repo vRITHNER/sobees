@@ -1,0 +1,165 @@
+﻿<Window x:Class="FacebookConsoleTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="850"
+        Width="850">
+  <Window.Resources>
+    <DataTemplate x:Key="FeedEntryDataTemplate">
+      <Grid d:DesignWidth="720"
+            d:DesignHeight="255"
+            Margin="2">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="42" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="40" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition />
+          <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="103" />
+          <ColumnDefinition Width="127*" />
+          <ColumnDefinition Width="137*" />
+          <ColumnDefinition Width="353*" />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="Story"
+               Content="{Binding Story, Mode=OneWay}"
+               Grid.Row="0"
+               Grid.Column="1"
+               HorizontalAlignment="Left"
+               Margin="5"
+               FontSize="12"
+               Foreground="#FF001EFF"
+               Background="{x:Null}"
+               Grid.RowSpan="1" />
+        
+        <Label x:Name="Name"
+               Content="{Binding Name, Mode=OneWay}"
+               Grid.Column="1"
+               HorizontalAlignment="Stretch"
+               Margin="5"
+               FontSize="16"
+               Foreground="#FF174EAC"
+               Grid.ColumnSpan="2"
+               Grid.Row="2" />
+
+        <Label x:Name="To"
+               Content="{Binding To, Mode=OneWay}"
+               Grid.Column="3"
+               HorizontalAlignment="Stretch"
+               Margin="5"
+               FontSize="16"
+               Foreground="#FF174EAC"
+               Grid.Row="0"
+               Grid.ColumnSpan="1" />
+
+        <Label x:Name="Via"
+               Content="{Binding Via, Mode=OneWay}"
+               Grid.Column="3"
+               HorizontalAlignment="Stretch"
+               Margin="2"
+               FontSize="16"
+               Foreground="#FF174EAC"
+               Grid.ColumnSpan="1"
+               Grid.Row="1" />
+
+        <Label x:Name="Caption"
+               Content="{Binding Caption, Mode=OneWay}"
+               Grid.Row="1"
+               Grid.Column="1"
+               HorizontalAlignment="Stretch"
+               Margin="1"
+               FontSize="13.333"
+               Foreground="#FF3F3F3F"
+               Grid.ColumnSpan="2"
+               Grid.RowSpan="1" />
+
+        <Label x:Name="Description"
+               Content="{Binding Description, Mode=OneWay}"
+               Grid.Row="3"
+               Grid.Column="2"
+               HorizontalAlignment="Left"
+               Margin="5"
+               FontSize="16"
+               Foreground="#FF3F3F3F"
+               Grid.ColumnSpan="3"
+               Grid.RowSpan="2" />
+       
+
+        <Label x:Name="CreationTime"
+               Content="{Binding CreatedTime, Mode=OneWay}"
+               Grid.Row="6"
+               Grid.Column="1"
+               HorizontalAlignment="Stretch"
+               Margin="5"
+               FontSize="12"
+               Foreground="#FF0007FF"
+               Grid.ColumnSpan="3"
+               Background="{x:Null}"
+               Grid.RowSpan="1" />
+        
+        <Button Grid.Row="0"
+                Grid.RowSpan="3"
+                Grid.Column="0">
+          <Button.Content>
+            <Image x:Name="imageProfile"
+                   Source="{Binding Icon, Mode=OneWay}"
+                   Stretch="UniformToFill"
+                   ClipToBounds="True"
+                   SnapsToDevicePixels="True" />
+          </Button.Content>
+        </Button>
+
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                Grid.RowSpan="3"
+                Grid.ColumnSpan="1"
+                HorizontalAlignment="Left"
+                Width="Auto">
+          <Button.Content>
+            <Image x:Name="imagePost"
+                   Source="{Binding Picture, Mode=OneWay}"
+                   Stretch="Uniform"
+                   ClipToBounds="True"
+                   SnapsToDevicePixels="True" />
+          </Button.Content>
+        </Button>
+
+      </Grid>
+    </DataTemplate>
+  </Window.Resources>
+  <Window.DataContext>
+    <Binding Path="Main"
+             Source="{StaticResource Locator}"></Binding>
+  </Window.DataContext>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="43" />
+      <RowDefinition Height="30" />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Button x:Name="ButtonLogin"
+            Content="Login..."
+            Click="ButtonBase_OnClick" />
+    <Label x:Name="lblToken"
+           Content="..."
+           HorizontalAlignment="Center"
+           Grid.Row="1"
+           FontSize="9.333" />
+    <Label Grid.Row="2"
+           x:Name="LblUser"
+           HorizontalAlignment="Center"
+           FontSize="12" />
+
+    <ListBox Grid.Row="2"
+             x:Name="MyItemsControl"
+             ItemsSource="{Binding FacebookFeedEntries}"
+             ItemTemplate="{DynamicResource FeedEntryDataTemplate}" />
+  </Grid>
+</Window>

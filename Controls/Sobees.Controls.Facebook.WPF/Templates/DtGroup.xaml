@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Sobees.Controls.Facebook.Templates.DtGroup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="ucDtGroup"
+             Tag="{Binding DataContext,ElementName=lstFacebook}" Unloaded="ucDtGroup_Unloaded">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/TemplateFacebook.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Button Focusable="False"
+            Command="{Binding Tag.GoToWebCommand, ElementName=ucDtGroup}"
+            CommandParameter="{Binding Attachement.Medias[0].Href}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Top"
+            Padding="0" Cursor="Hand">
+      <Image Source="{Binding Attachement.Medias[0].Src,IsAsync=True}"
+             MaxHeight="90"
+             MaxWidth="90"
+             IsHitTestVisible="True" />
+    </Button>
+    <StackPanel HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Grid.Column="0"
+                Margin="0,3,0,0"
+                Grid.Row="1">
+      <Button
+        Content="{Binding Attachement.Name}"
+        x:Name="ImagePhoto"
+        Command="{Binding Tag.GoToWebCommand, ElementName=ucDtGroup}"
+        CommandParameter="{Binding Attachement.Href}"
+        Style="{DynamicResource BtnStyleFooterItem}" />
+      <TextBlock x:Name="txtblSource" Style="{DynamicResource TxtblStyleItemContentH2}">
+        <InlineUIContainer>
+          <ContentPresenter Content="{Binding Attachement.Caption}" />
+        </InlineUIContainer>
+      </TextBlock>
+      <TextBlock x:Name="txtblDescription"
+                 Text="{Binding Attachement.Description}"
+                 Style="{DynamicResource TxtblStyleItemContent}" />
+    </StackPanel>
+  </Grid>
+</UserControl>

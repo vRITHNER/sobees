@@ -1,0 +1,55 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Controls="clr-namespace:Sobees.Infrastructure.Controls"
+             xmlns:Converters="clr-namespace:Sobees.Infrastructure.Converters"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="Sobees.Infrastructure.Controls.StatusBoxControls.UcTwStatusBox"
+             mc:Ignorable="d"
+             x:Name="ucTwStatusBox">
+  <UserControl.Resources>
+    <Converters:RemainingCharsConverter x:Key="remainingCharsConverter" />
+    
+    
+  </UserControl.Resources>
+  <Grid>
+    <Controls:BTextBox x:Name="txtTweet"
+                       Text="{Binding Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Tag="OK"
+                       KeyDown="txtKeywords1_KeyDown"
+                       MaxCharacters="140"
+                       Style="{DynamicResource TextBoxStyleInputTweet}"
+                       CursorPosition="{Binding CursorPosition,Mode=TwoWay}"
+                           MoveCursor="{Binding MoveCursor, Mode=TwoWay}"
+                       TextChanged="txtTweet_TextChanged"
+                       FocusableChanged="btnRetweet_IsVisibleChanged"
+                       PreviewKeyDown="txtTweet_PreviewKeyDown" />
+
+    <TextBlock x:Name="txtblTweetCount"
+               FontSize="32"
+               FontFamily="Arial Black"
+               IsHitTestVisible="False"
+               HorizontalAlignment="Right"
+               Margin="0,0,5,0"
+               Foreground="#43000000"
+               VerticalAlignment="Bottom">
+					<TextBlock.Text>
+							<MultiBinding Converter="{StaticResource remainingCharsConverter}">
+								<Binding ElementName="txtTweet"
+                         Path="Text.Length" />
+								<Binding ElementName="txtTweet"
+                         Path="MaxCharacters" />
+							</MultiBinding>
+						</TextBlock.Text></TextBlock>
+    <Button x:Name="btnRetweet"
+            Visibility="{Binding VisibilityButtonRetweet}"
+            Command="{Binding ReTweetOldCommand}"
+            Click="btntTweet_Checked"
+            KeyDown="btnRetweet_KeyDown"
+            IsVisibleChanged="btnRetweet_IsVisibleChanged"
+            Focusable="True"
+            Tag="{Binding Friends}" Unloaded="btnRetweet_Unloaded"
+			Style="{DynamicResource BtnStyleRetweet}" 
+			/>
+  </Grid>
+</UserControl>

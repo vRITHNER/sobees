@@ -1,0 +1,537 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="Geometry.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <!-- Style generic for icon menu level 1 -->
+  <Style x:Key="PathStyleGenericH1"
+         TargetType="{x:Type Path}">
+    <Setter Property="Width"
+            Value="15" />
+    <Setter Property="Height"
+            Value="15" />
+    <Setter Property="Fill"
+            Value="{DynamicResource Level4BrushIcon}" />
+    <Setter Property="Stretch"
+            Value="Fill" />
+  </Style>
+  <!-- Style generic for icon menu level 2 -->
+  <Style x:Key="PathStyleGenericH2"
+         TargetType="{x:Type Path}">
+    <Setter Property="Width"
+            Value="13" />
+    <Setter Property="Height"
+            Value="13" />
+    <Setter Property="Fill"
+            Value="{DynamicResource Level4BrushIcon}" />
+    <Setter Property="Stretch"
+            Value="Fill" />
+  </Style>
+  <!-- Style generic for iconImage menu level 2 -->
+  <Style x:Key="ImageStyleGenericH1"
+         TargetType="{x:Type Image}">
+    <Setter Property="FlowDirection"
+            Value="LeftToRight" />
+    <Setter Property="Width"
+            Value="18" />
+    <Setter Property="Height"
+            Value="18" />
+    <Setter Property="Stretch"
+            Value="Fill" />
+  </Style>
+  <!-- Style generic for iconImage menu level 2 -->
+  <Style x:Key="ImageStyleGenericH2"
+         TargetType="{x:Type Image}">
+    <Setter Property="FlowDirection"
+            Value="LeftToRight" />
+    <Setter Property="Width"
+            Value="15" />
+    <Setter Property="Height"
+            Value="15" />
+    <Setter Property="Stretch"
+            Value="Fill" />
+  </Style>
+  <SolidColorBrush x:Key="****************TWITTER*****************3"
+                   Color="#FFFF00F7" />
+  <!-- Style for icon -->
+  <Style x:Key="PathStyleTwitterHomeH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{StaticResource GeometryHome}" />
+  </Style>
+  <Style x:Key="PathStyleTwitterDmH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{StaticResource GeometryDM}" />
+    <Setter Property="Height"
+            Value="12" />
+  </Style>
+  <Style x:Key="PathStyleTwitterUserH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{StaticResource GeometryUsers}" />
+  </Style>
+  <Style x:Key="PathStyleTwitterRepliesH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryRepliesNew}" />
+  </Style>
+  <Style x:Key="PathStyleTwitterFavoritH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{StaticResource GeometryStar}" />
+  </Style>
+  <Style x:Key="PathStyleTwitterListH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryListTwitter}" />
+  </Style>
+  <SolidColorBrush x:Key="****************FACEBOOK*****************3"
+                   Color="#FFFF00F7" />
+  <Style x:Key="PathStyleFacebookHomeH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{StaticResource GeometryHome}" />
+  </Style>
+  <Style x:Key="PathStyleFacebookStatusH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryNewBubble}" />
+  </Style>
+  <Style x:Key="PathStyleFacebookLinkH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryNewBubble}" />
+  </Style>
+  <Style x:Key="PathStyleFacebookPhotoH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryNewBubble}" />
+  </Style>
+  <Style x:Key="PathStyleFacebookFriendsH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryFbFriends}" />
+  </Style>
+  <Style x:Key="PathStyleFacebookOnlineH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryFBFriensOnline}" />
+    <Setter Property="Width"
+            Value="13" />
+    <Setter Property="Height"
+            Value="12" />
+  </Style>
+  <Style x:Key="PathStyleFacebookEventsH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryFBEvents}" />
+  </Style>
+  <Style x:Key="PathStyleFacebookBirthdayH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryFBBirthday}" />
+  </Style>
+  <Style x:Key="PathStyleFacebookEventH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryFBEvents}" />
+  </Style>
+  <Style x:Key="PathStyleFacebookInboxH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryDM}" />
+    <Setter Property="Height"
+            Value="11" />
+  </Style>
+  <Style x:Key="PathStyleFacebookOnlyNewMailH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryDM}" />
+    <Setter Property="Height"
+            Value="9" />
+  </Style>
+  <Style x:Key="PathStyleFacebookProfileH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryUsers}" />
+  </Style>
+  <SolidColorBrush x:Key="*****************LINKEDIN*****************4"
+                   Color="#FFFF00F7" />
+  <Style x:Key="PathStyleLinkedinHomeH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryHome}" />
+  </Style>
+  <Style x:Key="PathStyleLinkedinConnectH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryLinkedinConnect}" />
+  </Style>
+  <Style x:Key="PathStyleLinkedinStatusH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryBubble}" />
+  </Style>
+  <Style x:Key="PathStyleLinkedinAppsH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryAdvanced}" />
+  </Style>
+  <Style x:Key="PathStyleLinkedinJobsH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryJob}" />
+    <Setter Property="Height"
+            Value="11" />
+  </Style>
+  <Style x:Key="PathStyleLinkedinJGRPH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryStar}" />
+  </Style>
+  <Style x:Key="PathStyleLinkedinRECUH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryAddGroup}" />
+  </Style>
+  <Style x:Key="PathStyleLinkedinPRFUH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryUsers}" />
+  </Style>
+  <Style x:Key="PathStyleLinkedinSearchH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometrySearch}" />
+  </Style>
+  <SolidColorBrush x:Key="*****************MYSPACE*****************5"
+                   Color="#FFFF00F7" />
+  <Style x:Key="PathStyleMyspaceActivitiesH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{StaticResource GeometryHome}" />
+  </Style>
+  <Style x:Key="PathStyleMyspaceStatusH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryNewBubble}" />
+  </Style>
+  <Style x:Key="PathStyleMyspaceMyActivitiesH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryUsers}" />
+  </Style>
+  <Style x:Key="PathStyleMyspaceTopFriendsH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryFbFriends}" />
+  </Style>
+  <Style x:Key="PathStyleMyspaceTopFriendsOnlineH2"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH2}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryFBFriensOnline}" />
+  </Style>
+  <Style x:Key="PathStyleMyspaceCommentsH1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryBubble}" />
+  </Style>
+  <SolidColorBrush x:Key="*****************OTHER*****************4"
+                   Color="#FFFF00F7" />
+  <!-- Other style-->
+  <Style x:Key="PathStyleSettings"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryAngenage}" />
+    <Setter Property="Stroke"
+            Value="#FF434343" />
+    <Setter Property="StrokeThickness"
+            Value="0.5" />
+  </Style>
+  <Style x:Key="PathStyleSettingsControl"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryRefreshSettings}" />
+    <Setter Property="Height"
+            Value="12" />
+    <Setter Property="Width"
+            Value="12" />
+  </Style>
+  <Style x:Key="PathStyleRefreshControl"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryRefresh}" />
+    <Setter Property="Height"
+            Value="11" />
+  </Style>
+  <Style x:Key="PathStyleNewPost"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryPost}" />
+    <Setter Property="Width"
+            Value="17" />
+    <Setter Property="Margin"
+            Value="3,0,0,0" />
+  </Style>
+  <Style x:Key="PathStyleNewSearch"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometrySearch}" />
+    <Setter Property="Margin"
+            Value="3,0,0,0" />
+  </Style>
+  <Style x:Key="RectangleStyleTest"
+         TargetType="{x:Type Rectangle}">
+    <Setter Property="Fill"
+            Value="{DynamicResource *****************BUTTON*****************3}" />
+    <Setter Property="Width"
+            Value="11" />
+    <Setter Property="Height"
+            Value="11" />
+  </Style>
+  <Style x:Key="PathStyleRetweet"
+         TargetType="{x:Type Path}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryRetweet}" />
+    <Setter Property="Margin"
+            Value="3,0" />
+    <Setter Property="Fill"
+            Value="{DynamicResource Level2TitleForeground}" />
+    <Setter Property="Width"
+            Value="13" />
+    <Setter Property="Height"
+            Value="12" />
+    <Setter Property="Stretch"
+            Value="Fill" />
+    <Setter Property="SnapsToDevicePixels"
+            Value="True" />
+  </Style>
+  <Style x:Key="PathStyleToUser"
+         TargetType="{x:Type Path}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryDM}" />
+    <Setter Property="Margin"
+            Value="3,0" />
+    <Setter Property="Fill"
+            Value="{DynamicResource Level2TitleForeground}" />
+    <Setter Property="Width"
+            Value="11" />
+    <Setter Property="Height"
+            Value="8" />
+    <Setter Property="Stretch"
+            Value="Fill" />
+    <Setter Property="SnapsToDevicePixels"
+            Value="True" />
+  </Style>
+  <Style x:Key="PathStyleClose"
+         TargetType="{x:Type Path}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryCloseCross}" />
+    <Setter Property="Width"
+            Value="11" />
+    <Setter Property="Height"
+            Value="11" />
+    <Setter Property="Stretch"
+            Value="Fill" />
+    <Setter Property="SnapsToDevicePixels"
+            Value="True" />
+    <Setter Property="Fill"
+            Value="White" />
+    <Setter Property="Stroke"
+            Value="Black" />
+    <Setter Property="StrokeThickness"
+            Value="0.4" />
+  </Style>
+  <Style x:Key="PathStyleTrash"
+         TargetType="{x:Type Path}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryTrashLittle}" />
+    <Setter Property="Width"
+            Value="11" />
+    <Setter Property="Height"
+            Value="11" />
+    <Setter Property="Stretch"
+            Value="Fill" />
+    <Setter Property="SnapsToDevicePixels"
+            Value="True" />
+    <Setter Property="Fill"
+            Value="#FF474747" />
+    <Setter Property="StrokeThickness"
+            Value="0.4" />
+  </Style>
+  <Style x:Key="PathStyleEdit"
+         TargetType="{x:Type Path}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryEditLittle}" />
+    <Setter Property="Width"
+            Value="11" />
+    <Setter Property="Height"
+            Value="11" />
+    <Setter Property="Stretch"
+            Value="Fill" />
+    <Setter Property="SnapsToDevicePixels"
+            Value="True" />
+    <Setter Property="Fill"
+            Value="#FF3F3F3F" />
+    <Setter Property="StrokeThickness"
+            Value="0.4" />
+  </Style>
+
+  <Style x:Key="ImageStyleLinksOnlyH2"
+         TargetType="{x:Type Image}"
+         BasedOn="{StaticResource ResourceKey=ImageStyleGenericH2}">
+    <Setter Property="Source"
+            Value="pack://application:,,,/Sobees.Templates;Component/Images/Icon/links_icon.png" />
+  </Style>
+  <Style x:Key="ImageStylePhotoH2"
+         TargetType="{x:Type Image}"
+         BasedOn="{StaticResource ResourceKey=ImageStyleGenericH2}">
+    <Setter Property="Source"
+            Value="pack://application:,,,/Sobees.Templates;Component/Images/Icon/photos_icon.png" />
+  </Style>
+  <Style x:Key="ImageStyleFeedH2"
+         TargetType="{x:Type Image}"
+         BasedOn="{StaticResource ResourceKey=ImageStyleGenericH2}">
+    <Setter Property="Source"
+            Value="pack://application:,,,/Sobees.Templates;Component/Images/Icon/feed_icon.png" />
+  </Style>
+  <Style x:Key="ImageStylePagesH2"
+         TargetType="{x:Type Image}"
+         BasedOn="{StaticResource ResourceKey=ImageStyleGenericH2}">
+    <Setter Property="Source"
+            Value="pack://application:,,,/Sobees.Templates;Component/Images/Icon/pages.png" />
+  </Style>
+  <Style x:Key="ImageStyleAppH2"
+         TargetType="{x:Type Image}"
+         BasedOn="{StaticResource ResourceKey=ImageStyleGenericH2}">
+    <Setter Property="Source"
+            Value="pack://application:,,,/Sobees.Templates;Component/Images/Icon/application.png" />
+  </Style>
+  <Style x:Key="ImageStyleVideoH2"
+         TargetType="{x:Type Image}"
+         BasedOn="{StaticResource ResourceKey=ImageStyleGenericH2}">
+    <Setter Property="Source"
+            Value="pack://application:,,,/Sobees.Templates;Component/Images/Icon/video.png" />
+  </Style>
+  <Style x:Key="LogoGeoloc"
+         TargetType="{x:Type Image}">
+    <Setter Property="Width"
+            Value="12" />
+    <Setter Property="Height"
+            Value="12" />
+    <Setter Property="Source"
+            Value="pack://application:,,,/Sobees.Templates;Component/Images/Icon/icon_geoloc.png" />
+  </Style>
+
+  <Style x:Key="ImageStyleRTSTwitterSearchH1"
+         TargetType="{x:Type Image}"
+         BasedOn="{StaticResource ResourceKey=ImageStyleGenericH1}">
+    <Setter Property="Source"
+            Value="pack://application:,,,/Sobees.Templates;Component/Images/Services/twitter_search.png" />
+  </Style>
+  <Style x:Key="PathStyleRTSTop10H1"
+         TargetType="{x:Type Path}"
+         BasedOn="{StaticResource ResourceKey=PathStyleGenericH1}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryTop10}" />
+    <Setter Property="Width"
+            Value="17" />
+    <Setter Property="Height"
+            Value="17" />
+  </Style>
+  <Style x:Key="PathStyleTweetTypeDm"
+         TargetType="{x:Type Path}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryDM}" />
+    <Setter Property="Fill"
+            Value="{DynamicResource FillTweetType}" />
+    <Setter Property="HorizontalAlignment"
+            Value="Right" />
+    <Setter Property="VerticalAlignment"
+            Value="Bottom" />
+    <Setter Property="Width"
+            Value="22" />
+    <Setter Property="Height"
+            Value="16" />
+    <Setter Property="Stretch"
+            Value="Fill" />
+    <Setter Property="Margin"
+            Value="-22,-22,-2,-8" />
+  </Style>
+  <Style x:Key="PathStyleTweetTypeReplies"
+         TargetType="{x:Type Path}">
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryRepliesNew}" />
+    <Setter Property="Fill"
+            Value="{DynamicResource FillTweetType}" />
+    <Setter Property="HorizontalAlignment"
+            Value="Right" />
+    <Setter Property="VerticalAlignment"
+            Value="Bottom" />
+    <Setter Property="Width"
+            Value="22" />
+    <Setter Property="Height"
+            Value="22" />
+    <Setter Property="Stretch"
+            Value="Fill" />
+    <Setter Property="Margin"
+            Value="-22,-22,-2,-8" />
+  </Style>
+  <Style x:Key="PathStyleListColor1"
+         TargetType="{x:Type Path}">
+    <Setter Property="Stretch"
+            Value="Fill" />
+    <Setter Property="Width"
+            Value="13" />
+    <Setter Property="Height"
+            Value="13" />
+    <Setter Property="Data"
+            Value="{DynamicResource GeometryListTwitter}" />
+  </Style>
+  <SolidColorBrush x:Key="*****************IMAGEBRUSH*****************3"
+                   Color="#FFFF00F7" />
+  <ImageBrush x:Key="ibLogoSobees"
+              ImageSource="pack://application:,,,/Sobees;Component/Resources/Images/iconSobees.png" />
+  <ImageBrush x:Key="ibRssLittleIcon"
+              ImageSource="pack://application:,,,/Sobees;Component/Resources/Images/Services/rss_little.png" />
+
+</ResourceDictionary>

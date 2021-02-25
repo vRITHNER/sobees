@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Sobees.Infrastructure.Controls.StatusBoxControls.UcDefaultStatusBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Sobees.Infrastructure.Controls"
+    x:Name="ucDefaultStatusBox">
+  <Grid>
+    <Controls:BTextBox x:Name="txtTweet"
+                       KeyDown="txtKeywords1_KeyDown"
+                       Text="{Binding Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Tag="OK"
+                       MaxCharacters="140"
+                       Style="{DynamicResource TextBoxStyleInputTweet}"
+                       />
+  </Grid>
+</UserControl>

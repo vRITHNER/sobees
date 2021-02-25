@@ -1,0 +1,43 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="Sobees.Controls.Twitter.Controls.UcFollowSobees"
+    mc:Ignorable="d" d:DesignWidth="330" d:DesignHeight="481.96" Background="{DynamicResource BgTransparentBlack}"
+    >
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+        
+      </ResourceDictionary.MergedDictionaries>
+
+    </ResourceDictionary>
+  </UserControl.Resources>
+ 
+    <DockPanel VerticalAlignment="Center">
+    	<Image DockPanel.Dock="Top" Margin="25,0"
+               Source="/Sobees.Templates;Component/Images/Misc/twitter_follow_me_bird.png" MaxWidth="147"/>
+    	<TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblFollowSobees}"
+    		 VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center" DockPanel.Dock="Top" FontSize="13.333" Foreground="#FFFCFCFC" Margin="15,10" TextWrapping="Wrap" />
+      <StackPanel Orientation="Horizontal"
+                  VerticalAlignment="Bottom"
+                  HorizontalAlignment="Center"
+                  DockPanel.Dock="Bottom"
+                  Margin="10">
+
+        <Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnYes}"
+                Command="{Binding YesFollowingSobeesCommand}"
+                VerticalAlignment="Center"
+                Margin="0,0,5,0" FontSize="21.333" />
+
+
+        <Button x:Name="btnCancel"
+                Command="{Binding NoFollowingSobeesCommand}"
+                Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnNo}" FontSize="21.333" />
+      </StackPanel>
+
+
+    </DockPanel>
+  
+</UserControl>

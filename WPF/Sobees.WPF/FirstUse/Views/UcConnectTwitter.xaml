@@ -1,0 +1,122 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Cls="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             x:Class="Sobees.FirstUse.Views.UcConnectTwitter"
+             mc:Ignorable="d"
+             d:DesignWidth="540"
+             d:DesignHeight="347">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Cls:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+      <DataTemplate x:Key="dtAccount">
+        <Button Content="{Binding}"
+                Command="{Binding DataContext.OpenTWCommand, ElementName=lstAccountsTwitter}"
+                CommandParameter="{Binding}"
+                Style="{DynamicResource BtnStyleFooterItem}"
+                Margin="0,0,5,0"
+                FontSize="12" />
+      </DataTemplate>
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <Grid x:Name="grid">
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                MaxWidth="270"
+                Margin="0,6,0,6"
+                Width="270"
+                Height="345">
+      
+      <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblTwitterPinCodeExplaination1}"
+                 Style="{DynamicResource TxtblStyleItemContent}" />
+      <Button x:Name="btnTwitterPinCodeLaunchBrowser"
+              Command="{Binding LaunchTwitterBrowserForPinCodeCommand}"
+              CommandParameter="{Binding ElementName=txtTwitterPinCode}"
+              Style="{DynamicResource BtnNoStyle}"
+              Margin="0,0,0,10"
+              VerticalAlignment="Center"
+              DockPanel.Dock="Top"
+              HorizontalAlignment="Center"
+              Cursor="Hand">
+        <Image Height="24"
+               Source="/Sobees;Component/Resources/Images/Services/logintw.png"
+               Width="151"
+               Margin="10" />
+      </Button>
+      <!-- Rendre visible spSecurityCode & spButtonLogin quand le browser s'ouvre -->
+      <DockPanel x:Name="spSecurityCode"
+                  Margin="0,0,0,8">
+        <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtSecurityCodeLI}"
+                   VerticalAlignment="Center"
+                   Style="{DynamicResource TxtblStyleItemContent}" />
+        <TextBox x:Name="txtTwitterPinCode"
+                 Text="{Binding PinCodeTwitter, Mode=TwoWay}"
+                 TextChanged="txtTwitterLogin_TextChanged"
+                 KeyDown="txtTwitterLogin_KeyDown"
+                 Margin="2,0,0,0"
+                 Width="55"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Center" />
+      </DockPanel>
+
+      <StackPanel x:Name="spButtonLogin"
+                  Orientation="Horizontal"
+                  HorizontalAlignment="Right"
+                  DockPanel.Dock="Top"
+                  Margin="0,0,0,10">
+        <Button x:Name="btnTwitterPinCodeSignIn" Margin="0,-3,0,0"
+                Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnTwitterPinCodeSignIn}"
+                Command="{Binding CheckTwitterSignInCommand}"
+                CommandParameter="{Binding ElementName=txtTwitterPinCode}"
+                HorizontalAlignment="Right" />
+      </StackPanel>
+      <Separator Margin="0,0,0,10"
+                 Style="{DynamicResource SeparatorStyleLevel2}"
+                 DockPanel.Dock="Top" />
+
+      <StackPanel HorizontalAlignment="Right"
+                  Orientation="Horizontal"
+                  Margin="0,10"
+                  VerticalAlignment="Bottom"
+                  DockPanel.Dock="Top">
+     
+        <Controls:UcWaiting BorderBrush="{StaticResource BrushWaiting}"
+                            IsAnimating="{Binding IsWaiting}"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Margin="0,0,10,0"
+                            Visibility="Visible" />
+      </StackPanel>
+      <TextBlock x:Name="txtblError"
+                 Text="{Binding ErrorMsg}"
+                 Visibility="{Binding ErrorMsgVisibility}"
+                 VerticalAlignment="Center"
+                 FontSize="11"
+                 Margin="0,0,0,10"
+                 HorizontalAlignment="Center"
+                 Foreground="#FFFF4F4F"
+                 DockPanel.Dock="Top" />
+
+      <DockPanel>
+        <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnIsConnected}"
+                   Visibility="{Binding IsTwitterConnected, Converter={StaticResource boolToVisibilityConverter}}"
+                   Style="{DynamicResource TxtblStyleItemContent}"
+                   Margin="0,0,5,0" />
+        <ListBox x:Name="lstAccountsTwitter"
+                 Visibility="{Binding IsTwitterConnected, Converter={StaticResource boolToVisibilityConverter}}"
+                 ItemsSource="{Binding AccountsTwitter}"
+                 ItemTemplate="{StaticResource dtAccount}"
+                 Style="{DynamicResource ListBoxStyleEmpty}"
+                 ItemContainerStyle="{DynamicResource ListBoxItemEmpty}"
+                 ItemsPanel="{DynamicResource ItemsPanelTemplateWrap}" />
+      </DockPanel>
+    </StackPanel>
+  </Grid>
+</UserControl>

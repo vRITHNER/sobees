@@ -1,0 +1,7 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\ThirdParty\References\UniveRss.HtmlConverter.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\ThirdParty\References\UniveRss.HtmlConverter.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\ThirdParty\UniveRss.HtmlConverter\UniveRss.HtmlConverter\obj\Debug\UniveRss.HtmlConverter.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\ThirdParty\UniveRss.HtmlConverter\UniveRss.HtmlConverter\obj\Debug\UniveRss.HtmlConverter.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\ThirdParty\UniveRss.HtmlConverter\UniveRss.HtmlConverter\obj\Debug\UniveRss.HtmlConverter.csproj.CopyComplete
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\ThirdParty\UniveRss.HtmlConverter\UniveRss.HtmlConverter\obj\Debug\UniveRss.HtmlConverter.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\ThirdParty\UniveRss.HtmlConverter\UniveRss.HtmlConverter\obj\Debug\UniveRss.HtmlConverter.pdb

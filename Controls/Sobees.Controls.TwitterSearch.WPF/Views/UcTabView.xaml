@@ -1,0 +1,138 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Views="clr-namespace:Sobees.Controls.TwitterSearch.Views"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:Controls="clr-namespace:Sobees.Controls.TwitterSearch.Controls"
+             xmlns:Cls="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Controls1="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             x:Class="Sobees.Controls.TwitterSearch.Views.UcTabView"
+             mc:Ignorable="d" d:DesignWidth="369" d:DesignHeight="378.627">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/Icon.xaml"/>
+        
+      </ResourceDictionary.MergedDictionaries>
+      <Cls:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+
+      <DataTemplate x:Key="dtSearch">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="{Binding WorkspaceSettings.SearchQuery, FallbackValue=Search}" Margin="0,1,3,0"/>
+          <Button x:Name="btnClearTweets"
+                  ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnClearTweets}"
+                  Command="{Binding ClearTweetsCommand}"
+				  Style="{StaticResource BtnLittleHeader}">
+            <Path
+          		Height="10"
+          		VerticalAlignment="Center"
+          		Width="8"
+          		Style="{StaticResource PathStyleTrash}" Fill="White" Stroke="Black" StrokeThickness="0.2"/>
+          </Button>
+          <Button x:Name="btnClose"
+          	Command="{Binding CloseCommand}"
+          	Style="{StaticResource BtnLittleHeader}">
+          	<Path
+          		Height="8"
+          		VerticalAlignment="Center"
+          		Width="8"
+          		Style="{StaticResource PathStyleClose}"/>
+          </Button>
+        </StackPanel>
+      </DataTemplate>
+      <Style x:Key="ListBoxItemStyleKeywordsRTS"
+             TargetType="ListBoxItem">
+        <Setter Property="Background"
+                Value="Transparent" />
+		<Setter Property="Foreground"
+                Value="{DynamicResource Level2HeaderForeground}" />
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="FontSize"
+                Value="10.667" />
+        <Setter Property="Margin"
+                Value="0,0,3,0" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="ListBoxItem">
+              <ControlTemplate.Resources>
+                <Storyboard x:Key="itemSelected" />
+                <Storyboard x:Key="itemNoSelected" />
+              </ControlTemplate.Resources>
+              <Grid Background="{TemplateBinding Background}"
+                    SnapsToDevicePixels="True">
+                <Border x:Name="bgSelected"
+                        SnapsToDevicePixels="True"
+                        CornerRadius="4"
+                        BorderThickness="1,1,0,0"
+                        BorderBrush="#FF535353" Opacity="0">
+                  <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1"
+                                         StartPoint="0.5,0">
+                      <GradientStop Color="#FF848484"
+                                    Offset="0" />
+                      <GradientStop Color="#FFADADAD"
+                                    Offset="0.208" />
+                    </LinearGradientBrush>
+                  </Border.Background>
+                  <Border x:Name="bgSelected_Copy"
+                          Opacity="1"
+                          SnapsToDevicePixels="True"
+                          BorderBrush="#FFF2F2F2"
+                          BorderThickness="0,0,1,1"
+                          CornerRadius="3" />
+                </Border>
+                <ContentPresenter x:Name="contentPresenter"
+                                  Content="{TemplateBinding Content}"
+                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                  Margin="3,2" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver"
+                         Value="True" >
+                	<Setter Property="Opacity" TargetName="bgSelected" Value="0.2"/>
+                </Trigger>
+                <Trigger Property="Selector.IsSelected"
+                         Value="True">
+                  <Setter Property="Opacity"
+                          TargetName="bgSelected"
+                          Value="1" />
+				<Setter Property="Foreground"
+                Value="#FF141414" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+
+
+      </Style>
+
+
+
+    </ResourceDictionary>
+
+  </UserControl.Resources>
+  <DockPanel LastChildFill="True">
+    <!--<TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblEnterSearch}"                 />-->
+    <Controls1:UcSearchBox Visibility="{Binding IsSpecialZoneOpen, Converter={StaticResource boolToVisibilityConverter}}"
+                           DockPanel.Dock="Top"
+                           Background="{DynamicResource Level2HeaderElongated}" />
+
+        <ListBox x:Name="lstKeywordsSearch"
+             ItemsSource="{Binding TwitterSearchWorkspaces}"
+             SelectedItem="{Binding TwitterSearchSelectedWorkspace}"
+             ItemTemplate="{StaticResource dtSearch}"
+             DockPanel.Dock="Top"
+             ItemsPanel="{DynamicResource ItemsPanelTemplateWrap}"
+             Style="{DynamicResource ListBoxStyleEmpty}"
+             ItemContainerStyle="{DynamicResource ListBoxItemStyleKeywordsRTS}"
+             Background="{DynamicResource Level2HeaderElongated}"
+             Padding="5,0,0,4" />
+
+    <Views:TwitterSearchWorkspace DataContext="{Binding TwitterSearchSelectedWorkspace}"
+                                  DockPanel.Dock="Top" />
+  </DockPanel>
+</UserControl>

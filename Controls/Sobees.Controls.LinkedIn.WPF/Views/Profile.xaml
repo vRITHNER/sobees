@@ -1,0 +1,129 @@
+﻿<UserControl x:Class="Sobees.Controls.LinkedIn.Views.Profile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:LocalizeWPF="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib">
+  <UserControl.Resources>
+  	<ResourceDictionary>
+  		<ResourceDictionary.MergedDictionaries>
+  			<ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml"/>
+  		</ResourceDictionary.MergedDictionaries>
+  		<DataTemplate x:Key="dtUrls">
+  			<Button Command="{Binding DataContext.GoToWebCommand, ElementName=lstUrls}"
+  				CommandParameter="{Binding UrlSrc}"
+  				Content="{Binding Name}" 
+				Style="{DynamicResource BtnStyleContentItem}"
+              />
+  		</DataTemplate>
+  		<DataTemplate x:Key="dtPosition">
+  			<StackPanel Orientation="Vertical"
+              >
+  				<TextBlock Text="{Binding Title}"
+					Style="{DynamicResource TxtblStyleItemContentH2}" />
+  				<TextBlock Text="{Binding Summary}"
+  					Style="{DynamicResource TxtblStyleItemContentH2}" />
+  				<!--<StackPanel Orientation="Horizontal"
+                    Visibility="Collapsed">
+          <TextBlock Text="Start " />
+          <TextBlock Text="{Binding StartM}" />
+          <TextBlock Text="{Binding StartY}" />
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Visibility="Collapsed">
+          <TextBlock Text="End " />
+          <TextBlock Text="{Binding EndM}" />
+          <TextBlock Text="{Binding EndY}" />
+        </StackPanel>-->
+  				<TextBlock Text="{Binding Compagny}"
+  					Style="{DynamicResource TxtblStyleItemContentH2}" />
+  			</StackPanel>
+  		</DataTemplate>
+  		
+  	</ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+  <TextBlock x:Name="txtblDescription"
+  		Text="{Binding CurrentUser.Description}" Style="{DynamicResource TxtblStyleItemContent}"
+               />
+  <WrapPanel x:Name="spTitre"
+               >
+  	<TextBlock x:Name="txtblLocation"
+  		Text="{Binding CurrentUser.Location}"
+        Style="{DynamicResource TxtblStyleItemContent}"/>
+  	<TextBlock x:Name="deco" Text="  |  " Style="{DynamicResource TxtblStyleItemContent}"/>
+  	<TextBlock x:Name="txtblIndustryCode" Text="{Binding CurrentUser.IndustryCode.Description}" Style="{DynamicResource TxtblStyleItemContent}"/>
+
+  </WrapPanel>
+  <StackPanel x:Name="spConnexions"
+  	Orientation="Horizontal"
+  	Margin="0">
+  	<TextBlock x:Name="txtblNbrConnexion" Text="{Binding CurrentUser.NbConnections}" Style="{DynamicResource TxtblStyleItemContent}"/>
+  	<TextBlock x:Name="txtblNbrConn" VerticalAlignment="Bottom" Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinConnections}"  Style="{DynamicResource TxtblStyleItemContent}"/>
+  </StackPanel>
+  <StackPanel x:Name="spRecommandation"
+  	Orientation="Horizontal"       
+  	HorizontalAlignment="Left"
+  	VerticalAlignment="Top">
+  	<TextBlock x:Name="txtblNbrRecommandation"
+  		Text="{Binding CurrentUser.NbRecommendations}"
+  		Style="{DynamicResource TxtblStyleItemContent}"/>
+  	<TextBlock x:Name="txtblNbrRecomm"
+  		Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinRecommendations}"
+  		Style="{DynamicResource TxtblStyleItemContent}"/>
+  </StackPanel>
+  <Separator Style="{DynamicResource SeparatorStyleLevel2}" Margin="0,10,0,5"  />
+    <TextBlock Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinSummary}"
+                Style="{DynamicResource TxtblStyleItemContent}" FontSize="16" />
+    <TextBlock x:Name="txtBlSummary"
+               
+               Text="{Binding CurrentUser.Summary}"
+                Style="{DynamicResource TxtblStyleItemContentH2}"
+               TextTrimming="WordEllipsis"
+               MaxHeight="150" />
+    <Separator Style="{DynamicResource SeparatorStyleLevel2}" Margin="0,5"  />
+    <TextBlock Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinExperience}"
+               Style="{DynamicResource TxtblStyleItemContent}" FontSize="16"/>
+    <ListBox x:Name="lstExperience"
+             ItemsSource="{Binding CurrentUser.Positions}"
+             ItemTemplate="{DynamicResource dtPosition}" 
+			 Style="{DynamicResource ListBoxStyleEmpty}" 
+			 ItemContainerStyle="{DynamicResource ListBoxItemEmpty}" />
+    <Separator Style="{DynamicResource SeparatorStyleLevel2}" Margin="0,5"  />
+    <TextBlock Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinSpecialities}"
+               TextWrapping="Wrap"
+               FontSize="16" Style="{DynamicResource TxtblStyleItemContent}" />
+    <TextBlock x:Name="txtBlSpecialties"
+               
+               Text="{Binding CurrentUser.Specialties}"
+               TextWrapping="Wrap"
+               HorizontalAlignment="Left" Style="{DynamicResource TxtblStyleItemContentH2}" />
+    <Separator Style="{DynamicResource SeparatorStyleLevel2}" Margin="0,5"  />
+    <TextBlock Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinAssociations}"
+               TextWrapping="Wrap"
+               FontSize="16" Style="{DynamicResource TxtblStyleItemContent}" />
+    <TextBlock x:Name="txtBlAssociations"
+               
+               Text="{Binding CurrentUser.Associations}"
+               TextWrapping="Wrap"
+               HorizontalAlignment="Left" Style="{DynamicResource TxtblStyleItemContentH2}" />
+    <Separator Style="{DynamicResource SeparatorStyleLevel2}" Margin="0,5"  />
+    <TextBlock Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinLastStatus}"
+               TextWrapping="Wrap"
+               FontSize="16" Style="{DynamicResource TxtblStyleItemContent}" />
+    <TextBlock x:Name="txtBlLocation2"
+               
+               Text="{Binding CurrentUser.LastStatus}"
+               TextWrapping="Wrap"
+               HorizontalAlignment="Left" Style="{DynamicResource TxtblStyleItemContent}" />
+    <ListBox x:Name="lstUrls"
+             ItemsSource="{Binding CurrentUser.Urls}"
+             ItemTemplate="{StaticResource dtUrls}"
+             Style="{DynamicResource ListBoxStyleEmpty}" 
+			 ItemContainerStyle="{DynamicResource ListBoxItemEmpty}" />
+    <TextBlock x:Name="txtblDate"
+               Text="{Binding CurrentUser.LastStatusDate}" Style="{DynamicResource TxtblStyleItemContentH2}"
+/>
+
+    <TextBlock Text="{Binding CurrentUser.Distance}" Visibility="Collapsed" />
+  </StackPanel>
+</UserControl>

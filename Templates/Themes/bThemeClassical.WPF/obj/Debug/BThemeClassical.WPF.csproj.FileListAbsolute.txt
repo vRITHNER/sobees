@@ -1,0 +1,11 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Output\Debug\Themes\Sobees.Themes.BThemeClassical.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Output\Debug\Themes\Sobees.Themes.BThemeClassical.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\bThemeClassical.WPF\obj\Debug\BThemeClassical.WPF.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\bThemeClassical.WPF\obj\Debug\ThemeClassical.baml
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\bThemeClassical.WPF\obj\Debug\Sobees.Themes.BThemeClassical_MarkupCompile.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\bThemeClassical.WPF\obj\Debug\Sobees.Themes.BThemeClassical.g.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\bThemeClassical.WPF\obj\Debug\Sobees.Themes.BThemeClassical.Properties.Resources.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\bThemeClassical.WPF\obj\Debug\BThemeClassical.WPF.csproj.GenerateResource.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\bThemeClassical.WPF\obj\Debug\BThemeClassical.WPF.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\bThemeClassical.WPF\obj\Debug\Sobees.Themes.BThemeClassical.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\bThemeClassical.WPF\obj\Debug\Sobees.Themes.BThemeClassical.pdb

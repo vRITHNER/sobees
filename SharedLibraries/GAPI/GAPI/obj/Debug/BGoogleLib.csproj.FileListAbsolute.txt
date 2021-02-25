@@ -1,0 +1,7 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BGoogleLib.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BGoogleLib.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\GAPI\GAPI\obj\Debug\BGoogleLib.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\GAPI\GAPI\obj\Debug\BGoogleLib.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\GAPI\GAPI\obj\Debug\BGoogleLib.csproj.CopyComplete
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\GAPI\GAPI\obj\Debug\Sobees.Library.BGoogleLib.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\GAPI\GAPI\obj\Debug\Sobees.Library.BGoogleLib.pdb

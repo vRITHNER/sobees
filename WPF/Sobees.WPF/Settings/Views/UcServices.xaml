@@ -1,0 +1,69 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:Commands="clr-namespace:Sobees.Infrastructure.Commands;assembly=Sobees.Infrastructure"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="Sobees.Settings.Views.UcServices"
+             mc:Ignorable="d"
+             d:DesignWidth="351.967"
+             d:DesignHeight="196.34">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Sobees.Templates;Component/TemplateSettings.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel>
+        <CheckBox x:Name="ckbCloseBoxPublication"
+                  IsChecked="{Binding CloseBoxPublication}"
+                  Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=ckbCloseBoxPublication}"
+                  DockPanel.Dock="Top" />
+        <CheckBox x:Name="ckbSendByEnter"
+                  IsChecked="{Binding IsSendByEnter}"
+                  Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=ckbIsSendByEnter}"
+                  DockPanel.Dock="Top" />
+        <Separator DockPanel.Dock="Top" />
+        <WrapPanel x:Name="grdSettingsTabItemGeneral3"
+                    Orientation="Horizontal"
+                    DockPanel.Dock="Top">
+            <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblkShortener}"
+                       VerticalAlignment="Center"
+                       Margin="0,0,5,0" />
+            <ComboBox ItemsSource="{Binding LcvURLShortener}"
+                      SelectedIndex="{Binding URLShortenerIndex}" />
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Left"
+                    Visibility="{Binding IsBitLyChoice}"
+                    Orientation="Horizontal"
+                    DockPanel.Dock="Top"
+                    Margin="0,5,0,0">
+            <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=lblUserName}"
+                       VerticalAlignment="Center"
+                       Margin="0,0,5,0" />
+            <TextBox x:Name="txbkLoginBitLy"
+                     Text="{Binding BitLyUserName}"
+                     Width="80" />
+            <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtApiKey}"
+                       Margin="20,0,5,0"
+                       VerticalAlignment="Center" />
+            <TextBox x:Name="txbkPwdBitLy"
+                     Text="{Binding BitLyPassword}"
+                     Width="80" />
+        </WrapPanel>
+        <Separator DockPanel.Dock="Top" />
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Top"
+                    VerticalAlignment="Top">
+            <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtTraductorLanguage}"
+                       Margin="0,0,5,0"
+                       VerticalAlignment="Center" />
+            <!--<ListBox ItemsSource="{Binding LanguagesTraductor}"
+				SelectedItem="{Binding CurrentLanguageTraductor}" MaxHeight="100" />-->
+            <ComboBox Width="120"
+                      ItemsSource="{Binding LanguagesTraductor}"
+                      SelectedItem="{Binding CurrentLanguageTraductor}" />
+        </StackPanel>
+    </DockPanel>
+</UserControl>

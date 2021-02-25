@@ -1,0 +1,11 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Output\Debug\Themes\Sobees.Themes.BThemeForest.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Output\Debug\Themes\Sobees.Themes.BThemeForest.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeForest.WPF\obj\Debug\BThemeForest.WPF.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeForest.WPF\obj\Debug\ThemeForest.baml
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeForest.WPF\obj\Debug\Sobees.Themes.BThemeForest_MarkupCompile.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeForest.WPF\obj\Debug\Sobees.Themes.BThemeForest.g.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeForest.WPF\obj\Debug\Sobees.Themes.BThemeForest.Properties.Resources.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeForest.WPF\obj\Debug\BThemeForest.WPF.csproj.GenerateResource.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeForest.WPF\obj\Debug\BThemeForest.WPF.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeForest.WPF\obj\Debug\Sobees.Themes.BThemeForest.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemeForest.WPF\obj\Debug\Sobees.Themes.BThemeForest.pdb

@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Sobees.Controls.TwitterSearch.Controls.UcAddToList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib" Background="{DynamicResource BgTransparentBlack}">
+  <UserControl.Resources>
+  	<ResourceDictionary>
+  		<ResourceDictionary.MergedDictionaries>
+  			<ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml"/>
+  		</ResourceDictionary.MergedDictionaries>
+  		<DataTemplate x:Key="dtListName">
+  			
+  				<TextBlock Text="{Binding FullName}" Style="{DynamicResource TxtblStyleItemContent}" />
+  			
+  		</DataTemplate>
+  	</ResourceDictionary>
+  </UserControl.Resources>
+  <Border Style="{DynamicResource BorderStyleMsgWindowInService}" HorizontalAlignment="Stretch">
+		<DockPanel>
+			<TextBlock Text="{Binding ConfirmationText}"
+				x:Name="txtblConfirmation"
+				Style="{DynamicResource TxtblStyleItemTitle}"
+				DockPanel.Dock="Top" 
+				Margin="0,0,0,10" 
+				/>
+			<ListBox ItemsSource="{Binding TwitterListOwn}"
+				ItemTemplate="{StaticResource dtListName}"
+				SelectedItem="{Binding SelectedList}"
+				Visibility="{Binding VisibilityListTwitter}"
+				MaxHeight="250" DockPanel.Dock="Top" Margin="0,0,0,10" Style="{DynamicResource ListBoxStyleDeck}" />
+			<StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right" DockPanel.Dock="Bottom">
+				<Button x:Name="btnOk"
+					Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnOk}"
+					Command="{Binding ConfirmationCommand}"
+                 
+					Margin="0,0,5,0" />
+				<Button x:Name="btnCancel"
+					Command="{Binding CancelConfirmationCommand}"
+					Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCancel}" />
+			</StackPanel>
+		</DockPanel>
+	</Border>
+</UserControl>

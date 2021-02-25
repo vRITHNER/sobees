@@ -1,0 +1,41 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+    xmlns:CustomControls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+    xmlns:Cls="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure"
+    xmlns:Templates="clr-namespace:Sobees.FirstUse.Views.Templates" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Sobees.FirstUse.Views.UcSearch"
+    d:DesignWidth="381.733" d:DesignHeight="269.653">
+
+  <UserControl.Resources>
+    <Cls:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    <DataTemplate x:Key="dtTrends">
+      <Templates:DtTrending />
+    </DataTemplate>
+  </UserControl.Resources>
+  <Border Style="{DynamicResource BorderStyleMsgWindowInService}"
+          HorizontalAlignment="Stretch"
+          Margin="20,0">
+    <StackPanel Orientation="Vertical"
+                VerticalAlignment="Center">
+      <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblEnterSearch}"
+                 
+                 Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,0,5" />
+      <CustomControls:UcSearchBox />
+
+      <TextBlock x:Name="txtblTrendingTopics1"
+    		Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblTrendingTopics}"
+    		Style="{DynamicResource TxtblStyleItemContent}"
+    		Margin="0,10" Visibility="Collapsed"/>
+      <ListBox x:Name="lstInsideTrends"
+               ItemsSource="{Binding ListTrends}"
+               ItemTemplate="{StaticResource dtTrends}"
+               Style="{DynamicResource ListBoxStyleEmpty}"
+               ItemsPanel="{DynamicResource ItemsPanelTemplateWrap}"
+               ItemContainerStyle="{DynamicResource ListBoxItemEmpty}"
+               Padding="5,0,0,0" />
+    </StackPanel>
+
+
+  </Border>
+</UserControl>

@@ -1,0 +1,1245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAbout" xml:space="preserve">
+    <value>Ueber</value>
+  </data>
+  <data name="btnAddColumn" xml:space="preserve">
+    <value>Service hinzufügen</value>
+  </data>
+  <data name="btnAddFavorite" xml:space="preserve">
+    <value>Zu Favoriten hinzufügen</value>
+  </data>
+  <data name="btnAddSpamAccount" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="btnAlpha" xml:space="preserve">
+    <value>Alpha</value>
+  </data>
+  <data name="btnBeta" xml:space="preserve">
+    <value> - Alpha</value>
+  </data>
+  <data name="btnBlockUser" xml:space="preserve">
+    <value>Anwender blocken</value>
+  </data>
+  <data name="btnBysobees" xml:space="preserve">
+    <value>von sobees - Alpha</value>
+  </data>
+  <data name="btnBysobeesShort" xml:space="preserve">
+    <value>von sobees</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>abbrechen</value>
+  </data>
+  <data name="btnChangeTemplate" xml:space="preserve">
+    <value>Vorlage ändern</value>
+  </data>
+  <data name="btnCheckAccountPassword" xml:space="preserve">
+    <value>Neues Passwort speichern</value>
+  </data>
+  <data name="btnClearTweets" xml:space="preserve">
+    <value>Liste löschen</value>
+  </data>
+  <data name="btnClosebDule" xml:space="preserve">
+    <value>sobees schliessen</value>
+  </data>
+  <data name="btnCloseProfileFB" xml:space="preserve">
+    <value>zurück zu Freunden</value>
+  </data>
+  <data name="btnCloseTrends" xml:space="preserve">
+    <value>schliessen</value>
+  </data>
+  <data name="btnComment" xml:space="preserve">
+    <value>Kommentar</value>
+  </data>
+  <data name="btnConnect" xml:space="preserve">
+    <value>verbinden</value>
+  </data>
+  <data name="btnConnectMS" xml:space="preserve">
+    <value>Verbindung zu MySpace</value>
+  </data>
+  <data name="btnConnectTo" xml:space="preserve">
+    <value>sich anmelden ins</value>
+  </data>
+  <data name="btnConnectTwitter" xml:space="preserve">
+    <value>Verbindung zu Twitter</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="btnDeleteTweet" xml:space="preserve">
+    <value>Tweet löschen</value>
+  </data>
+  <data name="btnDirectMessages" xml:space="preserve">
+    <value>Nachrichten</value>
+  </data>
+  <data name="btnDM" xml:space="preserve">
+    <value>Nachricht</value>
+  </data>
+  <data name="btnDropHereTemplate" xml:space="preserve">
+    <value>Hier platzieren</value>
+  </data>
+  <data name="btnEditGroup" xml:space="preserve">
+    <value>Gruppe ändern</value>
+  </data>
+  <data name="btnFacebookDisconect" xml:space="preserve">
+    <value>sich abmelden</value>
+  </data>
+  <data name="btnFacebookPage" xml:space="preserve">
+    <value>Facebook Seite</value>
+  </data>
+  <data name="btnFacebookSettings" xml:space="preserve">
+    <value>Facebook Einstellungen</value>
+  </data>
+  <data name="btnFactery" xml:space="preserve">
+    <value>Factery anzeigen/verstecken</value>
+  </data>
+  <data name="btnFavorit" xml:space="preserve">
+    <value>Diesen Tweet favorisieren</value>
+  </data>
+  <data name="btnFavorites" xml:space="preserve">
+    <value>Favoriten</value>
+  </data>
+  <data name="btnFavoritTw" xml:space="preserve">
+    <value>Zu Favoriten hinzufügen</value>
+  </data>
+  <data name="btnFBPostLink" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="btnFBUploadPhoto" xml:space="preserve">
+    <value>Fotos</value>
+  </data>
+  <data name="btnFBUploadPhotoTT" xml:space="preserve">
+    <value>Foto hochladen</value>
+  </data>
+  <data name="btnFilterRanking" xml:space="preserve">
+    <value>Nach Factery Rang sortieren</value>
+  </data>
+  <data name="btnGoToOneRiot" xml:space="preserve">
+    <value>OneRiot</value>
+  </data>
+  <data name="btnGroupConvertToList" xml:space="preserve">
+    <value>In Twitter Liste umwandeln</value>
+  </data>
+  <data name="btnGroups" xml:space="preserve">
+    <value>Gruppe hinzufügen</value>
+  </data>
+  <data name="btnhelp" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="btnIsConnected" xml:space="preserve">
+    <value>verbunden</value>
+  </data>
+  <data name="btnLess" xml:space="preserve">
+    <value>Weniger…</value>
+  </data>
+  <data name="btnLike" xml:space="preserve">
+    <value>es gefällt mir </value>
+  </data>
+  <data name="btnLogin" xml:space="preserve">
+    <value>anmelden</value>
+  </data>
+  <data name="btnManageLists" xml:space="preserve">
+    <value>Listen verwalten</value>
+  </data>
+  <data name="btnMaximize" xml:space="preserve">
+    <value>als Vollbild darstellen</value>
+  </data>
+  <data name="btnMinimize" xml:space="preserve">
+    <value>auf Symbolgrösse verkleinern</value>
+  </data>
+  <data name="btnMinimizeToTray" xml:space="preserve">
+    <value>in die Taskleiste minimieren</value>
+  </data>
+  <data name="btnMore" xml:space="preserve">
+    <value>Mehr…</value>
+  </data>
+  <data name="btnMultiPosting" xml:space="preserve">
+    <value>Status auf mehrere Service aktualisieren</value>
+  </data>
+  <data name="btnNewList" xml:space="preserve">
+    <value>Neue Liste</value>
+  </data>
+  <data name="btnOk" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="btnOnlyFactery" xml:space="preserve">
+    <value>Nur Tweets mit Factery Daten anzeigen</value>
+  </data>
+  <data name="btnRefresh" xml:space="preserve">
+    <value>aktualisieren</value>
+  </data>
+  <data name="btnRefreshProfile" xml:space="preserve">
+    <value>Profil aktualisieren</value>
+  </data>
+  <data name="btnRefreshSettings" xml:space="preserve">
+    <value>Einstellungen aktualisieren</value>
+  </data>
+  <data name="btnRemoveFilter" xml:space="preserve">
+    <value>Filter zurückstellen</value>
+  </data>
+  <data name="btnReplies" xml:space="preserve">
+    <value>Antworten</value>
+  </data>
+  <data name="btnReply" xml:space="preserve">
+    <value>Antworten</value>
+  </data>
+  <data name="btnReportSpam" xml:space="preserve">
+    <value>Als Spam melden</value>
+  </data>
+  <data name="btnRestore" xml:space="preserve">
+    <value>wiederherstellen</value>
+  </data>
+  <data name="btnRetweet" xml:space="preserve">
+    <value>Retweet</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>speichern</value>
+  </data>
+  <data name="btnSaveGroup" xml:space="preserve">
+    <value>Änderungen speichern</value>
+  </data>
+  <data name="btnSendTweet" xml:space="preserve">
+    <value>senden</value>
+  </data>
+  <data name="btnSent" xml:space="preserve">
+    <value>Gesendet</value>
+  </data>
+  <data name="btnSettings" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="btnShareCalendarTT" xml:space="preserve">
+    <value>zum Kalender hinzufügen</value>
+  </data>
+  <data name="btnShareEmailTT" xml:space="preserve">
+    <value>per Email senden</value>
+  </data>
+  <data name="btnShareMail" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="btnShortenUrl" xml:space="preserve">
+    <value>verkürzen</value>
+  </data>
+  <data name="btnShowAlbumsOnly" xml:space="preserve">
+    <value>Nur Alben anzeigen</value>
+  </data>
+  <data name="btnShowAllComment" xml:space="preserve">
+    <value>Alle Kommentare</value>
+  </data>
+  <data name="btnShowAllFacebook" xml:space="preserve">
+    <value>Alles anzeigen</value>
+  </data>
+  <data name="btnShowBirthdayOnlyMyspace" xml:space="preserve">
+    <value>Nur Geburtstage zeigen</value>
+  </data>
+  <data name="btnShowEventOnlyMyspace" xml:space="preserve">
+    <value>Nur Ereignis zeigen</value>
+  </data>
+  <data name="btnShowLinksOnly" xml:space="preserve">
+    <value>Nur Links zeigen</value>
+  </data>
+  <data name="btnShowNewMailOnlyMyspace" xml:space="preserve">
+    <value>Nur neue Nachrichten zeigen</value>
+  </data>
+  <data name="btnShowOnlineOnlyMyspace" xml:space="preserve">
+    <value>Nur online Freunde zeigen</value>
+  </data>
+  <data name="btnShowStatusOnly" xml:space="preserve">
+    <value>Nur Status zeigen</value>
+  </data>
+  <data name="btntConnectToFB" xml:space="preserve">
+    <value>Verbindung zu Facebook</value>
+  </data>
+  <data name="btnTrends" xml:space="preserve">
+    <value>Trends</value>
+  </data>
+  <data name="btntShowFF" xml:space="preserve">
+    <value>anzeigen/verbergen Friendfeed</value>
+  </data>
+  <data name="btntShowOR" xml:space="preserve">
+    <value>anzeigen/verbergen OneRiot</value>
+  </data>
+  <data name="btntShowTS" xml:space="preserve">
+    <value>anzeigen/verbergen Twitter Suche</value>
+  </data>
+  <data name="btntTweetFB" xml:space="preserve">
+    <value>Was machst du gerade?</value>
+  </data>
+  <data name="btntUseSpellCheck" xml:space="preserve">
+    <value>Rechtschreibeprüfung benutzen</value>
+  </data>
+  <data name="btnTwitPic" xml:space="preserve">
+    <value>TwitPic</value>
+  </data>
+  <data name="btnTwitterPage" xml:space="preserve">
+    <value>Twitter Seite</value>
+  </data>
+  <data name="btnUnLike" xml:space="preserve">
+    <value>es gefällt mir nicht mehr</value>
+  </data>
+  <data name="ccChooseService" xml:space="preserve">
+    <value>Einen Service wählen</value>
+  </data>
+  <data name="ccChooseTemplate" xml:space="preserve">
+    <value>Eine Vorlage wählen</value>
+  </data>
+  <data name="ccEnterCredentials" xml:space="preserve">
+    <value>Anmeldedaten erfassen</value>
+  </data>
+  <data name="ckbAlerts" xml:space="preserve">
+    <value>Benachrichtigungen aktivieren</value>
+  </data>
+  <data name="ckbAlertsTwitterSearch" xml:space="preserve">
+    <value>Benachrichtigungen für Twitter Suche aktivieren</value>
+  </data>
+  <data name="ckbCloseBoxPublication" xml:space="preserve">
+    <value>Das "Was machst du gerade?" Feld automatisch nach der Veröffentlichung schliessen</value>
+  </data>
+  <data name="ckbDMAlertsEnable" xml:space="preserve">
+    <value>Benachrichtigungen für Nachrichten aktivieren</value>
+  </data>
+  <data name="ckbFriendsAlertsEnable" xml:space="preserve">
+    <value>Benachrichtigungen für Sartseite aktivieren</value>
+  </data>
+  <data name="ckbIsActivSignature" xml:space="preserve">
+    <value>Automatische Anmeldung aktivieren</value>
+  </data>
+  <data name="ckbReplyAlertsEnable" xml:space="preserve">
+    <value>Benachrichtigungen für die Antworten aktivieren</value>
+  </data>
+  <data name="ckbReplyGroupsEnable" xml:space="preserve">
+    <value>Benachrichtigungen für Gruppen aktivieren</value>
+  </data>
+  <data name="ckbRunAtStartup" xml:space="preserve">
+    <value>sobees starten wenn ich Windows starte</value>
+  </data>
+  <data name="ckbShowRemainingApis" xml:space="preserve">
+    <value>Restliche API zeigen</value>
+  </data>
+  <data name="ckbShowTwitterFrom" xml:space="preserve">
+    <value>"via den Service" in Twitter zeigen</value>
+  </data>
+  <data name="ckBUseAlertsRemovedWords" xml:space="preserve">
+    <value>Mich für Artikel mit folgenden Wörtern nicht alarmieren</value>
+  </data>
+  <data name="ckBUseAlertsUsers" xml:space="preserve">
+    <value>Mich nur für die folgenden Benutzer alarmieren</value>
+  </data>
+  <data name="ckBUseAlertsWords" xml:space="preserve">
+    <value>Mich nur für die folgenden Wörtern alarmieren</value>
+  </data>
+  <data name="ckbUseFactery" xml:space="preserve">
+    <value>Die Suche mit Factery aktivieren</value>
+  </data>
+  <data name="ckbUseFriendFeed" xml:space="preserve">
+    <value>Die Suche mit Friendfeed aktivieren</value>
+  </data>
+  <data name="ckbUseGlobalFilter" xml:space="preserve">
+    <value>sobees Filter zeigen</value>
+  </data>
+  <data name="ckbUseOneRiot" xml:space="preserve">
+    <value>Die Suche mit OneRiot aktivieren</value>
+  </data>
+  <data name="ckbuseProxy" xml:space="preserve">
+    <value>Proxy-Server verwenden</value>
+  </data>
+  <data name="ckbUseTwitterSearch" xml:space="preserve">
+    <value>Die Suche mit Twitter Suche aktivieren</value>
+  </data>
+  <data name="gotoStep1" xml:space="preserve">
+    <value>Weiter</value>
+  </data>
+  <data name="headerTabAccount" xml:space="preserve">
+    <value>Ein Twitter Konto hinzufügen</value>
+  </data>
+  <data name="headerTabGeneral" xml:space="preserve">
+    <value>Allgemeine Einstellungen</value>
+  </data>
+  <data name="hybtnFeedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="hybtnWhat" xml:space="preserve">
+    <value>Neuerungen</value>
+  </data>
+  <data name="hypbtnFollowFB" xml:space="preserve">
+    <value>Folgt uns auf Facebook</value>
+  </data>
+  <data name="hypbtnFollowTW" xml:space="preserve">
+    <value>Folgt uns auf Twitter</value>
+  </data>
+  <data name="hypbtnlicence" xml:space="preserve">
+    <value>Software-Lizenzvereinbarung.</value>
+  </data>
+  <data name="JumpListGoToWhatsNew" xml:space="preserve">
+    <value>What's new' auf sobees.com anzeigen</value>
+  </data>
+  <data name="JumpListPostStatus" xml:space="preserve">
+    <value>Status aktualisieren…</value>
+  </data>
+  <data name="JumpListSettings" xml:space="preserve">
+    <value>Einstellungen bearbeiten…</value>
+  </data>
+  <data name="lblPort" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="lblServer" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="lblUserDomain" xml:space="preserve">
+    <value>Domain</value>
+  </data>
+  <data name="lblUserName" xml:space="preserve">
+    <value>Nutzername</value>
+  </data>
+  <data name="rbFBAdvanced" xml:space="preserve">
+    <value>Erweiterte Benachrichtigungseinstellungen</value>
+  </data>
+  <data name="rbFBAll" xml:space="preserve">
+    <value>Benachrichtigungen für alle Elemente aktivieren</value>
+  </data>
+  <data name="rbFBNo" xml:space="preserve">
+    <value>Benachrichtigungen deaktivieren</value>
+  </data>
+  <data name="rdTabConnections" xml:space="preserve">
+    <value>Kontakte</value>
+  </data>
+  <data name="rdTabEvents" xml:space="preserve">
+    <value>Veranstaltungen</value>
+  </data>
+  <data name="rdTabFriends" xml:space="preserve">
+    <value>Freunde</value>
+  </data>
+  <data name="rdTabFriendsMy" xml:space="preserve">
+    <value>Aktivitäten</value>
+  </data>
+  <data name="rdTabHome" xml:space="preserve">
+    <value>Startseite</value>
+  </data>
+  <data name="rdTabMail" xml:space="preserve">
+    <value>Postfach</value>
+  </data>
+  <data name="rdTabMyUpdateMy" xml:space="preserve">
+    <value>Meine Aktivitäten</value>
+  </data>
+  <data name="rdTabProfile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="rdTabSearch" xml:space="preserve">
+    <value>Suchen</value>
+  </data>
+  <data name="rdTabStatusUpdateMy" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="rdTabTopFriendsMy" xml:space="preserve">
+    <value>Top Freunde</value>
+  </data>
+  <data name="RTS" xml:space="preserve">
+    <value>Suche</value>
+  </data>
+  <data name="tabAlbumsOnly" xml:space="preserve">
+    <value>Nur Alben</value>
+  </data>
+  <data name="tabCredentials" xml:space="preserve">
+    <value>Konten</value>
+  </data>
+  <data name="tabItemGeneral" xml:space="preserve">
+    <value>Generell</value>
+  </data>
+  <data name="tabItemProxy" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="tabItemServices" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="tabLinksOnly" xml:space="preserve">
+    <value>Nur Links</value>
+  </data>
+  <data name="tabStatusOnly" xml:space="preserve">
+    <value>Nur Status</value>
+  </data>
+  <data name="textBlockSureClosing" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie dieses Service schliessen wollen?</value>
+  </data>
+  <data name="timAgoAbout" xml:space="preserve">
+    <value>vor etwa </value>
+  </data>
+  <data name="timAgoAHour" xml:space="preserve">
+    <value>vor 1 Stunde</value>
+  </data>
+  <data name="timAgoAMinute" xml:space="preserve">
+    <value>vor 1 Minute</value>
+  </data>
+  <data name="timAgoASecond" xml:space="preserve">
+    <value>vor 1 Sekunde</value>
+  </data>
+  <data name="timAgoXSecond" xml:space="preserve">
+    <value> Sekunden</value>
+  </data>
+  <data name="timeAgoADay" xml:space="preserve">
+    <value>vor 1 Tag</value>
+  </data>
+  <data name="timeAgoXDay" xml:space="preserve">
+    <value> Tage</value>
+  </data>
+  <data name="timeAgoXHour" xml:space="preserve">
+    <value> Stunden</value>
+  </data>
+  <data name="timeAgoXMinute" xml:space="preserve">
+    <value> Minuten</value>
+  </data>
+  <data name="trayMinimizeToTaskbar" xml:space="preserve">
+    <value>In die Taskleiste minimieren</value>
+  </data>
+  <data name="trayMinimizeToTray" xml:space="preserve">
+    <value>In den Infobereich minimieren</value>
+  </data>
+  <data name="trayQuitbDule" xml:space="preserve">
+    <value>sobees schliessen</value>
+  </data>
+  <data name="trayRestorebDule" xml:space="preserve">
+    <value>sobees wiederherstellen</value>
+  </data>
+  <data name="trayShowbDule" xml:space="preserve">
+    <value>sobees öffnen</value>
+  </data>
+  <data name="traySystemTrayIconTooltip_Hidden" xml:space="preserve">
+    <value>sobees anzeigen</value>
+  </data>
+  <data name="traySystemTrayIconTooltip_Normal" xml:space="preserve">
+    <value>sobees</value>
+  </data>
+  <data name="txbRegister" xml:space="preserve">
+    <value>Registrieren Sie sich um sobees von jedem Computer zugreifen und um Ihre Einstellungen und Service zu speichern.</value>
+  </data>
+  <data name="txtAll" xml:space="preserve">
+    <value>Alles</value>
+  </data>
+  <data name="txtApiKey" xml:space="preserve">
+    <value>API Schlüssel</value>
+  </data>
+  <data name="txtArrangeServicesTemplate" xml:space="preserve">
+    <value>Service einrichten</value>
+  </data>
+  <data name="txtbkFollow" xml:space="preserve">
+    <value>Folgen</value>
+  </data>
+  <data name="txtbkTwPassword" xml:space="preserve">
+    <value>Twitter Passwort</value>
+  </data>
+  <data name="txtbkUnfollow" xml:space="preserve">
+    <value>Nicht mehr folgen</value>
+  </data>
+  <data name="txtblActivities" xml:space="preserve">
+    <value>Aktivitäten:</value>
+  </data>
+  <data name="txtblAddAccount" xml:space="preserve">
+    <value>ein Account hinzufügen</value>
+  </data>
+  <data name="txtblAddMultiPostingService" xml:space="preserve">
+    <value>Um Ihren Status auf andere Service zu aktualisieren, melden sie sich auf Ihre Kontos durch Meine Sozialen Netzwerke.</value>
+  </data>
+  <data name="txtblAddMultiPostingServiceSobees" xml:space="preserve">
+    <value>Um Ihren Status auf andere Service zu aktualisieren, melden sie sich auf Ihre Kontos durch sobees.</value>
+  </data>
+  <data name="txtBlAddNew" xml:space="preserve">
+    <value>Einer neuen Gruppe hinzufügen</value>
+  </data>
+  <data name="txtblAddToList" xml:space="preserve">
+    <value>Zur Liste hinzufügen</value>
+  </data>
+  <data name="txtBlAlerts" xml:space="preserve">
+    <value>Benachrichtigungen</value>
+  </data>
+  <data name="txtBlAntiSpam" xml:space="preserve">
+    <value>Anti-SPAM</value>
+  </data>
+  <data name="txtblBirthday" xml:space="preserve">
+    <value>Geburtstag:</value>
+  </data>
+  <data name="txtblBirthdayCaption" xml:space="preserve">
+    <value>Geburtstage</value>
+  </data>
+  <data name="txtBlCloseservice" xml:space="preserve">
+    <value>Den Service schliessen</value>
+  </data>
+  <data name="txtblConfirmationBlock" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie diesen Benutzer blocken möchten?</value>
+  </data>
+  <data name="txtblConfirmationReportSpam" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie diesen Benutzer für Spam melden möchten?</value>
+  </data>
+  <data name="txtblConnectNew" xml:space="preserve">
+    <value>Anmeldung an einen neuen Service</value>
+  </data>
+  <data name="txtblCopyright" xml:space="preserve">
+    <value>Copyright 2007-2014 von sobees Ltd</value>
+  </data>
+  <data name="txtblCopyrightWarning" xml:space="preserve">
+    <value>Achtung: Dieses Programm ist durch Urheberrechtsgesetze und internationale Verträge geschützt. Die unbefugte Reproduktion oder der Vertrieb dieses Programms oder von Teilen desselben können zivil - oder strafrechtlich verfolgt werden und führen zu Strafen  im gesetzlich festgelegten Höchstmass. By using sobees, you are agreeing to be bound by sobees</value>
+  </data>
+  <data name="txtblCreateNewList" xml:space="preserve">
+    <value>Neue Liste erstellen</value>
+  </data>
+  <data name="txtblCrossServices" xml:space="preserve">
+    <value>Einstellungen für alle Dienste</value>
+  </data>
+  <data name="txtblEnterSearch" xml:space="preserve">
+    <value>Einen Suchbegriff eingeben</value>
+  </data>
+  <data name="txtBlEnterUsers" xml:space="preserve">
+    <value>Benutzer eingeben:</value>
+  </data>
+  <data name="txtBlEnterWords" xml:space="preserve">
+    <value>Wörter eingeben:</value>
+  </data>
+  <data name="txtBlEnterYourSpam" xml:space="preserve">
+    <value>Wörter/Sätze, die in der Timeline nicht erscheinen sollen, eingeben.</value>
+  </data>
+  <data name="txtblFilterHere" xml:space="preserve">
+    <value>Hier filtern…</value>
+  </data>
+  <data name="txtblFirstLauch00" xml:space="preserve">
+    <value>Nutzen Sie Ihre Lieblings-Netzwerke direkt in Yahoo! Mail.</value>
+  </data>
+  <data name="txtblFirstLauch0A" xml:space="preserve">
+    <value>Mit "Meine Sozialen Netzwerke" können Sie:</value>
+  </data>
+  <data name="txtblFirstLauch0B" xml:space="preserve">
+    <value>Mit Ihren Freunden bei Twitter, Facebook, LinkedIn und MySpace direkt aus Yahoo! Mail kommunizieren</value>
+  </data>
+  <data name="txtblFirstLauch0C" xml:space="preserve">
+    <value>Informationen per Mail versenden und Veranstaltungen in Ihren Kalender eintragen</value>
+  </data>
+  <data name="txtblFirstLauch0E" xml:space="preserve">
+    <value>Ihren Status auf mehreren Netzwerken gleichzeitig aktualisieren</value>
+  </data>
+  <data name="txtblFirstLauch0F" xml:space="preserve">
+    <value>Echtzeit-Nachrichten aus dem Web erhalten</value>
+  </data>
+  <data name="txtblFirstLauch0H" xml:space="preserve">
+    <value>Klicken Sie "Weiter", um Meine Sozialen Netzwerke jetzt zu starten.</value>
+  </data>
+  <data name="txtblFirstLauch1A" xml:space="preserve">
+    <value>Eine Sprache wählen</value>
+  </data>
+  <data name="txtblFirstLauch2A" xml:space="preserve">
+    <value>Loggen Sie sich in den gewünschte Service ein</value>
+  </data>
+  <data name="txtblFirstLauchSobA" xml:space="preserve">
+    <value>Loggen Sie sich in Ihre Favoriten soziale Netzwerke durch sobees ein.</value>
+  </data>
+  <data name="txtblFirstLauchSobB" xml:space="preserve">
+    <value>sobees erlaubt Ihnen:</value>
+  </data>
+  <data name="txtblFirstLauchSobCa" xml:space="preserve">
+    <value>mit Ihren Twitter, Facebook, LinkedIn und MySpace Freunden kommunizieren (was sie machen, ihre Fotos…)</value>
+  </data>
+  <data name="txtblFirstLauchSobG" xml:space="preserve">
+    <value>Um sobees jetzt zu starten, klicken Sie auf "weiter" und melden sich an</value>
+  </data>
+  <data name="txtblFollowers" xml:space="preserve">
+    <value>followers</value>
+  </data>
+  <data name="txtblFollowersFrDe" xml:space="preserve">
+    <value>folgt</value>
+  </data>
+  <data name="txtblFollowing" xml:space="preserve">
+    <value>following</value>
+  </data>
+  <data name="txtblFollowingFrDe" xml:space="preserve">
+    <value>ist gefolgen</value>
+  </data>
+  <data name="txtBlGroupName" xml:space="preserve">
+    <value>Den Gruppename eingeben:</value>
+  </data>
+  <data name="txtBlGroupNameUpdate" xml:space="preserve">
+    <value>Den Gruppename ändern:</value>
+  </data>
+  <data name="txtblInterests" xml:space="preserve">
+    <value>Interessen:</value>
+  </data>
+  <data name="txtblJoinedTitle" xml:space="preserve">
+    <value>Beitrittsdatum:</value>
+  </data>
+  <data name="txtblkAccountSettings" xml:space="preserve">
+    <value>Konto-Einstellungen</value>
+  </data>
+  <data name="txtblkAddTwAccount" xml:space="preserve">
+    <value>Hier klicken, um ein Twitterkonto zu konfigurieren. Für Facebook und MySpace, geht die Verbindung direkt vom "einen Service wählen" Fenster aus.</value>
+  </data>
+  <data name="txtblkChooseAccount" xml:space="preserve">
+    <value>Ein Konto wählen:</value>
+  </data>
+  <data name="txtblkHelpLogin" xml:space="preserve">
+    <value>Um ein Twitterkonto hinzufügen, unten Anmeldename und Passwort eingeben, dann Schaltfläche "hinzufügen" klicken.Noch kein Konto? Besuche zuerst http://twitter.com/signup</value>
+  </data>
+  <data name="txtblkMyAccounts" xml:space="preserve">
+    <value>Meine Konten</value>
+  </data>
+  <data name="txtblkNoAccounts" xml:space="preserve">
+    <value>Kein Konto</value>
+  </data>
+  <data name="txtblkPasswordLogin" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="txtblkRTSSettings" xml:space="preserve">
+    <value>Real-time search Einstellungen</value>
+  </data>
+  <data name="txtblkShortener" xml:space="preserve">
+    <value>Den gewünschten Service, um die URLs zu verkürzen, wählen:</value>
+  </data>
+  <data name="txtblkSignature" xml:space="preserve">
+    <value>Automatische Anmeldung  </value>
+  </data>
+  <data name="txtblkSignatureHelp" xml:space="preserve">
+    <value>Diese Zeichenfolge automatisch an die ausgehenden Tweets hinzufügen.</value>
+  </data>
+  <data name="txtblkTWSettings" xml:space="preserve">
+    <value>Generelle Einstellungen für Twitter</value>
+  </data>
+  <data name="txtblkUsernameLogin" xml:space="preserve">
+    <value>Anmeldename</value>
+  </data>
+  <data name="txtblkWarningLostSettings" xml:space="preserve">
+    <value>Bei Änderung der Vorlage geht die aktuelle Konfuguration verloren.</value>
+  </data>
+  <data name="txtblLanguage" xml:space="preserve">
+    <value>Sprache:</value>
+  </data>
+  <data name="txtblListname" xml:space="preserve">
+    <value>Listenname</value>
+  </data>
+  <data name="txtblLoadingSobees" xml:space="preserve">
+    <value>sobees wird aufgeladen</value>
+  </data>
+  <data name="txtblLocation" xml:space="preserve">
+    <value>Standort:</value>
+  </data>
+  <data name="txtblMood" xml:space="preserve">
+    <value>Laune</value>
+  </data>
+  <data name="txtblMovies" xml:space="preserve">
+    <value>Filme:</value>
+  </data>
+  <data name="txtblMultiPostClose" xml:space="preserve">
+    <value>Dieses Fenster schliessen</value>
+  </data>
+  <data name="txtblMultiPostRepost" xml:space="preserve">
+    <value>Einen neuen Status veröffentlichen</value>
+  </data>
+  <data name="txtblMultiPostsuccess" xml:space="preserve">
+    <value>Ihr Status wurde erfolgreich aktualisiert!</value>
+  </data>
+  <data name="txtblMusic" xml:space="preserve">
+    <value>Musik:</value>
+  </data>
+  <data name="txtblNumberResult" xml:space="preserve">
+    <value>Anzahl der zurückgegebenen Ergebnisse</value>
+  </data>
+  <data name="txtblNumberResultKeeped" xml:space="preserve">
+    <value>Anzahl der behaltenen Ergebnisse</value>
+  </data>
+  <data name="txtblPrivacy" xml:space="preserve">
+    <value>Datenschutz </value>
+  </data>
+  <data name="txtblPrivate" xml:space="preserve">
+    <value>privat</value>
+  </data>
+  <data name="txtblPublic" xml:space="preserve">
+    <value>öffentlich</value>
+  </data>
+  <data name="txtblRefreshMin" xml:space="preserve">
+    <value>Min.</value>
+  </data>
+  <data name="txtblRefreshTime" xml:space="preserve">
+    <value>Refresh-Zeit</value>
+  </data>
+  <data name="txtblRefreshTimeFF" xml:space="preserve">
+    <value>Refresh-Zeit FriendFeed</value>
+  </data>
+  <data name="txtblRefreshTimeOR" xml:space="preserve">
+    <value>Refresh-Zeit OneRiot</value>
+  </data>
+  <data name="txtblRefreshTimeTS" xml:space="preserve">
+    <value>Refresh-Zeit Twitter Suche</value>
+  </data>
+  <data name="txtBlRemainingApiText" xml:space="preserve">
+    <value>Restliche API: </value>
+  </data>
+  <data name="txtblReplace" xml:space="preserve">
+    <value>Ersetzen</value>
+  </data>
+  <data name="txtBlResetsText" xml:space="preserve">
+    <value>Neuinitialisierung:</value>
+  </data>
+  <data name="txtblRestoreSettings" xml:space="preserve">
+    <value>sobees Einstellungen wiederherstellen</value>
+  </data>
+  <data name="txtblResuls" xml:space="preserve">
+    <value>Ergebnisse</value>
+  </data>
+  <data name="txtblRTSSettings" xml:space="preserve">
+    <value>Echtzeit-Suche Einstellungen</value>
+  </data>
+  <data name="txtblSaveBDule" xml:space="preserve">
+    <value>sobees Einstellungen speichern</value>
+  </data>
+  <data name="txtblSearchHelp" xml:space="preserve">
+    <value>Um neue Nachrichten auf Twitter und FriendFeed zu suchen, tippen Sie ein Schlüsselwort unten ein</value>
+  </data>
+  <data name="txtblSelectAccount" xml:space="preserve">
+    <value>oder ein Konto auswählen</value>
+  </data>
+  <data name="txtblSelectFavorites" xml:space="preserve">
+    <value>Wählen Sie das Konto an welchem sie diesen Favorit hinzufügen möchten</value>
+  </data>
+  <data name="txtblSelectFollow" xml:space="preserve">
+    <value>Wählen Sie das Konto mit welchem Sie diesem Benutzer folgen möchten</value>
+  </data>
+  <data name="txtblSelectListTwitter" xml:space="preserve">
+    <value>Liste wählen</value>
+  </data>
+  <data name="txtBlSelectMembers" xml:space="preserve">
+    <value>Mitglied(er) der Gruppe wählen:</value>
+  </data>
+  <data name="txtBlselectsendto" xml:space="preserve">
+    <value>Wählen Sie den Service aus bei denen Sie ihren Status aktualisieren möchten</value>
+  </data>
+  <data name="txtblserviceconenct" xml:space="preserve">
+    <value>verbundene Service</value>
+  </data>
+  <data name="txtblSwitchTabColumn" xml:space="preserve">
+    <value>Zur Spalten/Tab Ansicht</value>
+  </data>
+  <data name="txtblTodayTrendingTopics" xml:space="preserve">
+    <value>oder wählen Sie eines der heutigen Trend-Themen</value>
+  </data>
+  <data name="txtblTrendingTopics" xml:space="preserve">
+    <value>Trend-Themen:</value>
+  </data>
+  <data name="txtblTweetingsSince" xml:space="preserve">
+    <value>Seit</value>
+  </data>
+  <data name="txtblTwitterLogin" xml:space="preserve">
+    <value>Twitter Anmeldename</value>
+  </data>
+  <data name="txtblTwsettings" xml:space="preserve">
+    <value>Twitter Einstellungen</value>
+  </data>
+  <data name="txtblVersionStr" xml:space="preserve">
+    <value>Alpha-Version</value>
+  </data>
+  <data name="txtBlVia" xml:space="preserve">
+    <value> via </value>
+  </data>
+  <data name="txtblVisualStyle" xml:space="preserve">
+    <value>sobees Display Stil:</value>
+  </data>
+  <data name="txtblWarningPopup" xml:space="preserve">
+    <value>Funktioniert die Verbindung mit dem Internet ? Bitte stellen Sie sicher, dass Pop-Up Fenster erlaubt sind.</value>
+  </data>
+  <data name="txtblWAYD" xml:space="preserve">
+    <value>Was gibt's Neues?</value>
+  </data>
+  <data name="txtComment" xml:space="preserve">
+    <value> Kommentar</value>
+  </data>
+  <data name="txtComments" xml:space="preserve">
+    <value> Kommentare</value>
+  </data>
+  <data name="txtConfirmation" xml:space="preserve">
+    <value>Bestätigung</value>
+  </data>
+  <data name="txtConfirmationDelete" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie dieses Konto löschen wollen?</value>
+  </data>
+  <data name="txtConfirmationDeleteGroup" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie diese Gruppe löschen wollen?</value>
+  </data>
+  <data name="txtConfirmationDisconnect" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie dieses Konto abschalten wollen?</value>
+  </data>
+  <data name="txtConfirmationModify" xml:space="preserve">
+    <value>Wollen Sie die Änderungen auf das Konto speichern?</value>
+  </data>
+  <data name="txtConnectingFacebook" xml:space="preserve">
+    <value>Anschluss an Facebook...</value>
+  </data>
+  <data name="txtCrosseServices" xml:space="preserve">
+    <value>Einstellungen alle Service.</value>
+  </data>
+  <data name="txtFBLikeAnd" xml:space="preserve">
+    <value> und </value>
+  </data>
+  <data name="txtFBLikeMeThis" xml:space="preserve">
+    <value>es gefällt </value>
+  </data>
+  <data name="txtFBLikeOther" xml:space="preserve">
+    <value> anders </value>
+  </data>
+  <data name="txtFBLikeOthers" xml:space="preserve">
+    <value> andere</value>
+  </data>
+  <data name="txtFBLikesThis" xml:space="preserve">
+    <value> Es gefällt </value>
+  </data>
+  <data name="txtFBLikeThis" xml:space="preserve">
+    <value> es gefällt </value>
+  </data>
+  <data name="txtFontSize" xml:space="preserve">
+    <value>Schriftgrösse</value>
+  </data>
+  <data name="txtGiveUsFeedback" xml:space="preserve">
+    <value>Geben Sie uns Ihre Meinung</value>
+  </data>
+  <data name="txtGoToWeb" xml:space="preserve">
+    <value>Auf sobees Web Seite gehen</value>
+  </data>
+  <data name="txtInReplyTo" xml:space="preserve">
+    <value> in reply to </value>
+  </data>
+  <data name="txtKeywords" xml:space="preserve">
+    <value>Suchbegriff hier eingeben…</value>
+  </data>
+  <data name="txtLinkedInApplicationupdates" xml:space="preserve">
+    <value>Applikationen-Updates</value>
+  </data>
+  <data name="txtLinkedinAssociations" xml:space="preserve">
+    <value>Vereinigungen</value>
+  </data>
+  <data name="txtLinkedInChangedProfile" xml:space="preserve">
+    <value>Profil-Updates</value>
+  </data>
+  <data name="txtLinkedinCompany" xml:space="preserve">
+    <value>Unternehmen:</value>
+  </data>
+  <data name="txtLinkedInCONN" xml:space="preserve">
+    <value> ist jetzt verbunden mit</value>
+  </data>
+  <data name="txtLinkedinConnections" xml:space="preserve">
+    <value>Kontakte</value>
+  </data>
+  <data name="txtLinkedInConnectionupdates" xml:space="preserve">
+    <value>Kontaks-Updates</value>
+  </data>
+  <data name="txtLinkedinExperience" xml:space="preserve">
+    <value>Berufserfahrung</value>
+  </data>
+  <data name="txtLinkedinIndustry" xml:space="preserve">
+    <value>Branche:</value>
+  </data>
+  <data name="txtLinkedInJGRP" xml:space="preserve">
+    <value> wurde Mitglied von der Gruppe</value>
+  </data>
+  <data name="txtLinkedInJoinedAGroup" xml:space="preserve">
+    <value>Gruppen-Updates</value>
+  </data>
+  <data name="txtLinkedinLastStatus" xml:space="preserve">
+    <value>Letzte Status</value>
+  </data>
+  <data name="txtLinkedinLinkedInPage" xml:space="preserve">
+    <value>LinkedIn Seite</value>
+  </data>
+  <data name="txtLinkedinName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="txtLinkedInNCON" xml:space="preserve">
+    <value> ist jetzt ein Kontakt</value>
+  </data>
+  <data name="txtLinkedinNumberOfResults" xml:space="preserve">
+    <value>Anzahl der Ergebnisse:</value>
+  </data>
+  <data name="txtLinkedinOnlyInMyNetwork" xml:space="preserve">
+    <value>Nur in meinem Netzwerk</value>
+  </data>
+  <data name="txtLinkedinOnlyOutMyNetwork" xml:space="preserve">
+    <value>Nur ausserhalb meinem Netzwerk</value>
+  </data>
+  <data name="txtLinkedInPICU" xml:space="preserve">
+    <value> hat ein neues Profil Foto</value>
+  </data>
+  <data name="txtLinkedInPostedAJob" xml:space="preserve">
+    <value>Hat eine Stellenanzeige aufgegeben</value>
+  </data>
+  <data name="txtLinkedInPREC" xml:space="preserve">
+    <value> empfiehlt</value>
+  </data>
+  <data name="txtLinkedInPROFstudingAt" xml:space="preserve">
+    <value> bei</value>
+  </data>
+  <data name="txtLinkedInPROFUpdated" xml:space="preserve">
+    <value>hat ein aktualisiertes Profil</value>
+  </data>
+  <data name="txtLinkedinRecommendations" xml:space="preserve">
+    <value>Empfehlungen</value>
+  </data>
+  <data name="txtLinkedinSearchPeople" xml:space="preserve">
+    <value>Personen suchen</value>
+  </data>
+  <data name="txtLinkedInSettings" xml:space="preserve">
+    <value>LinkedIn Einstellungen</value>
+  </data>
+  <data name="txtLinkedinSortBy" xml:space="preserve">
+    <value>Sortieren nach:</value>
+  </data>
+  <data name="txtLinkedinSpecialities" xml:space="preserve">
+    <value>Spezialitäten</value>
+  </data>
+  <data name="txtLinkedInStatusupdates" xml:space="preserve">
+    <value>Status-Updates</value>
+  </data>
+  <data name="txtLinkedinSummary" xml:space="preserve">
+    <value>Zusammenfassung</value>
+  </data>
+  <data name="txtMenuDisplay" xml:space="preserve">
+    <value>Menu mit sobees allgemeine Einstellungen anzeigen</value>
+  </data>
+  <data name="txtMyspaceSettings" xml:space="preserve">
+    <value>MySpace Einstellungen</value>
+  </data>
+  <data name="txtNoContentToDisplay" xml:space="preserve">
+    <value>Kein Inhalt anzuzeigen</value>
+  </data>
+  <data name="txtNoneMY" xml:space="preserve">
+    <value>(kein)</value>
+  </data>
+  <data name="txtNoneMYmood" xml:space="preserve">
+    <value>(keine)</value>
+  </data>
+  <data name="txtPleaseWaitFacebook" xml:space="preserve">
+    <value>Bitte warten</value>
+  </data>
+  <data name="txtPosMenu" xml:space="preserve">
+    <value>Antworten und Retweet-Funktionen im Avatar anstelle im Text anzeigen</value>
+  </data>
+  <data name="txtProxy" xml:space="preserve">
+    <value>Proxy Einstellungen</value>
+  </data>
+  <data name="txtReOrderTemplate" xml:space="preserve">
+    <value>Ordnen Sie neu Ihre Service im neuen Muster mittels ziehen und ablegen an.</value>
+  </data>
+  <data name="txtSearchFriends" xml:space="preserve">
+    <value>Freunde suchen:</value>
+  </data>
+  <data name="txtTitleMailMy" xml:space="preserve">
+    <value>Neue(n) Nachricht(en)</value>
+  </data>
+  <data name="txtTitleMoodMy" xml:space="preserve">
+    <value>Laune:</value>
+  </data>
+  <data name="txtTitleStatusMy" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="txtUpdate" xml:space="preserve">
+    <value>Update durchführen</value>
+  </data>
+  <data name="txtUpdateAvailable" xml:space="preserve">
+    <value>eine Update ist verfügbar</value>
+  </data>
+  <data name="txtViewAll" xml:space="preserve">
+    <value>Alles anzeigen</value>
+  </data>
+  <data name="txtYahooMailShare" xml:space="preserve">
+    <value>Geteilt von "Meine Sozialen Netzwerke" von sobees</value>
+  </data>
+  <data name="txtYouFBLike" xml:space="preserve">
+    <value>Es geffällt dir</value>
+  </data>
+  <data name="btnNo" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="btnYes" xml:space="preserve">
+    <value>Ya</value>
+  </data>
+  <data name="btnReportAbuse" xml:space="preserve">
+    <value>Missbrauch melden</value>
+  </data>
+  <data name="txtblReportAbuse1" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie das als Missbrauch melden möchten? Klicken Sie auf Ja, um fortzufahren.</value>
+  </data>
+  <data name="txtblReportAbuse2" xml:space="preserve">
+    <value>Das Element wird von der Timeline entfernt und Sie werden auf eine Seite umgeleitet, um dem Missbrauch zu melden.</value>
+  </data>
+  <data name="txtSettingsFacebook" xml:space="preserve">
+    <value>Finden Sie uns auf Facebook</value>
+  </data>
+  <data name="txtListMembersExist" xml:space="preserve">
+    <value>Benutzer bereits hinzugefügt</value>
+  </data>
+  <data name="txtListBadMember" xml:space="preserve">
+    <value>Falsche Benutzername</value>
+  </data>
+  <data name="btnConnectLI" xml:space="preserve">
+    <value>Verbindung zu LinkedIn</value>
+  </data>
+  <data name="btnWarningPopupFirstUse" xml:space="preserve">
+    <value>Klicken Sie hier, um mehr zu erfahren.</value>
+  </data>
+  <data name="txtblMoreInfo" xml:space="preserve">
+    <value>Mehr informationen</value>
+  </data>
+  <data name="txtblBook" xml:space="preserve">
+    <value>Bücher:</value>
+  </data>
+  <data name="txtBlCompany" xml:space="preserve">
+    <value>Firma:</value>
+  </data>
+  <data name="txtBlTv" xml:space="preserve">
+    <value>TV:</value>
+  </data>
+  <data name="txtblPolitical" xml:space="preserve">
+    <value>Politische Einstellung:</value>
+  </data>
+  <data name="txtblPostToWall" xml:space="preserve">
+    <value>An die Pinnwand posten</value>
+  </data>
+  <data name="txtReplyToAll" xml:space="preserve">
+    <value>Zu allen antworten</value>
+  </data>
+  <data name="txtBackToMails" xml:space="preserve">
+    <value>Wieder zum Postfach</value>
+  </data>
+  <data name="txtTraductorLanguage" xml:space="preserve">
+    <value>Übersetzen auf:</value>
+  </data>
+  <data name="txtblFreeVersion5Services" xml:space="preserve">
+    <value>Mit der kostenlosen Version von sobees können Sie  ein Maximum von 5 Dienstleistungen verbinden.</value>
+  </data>
+  <data name="btnDeleteAccount" xml:space="preserve">
+    <value>Dieses Konto löschen</value>
+  </data>
+  <data name="btnTranslate" xml:space="preserve">
+    <value>Übersetzen</value>
+  </data>
+  <data name="btnDMb" xml:space="preserve">
+    <value>Nachricht</value>
+  </data>
+  <data name="btnUpdateDone" xml:space="preserve">
+    <value>Ein Update wurde installiert. Clicken Sie hier, um die Aktualisierung zu beenden.</value>
+  </data>
+  <data name="btnTwitterPinSignIn" xml:space="preserve">
+    <value>Sign in to Twitter in your default browser</value>
+  </data>
+  <data name="txtblTwitterPinCodeExplaination1" xml:space="preserve">
+    <value>Sobees needs to use OAuth to access your Twitter account -  Please first authorize sobees on Twitter.com</value>
+  </data>
+  <data name="txtblTwitterPinCodePast" xml:space="preserve">
+    <value>Past the PIN code copied from the Twitter page in your browser</value>
+  </data>
+</root>

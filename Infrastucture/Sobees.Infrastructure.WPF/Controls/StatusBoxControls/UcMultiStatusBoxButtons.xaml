@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Sobees.Infrastructure.Controls.StatusBoxControls.UcMultiStatusBoxButtons"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib">
+  <StackPanel Orientation="Horizontal">
+    <Button x:Name="btnShortenUrl"
+            ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnShortenUrl}"
+            Command="{Binding ShortenUrlCommand}"
+            Margin="0,0,2,0"
+             >
+  		
+			<Path 
+				Fill="{DynamicResource BrushBtnDefaultForeground}" 
+				Stretch="Fill" 
+				Width="17" 
+				Height="14" 
+				Data="{DynamicResource GeometryShortenUrl}"/>
+  		
+		</Button>
+    <Button x:Name="btnTweetShrink"
+            HorizontalAlignment="Left"
+            Command="{Binding TweetShrinkCommand}"
+            ToolTip="TweetShrink"
+            >
+      <Path Fill="{DynamicResource BrushBtnDefaultForeground}"
+            Stretch="Fill"
+            Width="18"
+            Height="15"
+            Data="{DynamicResource GeometryShrink}">
+
+      </Path>
+    </Button>
+  </StackPanel>
+</UserControl>

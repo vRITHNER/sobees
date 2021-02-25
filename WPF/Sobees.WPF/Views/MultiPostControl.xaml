@@ -1,0 +1,509 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http: //schemas.microsoft.com/expression/blend/2008"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:Commands="clr-namespace:Sobees.Infrastructure.Commands;assembly=Sobees.Infrastructure"
+             xmlns:Converters="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure"
+             xmlns:StatusBoxControls="clr-namespace:Sobees.Infrastructure.Controls.StatusBoxControls;assembly=Sobees.Infrastructure"
+             xmlns:Converter="clr-namespace:Sobees.Converters"
+             mc:Ignorable="d d1"
+             xmlns:d1="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:CustomControls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+             xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             x:Class="Sobees.Views.MultiPostControl"
+             d1:DesignWidth="508"
+             d1:DesignHeight="504">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/Geometry.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/Icon.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Converters:RemainingCharsConverter x:Key="remainingCharsConverter" />
+      <Converters:CheckedAccountConverter x:Key="checkedAccountConverter" />
+      <Converter:TypeServiceImageConverter x:Key="typeServiceImageConverter" />
+      <Style x:Key="ListBoxItemStyleMultiPost"
+             TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment"
+                Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="Padding"
+                Value="2,0,0,0" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Grid>
+                <Border x:Name="BdOver"
+                        SnapsToDevicePixels="true"
+                        CornerRadius="5"
+                        Background="Transparent"
+                        d:LayoutOverrides="Width, Height"
+                        BorderThickness="1,1,0,0"
+                        BorderBrush="White"
+                        Opacity="0">
+                  <Border x:Name="BdOver_Copy"
+                          SnapsToDevicePixels="true"
+                          CornerRadius="5"
+                          d:LayoutOverrides="Width, Height"
+                          BorderThickness="0,0,1,1"
+                          BorderBrush="#47000000" />
+                </Border>
+                <Border x:Name="BdOver_Copy1"
+                        SnapsToDevicePixels="true"
+                        CornerRadius="5"
+                        Opacity="0"
+                        BorderBrush="#6E000000"
+                        BorderThickness="1,1,0,0"
+                        d:LayoutOverrides="Width, Height">
+                  <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1"
+                                         StartPoint="0.5,0">
+                      <GradientStop Color="#2D000000"
+                                    Offset="0" />
+                      <GradientStop Color="#35000000"
+                                    Offset="1" />
+                    </LinearGradientBrush>
+                  </Border.Background>
+                  <Border x:Name="BdOver_Copy2"
+                          SnapsToDevicePixels="true"
+                          CornerRadius="5"
+                          BorderBrush="#EDFFFFFF"
+                          BorderThickness="0,0,1,1"
+                          d:LayoutOverrides="Width, Height" />
+                </Border>
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                  Margin="2,5" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver"
+                         Value="True">
+                  <Setter Property="Opacity"
+                          TargetName="BdOver"
+                          Value="1" />
+                </Trigger>
+                <Trigger Property="IsSelected"
+                         Value="true" />
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected"
+                               Value="true" />
+                    <Condition Property="Selector.IsSelectionActive"
+                               Value="false" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground"
+                          Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+                </MultiTrigger>
+                <Trigger Property="IsEnabled"
+                         Value="false">
+                  <Setter Property="Foreground"
+                          Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <DataTemplate x:Key="dtAccount">
+        <CheckBox d:DesignWidth="340.667"
+                  d:DesignHeight="341.333"
+                  x:Name="chkInsideList"
+                  Commands:BCommandManager.Command="{Binding DataContext.CheckInsideListCommand, ElementName=lstBoxAccount}"
+                  Commands:BCommandManager.CommandEventName="Click"
+                  ToolTipService.ToolTip="{Binding Login}"
+                  Width="60"
+                  VerticalContentAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  Style="{DynamicResource CheckBoxStyleMultipost}">
+          <CheckBox.IsChecked>
+            <MultiBinding Converter="{StaticResource checkedAccountConverter}"
+                          ConverterParameter="Left"
+                          Mode="OneWay">
+              <Binding />
+              <Binding Path="DataContext.ListAccountsSelected"
+                       ElementName="lstBoxAccount" />
+
+            </MultiBinding>
+          </CheckBox.IsChecked>
+          <StackPanel>
+            <Image x:Name="imgIconService"
+                   Grid.ColumnSpan="1"
+                   Width="40"
+                   Height="40"
+                   Source="{Binding Type, Converter={StaticResource typeServiceImageConverter}}" />
+
+
+            <TextBlock Text="{Binding Login}"
+                       TextWrapping="NoWrap"
+                       VerticalAlignment="Center"
+                       Margin="0"
+                       HorizontalAlignment="Center"
+                       FontSize="10"
+                       MaxWidth="60"
+                       TextTrimming="CharacterEllipsis"
+                       Style="{DynamicResource TxtblStyleItemContentH2}" />
+          </StackPanel>
+        </CheckBox>
+
+      </DataTemplate>
+      <Style x:Key="EmptyCheckBoxFocusVisual">
+        <Setter Property="Control.Template">
+          <Setter.Value>
+            <ControlTemplate>
+              <Rectangle Stroke="Black"
+                         StrokeDashArray="1 2"
+                         StrokeThickness="1"
+                         Margin="1"
+                         SnapsToDevicePixels="true" />
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="CheckRadioFocusVisual">
+        <Setter Property="Control.Template">
+          <Setter.Value>
+            <ControlTemplate>
+              <Rectangle Stroke="Black"
+                         StrokeDashArray="1 2"
+                         StrokeThickness="1"
+                         Margin="14,0,0,0"
+                         SnapsToDevicePixels="true" />
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="CheckBoxStyleMultipost"
+             TargetType="{x:Type CheckBox}">
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="Background"
+                Value="#F4F4F4" />
+        <Setter Property="BorderBrush"
+                Value="#8E8F8F" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="FocusVisualStyle"
+                Value="{StaticResource EmptyCheckBoxFocusVisual}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type CheckBox}">
+              <ControlTemplate.Resources>
+                <Storyboard x:Key="checked">
+                  <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                 Storyboard.TargetName="path"
+                                                 Storyboard.TargetProperty="(UIElement.Opacity)">
+                    <SplineDoubleKeyFrame KeySpline="0,0,0.82,1"
+                                          KeyTime="00:00:00.3000000"
+                                          Value="1" />
+                  </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="unchecked">
+                  <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                 Storyboard.TargetName="path"
+                                                 Storyboard.TargetProperty="(UIElement.Opacity)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                          Value="1" />
+                    <SplineDoubleKeyFrame KeySpline="0,0,0.82,1"
+                                          KeyTime="00:00:00.3000000"
+                                          Value="0" />
+                  </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+              </ControlTemplate.Resources>
+              <Grid>
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  Margin="{TemplateBinding Padding}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                  RecognizesAccessKey="True" />
+                <Path x:Name="path"
+                      Fill="#FF51C506"
+                      Stretch="Fill"
+                      Data="M-0.2561837,3.3930882 L4.3301543,7.2100392 11.087592,-1.1571408 9.3023065,-3.0768643 4.1136968,4.1440838 1.1848197,1.6521264 z"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Width="28.691"
+                      Height="24.394"
+                      Visibility="Visible"
+                      Stroke="#FF99FE5A"
+                      Margin="4,8,0,0"
+                      Opacity="0"
+                      RenderTransformOrigin="0.5,0.5"
+                      SnapsToDevicePixels="True">
+                  <Path.RenderTransform>
+                    <TransformGroup>
+                      <ScaleTransform />
+                      <SkewTransform />
+                      <RotateTransform />
+                      <TranslateTransform />
+                    </TransformGroup>
+                  </Path.RenderTransform>
+                  <Path.Effect>
+                    <DropShadowEffect Opacity="0.54" />
+                  </Path.Effect>
+                </Path>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked"
+                         Value="True">
+                  <Trigger.ExitActions>
+                    <BeginStoryboard x:Name="unchecked_BeginStoryboard"
+                                     Storyboard="{StaticResource unchecked}" />
+                  </Trigger.ExitActions>
+                  <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource checked}" />
+                  </Trigger.EnterActions>
+                  <Setter Property="Visibility"
+                          TargetName="path"
+                          Value="Visible" />
+                </Trigger>
+                <Trigger Property="HasContent"
+                         Value="true">
+                  <Setter Property="FocusVisualStyle"
+                          Value="{StaticResource CheckRadioFocusVisual}" />
+                  <Setter Property="Padding"
+                          Value="4,0,0,0" />
+                </Trigger>
+                <Trigger Property="IsEnabled"
+                         Value="false">
+                  <Setter Property="Foreground"
+                          Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <UserControl.DataContext>
+    <Binding Path="MultiPostViewModel"
+             Source="{StaticResource Locator}" />
+  </UserControl.DataContext>
+  <Grid>
+    <i:Interaction.Triggers>
+      <i:EventTrigger EventName="Loaded">
+        <ic:GoToStateAction StateName="vsIntro" />
+      </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="VisualStateGroup">
+        <VisualState x:Name="vsIntro">
+
+          <Storyboard>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="ccChooseService"
+                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+              <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                    Value="35" />
+              <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                    Value="35" />
+              <SplineDoubleKeyFrame KeySpline="0,0,0.1,1"
+                                    KeyTime="00:00:01"
+                                    Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="ccChooseService"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+              <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                    Value="0" />
+              <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                    Value="0" />
+              <SplineDoubleKeyFrame KeySpline="0,0,0.1,1"
+                                    KeyTime="00:00:01"
+                                    Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="dockPanel"
+                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+              <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                    Value="20" />
+              <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                    Value="20" />
+              <SplineDoubleKeyFrame KeySpline="0,0,0.11,1"
+                                    KeyTime="00:00:01"
+                                    Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="dockPanel"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+              <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                    Value="0" />
+              <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                    Value="0" />
+              <SplineDoubleKeyFrame KeySpline="0,0,0.11,1"
+                                    KeyTime="00:00:01"
+                                    Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+          </Storyboard>
+
+        </VisualState>
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <ContentControl x:Name="bg" Style="{DynamicResource ContentControlStyleBgPaper}" Grid.RowSpan="2"/>
+	<ContentControl x:Name="WindowTitle" Style="{DynamicResource ContentControlStyleWindowTitle}"/>
+    <ContentControl x:Name="ccChooseService"
+                    Style="{DynamicResource LabelContentControlTitleLevel1}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnMultiPosting}"
+                    Margin="0,15"
+                   >
+      
+    </ContentControl>
+
+    <DockPanel x:Name="dockPanel"
+               Visibility="{Binding VisibilityPostTweets}"
+               Margin="20,0,20,20"
+               Grid.Row="1"
+               RenderTransformOrigin="0.5,0.5">
+      <DockPanel.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform />
+          <SkewTransform />
+          <RotateTransform />
+          <TranslateTransform />
+        </TransformGroup>
+      </DockPanel.RenderTransform>
+      <StackPanel d:LayoutOverrides="Height"
+                  x:Name="spButton"
+                  Visibility="{Binding VisibilityMultiPost}"
+                  Orientation="Horizontal"
+                  VerticalAlignment="Bottom"
+                  HorizontalAlignment="Right"
+                  DockPanel.Dock="Bottom">
+        <Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnSendTweet}"
+                Margin="0,0,5,0"
+                IsEnabled="{Binding IsActiv}"
+                Command="{Binding SendMultiCommand}" />
+        <Button d:LayoutOverrides="Width"
+                x:Name="BtnCancel"
+                Margin="0"
+                Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCancel}"
+                Command="{Binding CloseMultiCommand}" />
+      </StackPanel>
+      <Grid Margin="0"
+            VerticalAlignment="Top" x:Name="grMainMulti"
+            Tag="{Binding Friends}"
+            d1:LayoutOverrides="VerticalAlignment"
+            DockPanel.Dock="Top">
+        <CustomControls:BTextBox x:Name="txtTweet"
+                                 VerticalAlignment="Stretch"
+                                 Text="{Binding NewPostMsg, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Tag="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnOk}"
+                                 TextWrapping="Wrap"
+                                 PreviewKeyDown="txtTweet_PreviewKeyDown"
+                                 HorizontalAlignment="Stretch"
+                                 Grid.RowSpan="1"
+                                 Height="55"
+                                 Grid.Row="1"
+                                 Grid.ColumnSpan="1"
+                                 TextChanged="txtTweet_TextChanged"
+                                 MaxCharacters="140"
+                                 SpellCheck.IsEnabled="{Binding IsChecked, ElementName=btntUseSpellCheck}"
+                                 Margin="1"
+                                 Style="{DynamicResource TextBoxStyleInputTweet}" />
+        <!--<TextBox x:Name="txtTweet"
+    					VerticalAlignment="Stretch"
+    					Text="{Binding NewPostMsg, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+    					Tag="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnOk}"
+    					TextWrapping="Wrap"
+    					HorizontalAlignment="Stretch"
+    					Grid.RowSpan="1"
+    					Height="70"
+    					Grid.Row="1"
+    					Grid.ColumnSpan="1"
+    					SpellCheck.IsEnabled="{Binding IsChecked, ElementName=btntUseSpellCheck}"
+    					Margin="1" />-->
+        <TextBlock d:LayoutOverrides="Height"
+                   x:Name="txtblTweetCount"
+                   HorizontalAlignment="Right"
+                   TextWrapping="Wrap"
+                   Grid.Row="1"
+                   FontSize="29.333"
+                   FontFamily="Arial Black"
+                   IsHitTestVisible="False"
+                   Margin="0,0,5,0"
+                   VerticalAlignment="Center">
+        			<TextBlock.Text>
+        				<MultiBinding Converter="{StaticResource remainingCharsConverter}">
+        					<Binding ElementName="txtTweet"
+                           Path="Text.Length" />
+        					<Binding ElementName="txtTweet"
+                           Path="MaxCharacters" />
+        				</MultiBinding>
+        			</TextBlock.Text>
+        			<TextBlock.OpacityMask>
+        				<LinearGradientBrush EndPoint="0.5,1"
+                                     StartPoint="0.5,0">
+        					<GradientStop Color="#30000000"
+                                Offset="0" />
+        					<GradientStop Color="#10FFFFFF"
+                                Offset="0.759" />
+        				</LinearGradientBrush>
+        			</TextBlock.OpacityMask></TextBlock>
+
+      </Grid>
+      <DockPanel Margin="0,5,0,0" VerticalAlignment="Top" DockPanel.Dock="Top">
+      	<StatusBoxControls:UcMultiStatusBoxButtons VerticalAlignment="Top"
+                                                 d1:LayoutOverrides="Width" />
+      	<ToggleButton d:LayoutOverrides="HorizontalAlignment"
+      		x:Name="btntUseSpellCheck"
+      		Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btntUseSpellCheck}"
+      		Style="{DynamicResource btntSpellCheckLevel2}"
+      		VerticalAlignment="Top"
+      		DockPanel.Dock="Right" HorizontalAlignment="Right" />
+
+      </DockPanel>
+
+      <Separator Margin="0,10"
+                 Style="{DynamicResource SeparatorStyleLevel2}"
+                 DockPanel.Dock="Top" />
+      <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtBlselectsendto}"
+                 HorizontalAlignment="Center"
+                 DockPanel.Dock="Top"
+                 Style="{DynamicResource TxtblStyleItemContent}" />
+      <ListBox x:Name="lstBoxAccount"
+               ItemsSource="{Binding Accounts}"
+               ItemTemplate="{StaticResource dtAccount}"
+               SelectionMode="Multiple"
+               HorizontalAlignment="Center"
+               Margin="0,10,0,0"
+               ItemContainerStyle="{DynamicResource ListBoxItemStyleMultiPost}"
+               ItemsPanel="{DynamicResource ItemsPanelTemplateWrap}"
+               VerticalAlignment="Top"
+               d1:LayoutOverrides="VerticalMargin"
+               Style="{DynamicResource ListBoxStyleEmpty}"
+               ScrollViewer.VerticalScrollBarVisibility="Auto" />
+
+    </DockPanel>
+    <Grid x:Name="grValidation"
+          Visibility="{Binding VisibilityValidation}"
+          Grid.RowSpan="2" Grid.Row="2">
+      <StackPanel HorizontalAlignment="Center"
+                  VerticalAlignment="Top"
+                  Margin="0,40,0,0">
+        <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblMultiPostsuccess}"
+                   Margin="0,0,0,30"
+                   Style="{DynamicResource TxtblStyleLevel1H1}" />
+        <Button x:Name="btnRePost"
+                Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblMultiPostRepost}"
+                Command="{Binding RepostCommand}"
+                Margin="0,0,0,10" />
+        <Button x:Name="btnClose"
+                Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblMultiPostClose}"
+                Command="{Binding CloseMultiCommand}"
+                FontSize="18" />
+      </StackPanel>
+    </Grid>
+  </Grid>
+</UserControl>

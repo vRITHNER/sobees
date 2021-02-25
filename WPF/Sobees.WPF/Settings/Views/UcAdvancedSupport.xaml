@@ -1,0 +1,180 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:Controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="Sobees.Settings.Views.UcAdvancedSupport"
+             mc:Ignorable="d"
+             d:DesignWidth="485"
+             d:DesignHeight="443.691">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Sobees.Templates;Component/TemplateSettings.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <DockPanel>
+
+        <TextBlock x:Name="txtTitle"
+                   Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=lblSupportDescription}"
+                   TextWrapping="Wrap"
+                   DockPanel.Dock="Top"
+                   Style="{DynamicResource TxtblStyleSettingsContent}" />
+        <Separator VerticalAlignment="Top"
+                   DockPanel.Dock="Top" />
+        <Grid x:Name="grdSettingsTabItemGeneral4"
+              DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="267*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="lblSupportLogFrom"
+                       Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=lblSupportLogFrom}"
+                       Margin="0"
+                       VerticalAlignment="Top"
+                       Style="{DynamicResource TxtblStyleSettingsContent}" />
+
+            <Controls:BTextBoxWatermarked x:Name="txtFrom"
+                                          Text="{Binding SupportLogFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Label="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=WmlblSupportLogFrom}"
+                                          Grid.Column="1"
+                                          Margin="0,0,0,5"
+                                          VerticalAlignment="Bottom"
+                                          Height="25" />
+
+            <TextBlock x:Name="lblSupportLogSubject"
+                       Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=lblSupportLogSubject}"
+                       Grid.Row="1"
+                       Margin="0"
+                       VerticalAlignment="Top"
+                       Style="{DynamicResource TxtblStyleSettingsContent}" />
+
+            <Controls:BTextBoxWatermarked  x:Name="txtSubject"
+                                           Text="{Binding SupportLogSubject, Mode=TwoWay}"
+                                           Label="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=WmlblSupportLogSubject}"
+                                           Grid.Column="1"
+                                           Grid.Row="1"
+                                           Margin="0,0,0,5" />
+
+            <TextBlock x:Name="lblSupportLogDescription"
+                       Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=lblSupportLogDescription}"
+                       Grid.Row="2"
+                       Height="20"
+                       VerticalAlignment="Top"
+                       Margin="0"
+                       Style="{DynamicResource TxtblStyleSettingsContent}" />
+
+            <Controls:BTextBoxWatermarked  x:Name="txtDescription"
+                                           Text="{Binding SupportLogDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                           Label="Describe your issue here..."
+                                           Grid.Column="1"
+                                           Grid.Row="2"
+                                           Margin="0,0,0,5"
+                                           Height="50"
+                                           TextWrapping="Wrap" />
+
+            <TextBlock x:Name="lblSupportLogAttachement"
+                       Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=lblSupportLogAttachment}"
+                       IsEnabled="False"
+                       Grid.Row="3"
+                       VerticalAlignment="Top"
+                       Visibility="Collapsed" />
+            <Separator VerticalAlignment="Top"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="3" />
+            <StackPanel VerticalAlignment="Top"
+                        Grid.Row="3"
+                        Orientation="Vertical"
+                        Margin="0,16,0,0">
+                <CheckBox HorizontalAlignment="Left"
+                          Margin="0"
+                          VerticalAlignment="Top"
+                          IsChecked="{Binding BisSupportLogImageSendWithLog, Mode=TwoWay}"
+                          Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=lblSupportLogAttachment}" />
+                <TextBlock x:Name="txtAttachments2"
+                           Style="{DynamicResource TxtblStyleSettingsContent}"
+                           Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=lblSupportScreenShot}"
+                           TextWrapping="Wrap" />
+                <Button HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        x:Name="btnCaptureScreen"
+                        Command="{Binding SupportLogCaptureCommand}"
+                        Visibility="Visible"
+                        Style="{DynamicResource BtnStyleFooterItem}"
+                        Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=lblSupportTakeNewScreenShot}"
+                        FontSize="12" />
+
+            </StackPanel>
+
+            <Controls:BTextBoxWatermarked x:Name="txtAttachement"
+                                          Text="{Binding SupportLogAttachment, Mode=TwoWay}"
+                                          Label="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=WmlblSupportLogAttachment}"
+                                          Grid.Column="1"
+                                          Grid.Row="3"
+                                          VerticalAlignment="Top"
+                                          Height="24.264"
+                                          Visibility="Collapsed" />
+
+            <StackPanel Grid.Column="1"
+                        Grid.Row="3"
+                        Orientation="Vertical"
+                        d:LayoutOverrides="Height"
+                        Margin="0,16,0,0">
+
+                <Image x:Name="imgCapture"
+                       Visibility="Visible"
+                       HorizontalAlignment="Left"
+                       Source="{Binding SupportLogCaptureImage, Mode=TwoWay}"
+                       MaxHeight="100" />
+
+            </StackPanel>
+        </Grid>
+        <Separator VerticalAlignment="Top"
+                   DockPanel.Dock="Top" />
+
+        
+            
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        VerticalAlignment="Top"
+                        d:LayoutOverrides="VerticalAlignment"
+                        DockPanel.Dock="Top"
+                        HorizontalAlignment="Right">
+            	<Controls:UcWaiting x:Name="ucWaiting"
+                                Visibility="{Binding WaitingVisibility, Mode=TwoWay}"
+                          IsAnimating="{Binding IsWaiting}"
+                                BorderBrush="#FF545454"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                HorizontalAlignment="Center"
+                                VerticalContentAlignment="Center" 
+								VerticalAlignment="Center"
+								Margin="0,0,10,0"/>
+            
+                <Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnSupportLogSend}"
+                        x:Name="btnSend"
+                        Command="{Binding SupportLogSubmitCommand}"
+                        IsEnabled="{Binding BisSupportLogMailValid}"
+                        Margin="0,0,5,0" />
+                <Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCancel}"
+                        x:Name="btnCancel"
+                        Command="{Binding SupportLogCancelCommand}" />
+
+
+            </StackPanel>
+        
+
+    </DockPanel>
+</UserControl>

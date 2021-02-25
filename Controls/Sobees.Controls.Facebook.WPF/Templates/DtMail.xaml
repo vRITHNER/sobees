@@ -1,0 +1,92 @@
+﻿<UserControl
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:localizeWpf="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  x:Class="Sobees.Controls.Facebook.Templates.DtMail"
+  mc:Ignorable="d">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/TemplateFacebook.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid>
+    <DockPanel d:LayoutOverrides="Width, Height">
+      <ContentControl HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Style="{DynamicResource ContentControlStyleAvatar}">
+        <Button Cursor="Hand"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding DataContext.ShowUserProfileCommand, ElementName=lstMail}"
+                CommandParameter="{Binding User}"
+                Style="{DynamicResource BtnNoStyle}">
+          <Image Source="{Binding User.ProfileImgUrl, IsAsync=True}"
+                 Width="47"
+                 Height="47"
+                 Stretch="Fill" />
+        </Button>
+
+      </ContentControl>
+      <StackPanel>
+
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+
+          <TextBlock x:Name="txtName" Text="{Binding User.NickName}"
+                     IsHitTestVisible="False"
+                     Style="{DynamicResource TxtblStyleItemTitle}" d:LayoutOverrides="Width" />
+
+          <TextBlock
+            Text="{Binding UpdatedTime}"
+            x:Name="txtDate"
+            Style="{DynamicResource TxtblStyleItemFooter}"
+            Grid.Column="1"
+            TextWrapping="NoWrap"
+            TextTrimming="CharacterEllipsis"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center" FontSize="9.333" />
+
+        </Grid>
+        <Button x:Name="subject" Content="{Binding Subject}"
+                IsEnabled="{Binding Unread}"
+                MinWidth="60"
+                Style="{DynamicResource BtnStyleContentItem}" />
+        <!--<Grid HorizontalAlignment="Stretch"
+					DockPanel.Dock="Top" Visibility="Collapsed">
+					<Button Content="{Binding Subject}"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+						Command="{Binding DataContext.ShowMessageCommand, ElementName=lstMail}"
+						CommandParameter="{Binding}"
+						Opacity="0"
+						FontWeight="Bold"
+						MinWidth="60" Visibility="Collapsed" />
+
+
+				</Grid>-->
+        <TextBlock TextWrapping="NoWrap"
+                   Text="{Binding Snippet}"
+                   x:Name="txtContentMailFB"
+                   IsHitTestVisible="False"
+                   TextTrimming="WordEllipsis"
+                   Style="{DynamicResource TxtblStyleItemContentH2}" MaxHeight="15" />
+      </StackPanel>
+
+    </DockPanel>
+
+    <Button x:Name="BtnGotoMail"
+            Content="Button"
+            Opacity="0"
+            Command="{Binding DataContext.ShowMessageCommand, ElementName=lstMail}"
+            CommandParameter="{Binding}"
+            Cursor="Hand" />
+  </Grid>
+</UserControl>

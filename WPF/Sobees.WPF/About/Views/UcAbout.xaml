@@ -1,0 +1,159 @@
+﻿<UserControl x:Class="Sobees.About.Views.UcAbout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             DataContext="{Binding AboutViewModel, Source={StaticResource Locator}}"
+             mc:Ignorable="d"
+             d:DesignWidth="553"
+             d:DesignHeight="642">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid x:Name="grMain">
+    <ContentControl x:Name="Bg"
+                    Style="{DynamicResource ContentControlStyleBgPaper}" />
+    <Button x:Name="btnClose"
+            Visibility="{Binding CloseButtonVisibility}"
+            Command="{Binding CloseCommand}"
+            Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnOk}"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Margin="0,0,10,10" />
+
+    <DockPanel VerticalAlignment="Top"
+               Width="300"
+               Margin="0,30,0,0">
+      <Image Width="137"
+             Height="34.065"
+             Source="/Resources\Images\logo_sobees_transparent_small_no_text.png"
+             Stretch="Fill"
+             HorizontalAlignment="Left"
+             Margin="-7,0,0,5"
+             DockPanel.Dock="Top"
+             d:LayoutOverrides="HorizontalAlignment" />
+      <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblVersionShort}"
+                 DockPanel.Dock="Top"
+                 Style="{DynamicResource TxtblStyleItemContent}" />
+      <StackPanel Orientation="Horizontal"
+                  DockPanel.Dock="Top">
+        <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblVersionBeta}"
+                   Margin="0,0,3,0"
+                   Style="{DynamicResource TxtblStyleItemContent}" />
+        <TextBlock x:Name="txtblVersion"
+                   Text="{Binding VersionNumber}"
+                   Style="{DynamicResource TxtblStyleItemContent}"
+                   Margin="0,0,5,0" />
+      </StackPanel>
+      <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblCopyright}"
+                 Style="{DynamicResource TxtblStyleItemContent}"
+                 Margin="0,0,0,10"
+                 DockPanel.Dock="Top" />
+      <TextBlock Style="{DynamicResource TxtblStyleItemContent}"
+                 Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblCopyrightWarning}"
+                 DockPanel.Dock="Top" />
+      <Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=hypbtnlicence}"
+              Command="{Binding GoToWebCommand}"
+              CommandParameter="http://www.sobees.com/sla"
+              Margin="0,10,0,0"
+              DockPanel.Dock="Top"
+              Style="{DynamicResource BtnStyleFooterItem}"
+              FontSize="12" />
+      <StackPanel Orientation="Horizontal"
+                  Margin="0,10,0,0"
+                  Visibility="Collapsed">
+        <!--<Button HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Commands:bCommandManager.Command="{Binding RequestNavigateCommand}"
+                  Commands:bCommandManager.CommandEventName="Click"
+                  Commands:bCommandManager.CommandParameter="http://www.facebook.com/pages/sobees/59333223229"
+                  Margin="0,0,5,0"
+                  Cursor="Hand"
+                  Style="{StaticResource BtnFollowFacebook}"
+                  Tag="Follow us on Facebook"
+                  Width="123"
+                  Foreground="{StaticResource Level4Foreground}">
+            <Rectangle Fill="{StaticResource ibFacebookIcon}"
+                       VerticalAlignment="Top"
+                       Width="40"
+                       Height="40"
+                       HorizontalAlignment="Left" />
+          </Button>-->
+        <Button x:Name="hypbtnFollowFB"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="0,0,10,0"
+                Cursor="Hand"
+                Padding="0">
+          <Rectangle VerticalAlignment="Top"
+                     Width="144"
+                     Height="44"
+                     HorizontalAlignment="Left" />
+        </Button>
+        <!--<Button HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Commands:bCommandManager.Command="{Binding RequestNavigateCommand}"
+                  Commands:bCommandManager.CommandEventName="Click"
+                  Commands:bCommandManager.CommandParameter="http://twitter.com/sobees"
+                  Cursor="Hand"
+                  Style="{StaticResource BtnFollowFacebook}"
+                  Tag="Follow us on Twitter"
+                  Width="114"
+                  Foreground="{StaticResource Level4Foreground}">
+            <Rectangle Fill="{StaticResource ibTwitterIcon}"
+                       VerticalAlignment="Top"
+                       Width="40"
+                       Height="40"
+                       HorizontalAlignment="Left" />
+          </Button>-->
+        <Button x:Name="hypbtnFollowTW"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Cursor="Hand"
+                Width="114">
+          <Rectangle Fill="{StaticResource ibTwitterIcon}"
+                     VerticalAlignment="Top"
+                     Width="40"
+                     Height="40"
+                     HorizontalAlignment="Left" />
+        </Button>
+      </StackPanel>
+      <StackPanel Margin="0,10,0,0"
+                  Orientation="Horizontal"
+                  DockPanel.Dock="Top">
+        <Button HorizontalAlignment="Left"
+                Command="{Binding GoToWebCommand}"
+                CommandParameter="http://www.facebook.com/sobees"
+                VerticalAlignment="Top"
+                Margin="0,0,5,0"
+                ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=hypbtnFollowFB}"
+                Style="{DynamicResource BtnFollowFacebook}">
+          <Rectangle Fill="{StaticResource ibFollowFacebook}"
+                     VerticalAlignment="Top"
+                     Width="144"
+                     Height="44"
+                     HorizontalAlignment="Left" />
+        </Button>
+        <Button HorizontalAlignment="Left"
+                Command="{Binding GoToWebCommand}"
+                CommandParameter="http://twitter.com/sobees"
+                VerticalAlignment="Top"
+                Tag="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=hypbtnFollowTW}"
+                Width="114"
+                Style="{DynamicResource BtnFollowFacebook}">
+          <Rectangle Fill="{StaticResource ibTwitterIcon}"
+                     VerticalAlignment="Top"
+                     Width="40"
+                     Height="40"
+                     HorizontalAlignment="Left"
+                     Margin="2" />
+        </Button>
+      </StackPanel>
+    </DockPanel>
+  </Grid>
+</UserControl>

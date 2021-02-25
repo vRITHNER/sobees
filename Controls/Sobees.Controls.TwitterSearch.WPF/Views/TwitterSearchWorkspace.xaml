@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Sobees.Controls.TwitterSearch.Views.TwitterSearchWorkspace"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:CustomControls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+    xmlns:Templates="clr-namespace:Sobees.Controls.TwitterSearch.Templates"
+    xmlns:Controls1="clr-namespace:Sobees.Controls.TwitterSearch.Controls" x:Name="twittterSearchWorkspace">
+  <UserControl.Resources>
+  	<ResourceDictionary>
+  		<ResourceDictionary.MergedDictionaries>
+  			<ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml"/>
+  		</ResourceDictionary.MergedDictionaries>
+  		<DataTemplate x:Key="dtTweet">
+  			<Templates:DtTweets x:Name="dtTweets"/>
+  		</DataTemplate>
+  	</ResourceDictionary>
+  </UserControl.Resources>
+  <DockPanel LastChildFill="True">
+        <Controls1:UcAdsTop DockPanel.Dock="Top"  Visibility="{Binding AddsVisibility}" />
+        <Controls1:UcTweetDetails Visibility="{Binding TweetsDetailsVisibility}"
+                              DockPanel.Dock="Bottom" />
+    <Grid>
+      <CustomControls:UcNoDataToDisplay Visibility="{Binding IsAnyDataVisibility}" />
+    
+    <CustomControls:BListBox x:Name="LstTweets"
+                           VirtualizingStackPanel.IsVirtualizing="True"
+                           VirtualizingStackPanel.VirtualizationMode="Standard"
+                           ScrollSpeed="1"
+                           ItemsSource="{Binding TweetsShow}"
+                           SelectedIndex="{Binding SelectedTweetIndex}"
+                           ItemTemplate="{StaticResource dtTweet}"
+                           Style="{StaticResource ListBoxStyleDeck}"/>
+      </Grid>
+    </DockPanel>
+</UserControl>

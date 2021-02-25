@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="f3943d0a-a53f-44f7-be51-85fa503790a6" Name="sobeesSetup" Language="1033" Codepage="Windows-1252" Version="0.8.9.2" UpgradeCode="f3943d0a-a53f-44f7-be51-85fa50b700a3" Manufacturer="vrith">
+    <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" Id="f3943d0a-a53f-44f7-be51-85fa503790a6" />
+    <Media Id="1" Cabinet="sobeesSetup.cab" EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder" Name="ProgramFilesFolder">
+        <Directory Id="ProgramFilesFolder.sobees" Name="sobees">
+          <Directory Id="INSTALLDIR" Name="sobeesDesktop">
+
+            <Component Id="Component.BGlassWindow.dll" Guid="f3943d0a-a53f-44f7-be51-85fac1f6a7a0">
+              <File Id="BGlassWindow.dll" Source="bin\debug\BGlassWindow.dll" />
+            </Component>
+
+            <Component Id="Component.BGlassWindow.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa382ca8a8">
+              <File Id="BGlassWindow.pdb" Source="bin\debug\BGlassWindow.pdb" />
+            </Component>
+
+            <Component Id="Component.BootstrapperCore.dll" Guid="f3943d0a-a53f-44f7-be51-85fa37193bca">
+              <File Id="BootstrapperCore.dll" Source="bin\debug\BootstrapperCore.dll" />
+            </Component>
+
+            <Component Id="Component.Capture_logfile.jpg" Guid="f3943d0a-a53f-44f7-be51-85fadf7c52fb">
+              <File Id="Capture_logfile.jpg" Source="bin\debug\Capture-logfile.jpg" />
+            </Component>
+
+            <Component Id="Component.GalaSoft.MvvmLight.dll" Guid="f3943d0a-a53f-44f7-be51-85fa6186da93">
+              <File Id="GalaSoft.MvvmLight.dll" Source="bin\debug\GalaSoft.MvvmLight.dll" />
+            </Component>
+
+            <Component Id="Component.GalaSoft.MvvmLight.Extras.dll" Guid="f3943d0a-a53f-44f7-be51-85fabd0891f8">
+              <File Id="GalaSoft.MvvmLight.Extras.dll" Source="bin\debug\GalaSoft.MvvmLight.Extras.dll" />
+            </Component>
+
+            <Component Id="Component.GalaSoft.MvvmLight.Extras.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa025f7a3a">
+              <File Id="GalaSoft.MvvmLight.Extras.pdb" Source="bin\debug\GalaSoft.MvvmLight.Extras.pdb" />
+            </Component>
+
+            <Component Id="Component.GalaSoft.MvvmLight.Extras.xml" Guid="f3943d0a-a53f-44f7-be51-85fabd0791fc">
+              <File Id="GalaSoft.MvvmLight.Extras.xml" Source="bin\debug\GalaSoft.MvvmLight.Extras.xml" />
+            </Component>
+
+            <Component Id="Component.GalaSoft.MvvmLight.pdb" Guid="f3943d0a-a53f-44f7-be51-85fabe5136bb">
+              <File Id="GalaSoft.MvvmLight.pdb" Source="bin\debug\GalaSoft.MvvmLight.pdb" />
+            </Component>
+
+            <Component Id="Component._...alaSoft.MvvmLight.Platform.dll" Guid="f3943d0a-a53f-44f7-be51-85fa5e4b6986">
+              <File Id="_...alaSoft.MvvmLight.Platform.dll" Source="bin\debug\GalaSoft.MvvmLight.Platform.dll" />
+            </Component>
+
+            <Component Id="Component._...alaSoft.MvvmLight.Platform.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa5dd10e5e">
+              <File Id="_...alaSoft.MvvmLight.Platform.pdb" Source="bin\debug\GalaSoft.MvvmLight.Platform.pdb" />
+            </Component>
+
+            <Component Id="Component._...alaSoft.MvvmLight.Platform.xml" Guid="f3943d0a-a53f-44f7-be51-85fa010ede21">
+              <File Id="_...alaSoft.MvvmLight.Platform.xml" Source="bin\debug\GalaSoft.MvvmLight.Platform.xml" />
+            </Component>
+
+            <Component Id="Component.GalaSoft.MvvmLight.xml" Guid="f3943d0a-a53f-44f7-be51-85fa044a4f2e">
+              <File Id="GalaSoft.MvvmLight.xml" Source="bin\debug\GalaSoft.MvvmLight.xml" />
+            </Component>
+
+            <Component Id="Component.Hammock.ClientProfile.dll" Guid="f3943d0a-a53f-44f7-be51-85fa30f4e482">
+              <File Id="Hammock.ClientProfile.dll" Source="bin\debug\Hammock.ClientProfile.dll" />
+            </Component>
+
+            <Component Id="Component.Hammock.ClientProfile.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa15254508">
+              <File Id="Hammock.ClientProfile.pdb" Source="bin\debug\Hammock.ClientProfile.pdb" />
+            </Component>
+
+            <Component Id="Component.Hammock.dll" Guid="f3943d0a-a53f-44f7-be51-85fa63e3dc73">
+              <File Id="Hammock.dll" Source="bin\debug\Hammock.dll" />
+            </Component>
+
+            <Component Id="Component.Hammock.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa52a6c065">
+              <File Id="Hammock.pdb" Source="bin\debug\Hammock.pdb" />
+            </Component>
+
+            <Component Id="Component.HtmlAgilityPack.dll" Guid="f3943d0a-a53f-44f7-be51-85fa1493cec7">
+              <File Id="HtmlAgilityPack.dll" Source="bin\debug\HtmlAgilityPack.dll" />
+            </Component>
+
+            <Component Id="Component.HtmlAgilityPack.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa0f9545fd">
+              <File Id="HtmlAgilityPack.pdb" Source="bin\debug\HtmlAgilityPack.pdb" />
+            </Component>
+
+            <Component Id="Component.HtmlAgilityPack.xml" Guid="f3943d0a-a53f-44f7-be51-85fa14cca033">
+              <File Id="HtmlAgilityPack.xml" Source="bin\debug\HtmlAgilityPack.xml" />
+            </Component>
+
+            <Component Id="Component.ICSharpCode.SharpZipLib.dll" Guid="f3943d0a-a53f-44f7-be51-85fac876af63">
+              <File Id="ICSharpCode.SharpZipLib.dll" Source="bin\debug\ICSharpCode.SharpZipLib.dll" />
+            </Component>
+
+            <Component Id="Component.LinqToTwitter.AspNet.dll" Guid="f3943d0a-a53f-44f7-be51-85fab2e71045">
+              <File Id="LinqToTwitter.AspNet.dll" Source="bin\debug\LinqToTwitter.AspNet.dll" />
+            </Component>
+
+            <Component Id="Component.LinqToTwitter.net.dll" Guid="f3943d0a-a53f-44f7-be51-85fa834d3f28">
+              <File Id="LinqToTwitter.net.dll" Source="bin\debug\LinqToTwitter.net.dll" />
+            </Component>
+
+            <Component Id="Component.log4net.dll" Guid="f3943d0a-a53f-44f7-be51-85fa2fda1268">
+              <File Id="log4net.dll" Source="bin\debug\log4net.dll" />
+            </Component>
+
+            <Component Id="Component.log4net.xml" Guid="f3943d0a-a53f-44f7-be51-85fad9245174">
+              <File Id="log4net.xml" Source="bin\debug\log4net.xml" />
+            </Component>
+
+            <Component Id="Component._...eployment.WindowsInstaller.dll" Guid="f3943d0a-a53f-44f7-be51-85fa2dea4587">
+              <File Id="_...eployment.WindowsInstaller.dll" Source="bin\debug\Microsoft.Deployment.WindowsInstaller.dll" />
+            </Component>
+
+            <Component Id="Component._...ft.Expression.Interactions.dll" Guid="f3943d0a-a53f-44f7-be51-85fa9c18bc8f">
+              <File Id="_...ft.Expression.Interactions.dll" Source="bin\debug\Microsoft.Expression.Interactions.dll" />
+            </Component>
+
+            <Component Id="Component._....Practices.ServiceLocation.dll" Guid="f3943d0a-a53f-44f7-be51-85fafe570942">
+              <File Id="_....Practices.ServiceLocation.dll" Source="bin\debug\Microsoft.Practices.ServiceLocation.dll" />
+            </Component>
+
+            <Component Id="Component._....Practices.ServiceLocation.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa88b5646a">
+              <File Id="_....Practices.ServiceLocation.pdb" Source="bin\debug\Microsoft.Practices.ServiceLocation.pdb" />
+            </Component>
+
+            <Component Id="Component._....Practices.ServiceLocation.xml" Guid="f3943d0a-a53f-44f7-be51-85faa11a7edd">
+              <File Id="_....Practices.ServiceLocation.xml" Source="bin\debug\Microsoft.Practices.ServiceLocation.xml" />
+            </Component>
+
+            <Component Id="Component._...crosoft.WindowsAPICodePack.dll" Guid="f3943d0a-a53f-44f7-be51-85fadec6d3ad">
+              <File Id="_...crosoft.WindowsAPICodePack.dll" Source="bin\debug\Microsoft.WindowsAPICodePack.dll" />
+            </Component>
+
+            <Component Id="Component._...t.WindowsAPICodePack.Shell.dll" Guid="f3943d0a-a53f-44f7-be51-85fa4286bca7">
+              <File Id="_...t.WindowsAPICodePack.Shell.dll" Source="bin\debug\Microsoft.WindowsAPICodePack.Shell.dll" />
+            </Component>
+
+            <Component Id="Component.Newtonsoft.Json.dll" Guid="f3943d0a-a53f-44f7-be51-85fade117b7e">
+              <File Id="Newtonsoft.Json.dll" Source="bin\debug\Newtonsoft.Json.dll" />
+            </Component>
+
+            <Component Id="Component.Newtonsoft.Json.xml" Guid="f3943d0a-a53f-44f7-be51-85fadd4a4eea">
+              <File Id="Newtonsoft.Json.xml" Source="bin\debug\Newtonsoft.Json.xml" />
+            </Component>
+
+            <Component Id="Component.PresentationCore.dll" Guid="f3943d0a-a53f-44f7-be51-85fa859b3758">
+              <File Id="PresentationCore.dll" Source="bin\debug\PresentationCore.dll" />
+            </Component>
+
+            <Component Id="Component.PresentationFramework.Aero.dll" Guid="f3943d0a-a53f-44f7-be51-85fa8abac82c">
+              <File Id="PresentationFramework.Aero.dll" Source="bin\debug\PresentationFramework.Aero.dll" />
+            </Component>
+
+            <Component Id="Component.PresentationFramework.dll" Guid="f3943d0a-a53f-44f7-be51-85fae89ff2fb">
+              <File Id="PresentationFramework.dll" Source="bin\debug\PresentationFramework.dll" />
+            </Component>
+
+            <Component Id="Component._...ees.Configuration.BGlobals.dll" Guid="f3943d0a-a53f-44f7-be51-85fabe4499d5">
+              <File Id="_...ees.Configuration.BGlobals.dll" Source="bin\debug\Sobees.Configuration.BGlobals.dll" />
+            </Component>
+
+            <Component Id="Component._...figuration.BGlobals.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa980596c3">
+              <File Id="_...figuration.BGlobals.dll.config" Source="bin\debug\Sobees.Configuration.BGlobals.dll.config" />
+            </Component>
+
+            <Component Id="Component._...ees.Configuration.BGlobals.pdb" Guid="f3943d0a-a53f-44f7-be51-85fac0def4fd">
+              <File Id="_...ees.Configuration.BGlobals.pdb" Source="bin\debug\Sobees.Configuration.BGlobals.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.Controls.Twitter.dll" Guid="f3943d0a-a53f-44f7-be51-85fabd702e7a">
+              <File Id="Sobees.Controls.Twitter.dll" Source="bin\debug\Sobees.Controls.Twitter.dll" />
+            </Component>
+
+            <Component Id="Component._...es.Controls.Twitter.dll.config" Guid="f3943d0a-a53f-44f7-be51-85facfd50e88">
+              <File Id="_...es.Controls.Twitter.dll.config" Source="bin\debug\Sobees.Controls.Twitter.dll.config" />
+            </Component>
+
+            <Component Id="Component.Sobees.Controls.Twitter.pdb" Guid="f3943d0a-a53f-44f7-be51-85facdad4ba4">
+              <File Id="Sobees.Controls.Twitter.pdb" Source="bin\debug\Sobees.Controls.Twitter.pdb" />
+            </Component>
+
+            <Component Id="Component._...ees.Controls.TwitterSearch.dll" Guid="f3943d0a-a53f-44f7-be51-85fa9530d958">
+              <File Id="_...ees.Controls.TwitterSearch.dll" Source="bin\debug\Sobees.Controls.TwitterSearch.dll" />
+            </Component>
+
+            <Component Id="Component._...trols.TwitterSearch.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa2b922fb3">
+              <File Id="_...trols.TwitterSearch.dll.config" Source="bin\debug\Sobees.Controls.TwitterSearch.dll.config" />
+            </Component>
+
+            <Component Id="Component._...ees.Controls.TwitterSearch.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa0bf27e30">
+              <File Id="_...ees.Controls.TwitterSearch.pdb" Source="bin\debug\Sobees.Controls.TwitterSearch.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.exe" Guid="f3943d0a-a53f-44f7-be51-85fa5a814bb9">
+              <File Id="Sobees.exe" Source="bin\debug\Sobees.exe">
+                <Shortcut Id="Shortcut.Sobees.exe.sobees.exe" WorkingDirectory="INSTALLDIR" Directory="INSTALLDIR" Name="sobees.exe.lnk" Icon="IconFile1_sobees.ico" IconIndex="0" />
+                <Shortcut Id="Shortcut.Sobees.exe.sobees.exe.1" WorkingDirectory="INSTALLDIR" Directory="DesktopFolder" Name="sobees.exe.lnk" Icon="IconFile1_sobees.ico" IconIndex="0" />
+              </File>
+
+              <RegistryKey Root="HKCU" Key="Software\WixSharp\Used">
+                <RegistryValue Value="0" Type="string" KeyPath="yes" />
+              </RegistryKey>
+            </Component>
+
+            <Component Id="Component.Sobees.exe.config" Guid="f3943d0a-a53f-44f7-be51-85faa13a56bd">
+              <File Id="Sobees.exe.config" Source="bin\debug\Sobees.exe.config" />
+            </Component>
+
+            <Component Id="Component.sobees.ico" Guid="f3943d0a-a53f-44f7-be51-85fadf49eb00">
+              <File Id="sobees.ico" Source="bin\debug\sobees.ico" />
+            </Component>
+
+            <Component Id="Component.Sobees.Infrastructure.dll" Guid="f3943d0a-a53f-44f7-be51-85fa4cd0e673">
+              <File Id="Sobees.Infrastructure.dll" Source="bin\debug\Sobees.Infrastructure.dll" />
+            </Component>
+
+            <Component Id="Component._...bees.Infrastructure.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa73fbebd9">
+              <File Id="_...bees.Infrastructure.dll.config" Source="bin\debug\Sobees.Infrastructure.dll.config" />
+            </Component>
+
+            <Component Id="Component.Sobees.Infrastructure.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa0689fd31">
+              <File Id="Sobees.Infrastructure.pdb" Source="bin\debug\Sobees.Infrastructure.pdb" />
+            </Component>
+
+            <Component Id="Component._...bees.Library.BChromeWindow.dll" Guid="f3943d0a-a53f-44f7-be51-85faacb2b49c">
+              <File Id="_...bees.Library.BChromeWindow.dll" Source="bin\debug\Sobees.Library.BChromeWindow.dll" />
+            </Component>
+
+            <Component Id="Component._...brary.BChromeWindow.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa035f97de">
+              <File Id="_...brary.BChromeWindow.dll.config" Source="bin\debug\Sobees.Library.BChromeWindow.dll.config" />
+            </Component>
+
+            <Component Id="Component._...bees.Library.BChromeWindow.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa61805974">
+              <File Id="_...bees.Library.BChromeWindow.pdb" Source="bin\debug\Sobees.Library.BChromeWindow.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.Library.BGenericLib.dll" Guid="f3943d0a-a53f-44f7-be51-85fa907dd495">
+              <File Id="Sobees.Library.BGenericLib.dll" Source="bin\debug\Sobees.Library.BGenericLib.dll" />
+            </Component>
+
+            <Component Id="Component._...Library.BGenericLib.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa32fd200f">
+              <File Id="_...Library.BGenericLib.dll.config" Source="bin\debug\Sobees.Library.BGenericLib.dll.config" />
+            </Component>
+
+            <Component Id="Component.Sobees.Library.BGenericLib.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa920030bd">
+              <File Id="Sobees.Library.BGenericLib.pdb" Source="bin\debug\Sobees.Library.BGenericLib.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.Library.BGoogleLib.dll" Guid="f3943d0a-a53f-44f7-be51-85fa5b12d5ca">
+              <File Id="Sobees.Library.BGoogleLib.dll" Source="bin\debug\Sobees.Library.BGoogleLib.dll" />
+            </Component>
+
+            <Component Id="Component.Sobees.Library.BGoogleLib.pdb" Guid="f3943d0a-a53f-44f7-be51-85fab59563c4">
+              <File Id="Sobees.Library.BGoogleLib.pdb" Source="bin\debug\Sobees.Library.BGoogleLib.pdb" />
+            </Component>
+
+            <Component Id="Component._...obees.Library.BLocalizeLib.dll" Guid="f3943d0a-a53f-44f7-be51-85fad1c7f822">
+              <File Id="_...obees.Library.BLocalizeLib.dll" Source="bin\debug\Sobees.Library.BLocalizeLib.dll" />
+            </Component>
+
+            <Component Id="Component._...ibrary.BLocalizeLib.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa2fcce79d">
+              <File Id="_...ibrary.BLocalizeLib.dll.config" Source="bin\debug\Sobees.Library.BLocalizeLib.dll.config" />
+            </Component>
+
+            <Component Id="Component._...obees.Library.BLocalizeLib.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa00d6534a">
+              <File Id="_...obees.Library.BLocalizeLib.pdb" Source="bin\debug\Sobees.Library.BLocalizeLib.pdb" />
+            </Component>
+
+            <Component Id="Component._...Library.BResolveUrlLibrary.dll" Guid="f3943d0a-a53f-44f7-be51-85fa6bc28647">
+              <File Id="_...Library.BResolveUrlLibrary.dll" Source="bin\debug\Sobees.Library.BResolveUrlLibrary.dll" />
+            </Component>
+
+            <Component Id="Component._....BResolveUrlLibrary.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa13d34f73">
+              <File Id="_....BResolveUrlLibrary.dll.config" Source="bin\debug\Sobees.Library.BResolveUrlLibrary.dll.config" />
+            </Component>
+
+            <Component Id="Component._...Library.BResolveUrlLibrary.pdb" Guid="f3943d0a-a53f-44f7-be51-85fae0842b1f">
+              <File Id="_...Library.BResolveUrlLibrary.pdb" Source="bin\debug\Sobees.Library.BResolveUrlLibrary.pdb" />
+            </Component>
+
+            <Component Id="Component._...obees.Library.BServicesLib.dll" Guid="f3943d0a-a53f-44f7-be51-85fad1988e8b">
+              <File Id="_...obees.Library.BServicesLib.dll" Source="bin\debug\Sobees.Library.BServicesLib.dll" />
+            </Component>
+
+            <Component Id="Component._...ibrary.BServicesLib.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa4a5d916b">
+              <File Id="_...ibrary.BServicesLib.dll.config" Source="bin\debug\Sobees.Library.BServicesLib.dll.config" />
+            </Component>
+
+            <Component Id="Component._...obees.Library.BServicesLib.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa59ba3363">
+              <File Id="_...obees.Library.BServicesLib.pdb" Source="bin\debug\Sobees.Library.BServicesLib.pdb" />
+            </Component>
+
+            <Component Id="Component._...Library.BTransitionEffects.dll" Guid="f3943d0a-a53f-44f7-be51-85faa7e4abe8">
+              <File Id="_...Library.BTransitionEffects.dll" Source="bin\debug\Sobees.Library.BTransitionEffects.dll" />
+            </Component>
+
+            <Component Id="Component._...Library.BTransitionEffects.pdb" Guid="f3943d0a-a53f-44f7-be51-85faf2170610">
+              <File Id="_...Library.BTransitionEffects.pdb" Source="bin\debug\Sobees.Library.BTransitionEffects.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.Library.BTwitterLib.dll" Guid="f3943d0a-a53f-44f7-be51-85fa2716aaf9">
+              <File Id="Sobees.Library.BTwitterLib.dll" Source="bin\debug\Sobees.Library.BTwitterLib.dll" />
+            </Component>
+
+            <Component Id="Component._...Library.BTwitterLib.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa08941ed4">
+              <File Id="_...Library.BTwitterLib.dll.config" Source="bin\debug\Sobees.Library.BTwitterLib.dll.config" />
+            </Component>
+
+            <Component Id="Component.Sobees.Library.BTwitterLib.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa84e10521">
+              <File Id="Sobees.Library.BTwitterLib.pdb" Source="bin\debug\Sobees.Library.BTwitterLib.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.Library.BUtilities.dll" Guid="f3943d0a-a53f-44f7-be51-85faa920be69">
+              <File Id="Sobees.Library.BUtilities.dll" Source="bin\debug\Sobees.Library.BUtilities.dll" />
+            </Component>
+
+            <Component Id="Component._....Library.BUtilities.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa3ffd4bfb">
+              <File Id="_....Library.BUtilities.dll.config" Source="bin\debug\Sobees.Library.BUtilities.dll.config" />
+            </Component>
+
+            <Component Id="Component.Sobees.Library.BUtilities.pdb" Guid="f3943d0a-a53f-44f7-be51-85faee77a8b3">
+              <File Id="Sobees.Library.BUtilities.pdb" Source="bin\debug\Sobees.Library.BUtilities.pdb" />
+            </Component>
+
+            <Component Id="Component._....BUtilities.XmlSerializers.dll" Guid="f3943d0a-a53f-44f7-be51-85faa5e818de">
+              <File Id="_....BUtilities.XmlSerializers.dll" Source="bin\debug\Sobees.Library.BUtilities.XmlSerializers.dll" />
+            </Component>
+
+            <Component Id="Component.Sobees.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa493e8ac5">
+              <File Id="Sobees.pdb" Source="bin\debug\Sobees.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.Templates.dll" Guid="f3943d0a-a53f-44f7-be51-85fa092dacc6">
+              <File Id="Sobees.Templates.dll" Source="bin\debug\Sobees.Templates.dll" />
+            </Component>
+
+            <Component Id="Component.Sobees.Templates.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa254bacbe">
+              <File Id="Sobees.Templates.pdb" Source="bin\debug\Sobees.Templates.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.Themes.BThemeBlack.dll" Guid="f3943d0a-a53f-44f7-be51-85fa95ea4e7e">
+              <File Id="Sobees.Themes.BThemeBlack.dll" Source="bin\debug\Sobees.Themes.BThemeBlack.dll" />
+            </Component>
+
+            <Component Id="Component.Sobees.Themes.BThemeBlack.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa65cf0a14">
+              <File Id="Sobees.Themes.BThemeBlack.pdb" Source="bin\debug\Sobees.Themes.BThemeBlack.pdb" />
+            </Component>
+
+            <Component Id="Component._...ees.Themes.BThemeClassical.dll" Guid="f3943d0a-a53f-44f7-be51-85fae268a14d">
+              <File Id="_...ees.Themes.BThemeClassical.dll" Source="bin\debug\Sobees.Themes.BThemeClassical.dll" />
+            </Component>
+
+            <Component Id="Component._...ees.Themes.BThemeClassical.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa3c164625">
+              <File Id="_...ees.Themes.BThemeClassical.pdb" Source="bin\debug\Sobees.Themes.BThemeClassical.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.Themes.BThemeForest.dll" Guid="f3943d0a-a53f-44f7-be51-85fa4bfe7509">
+              <File Id="Sobees.Themes.BThemeForest.dll" Source="bin\debug\Sobees.Themes.BThemeForest.dll" />
+            </Component>
+
+            <Component Id="Component.Sobees.Themes.BThemeForest.pdb" Guid="f3943d0a-a53f-44f7-be51-85faffb41ae1">
+              <File Id="Sobees.Themes.BThemeForest.pdb" Source="bin\debug\Sobees.Themes.BThemeForest.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.Themes.BThemePurple.dll" Guid="f3943d0a-a53f-44f7-be51-85fa76cab65c">
+              <File Id="Sobees.Themes.BThemePurple.dll" Source="bin\debug\Sobees.Themes.BThemePurple.dll" />
+            </Component>
+
+            <Component Id="Component._...Themes.BThemePurple.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa1354d8eb">
+              <File Id="_...Themes.BThemePurple.dll.config" Source="bin\debug\Sobees.Themes.BThemePurple.dll.config" />
+            </Component>
+
+            <Component Id="Component.Sobees.Themes.BThemePurple.pdb" Guid="f3943d0a-a53f-44f7-be51-85fac1fd1184">
+              <File Id="Sobees.Themes.BThemePurple.pdb" Source="bin\debug\Sobees.Themes.BThemePurple.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.Themes.BThemeSnow.dll" Guid="f3943d0a-a53f-44f7-be51-85fab2f00855">
+              <File Id="Sobees.Themes.BThemeSnow.dll" Source="bin\debug\Sobees.Themes.BThemeSnow.dll" />
+            </Component>
+
+            <Component Id="Component.Sobees.Themes.BThemeSnow.pdb" Guid="f3943d0a-a53f-44f7-be51-85face02085d">
+              <File Id="Sobees.Themes.BThemeSnow.pdb" Source="bin\debug\Sobees.Themes.BThemeSnow.pdb" />
+            </Component>
+
+            <Component Id="Component.Sobees.Tools.dll" Guid="f3943d0a-a53f-44f7-be51-85fa8fb84c0f">
+              <File Id="Sobees.Tools.dll" Source="bin\debug\Sobees.Tools.dll" />
+            </Component>
+
+            <Component Id="Component.Sobees.Tools.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa17764c07">
+              <File Id="Sobees.Tools.pdb" Source="bin\debug\Sobees.Tools.pdb" />
+            </Component>
+
+            <Component Id="Component.System.Configuration.dll" Guid="f3943d0a-a53f-44f7-be51-85fa3c02a83a">
+              <File Id="System.Configuration.dll" Source="bin\debug\System.Configuration.dll" />
+            </Component>
+
+            <Component Id="Component._...tem.Data.DataSetExtensions.dll" Guid="f3943d0a-a53f-44f7-be51-85faac474b29">
+              <File Id="_...tem.Data.DataSetExtensions.dll" Source="bin\debug\System.Data.DataSetExtensions.dll" />
+            </Component>
+
+            <Component Id="Component.System.Data.dll" Guid="f3943d0a-a53f-44f7-be51-85fa0f4f1557">
+              <File Id="System.Data.dll" Source="bin\debug\System.Data.dll" />
+            </Component>
+
+            <Component Id="Component.System.Deployment.dll" Guid="f3943d0a-a53f-44f7-be51-85fab40fefd8">
+              <File Id="System.Deployment.dll" Source="bin\debug\System.Deployment.dll" />
+            </Component>
+
+            <Component Id="Component.System.dll" Guid="f3943d0a-a53f-44f7-be51-85fa761f2dee">
+              <File Id="System.dll" Source="bin\debug\System.dll" />
+            </Component>
+
+            <Component Id="Component.System.Drawing.dll" Guid="f3943d0a-a53f-44f7-be51-85fa858ec67b">
+              <File Id="System.Drawing.dll" Source="bin\debug\System.Drawing.dll" />
+            </Component>
+
+            <Component Id="Component.System.EnterpriseServices.dll" Guid="f3943d0a-a53f-44f7-be51-85fa372b9edb">
+              <File Id="System.EnterpriseServices.dll" Source="bin\debug\System.EnterpriseServices.dll" />
+            </Component>
+
+            <Component Id="Component.System.IO.Compression.dll" Guid="f3943d0a-a53f-44f7-be51-85fac831f22e">
+              <File Id="System.IO.Compression.dll" Source="bin\debug\System.IO.Compression.dll" />
+            </Component>
+
+            <Component Id="Component.System.Net.Http.dll" Guid="f3943d0a-a53f-44f7-be51-85fa89a5b14a">
+              <File Id="System.Net.Http.dll" Source="bin\debug\System.Net.Http.dll" />
+            </Component>
+
+            <Component Id="Component.System.Net.Http.Extensions.dll" Guid="f3943d0a-a53f-44f7-be51-85fa458b0f55">
+              <File Id="System.Net.Http.Extensions.dll" Source="bin\debug\System.Net.Http.Extensions.dll" />
+            </Component>
+
+            <Component Id="Component.System.Net.Http.Extensions.xml" Guid="f3943d0a-a53f-44f7-be51-85faa3d79bba">
+              <File Id="System.Net.Http.Extensions.xml" Source="bin\debug\System.Net.Http.Extensions.xml" />
+            </Component>
+
+            <Component Id="Component.System.Net.Http.Primitives.dll" Guid="f3943d0a-a53f-44f7-be51-85faecb8067b">
+              <File Id="System.Net.Http.Primitives.dll" Source="bin\debug\System.Net.Http.Primitives.dll" />
+            </Component>
+
+            <Component Id="Component.System.Net.Http.Primitives.xml" Guid="f3943d0a-a53f-44f7-be51-85fa8e537b16">
+              <File Id="System.Net.Http.Primitives.xml" Source="bin\debug\System.Net.Http.Primitives.xml" />
+            </Component>
+
+            <Component Id="Component.System.Net.Http.WebRequest.dll" Guid="f3943d0a-a53f-44f7-be51-85fa1bccdc89">
+              <File Id="System.Net.Http.WebRequest.dll" Source="bin\debug\System.Net.Http.WebRequest.dll" />
+            </Component>
+
+            <Component Id="Component.System.Reactive.Core.dll" Guid="f3943d0a-a53f-44f7-be51-85fa1fa0bb51">
+              <File Id="System.Reactive.Core.dll" Source="bin\debug\System.Reactive.Core.dll" />
+            </Component>
+
+            <Component Id="Component.System.Reactive.Core.xml" Guid="f3943d0a-a53f-44f7-be51-85faa85cbb52">
+              <File Id="System.Reactive.Core.xml" Source="bin\debug\System.Reactive.Core.xml" />
+            </Component>
+
+            <Component Id="Component.System.Reactive.Interfaces.dll" Guid="f3943d0a-a53f-44f7-be51-85fab12fb922">
+              <File Id="System.Reactive.Interfaces.dll" Source="bin\debug\System.Reactive.Interfaces.dll" />
+            </Component>
+
+            <Component Id="Component.System.Reactive.Interfaces.xml" Guid="f3943d0a-a53f-44f7-be51-85fa0e844487">
+              <File Id="System.Reactive.Interfaces.xml" Source="bin\debug\System.Reactive.Interfaces.xml" />
+            </Component>
+
+            <Component Id="Component.System.Reactive.Linq.dll" Guid="f3943d0a-a53f-44f7-be51-85fab3967aec">
+              <File Id="System.Reactive.Linq.dll" Source="bin\debug\System.Reactive.Linq.dll" />
+            </Component>
+
+            <Component Id="Component.System.Reactive.Linq.xml" Guid="f3943d0a-a53f-44f7-be51-85fa3c527aed">
+              <File Id="System.Reactive.Linq.xml" Source="bin\debug\System.Reactive.Linq.xml" />
+            </Component>
+
+            <Component Id="Component._....Reactive.PlatformServices.dll" Guid="f3943d0a-a53f-44f7-be51-85fae3482013">
+              <File Id="_....Reactive.PlatformServices.dll" Source="bin\debug\System.Reactive.PlatformServices.dll" />
+            </Component>
+
+            <Component Id="Component._....Reactive.PlatformServices.xml" Guid="f3943d0a-a53f-44f7-be51-85fa86eb95ae">
+              <File Id="_....Reactive.PlatformServices.xml" Source="bin\debug\System.Reactive.PlatformServices.xml" />
+            </Component>
+
+            <Component Id="Component.System.Runtime.Remoting.dll" Guid="f3943d0a-a53f-44f7-be51-85fab1f8b7be">
+              <File Id="System.Runtime.Remoting.dll" Source="bin\debug\System.Runtime.Remoting.dll" />
+            </Component>
+
+            <Component Id="Component._...stem.Runtime.Serialization.dll" Guid="f3943d0a-a53f-44f7-be51-85fa06d9e4e6">
+              <File Id="_...stem.Runtime.Serialization.dll" Source="bin\debug\System.Runtime.Serialization.dll" />
+            </Component>
+
+            <Component Id="Component.System.ServiceModel.dll" Guid="f3943d0a-a53f-44f7-be51-85fad894c1a1">
+              <File Id="System.ServiceModel.dll" Source="bin\debug\System.ServiceModel.dll" />
+            </Component>
+
+            <Component Id="Component.System.ServiceModel.Web.dll" Guid="f3943d0a-a53f-44f7-be51-85fa0d36d59d">
+              <File Id="System.ServiceModel.Web.dll" Source="bin\debug\System.ServiceModel.Web.dll" />
+            </Component>
+
+            <Component Id="Component.System.Web.dll" Guid="f3943d0a-a53f-44f7-be51-85fae3af8960">
+              <File Id="System.Web.dll" Source="bin\debug\System.Web.dll" />
+            </Component>
+
+            <Component Id="Component.System.Web.Services.dll" Guid="f3943d0a-a53f-44f7-be51-85fa59cea77d">
+              <File Id="System.Web.Services.dll" Source="bin\debug\System.Web.Services.dll" />
+            </Component>
+
+            <Component Id="Component.System.Windows.Forms.dll" Guid="f3943d0a-a53f-44f7-be51-85faf74523f5">
+              <File Id="System.Windows.Forms.dll" Source="bin\debug\System.Windows.Forms.dll" />
+            </Component>
+
+            <Component Id="Component._...stem.Windows.Interactivity.dll" Guid="f3943d0a-a53f-44f7-be51-85fa427b924b">
+              <File Id="_...stem.Windows.Interactivity.dll" Source="bin\debug\System.Windows.Interactivity.dll" />
+            </Component>
+
+            <Component Id="Component.System.Xaml.dll" Guid="f3943d0a-a53f-44f7-be51-85fa009017ca">
+              <File Id="System.Xaml.dll" Source="bin\debug\System.Xaml.dll" />
+            </Component>
+
+            <Component Id="Component.System.Xml.dll" Guid="f3943d0a-a53f-44f7-be51-85fa348f7f88">
+              <File Id="System.Xml.dll" Source="bin\debug\System.Xml.dll" />
+            </Component>
+
+            <Component Id="Component.System.Xml.Linq.dll" Guid="f3943d0a-a53f-44f7-be51-85faa9196366">
+              <File Id="System.Xml.Linq.dll" Source="bin\debug\System.Xml.Linq.dll" />
+            </Component>
+
+            <Component Id="Component.UIAutomationProvider.dll" Guid="f3943d0a-a53f-44f7-be51-85fa0963b8f1">
+              <File Id="UIAutomationProvider.dll" Source="bin\debug\UIAutomationProvider.dll" />
+            </Component>
+
+            <Component Id="Component.UniveRss.HtmlConverter.dll" Guid="f3943d0a-a53f-44f7-be51-85fa73711d3a">
+              <File Id="UniveRss.HtmlConverter.dll" Source="bin\debug\UniveRss.HtmlConverter.dll" />
+            </Component>
+
+            <Component Id="Component.UniveRss.HtmlConverter.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa72f6c212">
+              <File Id="UniveRss.HtmlConverter.pdb" Source="bin\debug\UniveRss.HtmlConverter.pdb" />
+            </Component>
+
+            <Component Id="Component.WindowsBase.dll" Guid="f3943d0a-a53f-44f7-be51-85fafd0de2f9">
+              <File Id="WindowsBase.dll" Source="bin\debug\WindowsBase.dll" />
+            </Component>
+
+            <Component Id="Component.WindowsFormsIntegration.dll" Guid="f3943d0a-a53f-44f7-be51-85fa8a130693">
+              <File Id="WindowsFormsIntegration.dll" Source="bin\debug\WindowsFormsIntegration.dll" />
+            </Component>
+
+            <Component Id="Component.WixSharp_Setup.exe" Guid="f3943d0a-a53f-44f7-be51-85fa8505a5f5">
+              <File Id="WixSharp_Setup.exe" Source="bin\debug\WixSharp Setup.exe" />
+            </Component>
+
+            <Component Id="Component.WixSharp_Setup.exe.config" Guid="f3943d0a-a53f-44f7-be51-85faab33fb48">
+              <File Id="WixSharp_Setup.exe.config" Source="bin\debug\WixSharp Setup.exe.config" />
+            </Component>
+
+            <Component Id="Component.WixSharp_Setup.pdb" Guid="f3943d0a-a53f-44f7-be51-85fa57b77761">
+              <File Id="WixSharp_Setup.pdb" Source="bin\debug\WixSharp Setup.pdb" />
+            </Component>
+
+            <Component Id="Component.WixSharp.dll" Guid="f3943d0a-a53f-44f7-be51-85faf54a292e">
+              <File Id="WixSharp.dll" Source="bin\debug\WixSharp.dll" />
+            </Component>
+
+            <Component Id="Component.WixSharp.Msi.dll" Guid="f3943d0a-a53f-44f7-be51-85faf7a89a1e">
+              <File Id="WixSharp.Msi.dll" Source="bin\debug\WixSharp.Msi.dll" />
+            </Component>
+
+            <Component Id="Component.WixSharp.UI.dll" Guid="f3943d0a-a53f-44f7-be51-85fa698db576">
+              <File Id="WixSharp.UI.dll" Source="bin\debug\WixSharp.UI.dll" />
+            </Component>
+
+            <Component Id="Component.WixSharpSetup.exe" Guid="f3943d0a-a53f-44f7-be51-85fa3a2fc49d">
+              <File Id="WixSharpSetup.exe" Source="bin\debug\WixSharpSetup.exe" />
+            </Component>
+
+            <Component Id="Component.WixSharpSetup.exe.config" Guid="f3943d0a-a53f-44f7-be51-85fa2c4d3d46">
+              <File Id="WixSharpSetup.exe.config" Source="bin\debug\WixSharpSetup.exe.config" />
+            </Component>
+
+            <Component Id="Component.WixSharpSetup.pdb" Guid="f3943d0a-a53f-44f7-be51-85faacaff5e5">
+              <File Id="WixSharpSetup.pdb" Source="bin\debug\WixSharpSetup.pdb" />
+            </Component>
+
+            <Component Id="Component.WpfDragDropLib.dll" Guid="f3943d0a-a53f-44f7-be51-85fa1c0cece0">
+              <File Id="WpfDragDropLib.dll" Source="bin\debug\WpfDragDropLib.dll" />
+            </Component>
+
+            <Component Id="Component.WpfDragDropLib.dll.config" Guid="f3943d0a-a53f-44f7-be51-85fa908a1206">
+              <File Id="WpfDragDropLib.dll.config" Source="bin\debug\WpfDragDropLib.dll.config" />
+            </Component>
+
+            <Component Id="Component.WpfDragDropLib.pdb" Guid="f3943d0a-a53f-44f7-be51-85faa32e91b8">
+              <File Id="WpfDragDropLib.pdb" Source="bin\debug\WpfDragDropLib.pdb" />
+            </Component>
+
+            <Component Id="Uninstall_sobeesDesktop" Guid="f3943d0a-a53f-44f7-be51-85fa710b572f">
+              <Shortcut Id="INSTALLDIR.Uninstall_sobeesDesktop" WorkingDirectory="System64Folder" Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode]" Name="Uninstall sobeesDesktop.lnk" />
+
+              <CreateFolder />
+              <RemoveFolder Id="INSTALLDIR" On="uninstall" />
+
+              <RegistryKey Root="HKCU" Key="Software\WixSharp\Used">
+                <RegistryValue Value="0" Type="string" KeyPath="yes" />
+              </RegistryKey>
+            </Component>
+
+            <Directory Id="INSTALLDIR.Controls" Name="Controls">
+
+              <Component Id="Component.Sobees.Controls.Twitter.dll.1" Guid="f3943d0a-a53f-44f7-be51-85fada44efe5">
+                <File Id="Sobees.Controls.Twitter.dll.1" Source="bin\debug\Controls\Sobees.Controls.Twitter.dll" />
+              </Component>
+
+              <Component Id="Component.Sobees.Controls.Twitter.pdb.1" Guid="f3943d0a-a53f-44f7-be51-85fa9d36fb2f">
+                <File Id="Sobees.Controls.Twitter.pdb.1" Source="bin\debug\Controls\Sobees.Controls.Twitter.pdb" />
+              </Component>
+
+              <Component Id="Component._...ees.Controls.TwitterSearch.dll.1" Guid="f3943d0a-a53f-44f7-be51-85faadac98aa">
+                <File Id="_...ees.Controls.TwitterSearch.dll.1" Source="bin\debug\Controls\Sobees.Controls.TwitterSearch.dll" />
+              </Component>
+
+              <Component Id="Component._...ees.Controls.TwitterSearch.pdb.1" Guid="f3943d0a-a53f-44f7-be51-85fa25ee3c82">
+                <File Id="_...ees.Controls.TwitterSearch.pdb.1" Source="bin\debug\Controls\Sobees.Controls.TwitterSearch.pdb" />
+              </Component>
+
+            </Directory>
+
+            <Directory Id="INSTALLDIR.Data" Name="Data">
+
+              <Component Id="Component.BServiceWorkspaces.xml" Guid="f3943d0a-a53f-44f7-be51-85fa9c70a3f6">
+                <File Id="BServiceWorkspaces.xml" Source="bin\debug\Data\BServiceWorkspaces.xml" />
+              </Component>
+
+              <Component Id="Component.BTemplates.xml" Guid="f3943d0a-a53f-44f7-be51-85faad8093fc">
+                <File Id="BTemplates.xml" Source="bin\debug\Data\BTemplates.xml" />
+              </Component>
+
+            </Directory>
+
+            <Directory Id="INSTALLDIR.de" Name="de">
+
+              <Component Id="Component._...uration.BGlobals.resources.dll" Guid="f3943d0a-a53f-44f7-be51-85faeb7633b6">
+                <File Id="_...uration.BGlobals.resources.dll" Source="bin\debug\de\Sobees.Configuration.BGlobals.resources.dll" />
+              </Component>
+
+            </Directory>
+
+            <Directory Id="INSTALLDIR.es" Name="es">
+
+              <Component Id="Component._...uration.BGlobals.resources.dll.1" Guid="f3943d0a-a53f-44f7-be51-85fa50d2df80">
+                <File Id="_...uration.BGlobals.resources.dll.1" Source="bin\debug\es\Sobees.Configuration.BGlobals.resources.dll" />
+              </Component>
+
+            </Directory>
+
+            <Directory Id="INSTALLDIR.fr" Name="fr">
+
+              <Component Id="Component._...uration.BGlobals.resources.dll.2" Guid="f3943d0a-a53f-44f7-be51-85fa50d1df80">
+                <File Id="_...uration.BGlobals.resources.dll.2" Source="bin\debug\fr\Sobees.Configuration.BGlobals.resources.dll" />
+              </Component>
+
+            </Directory>
+
+            <Directory Id="INSTALLDIR.it" Name="it">
+
+              <Component Id="Component._...uration.BGlobals.resources.dll.3" Guid="f3943d0a-a53f-44f7-be51-85fa50d0df80">
+                <File Id="_...uration.BGlobals.resources.dll.3" Source="bin\debug\it\Sobees.Configuration.BGlobals.resources.dll" />
+              </Component>
+
+            </Directory>
+
+            <Directory Id="INSTALLDIR.ja" Name="ja">
+
+              <Component Id="Component._...uration.BGlobals.resources.dll.4" Guid="f3943d0a-a53f-44f7-be51-85fa50cfdf80">
+                <File Id="_...uration.BGlobals.resources.dll.4" Source="bin\debug\ja\Sobees.Configuration.BGlobals.resources.dll" />
+              </Component>
+
+            </Directory>
+
+            <Directory Id="INSTALLDIR.ko" Name="ko">
+
+              <Component Id="Component._...uration.BGlobals.resources.dll.5" Guid="f3943d0a-a53f-44f7-be51-85fa50cedf80">
+                <File Id="_...uration.BGlobals.resources.dll.5" Source="bin\debug\ko\Sobees.Configuration.BGlobals.resources.dll" />
+              </Component>
+
+            </Directory>
+
+            <Directory Id="INSTALLDIR.Properties" Name="Properties">
+
+              <Component Id="Component.sobeesForDeploy.ico" Guid="f3943d0a-a53f-44f7-be51-85fad67e712f">
+                <File Id="sobeesForDeploy.ico" Source="bin\debug\Properties\sobeesForDeploy.ico" />
+              </Component>
+
+            </Directory>
+
+            <Directory Id="INSTALLDIR.Resources" Name="Resources">
+              <Directory Id="INSTALLDIR.Resources.Images" Name="Images">
+                <Directory Id="INSTALLDIR.Resources.Images.MoodIcon" Name="MoodIcon">
+
+                  <Component Id="Component.adored.png" Guid="f3943d0a-a53f-44f7-be51-85fa45a9595a">
+                    <File Id="adored.png" Source="bin\debug\Resources\Images\MoodIcon\adored.png" />
+                  </Component>
+
+                  <Component Id="Component.aggravated.png" Guid="f3943d0a-a53f-44f7-be51-85fad274b5b0">
+                    <File Id="aggravated.png" Source="bin\debug\Resources\Images\MoodIcon\aggravated.png" />
+                  </Component>
+
+                  <Component Id="Component.amused.png" Guid="f3943d0a-a53f-44f7-be51-85fa174d58a0">
+                    <File Id="amused.png" Source="bin\debug\Resources\Images\MoodIcon\amused.png" />
+                  </Component>
+
+                  <Component Id="Component.angry.png" Guid="f3943d0a-a53f-44f7-be51-85fa07c646e5">
+                    <File Id="angry.png" Source="bin\debug\Resources\Images\MoodIcon\angry.png" />
+                  </Component>
+
+                  <Component Id="Component.annoyed.png" Guid="f3943d0a-a53f-44f7-be51-85fa1a4e709f">
+                    <File Id="annoyed.png" Source="bin\debug\Resources\Images\MoodIcon\annoyed.png" />
+                  </Component>
+
+                  <Component Id="Component.anxious.png" Guid="f3943d0a-a53f-44f7-be51-85fa5432f580">
+                    <File Id="anxious.png" Source="bin\debug\Resources\Images\MoodIcon\anxious.png" />
+                  </Component>
+
+                  <Component Id="Component.apathetic.png" Guid="f3943d0a-a53f-44f7-be51-85fa623e192a">
+                    <File Id="apathetic.png" Source="bin\debug\Resources\Images\MoodIcon\apathetic.png" />
+                  </Component>
+
+                  <Component Id="Component.artistic.png" Guid="f3943d0a-a53f-44f7-be51-85fa4cbb44a0">
+                    <File Id="artistic.png" Source="bin\debug\Resources\Images\MoodIcon\artistic.png" />
+                  </Component>
+
+                  <Component Id="Component.awake.png" Guid="f3943d0a-a53f-44f7-be51-85fad13cb68a">
+                    <File Id="awake.png" Source="bin\debug\Resources\Images\MoodIcon\awake.png" />
+                  </Component>
+
+                  <Component Id="Component.bitchy.png" Guid="f3943d0a-a53f-44f7-be51-85fa1eabf495">
+                    <File Id="bitchy.png" Source="bin\debug\Resources\Images\MoodIcon\bitchy.png" />
+                  </Component>
+
+                  <Component Id="Component.blah.png" Guid="f3943d0a-a53f-44f7-be51-85fadb36cf23">
+                    <File Id="blah.png" Source="bin\debug\Resources\Images\MoodIcon\blah.png" />
+                  </Component>
+
+                  <Component Id="Component.bored.png" Guid="f3943d0a-a53f-44f7-be51-85fa271357c6">
+                    <File Id="bored.png" Source="bin\debug\Resources\Images\MoodIcon\bored.png" />
+                  </Component>
+
+                  <Component Id="Component.bouncey.png" Guid="f3943d0a-a53f-44f7-be51-85faf1479ccc">
+                    <File Id="bouncey.png" Source="bin\debug\Resources\Images\MoodIcon\bouncey.png" />
+                  </Component>
+
+                  <Component Id="Component.busy.png" Guid="f3943d0a-a53f-44f7-be51-85fa64e2cc55">
+                    <File Id="busy.png" Source="bin\debug\Resources\Images\MoodIcon\busy.png" />
+                  </Component>
+
+                  <Component Id="Component.chipper.png" Guid="f3943d0a-a53f-44f7-be51-85fabe38c29f">
+                    <File Id="chipper.png" Source="bin\debug\Resources\Images\MoodIcon\chipper.png" />
+                  </Component>
+
+                  <Component Id="Component.cold.png" Guid="f3943d0a-a53f-44f7-be51-85fafa28fb69">
+                    <File Id="cold.png" Source="bin\debug\Resources\Images\MoodIcon\cold.png" />
+                  </Component>
+
+                  <Component Id="Component.confused.png" Guid="f3943d0a-a53f-44f7-be51-85faadc463ed">
+                    <File Id="confused.png" Source="bin\debug\Resources\Images\MoodIcon\confused.png" />
+                  </Component>
+
+                  <Component Id="Component.contemplative.png" Guid="f3943d0a-a53f-44f7-be51-85fa65ddfcd7">
+                    <File Id="contemplative.png" Source="bin\debug\Resources\Images\MoodIcon\contemplative.png" />
+                  </Component>
+
+                  <Component Id="Component.cooky.png" Guid="f3943d0a-a53f-44f7-be51-85fa30247fc7">
+                    <File Id="cooky.png" Source="bin\debug\Resources\Images\MoodIcon\cooky.png" />
+                  </Component>
+
+                  <Component Id="Component.crappy.png" Guid="f3943d0a-a53f-44f7-be51-85fa8707fdfa">
+                    <File Id="crappy.png" Source="bin\debug\Resources\Images\MoodIcon\crappy.png" />
+                  </Component>
+
+                  <Component Id="Component.crazy.png" Guid="f3943d0a-a53f-44f7-be51-85faae5df590">
+                    <File Id="crazy.png" Source="bin\debug\Resources\Images\MoodIcon\crazy.png" />
+                  </Component>
+
+                  <Component Id="Component.curious.png" Guid="f3943d0a-a53f-44f7-be51-85fa14669775">
+                    <File Id="curious.png" Source="bin\debug\Resources\Images\MoodIcon\curious.png" />
+                  </Component>
+
+                  <Component Id="Component.devious.png" Guid="f3943d0a-a53f-44f7-be51-85fae8c658b1">
+                    <File Id="devious.png" Source="bin\debug\Resources\Images\MoodIcon\devious.png" />
+                  </Component>
+
+                  <Component Id="Component.drained.png" Guid="f3943d0a-a53f-44f7-be51-85fa2fe16ac3">
+                    <File Id="drained.png" Source="bin\debug\Resources\Images\MoodIcon\drained.png" />
+                  </Component>
+
+                  <Component Id="Component.electric.png" Guid="f3943d0a-a53f-44f7-be51-85fabcd9ee13">
+                    <File Id="electric.png" Source="bin\debug\Resources\Images\MoodIcon\electric.png" />
+                  </Component>
+
+                  <Component Id="Component.examimate.png" Guid="f3943d0a-a53f-44f7-be51-85fa512c4607">
+                    <File Id="examimate.png" Source="bin\debug\Resources\Images\MoodIcon\examimate.png" />
+                  </Component>
+
+                  <Component Id="Component.flirty.png" Guid="f3943d0a-a53f-44f7-be51-85fac0926f82">
+                    <File Id="flirty.png" Source="bin\debug\Resources\Images\MoodIcon\flirty.png" />
+                  </Component>
+
+                  <Component Id="Component.focused.png" Guid="f3943d0a-a53f-44f7-be51-85fa8c04cb71">
+                    <File Id="focused.png" Source="bin\debug\Resources\Images\MoodIcon\focused.png" />
+                  </Component>
+
+                  <Component Id="Component.geeky.png" Guid="f3943d0a-a53f-44f7-be51-85fa7217e5ed">
+                    <File Id="geeky.png" Source="bin\debug\Resources\Images\MoodIcon\geeky.png" />
+                  </Component>
+
+                  <Component Id="Component.gloomy.png" Guid="f3943d0a-a53f-44f7-be51-85faf24b1a90">
+                    <File Id="gloomy.png" Source="bin\debug\Resources\Images\MoodIcon\gloomy.png" />
+                  </Component>
+
+                  <Component Id="Component.happy.png" Guid="f3943d0a-a53f-44f7-be51-85fab6ddf5d7">
+                    <File Id="happy.png" Source="bin\debug\Resources\Images\MoodIcon\happy.png" />
+                  </Component>
+
+                  <Component Id="Component.headphones.png" Guid="f3943d0a-a53f-44f7-be51-85fac94d9544">
+                    <File Id="headphones.png" Source="bin\debug\Resources\Images\MoodIcon\headphones.png" />
+                  </Component>
+
+                  <Component Id="Component.horny.png" Guid="f3943d0a-a53f-44f7-be51-85fa3bf5f515">
+                    <File Id="horny.png" Source="bin\debug\Resources\Images\MoodIcon\horny.png" />
+                  </Component>
+
+                  <Component Id="Component.hungry.png" Guid="f3943d0a-a53f-44f7-be51-85fa91b85244">
+                    <File Id="hungry.png" Source="bin\debug\Resources\Images\MoodIcon\hungry.png" />
+                  </Component>
+
+                  <Component Id="Component.indescribable.png" Guid="f3943d0a-a53f-44f7-be51-85facd5e2ff3">
+                    <File Id="indescribable.png" Source="bin\debug\Resources\Images\MoodIcon\indescribable.png" />
+                  </Component>
+
+                  <Component Id="Component.kiss.png" Guid="f3943d0a-a53f-44f7-be51-85fa801f05e8">
+                    <File Id="kiss.png" Source="bin\debug\Resources\Images\MoodIcon\kiss.png" />
+                  </Component>
+
+                  <Component Id="Component.lazy.png" Guid="f3943d0a-a53f-44f7-be51-85fa70631db6">
+                    <File Id="lazy.png" Source="bin\debug\Resources\Images\MoodIcon\lazy.png" />
+                  </Component>
+
+                  <Component Id="Component.love.png" Guid="f3943d0a-a53f-44f7-be51-85fa99b11d32">
+                    <File Id="love.png" Source="bin\debug\Resources\Images\MoodIcon\love.png" />
+                  </Component>
+
+                  <Component Id="Component.moody.png" Guid="f3943d0a-a53f-44f7-be51-85fa84d5c791">
+                    <File Id="moody.png" Source="bin\debug\Resources\Images\MoodIcon\moody.png" />
+                  </Component>
+
+                  <Component Id="Component.none.png" Guid="f3943d0a-a53f-44f7-be51-85fafe3f5cb4">
+                    <File Id="none.png" Source="bin\debug\Resources\Images\MoodIcon\none.png" />
+                  </Component>
+
+                  <Component Id="Component.scared.png" Guid="f3943d0a-a53f-44f7-be51-85faf39c33a6">
+                    <File Id="scared.png" Source="bin\debug\Resources\Images\MoodIcon\scared.png" />
+                  </Component>
+
+                  <Component Id="Component.sleepy.png" Guid="f3943d0a-a53f-44f7-be51-85fa0edf3cbd">
+                    <File Id="sleepy.png" Source="bin\debug\Resources\Images\MoodIcon\sleepy.png" />
+                  </Component>
+
+                  <Component Id="Component.tired.png" Guid="f3943d0a-a53f-44f7-be51-85fa6ea47df0">
+                    <File Id="tired.png" Source="bin\debug\Resources\Images\MoodIcon\tired.png" />
+                  </Component>
+
+                  <Component Id="Component.unhappy.png" Guid="f3943d0a-a53f-44f7-be51-85faa5208653">
+                    <File Id="unhappy.png" Source="bin\debug\Resources\Images\MoodIcon\unhappy.png" />
+                  </Component>
+
+                  <Component Id="Component.vital.png" Guid="f3943d0a-a53f-44f7-be51-85fac68c7620">
+                    <File Id="vital.png" Source="bin\debug\Resources\Images\MoodIcon\vital.png" />
+                  </Component>
+
+                  <Component Id="Component.weird.png" Guid="f3943d0a-a53f-44f7-be51-85fa671bd8aa">
+                    <File Id="weird.png" Source="bin\debug\Resources\Images\MoodIcon\weird.png" />
+                  </Component>
+
+                </Directory>
+              </Directory>
+            </Directory>
+
+            <Directory Id="INSTALLDIR.Themes" Name="Themes">
+
+              <Component Id="Component.Sobees.Themes.BThemeBlack.dll.1" Guid="f3943d0a-a53f-44f7-be51-85fab83d896a">
+                <File Id="Sobees.Themes.BThemeBlack.dll.1" Source="bin\debug\Themes\Sobees.Themes.BThemeBlack.dll" />
+              </Component>
+
+              <Component Id="Component._...ees.Themes.BThemeClassical.dll.1" Guid="f3943d0a-a53f-44f7-be51-85fa2f92fece">
+                <File Id="_...ees.Themes.BThemeClassical.dll.1" Source="bin\debug\Themes\Sobees.Themes.BThemeClassical.dll" />
+              </Component>
+
+              <Component Id="Component.Sobees.Themes.BThemeForest.dll.1" Guid="f3943d0a-a53f-44f7-be51-85faa258edde">
+                <File Id="Sobees.Themes.BThemeForest.dll.1" Source="bin\debug\Themes\Sobees.Themes.BThemeForest.dll" />
+              </Component>
+
+              <Component Id="Component.Sobees.Themes.BThemePurple.dll.1" Guid="f3943d0a-a53f-44f7-be51-85fa33a32e31">
+                <File Id="Sobees.Themes.BThemePurple.dll.1" Source="bin\debug\Themes\Sobees.Themes.BThemePurple.dll" />
+              </Component>
+
+              <Component Id="Component.Sobees.Themes.BThemeSnow.dll.1" Guid="f3943d0a-a53f-44f7-be51-85fa0c0b3144">
+                <File Id="Sobees.Themes.BThemeSnow.dll.1" Source="bin\debug\Themes\Sobees.Themes.BThemeSnow.dll" />
+              </Component>
+
+            </Directory>
+
+            <Directory Id="INSTALLDIR.zh_Hans" Name="zh-Hans">
+
+              <Component Id="Component._...uration.BGlobals.resources.dll.6" Guid="f3943d0a-a53f-44f7-be51-85fa50cddf80">
+                <File Id="_...uration.BGlobals.resources.dll.6" Source="bin\debug\zh-Hans\Sobees.Configuration.BGlobals.resources.dll" />
+              </Component>
+
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+
+      <Directory Id="TARGETDIR.INSTALLDIR" Name="INSTALLDIR">
+
+        <Component Id="INSTALLDIR.EmptyDirectory" Guid="f3943d0a-a53f-44f7-be51-85faebfc1b64" KeyPath="yes">
+          <CreateFolder />
+          <RemoveFolder Id="TARGETDIR.INSTALLDIR" On="uninstall" />
+        </Component>
+
+      </Directory>
+
+      <Directory Id="DesktopFolder" Name="DesktopFolder">
+
+        <Component Id="DesktopFolder.EmptyDirectory" Guid="f3943d0a-a53f-44f7-be51-85fa2e9ed80d">
+          <CreateFolder />
+
+          <RegistryKey Root="HKCU" Key="Software\WixSharp\Used">
+            <RegistryValue Value="0" Type="string" KeyPath="yes" />
+          </RegistryKey>
+        </Component>
+
+      </Directory>
+
+      <Component Id="TARGETDIR" Guid="f3943d0a-a53f-44f7-be51-85fac3877016" KeyPath="yes">
+        <CreateFolder />
+        <RemoveFolder Id="TARGETDIR" On="uninstall" />
+      </Component>
+
+    </Directory>
+
+    <Icon Id="IconFile1_sobees.ico" SourceFile="bin\debug\sobees.ico" />
+
+    <UIRef Id="WixUI_InstallDir" />
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+
+    <Feature Id="Complete" Title="Complete" Absent="allow" Level="1">
+      <ComponentRef Id="Component.BGlassWindow.dll" />
+      <ComponentRef Id="Component.BGlassWindow.pdb" />
+      <ComponentRef Id="Component.BootstrapperCore.dll" />
+      <ComponentRef Id="Component.Capture_logfile.jpg" />
+      <ComponentRef Id="Component.GalaSoft.MvvmLight.dll" />
+      <ComponentRef Id="Component.GalaSoft.MvvmLight.Extras.dll" />
+      <ComponentRef Id="Component.GalaSoft.MvvmLight.Extras.pdb" />
+      <ComponentRef Id="Component.GalaSoft.MvvmLight.Extras.xml" />
+      <ComponentRef Id="Component.GalaSoft.MvvmLight.pdb" />
+      <ComponentRef Id="Component._...alaSoft.MvvmLight.Platform.dll" />
+      <ComponentRef Id="Component._...alaSoft.MvvmLight.Platform.pdb" />
+      <ComponentRef Id="Component._...alaSoft.MvvmLight.Platform.xml" />
+      <ComponentRef Id="Component.GalaSoft.MvvmLight.xml" />
+      <ComponentRef Id="Component.Hammock.ClientProfile.dll" />
+      <ComponentRef Id="Component.Hammock.ClientProfile.pdb" />
+      <ComponentRef Id="Component.Hammock.dll" />
+      <ComponentRef Id="Component.Hammock.pdb" />
+      <ComponentRef Id="Component.HtmlAgilityPack.dll" />
+      <ComponentRef Id="Component.HtmlAgilityPack.pdb" />
+      <ComponentRef Id="Component.HtmlAgilityPack.xml" />
+      <ComponentRef Id="Component.ICSharpCode.SharpZipLib.dll" />
+      <ComponentRef Id="Component.LinqToTwitter.AspNet.dll" />
+      <ComponentRef Id="Component.LinqToTwitter.net.dll" />
+      <ComponentRef Id="Component.log4net.dll" />
+      <ComponentRef Id="Component.log4net.xml" />
+      <ComponentRef Id="Component._...eployment.WindowsInstaller.dll" />
+      <ComponentRef Id="Component._...ft.Expression.Interactions.dll" />
+      <ComponentRef Id="Component._....Practices.ServiceLocation.dll" />
+      <ComponentRef Id="Component._....Practices.ServiceLocation.pdb" />
+      <ComponentRef Id="Component._....Practices.ServiceLocation.xml" />
+      <ComponentRef Id="Component._...crosoft.WindowsAPICodePack.dll" />
+      <ComponentRef Id="Component._...t.WindowsAPICodePack.Shell.dll" />
+      <ComponentRef Id="Component.Newtonsoft.Json.dll" />
+      <ComponentRef Id="Component.Newtonsoft.Json.xml" />
+      <ComponentRef Id="Component.PresentationCore.dll" />
+      <ComponentRef Id="Component.PresentationFramework.Aero.dll" />
+      <ComponentRef Id="Component.PresentationFramework.dll" />
+      <ComponentRef Id="Component._...ees.Configuration.BGlobals.dll" />
+      <ComponentRef Id="Component._...figuration.BGlobals.dll.config" />
+      <ComponentRef Id="Component._...ees.Configuration.BGlobals.pdb" />
+      <ComponentRef Id="Component.Sobees.Controls.Twitter.dll" />
+      <ComponentRef Id="Component._...es.Controls.Twitter.dll.config" />
+      <ComponentRef Id="Component.Sobees.Controls.Twitter.pdb" />
+      <ComponentRef Id="Component._...ees.Controls.TwitterSearch.dll" />
+      <ComponentRef Id="Component._...trols.TwitterSearch.dll.config" />
+      <ComponentRef Id="Component._...ees.Controls.TwitterSearch.pdb" />
+      <ComponentRef Id="Component.Sobees.exe" />
+      <ComponentRef Id="Component.Sobees.exe.config" />
+      <ComponentRef Id="Component.sobees.ico" />
+      <ComponentRef Id="Component.Sobees.Infrastructure.dll" />
+      <ComponentRef Id="Component._...bees.Infrastructure.dll.config" />
+      <ComponentRef Id="Component.Sobees.Infrastructure.pdb" />
+      <ComponentRef Id="Component._...bees.Library.BChromeWindow.dll" />
+      <ComponentRef Id="Component._...brary.BChromeWindow.dll.config" />
+      <ComponentRef Id="Component._...bees.Library.BChromeWindow.pdb" />
+      <ComponentRef Id="Component.Sobees.Library.BGenericLib.dll" />
+      <ComponentRef Id="Component._...Library.BGenericLib.dll.config" />
+      <ComponentRef Id="Component.Sobees.Library.BGenericLib.pdb" />
+      <ComponentRef Id="Component.Sobees.Library.BGoogleLib.dll" />
+      <ComponentRef Id="Component.Sobees.Library.BGoogleLib.pdb" />
+      <ComponentRef Id="Component._...obees.Library.BLocalizeLib.dll" />
+      <ComponentRef Id="Component._...ibrary.BLocalizeLib.dll.config" />
+      <ComponentRef Id="Component._...obees.Library.BLocalizeLib.pdb" />
+      <ComponentRef Id="Component._...Library.BResolveUrlLibrary.dll" />
+      <ComponentRef Id="Component._....BResolveUrlLibrary.dll.config" />
+      <ComponentRef Id="Component._...Library.BResolveUrlLibrary.pdb" />
+      <ComponentRef Id="Component._...obees.Library.BServicesLib.dll" />
+      <ComponentRef Id="Component._...ibrary.BServicesLib.dll.config" />
+      <ComponentRef Id="Component._...obees.Library.BServicesLib.pdb" />
+      <ComponentRef Id="Component._...Library.BTransitionEffects.dll" />
+      <ComponentRef Id="Component._...Library.BTransitionEffects.pdb" />
+      <ComponentRef Id="Component.Sobees.Library.BTwitterLib.dll" />
+      <ComponentRef Id="Component._...Library.BTwitterLib.dll.config" />
+      <ComponentRef Id="Component.Sobees.Library.BTwitterLib.pdb" />
+      <ComponentRef Id="Component.Sobees.Library.BUtilities.dll" />
+      <ComponentRef Id="Component._....Library.BUtilities.dll.config" />
+      <ComponentRef Id="Component.Sobees.Library.BUtilities.pdb" />
+      <ComponentRef Id="Component._....BUtilities.XmlSerializers.dll" />
+      <ComponentRef Id="Component.Sobees.pdb" />
+      <ComponentRef Id="Component.Sobees.Templates.dll" />
+      <ComponentRef Id="Component.Sobees.Templates.pdb" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemeBlack.dll" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemeBlack.pdb" />
+      <ComponentRef Id="Component._...ees.Themes.BThemeClassical.dll" />
+      <ComponentRef Id="Component._...ees.Themes.BThemeClassical.pdb" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemeForest.dll" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemeForest.pdb" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemePurple.dll" />
+      <ComponentRef Id="Component._...Themes.BThemePurple.dll.config" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemePurple.pdb" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemeSnow.dll" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemeSnow.pdb" />
+      <ComponentRef Id="Component.Sobees.Tools.dll" />
+      <ComponentRef Id="Component.Sobees.Tools.pdb" />
+      <ComponentRef Id="Component.System.Configuration.dll" />
+      <ComponentRef Id="Component._...tem.Data.DataSetExtensions.dll" />
+      <ComponentRef Id="Component.System.Data.dll" />
+      <ComponentRef Id="Component.System.Deployment.dll" />
+      <ComponentRef Id="Component.System.dll" />
+      <ComponentRef Id="Component.System.Drawing.dll" />
+      <ComponentRef Id="Component.System.EnterpriseServices.dll" />
+      <ComponentRef Id="Component.System.IO.Compression.dll" />
+      <ComponentRef Id="Component.System.Net.Http.dll" />
+      <ComponentRef Id="Component.System.Net.Http.Extensions.dll" />
+      <ComponentRef Id="Component.System.Net.Http.Extensions.xml" />
+      <ComponentRef Id="Component.System.Net.Http.Primitives.dll" />
+      <ComponentRef Id="Component.System.Net.Http.Primitives.xml" />
+      <ComponentRef Id="Component.System.Net.Http.WebRequest.dll" />
+      <ComponentRef Id="Component.System.Reactive.Core.dll" />
+      <ComponentRef Id="Component.System.Reactive.Core.xml" />
+      <ComponentRef Id="Component.System.Reactive.Interfaces.dll" />
+      <ComponentRef Id="Component.System.Reactive.Interfaces.xml" />
+      <ComponentRef Id="Component.System.Reactive.Linq.dll" />
+      <ComponentRef Id="Component.System.Reactive.Linq.xml" />
+      <ComponentRef Id="Component._....Reactive.PlatformServices.dll" />
+      <ComponentRef Id="Component._....Reactive.PlatformServices.xml" />
+      <ComponentRef Id="Component.System.Runtime.Remoting.dll" />
+      <ComponentRef Id="Component._...stem.Runtime.Serialization.dll" />
+      <ComponentRef Id="Component.System.ServiceModel.dll" />
+      <ComponentRef Id="Component.System.ServiceModel.Web.dll" />
+      <ComponentRef Id="Component.System.Web.dll" />
+      <ComponentRef Id="Component.System.Web.Services.dll" />
+      <ComponentRef Id="Component.System.Windows.Forms.dll" />
+      <ComponentRef Id="Component._...stem.Windows.Interactivity.dll" />
+      <ComponentRef Id="Component.System.Xaml.dll" />
+      <ComponentRef Id="Component.System.Xml.dll" />
+      <ComponentRef Id="Component.System.Xml.Linq.dll" />
+      <ComponentRef Id="Component.UIAutomationProvider.dll" />
+      <ComponentRef Id="Component.UniveRss.HtmlConverter.dll" />
+      <ComponentRef Id="Component.UniveRss.HtmlConverter.pdb" />
+      <ComponentRef Id="Component.WindowsBase.dll" />
+      <ComponentRef Id="Component.WindowsFormsIntegration.dll" />
+      <ComponentRef Id="Component.WixSharp_Setup.exe" />
+      <ComponentRef Id="Component.WixSharp_Setup.exe.config" />
+      <ComponentRef Id="Component.WixSharp_Setup.pdb" />
+      <ComponentRef Id="Component.WixSharp.dll" />
+      <ComponentRef Id="Component.WixSharp.Msi.dll" />
+      <ComponentRef Id="Component.WixSharp.UI.dll" />
+      <ComponentRef Id="Component.WixSharpSetup.exe" />
+      <ComponentRef Id="Component.WixSharpSetup.exe.config" />
+      <ComponentRef Id="Component.WixSharpSetup.pdb" />
+      <ComponentRef Id="Component.WpfDragDropLib.dll" />
+      <ComponentRef Id="Component.WpfDragDropLib.dll.config" />
+      <ComponentRef Id="Component.WpfDragDropLib.pdb" />
+      <ComponentRef Id="Uninstall_sobeesDesktop" />
+      <ComponentRef Id="Component.Sobees.Controls.Twitter.dll.1" />
+      <ComponentRef Id="Component.Sobees.Controls.Twitter.pdb.1" />
+      <ComponentRef Id="Component._...ees.Controls.TwitterSearch.dll.1" />
+      <ComponentRef Id="Component._...ees.Controls.TwitterSearch.pdb.1" />
+      <ComponentRef Id="Component.BServiceWorkspaces.xml" />
+      <ComponentRef Id="Component.BTemplates.xml" />
+      <ComponentRef Id="Component._...uration.BGlobals.resources.dll" />
+      <ComponentRef Id="Component._...uration.BGlobals.resources.dll.1" />
+      <ComponentRef Id="Component._...uration.BGlobals.resources.dll.2" />
+      <ComponentRef Id="Component._...uration.BGlobals.resources.dll.3" />
+      <ComponentRef Id="Component._...uration.BGlobals.resources.dll.4" />
+      <ComponentRef Id="Component._...uration.BGlobals.resources.dll.5" />
+      <ComponentRef Id="Component.sobeesForDeploy.ico" />
+      <ComponentRef Id="Component.adored.png" />
+      <ComponentRef Id="Component.aggravated.png" />
+      <ComponentRef Id="Component.amused.png" />
+      <ComponentRef Id="Component.angry.png" />
+      <ComponentRef Id="Component.annoyed.png" />
+      <ComponentRef Id="Component.anxious.png" />
+      <ComponentRef Id="Component.apathetic.png" />
+      <ComponentRef Id="Component.artistic.png" />
+      <ComponentRef Id="Component.awake.png" />
+      <ComponentRef Id="Component.bitchy.png" />
+      <ComponentRef Id="Component.blah.png" />
+      <ComponentRef Id="Component.bored.png" />
+      <ComponentRef Id="Component.bouncey.png" />
+      <ComponentRef Id="Component.busy.png" />
+      <ComponentRef Id="Component.chipper.png" />
+      <ComponentRef Id="Component.cold.png" />
+      <ComponentRef Id="Component.confused.png" />
+      <ComponentRef Id="Component.contemplative.png" />
+      <ComponentRef Id="Component.cooky.png" />
+      <ComponentRef Id="Component.crappy.png" />
+      <ComponentRef Id="Component.crazy.png" />
+      <ComponentRef Id="Component.curious.png" />
+      <ComponentRef Id="Component.devious.png" />
+      <ComponentRef Id="Component.drained.png" />
+      <ComponentRef Id="Component.electric.png" />
+      <ComponentRef Id="Component.examimate.png" />
+      <ComponentRef Id="Component.flirty.png" />
+      <ComponentRef Id="Component.focused.png" />
+      <ComponentRef Id="Component.geeky.png" />
+      <ComponentRef Id="Component.gloomy.png" />
+      <ComponentRef Id="Component.happy.png" />
+      <ComponentRef Id="Component.headphones.png" />
+      <ComponentRef Id="Component.horny.png" />
+      <ComponentRef Id="Component.hungry.png" />
+      <ComponentRef Id="Component.indescribable.png" />
+      <ComponentRef Id="Component.kiss.png" />
+      <ComponentRef Id="Component.lazy.png" />
+      <ComponentRef Id="Component.love.png" />
+      <ComponentRef Id="Component.moody.png" />
+      <ComponentRef Id="Component.none.png" />
+      <ComponentRef Id="Component.scared.png" />
+      <ComponentRef Id="Component.sleepy.png" />
+      <ComponentRef Id="Component.tired.png" />
+      <ComponentRef Id="Component.unhappy.png" />
+      <ComponentRef Id="Component.vital.png" />
+      <ComponentRef Id="Component.weird.png" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemeBlack.dll.1" />
+      <ComponentRef Id="Component._...ees.Themes.BThemeClassical.dll.1" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemeForest.dll.1" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemePurple.dll.1" />
+      <ComponentRef Id="Component.Sobees.Themes.BThemeSnow.dll.1" />
+      <ComponentRef Id="Component._...uration.BGlobals.resources.dll.6" />
+      <ComponentRef Id="INSTALLDIR.EmptyDirectory" />
+      <ComponentRef Id="DesktopFolder.EmptyDirectory" />
+      <ComponentRef Id="TARGETDIR" />
+    </Feature>
+
+  </Product>
+</Wix>
+

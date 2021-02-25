@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9A243E5-6443-4A00-ACAC-C20A61286264}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SobeesMsiSetup</RootNamespace>
+    <AssemblyName>WixSharpSetup</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="wix\SobeesMsiSetup.g.wxs" />
+    <None Include="wix\$(ProjectName).g.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wix\SobeesSetupMsi.g.wxs">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WiX">
+      <Version>3.10.3</Version>
+    </PackageReference>
+    <PackageReference Include="WiX.Toolset">
+      <Version>3.9.1208</Version>
+    </PackageReference>
+    <PackageReference Include="WixSharp">
+      <Version>1.4.2</Version>
+    </PackageReference>
+    <PackageReference Include="WixSharp.wix.bin">
+      <Version>3.10.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Controls\Sobees.Controls.Twitter.WPF\Sobees.Controls.Twitter.WPF.csproj">
+      <Project>{5e1b61eb-d393-465a-b706-fc516c456f3d}</Project>
+      <Name>Sobees.Controls.Twitter.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Controls\Sobees.Controls.TwitterSearch.WPF\Sobees.Controls.TwitterSearch.WPF.csproj">
+      <Project>{d477a7f0-ec09-45eb-8ee9-7b1c2e76a0dd}</Project>
+      <Name>Sobees.Controls.TwitterSearch.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastucture\Sobees.Infrastructure.WPF\Sobees.Infrastructure.WPF.csproj">
+      <Project>{0aa29174-3175-4583-9cbb-c08fbb7c2245}</Project>
+      <Name>Sobees.Infrastructure.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastucture\Sobees.Tools.WPF\Sobees.Tools.WPF.csproj">
+      <Project>{266d7349-a7ec-4b5b-aa38-44d5ab276357}</Project>
+      <Name>Sobees.Tools.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SharedLibraries\BChromeWindow\BChromeWindow.csproj">
+      <Project>{6e840110-c9e8-4c86-a061-4ed8f3438f12}</Project>
+      <Name>BChromeWindow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SharedLibraries\BDragDropLib\WpfDragDropLib\BDragDropLib.csproj">
+      <Project>{2daf1685-10c7-46b9-9c99-b38cc6143c89}</Project>
+      <Name>BDragDropLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SharedLibraries\BGenericLib\BGenericLib.csproj">
+      <Project>{4f658495-3989-461d-b2be-a989abaf1a47}</Project>
+      <Name>BGenericLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SharedLibraries\BGlassWindow\BGlassWindow.csproj">
+      <Project>{c3309487-776a-479e-8cdc-be291631b12b}</Project>
+      <Name>BGlassWindow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SharedLibraries\BLocalizeLib\BLocalizeLib.csproj">
+      <Project>{d52af832-82bc-4b1a-bc9c-16d2c204f169}</Project>
+      <Name>BLocalizeLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SharedLibraries\BResolveUrlLibrary\BResolveUrlLibrary.csproj">
+      <Project>{dd6a4521-3405-4b1a-8c6b-638b65d8e8a4}</Project>
+      <Name>BResolveUrlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SharedLibraries\BServicesLib\BServicesLib.csproj">
+      <Project>{0f71f91f-358f-4320-8618-c4efb140edc7}</Project>
+      <Name>BServicesLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SharedLibraries\BTransitionEffects\BTransitionEffects.csproj">
+      <Project>{c044c5a8-5694-4311-ab9b-fe1e122aefe2}</Project>
+      <Name>BTransitionEffects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SharedLibraries\BTwitterLib\BTwitterLib.csproj">
+      <Project>{3581983a-7231-4f33-a3f8-73bcf040bfd4}</Project>
+      <Name>BTwitterLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SharedLibraries\BUtilities\BUtilities.csproj">
+      <Project>{a1326555-ad64-4a93-a95c-b68abd5672d4}</Project>
+      <Name>BUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SharedLibraries\GAPI\GAPI\BGoogleLib.csproj">
+      <Project>{4e43c62a-4f88-45b6-a420-ece29917822c}</Project>
+      <Name>BGoogleLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Templates\Sobees.Templates.WPF\Sobees.Templates.WPF.csproj">
+      <Project>{a13a71eb-4dbe-4653-875f-e8fc359be2a4}</Project>
+      <Name>Sobees.Templates.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Templates\Themes\BThemeBlack.WPF\BThemeBlack.WPF.csproj">
+      <Project>{5ee0fbff-3a4b-4892-b5fb-09e30ffc312b}</Project>
+      <Name>BThemeBlack.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Templates\Themes\bThemeClassical.WPF\BThemeClassical.WPF.csproj">
+      <Project>{7661680b-0696-4f3a-8c90-992fb1728971}</Project>
+      <Name>BThemeClassical.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Templates\Themes\BThemeForest.WPF\BThemeForest.WPF.csproj">
+      <Project>{4bc73253-cae9-474b-bb52-d7c8750b39dd}</Project>
+      <Name>BThemeForest.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Templates\Themes\BThemePurple.WPF\BThemePurple.WPF.csproj">
+      <Project>{565a74ed-24a3-48ac-905e-4cd16d54f0d4}</Project>
+      <Name>BThemePurple.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Templates\Themes\BThemeSnow.WPF\BThemeSnow.WPF.csproj">
+      <Project>{f859ca26-f5ab-421b-807d-fe4ed3b257e5}</Project>
+      <Name>BThemeSnow.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ThirdParty\UniveRss.HtmlConverter\UniveRss.HtmlConverter\UniveRss.HtmlConverter.csproj">
+      <Project>{b022381a-54f6-4b3c-b13f-f95fbfbb54ae}</Project>
+      <Name>UniveRss.HtmlConverter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WPF\BGlobals.WPF\BGlobals.WPF.csproj">
+      <Project>{a0d73dd4-543f-41c7-8ade-ed57d8b5eb90}</Project>
+      <Name>BGlobals.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WPF\Sobees.WPF\Sobees.WPF.csproj">
+      <Project>{1a04eedb-92b1-4900-a7f6-4967deb9e1b8}</Project>
+      <Name>Sobees.WPF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

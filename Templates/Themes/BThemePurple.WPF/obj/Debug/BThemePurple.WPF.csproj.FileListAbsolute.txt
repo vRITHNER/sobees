@@ -1,0 +1,12 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Output\Debug\Themes\Sobees.Themes.BThemePurple.dll.config
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Output\Debug\Themes\Sobees.Themes.BThemePurple.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Output\Debug\Themes\Sobees.Themes.BThemePurple.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemePurple.WPF\obj\Debug\BThemePurple.WPF.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemePurple.WPF\obj\Debug\ThemePurple.baml
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemePurple.WPF\obj\Debug\Sobees.Themes.BThemePurple_MarkupCompile.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemePurple.WPF\obj\Debug\Sobees.Themes.BThemePurple.g.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemePurple.WPF\obj\Debug\Sobees.Themes.BThemePurple.Properties.Resources.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemePurple.WPF\obj\Debug\BThemePurple.WPF.csproj.GenerateResource.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemePurple.WPF\obj\Debug\BThemePurple.WPF.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemePurple.WPF\obj\Debug\Sobees.Themes.BThemePurple.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Templates\Themes\BThemePurple.WPF\obj\Debug\Sobees.Themes.BThemePurple.pdb

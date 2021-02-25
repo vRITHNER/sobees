@@ -1,0 +1,11 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BChromeWindow.dll.config
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BChromeWindow.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BChromeWindow.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BChromeWindow\obj\Debug\BChromeWindow.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BChromeWindow\obj\Debug\BChromeWindowTemplate.baml
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BChromeWindow\obj\Debug\Sobees.Library.BChromeWindow_MarkupCompile.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BChromeWindow\obj\Debug\Sobees.Library.BChromeWindow.g.resources
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BChromeWindow\obj\Debug\BChromeWindow.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BChromeWindow\obj\Debug\BChromeWindow.csproj.CopyComplete
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BChromeWindow\obj\Debug\Sobees.Library.BChromeWindow.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BChromeWindow\obj\Debug\Sobees.Library.BChromeWindow.pdb

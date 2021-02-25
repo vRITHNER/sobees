@@ -1,0 +1,432 @@
+﻿<UserControl x:Class="Sobees.Views.SettingsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http: //schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d d1"
+             xmlns:d1="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             xmlns:Converter="clr-namespace:Sobees.Converters"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             DataContext="{Binding SettingsViewModel, Source={StaticResource Locator}}"
+             d1:DesignWidth="640.047"
+             d1:DesignHeight="409.46">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <!--<ResourceDictionary Source="/Sobees.Infrastructure;Component/Controls/Accordian.Generic.xaml" />
+                <ResourceDictionary Source="/Sobees.Infrastructure;Component/Controls/AccordianItem.Generic.xaml" />-->
+        <ResourceDictionary Source="/Sobees.Templates;Component/TemplateSettings.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Converter:TypeServiceImageConverter x:Key="typeServiceImageConverter" />
+      <Style TargetType="{x:Type Controls:Accordian}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Controls:Accordian}">
+              <Border Background="{TemplateBinding Background}"
+                      BorderBrush="{TemplateBinding BorderBrush}"
+                      BorderThickness="{TemplateBinding BorderThickness}">
+                <Controls:AccordianPanel IsItemsHost="True"
+                                         ChildToFill="{TemplateBinding ExpandedItem}" />
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="ButtonFocusVisual">
+        <Setter Property="Control.Template">
+          <Setter.Value>
+            <ControlTemplate>
+              <Rectangle Stroke="Black"
+                         StrokeDashArray="1 2"
+                         StrokeThickness="1"
+                         Margin="2"
+                         SnapsToDevicePixels="true" />
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="AccordianItem.HeaderButtonStyle"
+             TargetType="{x:Type Button}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Grid>
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualStateGroup.Transitions>
+                      <VisualTransition GeneratedDuration="00:00:00.1000000"
+                                        To="MouseOver" />
+                      <VisualTransition From="MouseOver"
+                                        GeneratedDuration="00:00:00.1000000" />
+                      <VisualTransition GeneratedDuration="00:00:00.1000000"
+                                        To="Disabled" />
+                      <VisualTransition From="Disabled"
+                                        GeneratedDuration="00:00:00.1000000" />
+                      <VisualTransition GeneratedDuration="00:00:00.1000000"
+                                        To="Pressed" />
+                      <VisualTransition From="Pressed"
+                                        GeneratedDuration="00:00:00.1000000" />
+                    </VisualStateGroup.Transitions>
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                       Duration="00:00:00.0010000"
+                                                       Storyboard.TargetName="border"
+                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                Value="1" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed" />
+                    <VisualState x:Name="Disabled">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                       Duration="00:00:00.0010000"
+                                                       Storyboard.TargetName="disabled"
+                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                Value="1" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Unfocused" />
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                  <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1"
+                                         StartPoint="0.5,0">
+                      <GradientStop Color="#FFF4F4F4"
+                                    Offset="0" />
+                      <GradientStop Color="#FFCDCDCD"
+                                    Offset="0.998" />
+                    </LinearGradientBrush>
+                  </Border.Background>
+                </Border>
+                <Border x:Name="border"
+                        BorderBrush="#FF686868"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Opacity="0">
+                  <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1"
+                                         StartPoint="0.5,0">
+                      <GradientStop Color="White"
+                                    Offset="0" />
+                      <GradientStop Color="#FFE2E2E2"
+                                    Offset="0.998" />
+                    </LinearGradientBrush>
+                  </Border.Background>
+                </Border>
+                <Border x:Name="disabled"
+                        BorderBrush="#FF1C8FCD"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Opacity="0">
+                  <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1"
+                                         StartPoint="0.5,0">
+                      <GradientStop Color="#FFBBEAFF"
+                                    Offset="0" />
+                      <GradientStop Color="#FF67AFD0"
+                                    Offset="0.998" />
+                    </LinearGradientBrush>
+                  </Border.Background>
+                </Border>
+                <ContentPresenter x:Name="contentPresenter"
+                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  Margin="{TemplateBinding Padding}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                  Content="{TemplateBinding Content}"
+                                  ContentTemplate="{TemplateBinding ContentTemplate}" />
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="AllowDrop"
+                Value="True" />
+        <Setter Property="Padding"
+                Value="10,0,0,0" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Left" />
+        <Setter Property="MinHeight"
+                Value="40" />
+        <Setter Property="Margin"
+                Value="0,0,0,3" />
+      </Style>
+
+      <!--<Style x:Key="AccordianItem.HeaderButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Chrome" SnapsToDevicePixels="true" 
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="2,2,2,2" 
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                          Margin="{TemplateBinding Padding}" 
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                          RecognizesAccessKey="True"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="Chrome" Value="{StaticResource ButtonMouseOverBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="Chrome" Value="{StaticResource ButtonPressedBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#ADADAD"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+      <Style TargetType="{x:Type Controls:AccordianItem}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Controls:AccordianItem}">
+              <ControlTemplate.Resources>
+                <Storyboard x:Key="OnExpanded">
+                  <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                 Storyboard.TargetName="ContentHostHeightTransform"
+                                                 Storyboard.TargetProperty="ScaleY">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.14"
+                                          Value="1" />
+                  </DoubleAnimationUsingKeyFrames>
+                  <BooleanAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                  Duration="00:00:00.0010000"
+                                                  Storyboard.TargetName="button"
+                                                  Storyboard.TargetProperty="(UIElement.IsEnabled)">
+                    <DiscreteBooleanKeyFrame KeyTime="00:00:00"
+                                             Value="False" />
+                  </BooleanAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="OnCollapsed">
+                  <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                 Storyboard.TargetName="ContentHostHeightTransform"
+                                                 Storyboard.TargetProperty="ScaleY">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.14"
+                                          Value="0" />
+                  </DoubleAnimationUsingKeyFrames>
+                  <BooleanAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                  Duration="00:00:00.0010000"
+                                                  Storyboard.TargetName="button"
+                                                  Storyboard.TargetProperty="(UIElement.IsEnabled)">
+                    <DiscreteBooleanKeyFrame KeyTime="00:00:00"
+                                             Value="True" />
+                  </BooleanAnimationUsingKeyFrames>
+                </Storyboard>
+              </ControlTemplate.Resources>
+              <Border Background="{TemplateBinding Background}"
+                      BorderBrush="{TemplateBinding BorderBrush}"
+                      BorderThickness="{TemplateBinding BorderThickness}">
+                <DockPanel>
+                  <Button x:Name="button"
+                          DockPanel.Dock="Top"
+                          Content="{TemplateBinding Header}"
+                          ContentTemplate="{TemplateBinding HeaderTemplate}"
+                          ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                          Command="{Binding Source={x:Static Controls:AccordianItem.ExpandCommand}}"
+                          Style="{StaticResource AccordianItem.HeaderButtonStyle}"
+                          BorderThickness="1,1,1,0" />
+                  <ContentPresenter x:Name="ContentHost"
+                                    DockPanel.Dock="Top"
+                                    Content="{TemplateBinding Content}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                                    Margin="0,-7,0,3">
+                    <ContentPresenter.LayoutTransform>
+                      <ScaleTransform x:Name="ContentHostHeightTransform"
+                                      ScaleY="0.0" />
+                    </ContentPresenter.LayoutTransform>
+                  </ContentPresenter>
+                </DockPanel>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsExpanded"
+                         Value="True">
+                  <Trigger.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource OnExpanded}" />
+                  </Trigger.EnterActions>
+                  <Trigger.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource OnCollapsed}" />
+                  </Trigger.ExitActions>
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <DataTemplate x:Key="dtAccounts">
+        <DockPanel>
+          <Image x:Name="imgIconService"
+                 Grid.ColumnSpan="1"
+                 Width="20"
+                 Height="20"
+                 Source="{Binding Type, Converter={StaticResource typeServiceImageConverter}}"
+                 VerticalAlignment="Center"
+                 Margin="0,0,5,0" />
+          <TextBlock Text="{Binding Login}"
+                     VerticalAlignment="Center"
+                     TextTrimming="CharacterEllipsis" />
+        </DockPanel>
+      </DataTemplate>
+
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <Grid>
+    <ContentControl x:Name="WindowTitle"
+                    Style="{DynamicResource ContentControlStyleWindowTitle}"
+                    Content="sobees - Options" />
+    <DockPanel Margin="5">
+
+      <Controls:Accordian VerticalAlignment="Top"
+                          DockPanel.Dock="Left"
+                          Margin="0,0,3,0"
+                          Width="150">
+        <Controls:AccordianItem IsExpanded="{Binding IsExpandedGeneral, Mode=TwoWay}">
+          <Controls:AccordianItem.Header>
+            <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=tabItemGeneral}" />
+          </Controls:AccordianItem.Header>
+          <!--<ListBox VerticalAlignment="Top" SelectedItem="{Binding SelectedIndexGeneral}" Style="{DynamicResource ListBoxStyleAccordianSubMnu}">
+            
+            <ListBoxItem>
+              <TextBlock x:Name="btnGeneralSettings"
+                Text="General settings"
+                Margin="0" />
+            </ListBoxItem>
+            
+          </ListBox>-->
+        </Controls:AccordianItem>
+        <Controls:AccordianItem  IsExpanded="{Binding IsExpandedAccount, Mode=TwoWay}">
+          <Controls:AccordianItem.Header>
+            <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=tabCredentials}" />
+          </Controls:AccordianItem.Header>
+          <ListBox VerticalAlignment="Top"
+                   SelectedIndex="{Binding SelectedIndexAccounts}"
+                   ItemsSource="{Binding Accounts}"
+                   ItemTemplate="{StaticResource dtAccounts}"
+                   Style="{DynamicResource ListBoxStyleAccordianSubMnu}" />
+        </Controls:AccordianItem>
+        <Controls:AccordianItem  IsExpanded="{Binding IsExpandedServices, Mode=TwoWay}">
+          <Controls:AccordianItem.Header>
+            <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=tabItemServices}" />
+          </Controls:AccordianItem.Header>
+          <!--<ListBox SelectedIndex="{Binding SelectedIndexServices}" Style="{DynamicResource ListBoxStyleAccordianSubMnu}">
+            <ListBoxItem>
+
+              <TextBlock x:Name="btnServices"
+                Text="Services Settings"
+                Margin="0" />
+            </ListBoxItem>
+          </ListBox>-->
+        </Controls:AccordianItem>
+        <Controls:AccordianItem  IsExpanded="{Binding IsExpandedAdvanced, Mode=TwoWay}">
+          <Controls:AccordianItem.Header>
+            <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=tabItemProxy}" />
+          </Controls:AccordianItem.Header>
+
+          <ListBox SelectedIndex="{Binding SelectedIndexAdvanced}"
+                   Style="{DynamicResource ListBoxStyleAccordianSubMnu}">
+            <ListBoxItem>
+              <TextBlock x:Name="btnAdvancedProxy"
+                         Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtProxy}"
+                         Margin="0" />
+            </ListBoxItem>
+            <ListBoxItem>
+              <TextBlock x:Name="btnAdvancedOther"
+                         Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=tabItemOthers}"
+                         Margin="0" />
+            </ListBoxItem>
+            <!--<ListBoxItem>
+                            <TextBlock x:Name="btnAdvancedSupport"
+                                       Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=tabItemSupport}"
+                                       Margin="0" />
+                        </ListBoxItem>-->
+          </ListBox>
+        </Controls:AccordianItem>
+        <Controls:AccordianItem IsExpanded="{Binding IsExpandedSupport, Mode=TwoWay}">
+          <Controls:AccordianItem.Header>
+            <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=tabItemSupport}" />
+          </Controls:AccordianItem.Header>
+        </Controls:AccordianItem>
+        <!--<Controls:AccordianItem IsExpanded="{Binding IsExpandedSync, Mode=TwoWay}">
+                    <Controls:AccordianItem.Header>
+                        <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=tabItemSync}" />
+                    </Controls:AccordianItem.Header>
+                </Controls:AccordianItem>-->
+      </Controls:Accordian>
+      <StackPanel Orientation="Horizontal"
+                  DockPanel.Dock="Bottom"
+                  HorizontalAlignment="Right"
+                  Margin="0,10,0,0">
+        <Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnSave}"
+                Command="{Binding SaveCommand}"
+                Margin="0,0,10,0" />
+        <Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCancel}"
+                Command="{Binding CloseCommand}" />
+      </StackPanel>
+      <Border x:Name="headerTwitter1"
+              DockPanel.Dock="Top"
+              CornerRadius="5,5,0,0"
+              BorderBrush="#FFA3A3A3"
+              BorderThickness="1,1,1,0"
+              Height="40">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1"
+                               StartPoint="0.5,0">
+            <GradientStop Color="#FFECECEC"
+                          Offset="0.292" />
+            <GradientStop Color="#FFC1C1C1"
+                          Offset="0.79" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Grid x:Name="Header1"
+              Margin="0"
+              Height="25.7333333333333">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock x:Name="txtSelectedTitle"
+                     VerticalAlignment="Center"
+                     Margin="5,4,0,4"
+                     Style="{DynamicResource TxtblStyleLevel2HeaderH1}"
+                     HorizontalAlignment="Left"
+                     d:LayoutOverrides="HorizontalMargin"
+                     Foreground="#FF434343"
+                     Text="{Binding SettingsTitleSelectedText}" />
+        </Grid>
+      </Border>
+      <ContentControl ContentTemplate="{Binding View}"
+                      Content="{Binding}"
+                      Style="{DynamicResource ContentControlStyleSettings}"
+                      DockPanel.Dock="Top" />
+    </DockPanel>
+
+  </Grid>
+
+</UserControl>

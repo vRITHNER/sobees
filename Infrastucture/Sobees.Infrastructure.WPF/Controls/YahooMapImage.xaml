@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Sobees.Infrastructure.Controls.YahooMapImage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Button Click="Button_Click" Style="{StaticResource BtnNoStyle}" Cursor="Hand" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5">
+  <Image x:Name="imgYahoo"/>
+    </Button>
+</UserControl>

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/sobeesRemoteServiceDBModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/sobeesRemoteServiceDBModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://sobeessql002.sobees.com/Silverlight/BDataService/DataService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:import schemaLocation="http://sobeessql002.sobees.com/Silverlight/BDataService/DataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="UserServiceCredential_USC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServiceUser_SUS" nillable="true" type="tns:ServiceUser_SUS" />
+          <xs:element minOccurs="0" name="ServiceUser_SUSReference" nillable="true" type="q1:EntityReferenceOfServiceUser_SUS845pt2jH" />
+          <xs:element minOccurs="0" name="SocialNetworkService_SNS" nillable="true" type="tns:SocialNetworkService_SNS" />
+          <xs:element minOccurs="0" name="SocialNetworkService_SNSReference" nillable="true" type="q1:EntityReferenceOfSocialNetworkService_SNS845pt2jH" />
+          <xs:element minOccurs="0" name="credentialFileAsXml_UCA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="credentialFile_UCA" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="email_USC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="field1_USC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="field2_USC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="id_USC" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_USC" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="login_USC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="openIdUrl_USC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password_USC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="token_USC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_USC" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserServiceCredential_USC" nillable="true" type="tns:UserServiceCredential_USC" />
+  <xs:complexType name="ServiceUser_SUS">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaidServiceOrders_PSO" nillable="true" type="tns:ArrayOfPaidServiceOrder_PSO" />
+          <xs:element minOccurs="0" name="UserServiceCredentials_USC" nillable="true" type="tns:ArrayOfUserServiceCredential_USC" />
+          <xs:element minOccurs="0" name="emailForLogin_SUS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="failedPasswordCount_SUS" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="id_SUS" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_SUS" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="isApproved_SUS" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isLockedOut_SUS" type="xs:boolean" />
+          <xs:element minOccurs="0" name="lastLockoutDate_SUS" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastLoginDate_SUS" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastPasswordChangedDate_SUS" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="nickName_SUS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="openId_URL_SUS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sobeesId_USR_SUS" type="ser:guid" />
+          <xs:element minOccurs="0" name="status_SUS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_SUS" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceUser_SUS" nillable="true" type="tns:ServiceUser_SUS" />
+  <xs:complexType name="ArrayOfPaidServiceOrder_PSO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaidServiceOrder_PSO" nillable="true" type="tns:PaidServiceOrder_PSO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaidServiceOrder_PSO" nillable="true" type="tns:ArrayOfPaidServiceOrder_PSO" />
+  <xs:complexType name="PaidServiceOrder_PSO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q3:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaidServiceOrderDetails_POD" nillable="true" type="tns:ArrayOfPaidServiceOrderDetail_POD" />
+          <xs:element minOccurs="0" name="ServiceUser_SUS" nillable="true" type="tns:ServiceUser_SUS" />
+          <xs:element minOccurs="0" name="ServiceUser_SUSReference" nillable="true" type="q3:EntityReferenceOfServiceUser_SUS845pt2jH" />
+          <xs:element minOccurs="0" name="divers1_PSO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="divers2_PSO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="id_PSO" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_PSO" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="transactionAmount_PSO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="transactionCurrency_PSO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionDate_PSO" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="transactionId_PSO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionInfo_PSO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_PSO" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaidServiceOrder_PSO" nillable="true" type="tns:PaidServiceOrder_PSO" />
+  <xs:complexType name="ArrayOfPaidServiceOrderDetail_POD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaidServiceOrderDetail_POD" nillable="true" type="tns:PaidServiceOrderDetail_POD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaidServiceOrderDetail_POD" nillable="true" type="tns:ArrayOfPaidServiceOrderDetail_POD" />
+  <xs:complexType name="PaidServiceOrderDetail_POD">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaidServiceGroupOffer_PSG" nillable="true" type="tns:PaidServiceGroupOffer_PSG" />
+          <xs:element minOccurs="0" name="PaidServiceGroupOffer_PSGReference" nillable="true" type="q4:EntityReferenceOfPaidServiceGroupOffer_PSG845pt2jH" />
+          <xs:element minOccurs="0" name="PaidServiceOrder_PSO" nillable="true" type="tns:PaidServiceOrder_PSO" />
+          <xs:element minOccurs="0" name="PaidServiceOrder_PSOReference" nillable="true" type="q4:EntityReferenceOfPaidServiceOrder_PSO845pt2jH" />
+          <xs:element minOccurs="0" name="amount_POD" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="date_end_validity_POD" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="date_start_validity_POD" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id_POD" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_POD" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="state_POD" type="xs:int" />
+          <xs:element minOccurs="0" name="updated_POD" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="userDisplay_POD" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaidServiceOrderDetail_POD" nillable="true" type="tns:PaidServiceOrderDetail_POD" />
+  <xs:complexType name="PaidServiceGroupOffer_PSG">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaidServiceGroupOfferDetails_PSD" nillable="true" type="tns:ArrayOfPaidServiceGroupOfferDetail_PSD" />
+          <xs:element minOccurs="0" name="PaidServiceOrderDetails_POD" nillable="true" type="tns:ArrayOfPaidServiceOrderDetail_POD" />
+          <xs:element minOccurs="0" name="amount_PSG" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="complement_PSG" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="currency_PSG" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="date_end_Validity_PSG" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="date_start_Validity_PSG" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="description_PSG" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="id_PSG" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_PSG" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="name_PSG" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_PSG" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaidServiceGroupOffer_PSG" nillable="true" type="tns:PaidServiceGroupOffer_PSG" />
+  <xs:complexType name="ArrayOfPaidServiceGroupOfferDetail_PSD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaidServiceGroupOfferDetail_PSD" nillable="true" type="tns:PaidServiceGroupOfferDetail_PSD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaidServiceGroupOfferDetail_PSD" nillable="true" type="tns:ArrayOfPaidServiceGroupOfferDetail_PSD" />
+  <xs:complexType name="PaidServiceGroupOfferDetail_PSD">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q6:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaidServiceGroupOffer_PSG" nillable="true" type="tns:PaidServiceGroupOffer_PSG" />
+          <xs:element minOccurs="0" name="PaidServiceGroupOffer_PSGReference" nillable="true" type="q6:EntityReferenceOfPaidServiceGroupOffer_PSG845pt2jH" />
+          <xs:element minOccurs="0" name="PaidService_PSE" nillable="true" type="tns:PaidService_PSE" />
+          <xs:element minOccurs="0" name="PaidService_PSEReference" nillable="true" type="q6:EntityReferenceOfPaidService_PSE845pt2jH" />
+          <xs:element minOccurs="0" name="discount_PSD" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="id_PSD" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_PSD" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updated_PSD" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaidServiceGroupOfferDetail_PSD" nillable="true" type="tns:PaidServiceGroupOfferDetail_PSD" />
+  <xs:complexType name="PaidService_PSE">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q7:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaidServiceGroupOfferDetails_PSD" nillable="true" type="tns:ArrayOfPaidServiceGroupOfferDetail_PSD" />
+          <xs:element minOccurs="0" name="SocialNetworkService_SNS" nillable="true" type="tns:SocialNetworkService_SNS" />
+          <xs:element minOccurs="0" name="SocialNetworkService_SNSReference" nillable="true" type="q7:EntityReferenceOfSocialNetworkService_SNS845pt2jH" />
+          <xs:element minOccurs="0" name="amount_PSE" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="id_PSE" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_PSE" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="name_PSE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_PSE" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaidService_PSE" nillable="true" type="tns:PaidService_PSE" />
+  <xs:complexType name="SocialNetworkService_SNS">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q8:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LocalizedSource_LSO" nillable="true" type="tns:LocalizedSource_LSO" />
+          <xs:element minOccurs="0" name="LocalizedSource_LSOReference" nillable="true" type="q8:EntityReferenceOfLocalizedSource_LSO845pt2jH" />
+          <xs:element minOccurs="0" name="PaidServices_PSE" nillable="true" type="tns:ArrayOfPaidService_PSE" />
+          <xs:element minOccurs="0" name="UserServiceCredentials_USC" nillable="true" type="tns:ArrayOfUserServiceCredential_USC" />
+          <xs:element minOccurs="0" name="id_SNS" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_SNS" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="name_SNS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_SNS" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SocialNetworkService_SNS" nillable="true" type="tns:SocialNetworkService_SNS" />
+  <xs:complexType name="LocalizedSource_LSO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q9:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Language_LNG" nillable="true" type="tns:Language_LNG" />
+          <xs:element minOccurs="0" name="Language_LNGReference" nillable="true" type="q9:EntityReferenceOfLanguage_LNG845pt2jH" />
+          <xs:element minOccurs="0" name="SocialNetworkServices_SNS" nillable="true" type="tns:ArrayOfSocialNetworkService_SNS" />
+          <xs:element minOccurs="0" name="Source_SRC" nillable="true" type="tns:Source_SRC" />
+          <xs:element minOccurs="0" name="Source_SRCReference" nillable="true" type="q9:EntityReferenceOfSource_SRC845pt2jH" />
+          <xs:element minOccurs="0" name="description_LSO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="id_LSO" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_LSO" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="name_LSO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tag_LSO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_LSO" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LocalizedSource_LSO" nillable="true" type="tns:LocalizedSource_LSO" />
+  <xs:complexType name="Language_LNG">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q10:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LocalizedCategorys_LCA" nillable="true" type="tns:ArrayOfLocalizedCategory_LCA" />
+          <xs:element minOccurs="0" name="LocalizedSources_LSO" nillable="true" type="tns:ArrayOfLocalizedSource_LSO" />
+          <xs:element minOccurs="0" name="code_LNG" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="id_LNG" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_LNG" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="name_LNG" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_LNG" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Language_LNG" nillable="true" type="tns:Language_LNG" />
+  <xs:complexType name="ArrayOfLocalizedCategory_LCA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocalizedCategory_LCA" nillable="true" type="tns:LocalizedCategory_LCA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocalizedCategory_LCA" nillable="true" type="tns:ArrayOfLocalizedCategory_LCA" />
+  <xs:complexType name="LocalizedCategory_LCA">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q11:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Category_CAT" nillable="true" type="tns:Category_CAT" />
+          <xs:element minOccurs="0" name="Category_CATReference" nillable="true" type="q11:EntityReferenceOfCategory_CAT845pt2jH" />
+          <xs:element minOccurs="0" name="Language_LNG" nillable="true" type="tns:Language_LNG" />
+          <xs:element minOccurs="0" name="Language_LNGReference" nillable="true" type="q11:EntityReferenceOfLanguage_LNG845pt2jH" />
+          <xs:element minOccurs="0" name="description_LCA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="id_LCA" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_LCA" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="name_LCA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_LCA" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LocalizedCategory_LCA" nillable="true" type="tns:LocalizedCategory_LCA" />
+  <xs:complexType name="Category_CAT">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q12:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LocalizedCategorys_LCA" nillable="true" type="tns:ArrayOfLocalizedCategory_LCA" />
+          <xs:element minOccurs="0" name="SourceCategorys_SCA" nillable="true" type="tns:ArrayOfSourceCategory_SCA" />
+          <xs:element minOccurs="0" name="id_CAT" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_CAT" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="name_CAT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_CAT" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Category_CAT" nillable="true" type="tns:Category_CAT" />
+  <xs:complexType name="ArrayOfSourceCategory_SCA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SourceCategory_SCA" nillable="true" type="tns:SourceCategory_SCA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSourceCategory_SCA" nillable="true" type="tns:ArrayOfSourceCategory_SCA" />
+  <xs:complexType name="SourceCategory_SCA">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q13:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Category_CAT" nillable="true" type="tns:Category_CAT" />
+          <xs:element minOccurs="0" name="Category_CATReference" nillable="true" type="q13:EntityReferenceOfCategory_CAT845pt2jH" />
+          <xs:element minOccurs="0" name="Source_SRC" nillable="true" type="tns:Source_SRC" />
+          <xs:element minOccurs="0" name="Source_SRCReference" nillable="true" type="q13:EntityReferenceOfSource_SRC845pt2jH" />
+          <xs:element minOccurs="0" name="id_SCA" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_SCA" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updated_SCA" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SourceCategory_SCA" nillable="true" type="tns:SourceCategory_SCA" />
+  <xs:complexType name="Source_SRC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q14:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Component_COM" nillable="true" type="tns:Component_COM" />
+          <xs:element minOccurs="0" name="Component_COMReference" nillable="true" type="q14:EntityReferenceOfComponent_COM845pt2jH" />
+          <xs:element minOccurs="0" name="LocalizedSources_LSO" nillable="true" type="tns:ArrayOfLocalizedSource_LSO" />
+          <xs:element minOccurs="0" name="SourceCategorys_SCA" nillable="true" type="tns:ArrayOfSourceCategory_SCA" />
+          <xs:element minOccurs="0" name="SourceType_STY" nillable="true" type="tns:SourceType_STY" />
+          <xs:element minOccurs="0" name="SourceType_STYReference" nillable="true" type="q14:EntityReferenceOfSourceType_STY845pt2jH" />
+          <xs:element minOccurs="0" name="homepage_SRC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="icon_SRC" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="id_SRC" type="ser:guid" />
+          <xs:element minOccurs="0" name="image_SRC" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="indice_SRC" type="xs:int" />
+          <xs:element minOccurs="0" name="inserted_SRC" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="language_SRC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="name_SRC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rating_SRC" type="xs:int" />
+          <xs:element minOccurs="0" name="settings_SRC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sponsorized_SRC" type="xs:boolean" />
+          <xs:element minOccurs="0" name="updated_SRC" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="url_SRC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="version_SRC" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Source_SRC" nillable="true" type="tns:Source_SRC" />
+  <xs:complexType name="Component_COM">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q15:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Sources_SRC" nillable="true" type="tns:ArrayOfSource_SRC" />
+          <xs:element minOccurs="0" name="dllname_COM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="icon_COM" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="id_COM" type="ser:guid" />
+          <xs:element minOccurs="0" name="image_COM" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="inserted_COM" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="type_COM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_COM" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="version_COM" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Component_COM" nillable="true" type="tns:Component_COM" />
+  <xs:complexType name="ArrayOfSource_SRC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Source_SRC" nillable="true" type="tns:Source_SRC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSource_SRC" nillable="true" type="tns:ArrayOfSource_SRC" />
+  <xs:complexType name="ArrayOfLocalizedSource_LSO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocalizedSource_LSO" nillable="true" type="tns:LocalizedSource_LSO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocalizedSource_LSO" nillable="true" type="tns:ArrayOfLocalizedSource_LSO" />
+  <xs:complexType name="SourceType_STY">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q16:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Sources_SRC" nillable="true" type="tns:ArrayOfSource_SRC" />
+          <xs:element minOccurs="0" name="id_STY" type="ser:guid" />
+          <xs:element minOccurs="0" name="inserted_STY" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="name_STY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updated_STY" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SourceType_STY" nillable="true" type="tns:SourceType_STY" />
+  <xs:complexType name="ArrayOfSocialNetworkService_SNS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SocialNetworkService_SNS" nillable="true" type="tns:SocialNetworkService_SNS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSocialNetworkService_SNS" nillable="true" type="tns:ArrayOfSocialNetworkService_SNS" />
+  <xs:complexType name="ArrayOfPaidService_PSE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaidService_PSE" nillable="true" type="tns:PaidService_PSE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaidService_PSE" nillable="true" type="tns:ArrayOfPaidService_PSE" />
+  <xs:complexType name="ArrayOfUserServiceCredential_USC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserServiceCredential_USC" nillable="true" type="tns:UserServiceCredential_USC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserServiceCredential_USC" nillable="true" type="tns:ArrayOfUserServiceCredential_USC" />
+</xs:schema>

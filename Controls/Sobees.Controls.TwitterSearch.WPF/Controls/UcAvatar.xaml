@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="Sobees.Controls.TwitterSearch.Controls.UcAvatar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="ucAvatar"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:Commands="clr-namespace:Sobees.Infrastructure.Commands;assembly=Sobees.Infrastructure"
+             Tag="{Binding DataContext, ElementName=LstTweets}" Unloaded="ucAvatar_Unloaded">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Sobees.Templates;Component/TemplateButtonAvatar.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Button x:Name="btnReplies"
+            Style="{DynamicResource BtnCommandTwitter}"
+            Command="{Binding Tag.ReplyCommand, ElementName=ucAvatar}"
+            CommandParameter="{Binding}"
+            ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key= btnReply }">
+      <Path Style="{DynamicResource PathStyleRepliesInAvatar}" />
+    </Button>
+    <Button x:Name="btnReTweet"
+           	Style="{DynamicResource BtnCommandTwitter}"
+            Command="{Binding Tag.ReTweetCommand, ElementName=ucAvatar}"
+            CommandParameter="{Binding}"
+            Grid.Row="8"
+            ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key= btnRetweet }">
+      <Path Style="{DynamicResource PathStyleRetweetInAvatar}"/>
+    </Button>
+    <!--<Button x:Name="btnDirectMessage"
+            Focusable="False"
+            Grid.Column="1"
+            Command="{Binding Tag.DMCommand, ElementName=ucAvatar}"
+            CommandParameter="{Binding}"
+            ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key= btnDM }">
+      <Path HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Height="9"
+            Width="11.5"
+            Stretch="Fill"
+            Fill="#FF303030">
+        <Path.Data>
+          <PathGeometry Figures="M10.430983,16.542 C10.430983,16.542 16.368612,22.3545 16.368612,22.3545 17.300822,23.28673 19.332129,23.26612 20.243774,22.354456 20.243774,22.354456 26.056371,16.6045 26.056371,16.6045 26.056371,16.6045 34.618938,26.4795 34.622028,26.482267 33.897144,27.213856 32.891712,27.667 31.780445,27.667 L3.6128353,27.667 C2.5418522,27.667 1.5691736,27.246115 0.85118614,26.560724 0.80595211,26.6045 10.430983,16.542 10.430983,16.542 z M35.750019,6.9540008 L35.580719,23.511003 27.80602,14.792 z M0,6.6420029 L8.2957437,14.667 0.17436169,23.261503 z M3.9310154,0 L32.097858,0 C33.749782,0 35.167823,1.0014238 35.778068,2.4303336 35.936357,2.8009752 19.975995,18.753524 19.944737,18.784783 18.835282,19.894262 17.186367,19.307632 16.623872,18.745132 16.590722,18.711981 0.013005537,3.132113 0.10355378,2.8344092 0.60254995,1.1938167 2.1273734,0 3.9310154,0 z">
+            <PathGeometry.Transform>
+              <MatrixTransform Matrix="1.0000212510234,0,0,1.00000000661819,0,0" />
+            </PathGeometry.Transform>
+          </PathGeometry>
+        </Path.Data>
+        <Path.RenderTransform>
+          <TransformGroup>
+            <ScaleTransform ScaleX="1"
+                            ScaleY="1" />
+            <SkewTransform AngleX="0"
+                           AngleY="0" />
+            <RotateTransform Angle="0" />
+            <TranslateTransform X="0"
+                                Y="0" />
+          </TransformGroup>
+        </Path.RenderTransform>
+      </Path>
+    </Button>-->
+    <ComboBox Grid.Row="1"
+              Grid.Column="2"
+              Commands:BCommandManager.Command="{Binding Tag.MenuActionCommand, ElementName=ucAvatar}"
+              Commands:BCommandManager.CommandEventName="SelectionChanged"
+              Commands:BCommandManager.CommandParameter="{Binding}">
+      <ComboBoxItem x:Name="ReplyToAll"
+                    Tag="ReplyToAll"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtReplyToAll}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtReplyToAll}">
+      </ComboBoxItem>
+      <ComboBoxItem x:Name="Favorit"
+                    Tag="Favorit"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnFavorit}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnFavorit}">
+      </ComboBoxItem>
+      <!--<ComboBoxItem x:Name="ReportSpam"
+                    Tag="ReportSpam"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnReportSpam }"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCancel}">
+
+      </ComboBoxItem>-->
+      <ComboBoxItem x:Name="Follow"
+                    Tag="Follow"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtbkFollow}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtbkFollow}">
+
+      </ComboBoxItem>
+      <!--<ComboBoxItem x:Name="Unfollow"
+                    Tag="UnFollow"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtbkUnfollow }"
+                    Content="unfollow">
+
+      </ComboBoxItem>-->
+      <ComboBoxItem x:Name="Addtolist"
+                    Tag="AddToList"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblAddToList}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblAddToList}">
+
+      </ComboBoxItem>
+      <!--<ComboBoxItem  x:Name="Block"
+                     Tag="Block"
+                     ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnBlockUser }"
+                     Content="Block user">
+
+      </ComboBoxItem>-->
+    </ComboBox>
+
+  </Grid>
+</UserControl>

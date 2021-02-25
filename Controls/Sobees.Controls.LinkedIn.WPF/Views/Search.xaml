@@ -1,0 +1,208 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:LocalizeWPF="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:CustomControls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             xmlns:Cache="clr-namespace:Sobees.Infrastructure.Cache;assembly=Sobees.Infrastructure"
+             xmlns:Templates="clr-namespace:Sobees.Controls.LinkedIn.Templates"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+             x:Class="Sobees.Controls.LinkedIn.Views.Search"
+             mc:Ignorable="d"
+             d:DesignWidth="221"
+             d:DesignHeight="267.373">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/Geometry.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/Icon.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <DataTemplate x:Key="dtSearch">
+        <Templates:DtSearch />
+      </DataTemplate>
+      <DataTemplate x:Key="dtIndustry">
+        <TextBlock Text="{Binding Description}" Style="{DynamicResource TxtblStyleItemContent}" />
+      </DataTemplate>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <DockPanel Background="{DynamicResource Level2HeaderElongated}">
+
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="VisualStateGroup">
+        <VisualState x:Name="vsViewAdvanced">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Duration="00:00:00.0010000"
+                                           Storyboard.TargetName="borderAdvSearch"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="00:00:00"
+                                      Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+        <VisualState x:Name="vsHideAdvanced" />
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    <TextBlock Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinSearchPeople}"
+               VerticalAlignment="Center"
+               Margin="5,0,0,2"
+               DockPanel.Dock="Top"
+               Style="{DynamicResource TxtblStyleLevel2HeaderH2}" />
+    <Grid Margin="5,0,5,5"
+          Height="21.96"
+          DockPanel.Dock="Top">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <CustomControls:UcSearchBox Grid.Column="0" />
+      <ToggleButton x:Name="tbAdvanced"
+                    IsChecked="{Binding UseAdvanced}"
+                    VerticalAlignment="Center"
+                    Margin="3,0,0,0"
+                    Grid.Column="1"
+                    Style="{DynamicResource btntTranslateLevel2}">
+        <i:Interaction.Triggers>
+          <i:EventTrigger EventName="Checked">
+            <ic:GoToStateAction StateName="vsViewAdvanced" />
+          </i:EventTrigger>
+          <i:EventTrigger EventName="Unchecked">
+            <ic:GoToStateAction StateName="vsHideAdvanced" />
+          </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <Path Fill="#FF535353"
+              Stretch="Fill"
+              Width="15"
+              Height="15" >
+        	<Path.Data>
+        		<PathGeometry
+        			Figures="M25.473881,21.960198 C25.063838,21.966196 24.648716,22.062222 24.257369,22.257895 22.865911,22.953623 22.301909,24.645622 22.997636,26.037081 23.693365,27.42854 25.385363,27.992541 26.776822,27.296814 28.16828,26.601086 28.732282,24.909086 28.036554,23.517629 27.536499,22.517518 26.52177,21.944872 25.473881,21.960198 z M11.902375,7.1992168 C11.206841,7.2093897 10.502691,7.3722744 9.8388681,7.7041855 7.4786091,8.8843126 6.5219221,11.754364 7.7020493,14.114624 8.8821764,16.474884 11.752228,17.431571 14.112488,16.251444 16.472748,15.071316 17.429435,12.201264 16.249307,9.8410048 15.401091,8.1445684 13.679856,7.1732187 11.902375,7.1992168 z M13.67189,0 L17.984908,1.4376774 16.974748,4.468154 17.048342,4.5149622 C17.712434,4.9529715 18.323092,5.4820986 18.859437,6.0953808 L18.865396,6.1023388 21.718486,4.6757965 23.751659,8.7421551 20.896968,10.169497 20.897356,10.17123 C21.066175,10.968274 21.123078,11.774276 21.075028,12.568356 L21.067918,12.660525 24.102001,13.671889 22.664324,17.984908 19.61722,16.969204 19.582946,17.022742 C19.142912,17.685616 18.611844,18.294813 17.996696,18.829448 L17.986156,18.838381 19.273972,21.41402 19.304563,21.322247 21.117817,21.926666 21.129455,21.90815 C21.370734,21.53728 21.659939,21.194211 21.993623,20.889292 L22.065558,20.825183 21.213552,19.121167 23.610817,17.922538 24.457888,19.616685 24.465831,19.614873 C24.935571,19.513865 25.410737,19.478884 25.879016,19.505827 L25.919462,19.508826 26.517074,17.715999 29.059753,18.563562 28.464228,20.350138 28.507614,20.377733 C28.89912,20.635956 29.259125,20.947895 29.575319,21.309447 L29.578832,21.31355 31.260833,20.472551 32.459461,22.869816 30.776518,23.711287 30.776746,23.712307 C30.876271,24.182194 30.909819,24.657362 30.881491,25.1255 L30.877299,25.179837 32.666,25.776073 31.818438,28.318753 30.02206,27.719959 30.001854,27.751521 C29.742438,28.14231 29.429355,28.501453 29.066703,28.81664 L29.060489,28.821906 29.909451,30.519833 27.512185,31.718462 26.658289,30.010667 26.563841,30.02975 C26.119695,30.113746 25.671717,30.139267 25.230253,30.109767 L25.211524,30.108221 24.605928,31.925 22.063247,31.077438 22.671193,29.253607 22.603446,29.209402 C22.282267,28.992598 21.982908,28.739279 21.7123,28.451754 L21.582666,28.308203 19.862169,29.168448 18.663539,26.771184 20.382988,25.911462 20.345087,25.71732 C20.277433,25.328319 20.254393,24.93684 20.273657,24.549815 L20.278741,24.472177 18.457001,23.864928 19.121738,21.87072 15.359847,23.75166 13.911427,20.854815 13.75122,20.887184 C12.997838,21.029661 12.237956,21.072952 11.489123,21.022912 L11.457353,21.020291 10.430112,24.102 6.1170921,22.664324 7.1483192,19.570653 7.0334034,19.495669 C6.4886045,19.127916 5.9808168,18.698223 5.5217981,18.210509 L5.3019075,17.967011 2.3835163,19.426203 0.3503418,15.359846 3.2669544,13.901543 3.2026644,13.572231 C3.0879059,12.912387 3.0488243,12.248341 3.0815029,11.591851 L3.0901241,11.460156 0,10.430112 1.4376774,6.1170912 4.5134077,7.1423378 4.5331497,7.1109304 C4.9424171,6.481842 5.4329815,5.8999119 5.998992,5.3826923 L6.1210127,5.2739487 4.6757975,2.3835144 8.7421551,0.35033989 10.179,3.2240343 10.192472,3.2209616 C10.989269,3.0496273 11.795268,2.9902897 12.589586,3.0359917 L12.658193,3.0410786 z" />
+        	</Path.Data>
+        </Path>
+      </ToggleButton>
+    </Grid>
+    <Border x:Name="borderAdvSearch"
+            DockPanel.Dock="Top"
+            Background="{DynamicResource Level2HeaderElongated}"
+            Margin="5,0,5,5"
+            Visibility="Collapsed">
+      <Grid x:Name="advSearch">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"
+                         MinHeight="30" />
+          <RowDefinition Height="Auto"
+                         MinHeight="30" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto"
+                         MinHeight="30" />
+          <RowDefinition Height="Auto"
+                         MinHeight="30" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="txtblName"
+                   Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinName}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Style="{StaticResource TxtblStyleLevel2HeaderH1}" />
+        <TextBox x:Name="txtbxName"
+                 Text="{Binding SearchName, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Center"
+                 Width="120"
+                 Grid.Column="1" />
+        <TextBlock x:Name="txtblCompagny"
+                   Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinCompany}"
+                   Margin="0,0,5,0"
+                   VerticalAlignment="Center"
+                   Grid.Row="1"
+                   Style="{DynamicResource TxtblStyleLevel2HeaderH1}" />
+        <TextBox x:Name="txtbxCompagny"
+                 Text="{Binding SearchCompagny, UpdateSourceTrigger=PropertyChanged}"
+                 Margin="0"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Width="120"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Center" />
+        <TextBlock x:Name="txtblIndustry"
+                   Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinIndustry}"
+                   Margin="0"
+                   VerticalAlignment="Top"
+                   Grid.Row="2"
+                   HorizontalAlignment="Left"
+                   Style="{DynamicResource TxtblStyleLevel2HeaderH1}" />
+        <CustomControls:BListBox x:Name="lstIndustry"
+                 SelectedItem="{Binding SelectedIndustry}"
+                 ItemsSource="{Binding IndustriesCode}"
+                 ItemTemplate="{StaticResource dtIndustry}"
+                 Margin="0"
+                 Grid.Row="2"
+                 Grid.Column="1"
+                 MaxHeight="120"
+                 Style="{DynamicResource ListBoxStyleDeck}"
+                 VerticalAlignment="Stretch" />
+        <StackPanel Margin="-0.001,0,0,0"
+                    Grid.Row="3"
+                    Grid.Column="1">
+          <CheckBox Content="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinOnlyInMyNetwork}"
+                    IsChecked="{Binding OnlyInNetwork}"
+                    Margin="0,5,5,0"
+                    VerticalAlignment="Top" />
+          <CheckBox Content="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinOnlyOutMyNetwork}"
+                    IsChecked="{Binding OnlyOutNetwork}"
+                    Margin="0,0,0,5" />
+        </StackPanel>
+        <TextBlock x:Name="txtblNumber"
+                   Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinNumberOfResults}"
+                   Margin="0,0,5,0"
+                   VerticalAlignment="Center"
+                   Grid.Row="5"
+                   Visibility="Collapsed" />
+        <Slider x:Name="slNbrResult"
+                Minimum="10"
+                Maximum="20"
+                SmallChange="10"
+                Value="{Binding NumberResult}"
+                Grid.Column="1"
+                Margin="0"
+                Grid.Row="5"
+                IsSnapToTickEnabled="True"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Visibility="Collapsed" />
+        <TextBlock x:Name="txtblSort"
+                   Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinSortBy}"
+                   Margin="0"
+                   Grid.Row="4"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Style="{DynamicResource TxtblStyleLevel2HeaderH1}" />
+
+        <ComboBox x:Name="comboSort"
+                  Width="120"
+                  ItemsSource="{Binding SortType}"
+                  SelectedItem="{Binding SelectedSort}"
+                  VerticalContentAlignment="Center"
+                  Grid.Row="4"
+                  Grid.Column="1"
+                  HorizontalAlignment="Left"
+                  Margin="0"
+                  VerticalAlignment="Center" />
+      </Grid>
+    </Border>
+
+
+    <CustomControls:BListBox x:Name="LstPosts"
+                             ItemsSource="{Binding Entries}"
+                             VerticalContentAlignment="Top"
+                             ItemTemplate="{StaticResource dtSearch}"
+                             Style="{StaticResource ListBoxStyleDeck}" />
+  </DockPanel>
+</UserControl>

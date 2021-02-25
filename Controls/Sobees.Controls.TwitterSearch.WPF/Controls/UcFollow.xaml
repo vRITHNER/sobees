@@ -1,0 +1,152 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="Sobees.Controls.TwitterSearch.Controls.UcFollow"
+    Background="{DynamicResource BgTransparentBlack}"
+    mc:Ignorable="d" d:DesignWidth="299.667" d:DesignHeight="200.173"
+    >
+
+    <UserControl.Resources>
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+    			<ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml"/>
+    		</ResourceDictionary.MergedDictionaries>
+    		<DataTemplate x:Key="dtAccount">
+    			<TextBlock x:Name="chkInsideList"
+    				Text="{Binding Login}" Style="{DynamicResource TxtblStyleItemContent}"/>
+    		</DataTemplate>
+    	</ResourceDictionary>
+  </UserControl.Resources>
+  <Border Style="{DynamicResource BorderStyleMsgWindowInService}" HorizontalAlignment="Stretch">
+  	<DockPanel>
+    <Canvas Height="40"
+                Width="40" d:LayoutOverrides="Height" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,5,0">
+  			<Path 
+  				Stretch="Fill"
+  				Height="24.037"
+  				Width="36.323"
+  				Canvas.Left="3.896"
+  				Canvas.Top="6.958"
+  				Data="M109.9218,0.50110412 C115.42073,0.44836381 120.16219,2.2858272 124.21536,5.8408232 C140.05765,0.44123626 151.43874,3.9021404 158.21577,16.507177 C178.82121,21.562237 186.62544,31.552233 181.54959,46.50753 C194.11284,58.262035 194.93799,70.039703 183.54926,81.841484 C188.71774,102.64515 180.7204,112.34198 162.21555,113.1746 C152.41632,129.01225 139.5285,132.57808 124.21555,126.508 C116.80065,136.47015 107.77129,137.37346 96.882172,127.84167 C84.917946,135.84923 73.870689,135.72751 63.548836,129.17468 C47.57132,135.07025 35.576275,130.94295 26.882143,118.50796 C13.086491,118.09156 5.1706853,109.90901 2.2154422,95.174553 C1.9002237,94.663445 1.5948734,94.153084 1.2994289,93.643471 L0.5,92.218735 L1.2150025,92.17395 C7.5549245,97.708878 15.208788,97.54258 24.21538,91.506973 C35.782574,93.559006 43.722538,89.937988 46.882397,78.840736 C56.067303,76.889717 60.557007,70.598396 60.215607,59.841122 C66.147606,47.930523 63.819221,38.703899 54.215221,31.841301 C52.985168,23.480732 46.481312,18.215715 32.214764,17.507229 C29.013433,15.177612 25.809219,13.82271 22.60186,13.528859 L21.298067,13.471273 L21.635645,13.311136 C24.685167,11.983061 28.452337,11.970957 32.882141,13.173935 C40.152802,6.0590329 49.746197,4.333281 61.882263,8.5070763 C69.937019,0.83618128 80.451195,-0.38350648 93.549057,5.1741667 C99.628052,2.0657897 105.06979,0.54764104 109.9218,0.50110412 z" Fill="White" />
+  			<Path Fill="#FF000000"
+  				Stretch="Fill"
+  				Height="1.512"
+  				Width="1.868"
+  				Canvas.Left="-2.344"
+  				Canvas.Top="14.712"
+  				Data="M266.375,449.875 L257.5,453.5 L265,457.375 z" />
+  			<Path Fill="#FFFFFFFF"
+  				Stretch="Fill"
+  				Height="4.219"
+  				Width="5.004"
+  				Canvas.Left="12.542"
+  				Canvas.Top="30.46"
+  				Data="M17.833178,0.5 C20.413643,2.1382089 23.039444,3.3744721 25.713575,4.1822562 L25.965752,4.2532077 L25.834011,21.166243 C17.426086,24.619652 8.9789734,23.56035 0.5,18.832558 L0.62950134,2.8819499 L1.502635,2.9945683 C6.4100766,3.5122151 11.84161,2.7108426 17.833178,0.5 z" />
+  			<Path Fill="#FFFFFFFF"
+  				Stretch="Fill"
+  				Height="5.85"
+  				Width="5.115"
+  				Canvas.Left="31.003"
+  				Canvas.Top="27.532"
+  				Data="M23.631397,0.5 L26.546495,28.778913 C18.13854,32.232285 12.025792,34.340546 3.5467911,29.61281 L0.5,16.253769 L0.74629331,16.19297 C7.5960226,14.310877 13.673545,9.3605566 18.879387,0.94680023 C20.035942,0.89476109 21.151449,0.80809689 22.225264,0.6862607 z" />
+  			<Path 
+  				Stretch="Fill"
+  				Data="M289,428.66666 C296.0322,420.53845 303.49741,418.14676 311.33334,420.66632 C318.68405,414.77554 326.01657,415.008 333.33401,420.33267 C347.6008,421.04114 354.10477,426.306 355.33484,434.66632 C364.939,441.52872 367.26743,450.75507 361.33533,462.66531 C361.67673,473.42227 357.18695,479.71341 348.00189,481.66437 C344.84198,492.76129 336.90189,496.3822 325.3345,494.33023 C316.32776,500.36566 308.67377,500.53195 302.33374,494.99719 C289.10056,496.13577 281.23914,491.99377 279.33301,481.99762 C268.67346,472.90619 266.03998,463.89978 273.33316,454.9985 C268.78732,443.13416 273.435,434.17529 289,428.66666 z"
+  				Height="13.929"
+  				Width="17.03"
+  				Canvas.Left="-1.636"
+  				Canvas.Top="9.755" />
+  			<Path Fill="#FFFFFFFF"
+  				Stretch="Fill"
+  				Stroke="#FF000000"
+  				Height="4.996"
+  				Width="5.307"
+  				Canvas.Left="0.359"
+  				Canvas.Top="11.864"
+  				Data="M33.5,17 C33.5,26.112698 26.112698,33.5 17,33.5 C7.8873014,33.5 0.5,26.112698 0.5,17 C0.5,7.8873014 7.8873014,0.5 17,0.5 C26.112698,0.5 33.5,7.8873014 33.5,17 z"
+  				StrokeThickness="0.3" />
+  			<Path Fill="#FFFFFFFF"
+  				Stretch="Fill"
+  				Height="2.261"
+  				Width="4.981"
+  				Canvas.Left="22.123"
+  				Canvas.Top="30.222"
+  				Data="M0.5,0.5 L1.5149162,1.3626509 C10.941394,9.1334724 18.949873,8.9478569 25.704664,1.7277689 L25.834002,1.5837665 L25.834002,10.165821 C17.426079,13.61927 8.9789696,12.559958 0.5,7.8321123 z" />
+  			<Path Fill="#FFFFFFFF"
+  				Stretch="Fill"
+  				Height="4.471"
+  				Width="5.071"
+  				Canvas.Left="6.364"
+  				Canvas.Top="28.012"
+  				Data="M1.7526848,0.5 L2.594624,0.95151079 C5.7854114,2.5614076 9.5223494,3.449945 13.833491,3.5800695 C17.36548,8.6317835 21.442251,12.312407 26.109499,14.506939 L26.317486,14.598734 L25.834084,22.579987 C17.426132,26.033445 8.9789972,24.974131 0.5,20.246273 z" />
+  			<Path Fill="#FF000000"
+  				Stretch="Fill"
+  				Height="1.425"
+  				Width="1.513"
+  				Canvas.Left="1.727"
+  				Canvas.Top="13.129"
+  				Data="M7.5,4 C7.5,5.9329967 5.9329967,7.5 4,7.5 C2.0670035,7.5 0.5,5.9329967 0.5,4 C0.5,2.0670035 2.0670035,0.5 4,0.5 C5.9329967,0.5 7.5,2.0670035 7.5,4 z" />
+  			<Path Fill="#FF000000"
+  				Stretch="Fill"
+  				Height="9.301"
+  				Width="9.658"
+  				Canvas.Left="-0.263"
+  				Canvas.Top="12.675"
+  				Data="M49.165894,5.9998074 C56.855446,12.727611 58.170036,30.948107 45.834286,42.820427 C32.833229,55.333061 17.31464,58.293068 9.8339338,51.33379 C2.6673155,44.666706 2.9288428,31.032526 13.83309,17.833279 C23.333244,6.3336411 42.498959,0.16672294 49.165894,5.9998074 z" />
+  			<Path Fill="#FFFFFFFF"
+  				Stretch="Fill"
+  				Stroke="#FF000000"
+  				Height="6.054"
+  				Width="6.431"
+  				Canvas.Left="5.008"
+  				Canvas.Top="11.617"
+  				Data="M33.5,17 C33.5,26.112698 26.112698,33.5 17,33.5 C7.8873014,33.5 0.5,26.112698 0.5,17 C0.5,7.8873014 7.8873014,0.5 17,0.5 C26.112698,0.5 33.5,7.8873014 33.5,17 z"
+  				StrokeThickness="0.3" />
+  			<Path Fill="#FF000000"
+  				Stretch="Fill"
+  				Stroke="{x:Null}"
+  				Height="4.206"
+  				Width="5.97"
+  				Canvas.Left="11.568"
+  				Canvas.Top="12.998"
+  				Data="M343.25,437.25 C350.85114,447.59113 361.00082,450.07394 372.75,447.625 C371.84772,453.08569 364.49316,457.18216 350.5,459.875 C342.91995,454.56372 340.58749,446.98569 343.25,437.25 z" />
+  			<Path Fill="#FF000000"
+  				Stretch="Fill"
+  				Stroke="{x:Null}"
+  				Height="1.425"
+  				Width="1.513"
+  				Canvas.Left="7.466"
+  				Canvas.Top="13.932"
+  				Data="M7.5,4 C7.5,5.9329967 5.9329967,7.5 4,7.5 C2.0670035,7.5 0.5,5.9329967 0.5,4 C0.5,2.0670035 2.0670035,0.5 4,0.5 C5.9329967,0.5 7.5,2.0670035 7.5,4 z" />
+  		</Canvas>
+    <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblSelectFollow}"
+    	DockPanel.Dock="Top"
+		Style="{DynamicResource TxtblStyleItemTitle}" />
+    <ListBox x:Name="lstInsideComboBoxB"
+    	IsSynchronizedWithCurrentItem="True"
+    	ItemsSource="{Binding ListAccount}"
+    	SelectedItem="{Binding SelectedAccount}"
+    	ItemTemplate="{StaticResource dtAccount}"
+    	MaxHeight="250"
+    	HorizontalContentAlignment="Stretch"
+    	VerticalContentAlignment="Stretch" DockPanel.Dock="Top" Margin="0,5,0,0" MaxWidth="250" Style="{DynamicResource ListBoxStyleDeck}" />
+    <StackPanel
+    	Orientation="Horizontal"
+                  
+    	VerticalAlignment="Bottom" HorizontalAlignment="Right" DockPanel.Dock="Bottom" Margin="0,10,10,10"
+                  >
+
+    	<Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnOk}"
+    		Command="{Binding ConfirmationCommand}"
+    		VerticalAlignment="Center" Margin="0,0,5,0" />
+
+
+    	<Button x:Name="btnCancel"
+    		Command="{Binding CancelConfirmationCommand}"
+    		Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCancel}" />
+    </StackPanel>
+
+    
+	</DockPanel>
+	</Border>
+  </UserControl>

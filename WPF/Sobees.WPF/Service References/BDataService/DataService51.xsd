@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://sobeessql002.sobees.com/Silverlight/BDataService/DataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://sobeessql002.sobees.com/Silverlight/BDataService/DataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/sobeesRemoteServiceDBModel" />
+  <xs:element name="GetCheckServiceRunningString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tokenValidation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCheckServiceRunningStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCheckServiceRunningStringResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserCredentialSettingFileAsXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="serviceUser_Id" type="q1:guid" />
+        <xs:element minOccurs="0" name="xmlSettingFile" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="tokenValidation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserCredentialSettingFileAsXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveUserCredentialSettingFileAsXmlResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserSettingFileAsXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="serviceUserId" type="q2:guid" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="userId" type="q3:guid" />
+        <xs:element minOccurs="0" name="xmlSettingFile" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="tokenValidation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserSettingFileAsXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveUserSettingFileAsXmlResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserCredentialSettingFileAsXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="serviceUserId" type="q4:guid" />
+        <xs:element minOccurs="0" name="tokenValidation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserCredentialSettingFileAsXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserCredentialSettingFileAsXmlResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserServiceCredentialByServiceUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="serviceUserId" type="q5:guid" />
+        <xs:element minOccurs="0" name="tokenValidation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserServiceCredentialByServiceUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/sobeesRemoteServiceDBModel" minOccurs="0" name="GetUserServiceCredentialByServiceUserIdResult" nillable="true" type="q6:UserServiceCredential_USC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserServiceCredential">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="serviceUserId" type="q7:guid" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="socialServiceId" type="q8:guid" />
+        <xs:element minOccurs="0" name="tokenValidation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserServiceCredentialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/sobeesRemoteServiceDBModel" minOccurs="0" name="AddUserServiceCredentialResult" nillable="true" type="q9:UserServiceCredential_USC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSocialNetworkServiceByServiceId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="serviceId" type="q10:guid" />
+        <xs:element minOccurs="0" name="tokenValidation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSocialNetworkServiceByServiceIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/sobeesRemoteServiceDBModel" minOccurs="0" name="GetSocialNetworkServiceByServiceIdResult" nillable="true" type="q11:SocialNetworkService_SNS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserSobeesToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sobeesToken" type="q12:guid" />
+        <xs:element minOccurs="0" name="tokenValidation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserSobeesTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/sobeesRemoteServiceDBModel" minOccurs="0" name="GetUserSobeesTokenResult" nillable="true" type="q13:ServiceUser_SUS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceUserByServiceUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="serviceUserId" type="q14:guid" />
+        <xs:element minOccurs="0" name="tokenValidation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceUserByServiceUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/sobeesRemoteServiceDBModel" minOccurs="0" name="GetServiceUserByServiceUserIdResult" nillable="true" type="q15:ServiceUser_SUS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserSettingFileAsXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="serviceUserId" type="q16:guid" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="userId" type="q17:guid" />
+        <xs:element minOccurs="0" name="tokenValidation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserSettingFileAsXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/sobeesRemoteServiceDBModel" minOccurs="0" name="GetUserSettingFileAsXmlResult" nillable="true" type="q18:UserServiceCredential_USC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

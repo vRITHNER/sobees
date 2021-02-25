@@ -1,0 +1,76 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib" x:Class="Sobees.Views.Waiting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" mc:Ignorable="d" d:DesignWidth="913.29" d:DesignHeight="497.5">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+  <Grid ClipToBounds="True">
+  <Rectangle Stroke="{x:Null}" RadiusX="5" RadiusY="5">
+    						<Rectangle.Fill>
+    							<LinearGradientBrush EndPoint="0.5,1"
+    								StartPoint="0.5,0">
+    								<GradientStop Color="#FFECECEC"
+    									Offset="1" />
+    								<GradientStop Color="#FFFAFAFA"
+    									Offset="0.003" />
+    							</LinearGradientBrush>
+    						</Rectangle.Fill>
+    					</Rectangle>
+    					<Rectangle Stroke="#FFD0D0D0"
+    						StrokeDashArray="2"
+    						StrokeThickness="3"
+    						RadiusX="5"
+    						RadiusY="5"
+    						d:LayoutOverrides="GridBox"
+    						Margin="2" />
+  <Ellipse VerticalAlignment="Bottom" Width="1200" Height="807" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Margin="0,0,0,-406">
+  	<Ellipse.Fill>
+  		<RadialGradientBrush>
+  			<GradientStop Color="#FFDFEEDC"/>
+  			<GradientStop Offset="1"/>
+  		</RadialGradientBrush>
+  	</Ellipse.Fill>
+  </Ellipse>
+  <Canvas HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="400" Height="400">
+  	<Path Fill="#FFF8F8F8" Stretch="Fill" Width="390.059" Height="280.282" Canvas.Left="6.99" Canvas.Top="113.718" Data="M6.9919893,392.02045 L6.9923256,131.34145 C5.9946594,102.43222 77.958767,109.67417 80.794661,147.29135 102.73591,135.32862 150.92023,136.33336 152.60234,174.20645 196.92822,163.65312 208.92356,196.78999 215.43422,232.02516 269.21927,229.90042 292.29364,240.1323 297.21526,279.87384 336.06264,279.93557 353.38573,300.90163 357.05504,329.71678 393.95612,339.68536 396.43755,364.55062 395.9506,393.0173 z">
+  		<Path.Effect>
+  			<DropShadowEffect BlurRadius="29" Direction="72" Opacity="0.06"/>
+  		</Path.Effect>
+  	</Path>
+  </Canvas>
+  <Canvas HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="400" Height="400">
+  	<Path Fill="#FFFAFAFA" Stretch="Fill" Width="400.483" Height="309.962" Canvas.Left="-7.988" Canvas.Top="84.029" Data="M6.9919893,392.02045 L6.4946586,100.94031 C26.713524,81.493197 65.694341,93.448721 68.530235,131.0659 113.38411,128.52841 147.5641,138.8778 149.24621,176.75089 193.57209,166.19756 215.37496,216.60348 199.47664,242.49214 253.26168,240.3674 266.85728,259.48316 271.7789,299.22471 310.62628,299.28643 325.48601,316.09424 329.15532,344.90939 370.14225,341.5666 396.43755,364.55062 395.9506,393.0173 z" RenderTransformOrigin="0.5,0.5">
+  		<Path.Effect>
+  			<DropShadowEffect BlurRadius="29" Direction="367" Opacity="0.06"/>
+  		</Path.Effect>
+  		<Path.RenderTransform>
+  			<TransformGroup>
+  				<ScaleTransform ScaleX="-1"/>
+  				<SkewTransform/>
+  				<RotateTransform/>
+  				<TranslateTransform X="0.0059999999999718057"/>
+  			</TransformGroup>
+  		</Path.RenderTransform>
+  	</Path>
+  </Canvas>
+  <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+  	<ContentControl x:Name="ccChooseService"
+  		Style="{DynamicResource LabelContentControlTitleLevel1}"
+  		Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblWaitingJustASecond}"
+                    DockPanel.Dock="Top"
+                   />
+  	<TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblWaitingSobeesRestored}" 
+               TextWrapping="Wrap" DockPanel.Dock="Top" Foreground="#FF787878"/>
+  	<Image Width="58" Source="/Sobees;Component/Resources/Images/logo_sobees_transparent_small_no_text.png" DockPanel.Dock="Top" Visibility="Collapsed"/>
+  	<Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill" Width="30" Height="30" DockPanel.Dock="Top" Margin="0,10,0,0">
+  		<Controls:UcWaiting IsAnimating="True" BorderBrush="#FF7E7E7E"
+  				/>
+  	</Viewbox>
+  </DockPanel>
+	</Grid>
+</UserControl>

@@ -1,0 +1,25 @@
+﻿<Glass:GlassWindow  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d"
+                    xmlns:Views="clr-namespace:Sobees.Views"
+                    xmlns:Glass="clr-namespace:Sobees.Glass"
+                    x:Class="Sobees.Settings.Views.SettingWindow"
+                    CenterInParentWindow="True"
+                    Title="Settings"
+                    Height="500"
+                    Width="640"
+                    ResizeMode="NoResize"
+                    FontFamily="{DynamicResource FontFamilyGeneric}">
+    <Grid x:Name="grMain"
+          Margin="0,0,0,0">
+
+        <ContentControl x:Name="Bg"
+                        Style="{StaticResource ContentControlStyleBg}" />
+
+        <Views:SettingsControl Margin="0,5,0,0"
+                               HorizontalAlignment="Stretch"
+                               VerticalAlignment="Stretch" />
+    </Grid>
+</Glass:GlassWindow>

@@ -1,0 +1,59 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Sobees.Controls.Facebook.Templates.DtMessage"
+             d:DesignWidth="156"
+             d:DesignHeight="124.213">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/TemplateFacebook.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+
+  <Grid>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+
+
+    <Button Cursor="Hand"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding DataContext.ShowUserProfileCommand, ElementName=lstMessage}"
+            CommandParameter="{Binding User}"
+            Style="{DynamicResource BtnNoStyle}"
+            Margin="0,0,5,0">
+      <Image Source="{Binding User.ProfileImgUrl, IsAsync=True}"
+             Width="47"
+             Height="47"
+             Stretch="Fill" />
+    </Button>
+    <StackPanel HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Grid.Column="1">
+      <TextBlock Text="{Binding Body}"
+                 x:Name="txtBirthday"
+                 Style="{DynamicResource TxtblStyleItemContent}" />
+      <Button x:Name="txtBlScreenName"
+              Content="{Binding User.NickName}"
+              Command="{Binding DataContext.ShowUserProfileCommand, ElementName=lstMessage}"
+              CommandParameter="{Binding User}"
+              Style="{DynamicResource BtnStyleContentItemH2}" />
+      <Button Content="{Binding CreatedTime}"
+              Command="{Binding DataContext.GotoFacebookMessageCommand, ElementName=lstMessage}"
+              x:Name="txtDate"
+              Margin="0,2,0,0"
+              Style="{DynamicResource BtnStyleFooterItem}" />
+    </StackPanel>
+  </Grid>
+
+
+</UserControl>

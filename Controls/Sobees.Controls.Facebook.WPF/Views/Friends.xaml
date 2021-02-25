@@ -1,0 +1,21 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:sobeesControlsFacebook="clr-namespace:Sobees.Controls.Facebook"
+             xmlns:templates="clr-namespace:Sobees.Controls.Facebook.Templates"
+             xmlns:controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             x:Class="Sobees.Controls.Facebook.Views.Friends">
+  <UserControl.Resources>
+    <DataTemplate x:Key="DtFriends">
+      <templates:DtFriends />
+    </DataTemplate>
+  </UserControl.Resources>
+  <Grid>
+    <controls:BListBox ItemsSource="{Binding FriendsDisplay}"
+                       ItemTemplate="{StaticResource DtFriends}"
+                       Style="{DynamicResource ListBoxStyleDeck}" x:Name="lstFriends" />
+    <controls:UcNoDataToDisplay Visibility="{Binding IsAnyDataVisibility}" />
+  </Grid>
+</UserControl>

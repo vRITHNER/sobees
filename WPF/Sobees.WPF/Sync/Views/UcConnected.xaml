@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="Sobees.Sync.Views.UcConnected"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Views="clr-namespace:Sobees.Sync.Views"
+    >
+  <StackPanel Orientation="Horizontal">
+    <!--<TextBlock Text="Welcome " ></TextBlock>
+    <TextBlock Text="{Binding UserName}" ></TextBlock>-->
+    <TextBlock Text="You are connected!" ></TextBlock>
+    
+  </StackPanel>
+</UserControl>

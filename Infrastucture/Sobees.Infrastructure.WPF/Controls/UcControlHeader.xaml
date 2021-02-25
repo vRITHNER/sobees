@@ -1,0 +1,78 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:Controls="clr-namespace:Sobees.Infrastructure.Controls"
+             xmlns:Converters="clr-namespace:Sobees.Infrastructure.Converters"
+             x:Class="Sobees.Infrastructure.Controls.UcControlHeader"
+             mc:Ignorable="d"
+             d:DesignWidth="109.833">
+    <UserControl.Resources>
+
+
+        <Converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    </UserControl.Resources>
+    <Border x:Name="headerTwitter1"
+            Style="{DynamicResource BorderStyleHeaderServiceBg}">
+        <Grid x:Name="Header1"
+              Margin="0"
+              Height="25.7333333333333">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="txtLinkedin1"
+                       VerticalAlignment="Center"
+                       Margin="5,4,0,4"
+                       Text="{Binding ServiceType}"
+                       Style="{DynamicResource TxtblStyleLevel2HeaderH1}"
+                       HorizontalAlignment="Left"
+                       d:LayoutOverrides="HorizontalMargin" />
+            <TextBlock x:Name="txtLinkedin1_Copy"
+                       VerticalAlignment="Center"
+                       Margin="4,5,0,5"
+                       Text="{Binding DisplayName}"
+                       TextTrimming="CharacterEllipsis"
+                       Style="{DynamicResource TxtblStyleLevel2HeaderH2}"
+                       HorizontalAlignment="Left"
+                       TextWrapping="NoWrap"
+                       Grid.Column="1" />
+            <StackPanel Grid.Column="2"
+                        Orientation="Horizontal"
+                        d:LayoutOverrides="Width"
+                        VerticalAlignment="Center"
+                        Margin="0,0,5,0">
+                <Controls:UcWaiting BorderBrush="{DynamicResource BrushWaiting}"
+                                    IsAnimating="{Binding IsWaiting}"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Margin="0,0,2,0" />
+                <Button x:Name="btnClearTweets"
+                        ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnClearTweets}"
+                        Command="{Binding ClearTweetsCommand}"
+                        Visibility="{Binding ClearTweetsVisibility}"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Margin="0,0,3,0"
+                        Style="{DynamicResource BtnLittleHeader}">
+                    <Path Stretch="Fill"
+                          Height="9"
+                          VerticalAlignment="Center"
+                          Width="7"
+                          Data="M0.62799835,3.8239975 L1.7899971,3.8239975 L1.7899971,7.9579983 L2.7619965,7.9579983 L2.7619965,3.8239975 L4.2439976,3.8239975 L4.2439976,7.9579973 L5.2159972,7.9579973 L5.2159972,3.8239975 L6.4289985,3.8239975 L6.4289985,8.9999981 L0.62799835,8.9999981 z M2.3739967,0 L4.5099964,0 L4.5099964,1.75 L7.0409999,1.75 L7.0409999,3.177 L0,3.177 L0,1.75 L2.3739967,1.75 z"
+                          Fill="{DynamicResource Level2HeaderForeground}" />
+                </Button>
+                <Button x:Name="btnCloseServices"
+                        Command="{Binding CloseServiceCommand}"
+                        ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtBlCloseservice}"
+                        Style="{DynamicResource BtnClose}"
+                        HorizontalAlignment="Right" />
+
+
+            </StackPanel>
+        </Grid>
+    </Border>
+
+</UserControl>

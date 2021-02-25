@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Sobees.Controls.TwitterSearch.Controls.UcAdsTop"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:CustomControls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+			 xmlns:BLocalizeLib="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             
+             xmlns:Cache="clr-namespace:Sobees.Infrastructure.Cache;assembly=Sobees.Infrastructure"
+             mc:Ignorable="d" d:DesignWidth="484.667" d:DesignHeight="192">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+    <Grid Background="#00000000"
+          x:Name="ucAds">
+		<Border x:Name="bg" SnapsToDevicePixels="True" Background="{DynamicResource Level2ItemAdsBg}"  BorderThickness="0,1,0,0" BorderBrush="{DynamicResource listBoxStyleDeckBorder}"/>
+		<Button Command="{Binding GoToWebCommand}"
+			CommandParameter="{Binding Ads.User.ProfileUrl}" Click="Button_Click" Unloaded="Button_Unloaded" Style="{DynamicResource BtnNoStyle}" Cursor="Hand">
+			<DockPanel x:Name="wrpMain" DataContext="{Binding Ads}" Loaded="wrpMain_Loaded" DataContextChanged="WrapPanel_DataContextChanged" Margin="3,7">
+				 <ContentControl Style="{DynamicResource ContentControlStyleAvatar}">
+				<Image Source="{Binding User.ProfileImgUrl, IsAsync=True}"/>
+				</ContentControl>
+				<Image Source="{Binding ImageUrl, IsAsync=True}"
+					Width="1"
+					Height="1" VerticalAlignment="Top" DockPanel.Dock="Right" Opacity="0" />
+				<TextBlock x:Name="btnUserName"
+					Text="{Binding User.NickName}"
+					DockPanel.Dock="Top" MaxHeight="30" Style="{DynamicResource TxtblStyleItemTitle}" Foreground="{DynamicResource Level2ItemAdsTitleForeground}" TextTrimming="WordEllipsis" />
+				<CustomControls:BLinkTweetTextBlock x:Name="txtBlContent"
+					BText="{Binding Title}"
+					DockPanel.Dock="Top"
+					Style="{DynamicResource TxtblStyleItemContent}" Foreground="{DynamicResource Level2ItemAdsTitleForeground}" MaxHeight="30" TextTrimming="WordEllipsis" />
+				
+				<WrapPanel VerticalAlignment="Top">
+					<TextBlock Text="Sponsored content"
+                       Style="{DynamicResource TxtblStyleItemFooter}" Foreground="{DynamicResource Level2ItemAdsFooterForeground}" />
+					<TextBlock Text=" - "
+                       Style="{DynamicResource TxtblStyleItemFooter}" Foreground="{DynamicResource Level2ItemAdsFooterForeground}" />
+					<Button x:Name="btnMore"
+						Content="{BLocalizeLib:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnMore}"
+						Style="{DynamicResource BtnStyleFooterItem}" Foreground="{DynamicResource Level2ItemAdsFooterForeground}"
+                    VerticalAlignment="Stretch" 
+                    />
+				</WrapPanel>
+			</DockPanel>
+		</Button>
+	</Grid>
+</UserControl>

@@ -1,0 +1,383 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+    xmlns:Cls="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+  xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    mc:Ignorable="d" 
+  xmlns:Sobees_Infrastructure_Controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure" 
+  xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
+  x:Class="Sobees.Controls.Twitter.Views.Profile"
+    d:DesignWidth="359.837" d:DesignHeight="449.527">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Cls:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+      
+      <Style x:Key="ButtonFocusVisual">
+        <Setter Property="Control.Template">
+          <Setter.Value>
+            <ControlTemplate>
+              <Rectangle Stroke="Black" StrokeDashArray="1 2" StrokeThickness="1" Margin="2" SnapsToDevicePixels="true"/>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      
+      <Style x:Key="BButtonRadiusStyleProfile" TargetType="{x:Type Sobees_Infrastructure_Controls:BButtonRadius}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource BButtonLevel2Foreground}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Sobees_Infrastructure_Controls:BButtonRadius}">
+              <Grid MinWidth="100">
+            <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualStateGroup.Transitions>
+                      <VisualTransition GeneratedDuration="00:00:00.1000000"/>
+                    </VisualStateGroup.Transitions>
+                    <VisualState x:Name="MouseOver">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Over" Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                      
+                    </VisualState>
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="Pressed" />
+                    <VisualState x:Name="Disabled" />
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border x:Name="Nrm" d:LayoutOverrides="Width, Height" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{DynamicResource BButtonLevel2Border}" BorderThickness="{TemplateBinding BorderThickness}" Background="{DynamicResource BButtonLevel2Bg}"/>
+                <Border x:Name="Over" CornerRadius="{TemplateBinding CornerRadius}" Background="{DynamicResource BButtonLevel2BgOver}" BorderBrush="{DynamicResource BButtonLevel2BorderOver}" BorderThickness="{TemplateBinding BorderThickness}" d:LayoutOverrides="Width, Height" Opacity="0"/>
+                <StackPanel Orientation="Vertical" d:LayoutOverrides="Height" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
+                  <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" Content="{TemplateBinding Content}"/>
+                  <TextBlock FontSize="10.667" FontWeight="Normal" Text="{TemplateBinding Content2}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+                </StackPanel>
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="5"/>
+      </Style>
+      <Style x:Key="BToggleButtonRadiusStyleProfile" TargetType="{x:Type Sobees_Infrastructure_Controls:BToggleButtonRadius}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource BButtonLevel2Foreground}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Sobees_Infrastructure_Controls:BToggleButtonRadius}">
+              <Grid MinWidth="100">
+            <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualStateGroup.Transitions>
+                      <VisualTransition GeneratedDuration="00:00:00.1000000"/>
+                    </VisualStateGroup.Transitions>
+                    <VisualState x:Name="MouseOver">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Over" Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                      
+                    </VisualState>
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="Pressed" />
+                    <VisualState x:Name="Disabled" />
+                  </VisualStateGroup>
+                <VisualStateGroup x:Name="CheckStates">
+                
+                <VisualState x:Name="Checked">
+                  <Storyboard>
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Checked1" Storyboard.TargetProperty="(UIElement.Opacity)">
+                      <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Nrm" Storyboard.TargetProperty="(UIElement.Opacity)">
+                      <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                    </DoubleAnimationUsingKeyFrames>
+                  </Storyboard>
+                  
+                </VisualState>
+                <VisualState x:Name="Unchecked" />
+              </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border x:Name="Nrm" d:LayoutOverrides="Width, Height" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{DynamicResource BButtonLevel2Border}" BorderThickness="{TemplateBinding BorderThickness}" Background="{DynamicResource BButtonLevel2Bg}"/>
+                <Border x:Name="Over" CornerRadius="{TemplateBinding CornerRadius}" Background="{DynamicResource BButtonLevel2BgOver}" BorderBrush="{DynamicResource BButtonLevel2BorderOver}" BorderThickness="{TemplateBinding BorderThickness}" d:LayoutOverrides="Width, Height" Opacity="0"/>
+                <Border x:Name="Checked1" CornerRadius="{TemplateBinding CornerRadius}" Background="{DynamicResource BButtonLevel2BgChecked}" BorderBrush="{DynamicResource BButtonLevel2BorderChecked}" BorderThickness="{TemplateBinding BorderThickness}" Opacity="0" d:LayoutOverrides="Width, Height"/>
+                <StackPanel Orientation="Vertical" d:LayoutOverrides="Height" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
+                  <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" Content="{TemplateBinding Content}"/>
+                  <TextBlock FontSize="10.667" FontWeight="Normal" Text="{TemplateBinding Content2}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+                </StackPanel>
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="5"/>
+      </Style>
+      <Style x:Key="ToggleButtonStyleFollow" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ToggleButton}">
+              <Grid>
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="borderOver" Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                  
+                    </VisualState>
+                    <VisualState x:Name="Pressed" />
+                    <VisualState x:Name="Disabled" >
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.525"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.175"/>
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="CheckStates">
+                
+                    <VisualState x:Name="Checked">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="borderChecked" Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.4"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.4"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock">
+                          <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="contentPresenter">
+                          <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                      </Storyboard>
+                  
+                    </VisualState>
+                    <VisualState x:Name="Unchecked" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Unfocused" />
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border x:Name="border"
+                  BorderThickness="1,1,0,0"
+                  CornerRadius="3" 
+                  BorderBrush="{DynamicResource ToggleLevel2Border1}" 
+                  Background="{DynamicResource ToggleLevel2Bg}">
+                  <Border BorderBrush="{DynamicResource ToggleLevel2Border2}" BorderThickness="0,0,1,1" CornerRadius="3"/>
+                </Border>
+                <Border x:Name="borderOver"
+                  BorderThickness="1"
+                  CornerRadius="3,3,3,3"
+                  Opacity="0" BorderBrush="{DynamicResource ToggleLevel2BorderOver}" Background="{DynamicResource ToggleLevel2BgOver}" />
+                <Border x:Name="borderChecked"
+                  BorderThickness="1,1,0,0"
+                  CornerRadius="3"
+                  Opacity="0" BorderBrush="{DynamicResource ToggleLevel2Border1Checked}" Background="{DynamicResource ToggleLevel2BgChecked}" >
+                  <Border BorderBrush="{DynamicResource ToggleLevel2Border2Checked}" BorderThickness="0,0,1,1" CornerRadius="3"/>
+                </Border>
+                <ContentPresenter x:Name="contentPresenter"
+                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                  Margin="{TemplateBinding Padding}" RenderTransformOrigin="0.5,0.5" >
+                  <ContentPresenter.RenderTransform>
+                    <TransformGroup>
+                      <ScaleTransform/>
+                      <SkewTransform/>
+                      <RotateTransform/>
+                      <TranslateTransform X="0.5" Y="0.5"/>
+                    </TransformGroup>
+                  </ContentPresenter.RenderTransform>
+                </ContentPresenter>
+                <TextBlock x:Name="textBlock" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" TextWrapping="Wrap" Text="{TemplateBinding Tag}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}" Visibility="Collapsed"/>
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="FontFamily"
+          Value="Arial" />
+        <Setter Property="Foreground"
+          Value="{DynamicResource BrushBtnDefaultForeground}" />
+        <Setter Property="FontSize"
+          Value="10.667" />
+        <Setter Property="BorderBrush"
+          Value="{DynamicResource BrushBtnDefaultForegroundShadow}" />
+        <Setter Property="Padding" Value="2,3"/>
+        <Setter Property="Tag" Value="UnFollow"/>
+        <Setter Property="Content" Value="Follow"/>
+      </Style>
+      
+    </ResourceDictionary>
+</UserControl.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="VisualStateGroupMoreInfo">
+        <VisualState x:Name="vsViewMore">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="grProfileDetail" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+        <VisualState x:Name="vsHideMore"/>
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    <StackPanel>
+      <ToggleButton IsChecked="{Binding IsFriends}" 
+        Command="{Binding FollowCommand}"
+        HorizontalAlignment="Left" 
+        Style="{DynamicResource ToggleButtonStyleFollow}" Padding="5" Margin="0,0,0,5" MinWidth="80" Tag="Unfollow"/>
+      <TextBlock Text="{Binding CurrentUser.Description, FallbackValue=Description et blablabla}" Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,0,10" FontSize="13.333" />
+      <TextBlock x:Name="txtBlLocation"
+        Text="{Binding CurrentUser.Location, FallbackValue=Le Noirmont}"
+        Style="{DynamicResource TxtblStyleItemContent}" />
+      <Button x:Name="btnLink"
+        Content="{Binding CurrentUser.Url, FallbackValue=http://www.sobees.com}"
+        Tag="{Binding}"
+        Command="{Binding GoToWebCommand}"
+        CommandParameter="{Binding CurrentUser.Url}" 
+        Style="{DynamicResource BtnStyleFooterItem}" />
+            <Button x:Name="btnTwitterPage"
+        HorizontalAlignment="Left"
+        Margin="0"
+        Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnTwitterPage}"
+        Command="{Binding GoToWebCommand}"
+        CommandParameter="{Binding CurrentUser.ProfileUrl}"
+        Style="{DynamicResource BtnStyleFooterItem}" />
+      <UniformGrid Rows="3" Columns="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5">
+        <Sobees_Infrastructure_Controls:BButtonRadius
+          x:Name="btnFollower" 
+          Style="{DynamicResource BButtonRadiusStyleProfile}" 
+          CornerRadius="8,0,0,0"
+          Content="{Binding CurrentUser.FollowersCount, FallbackValue=321}"
+          Content2="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblFollowers}" BorderThickness="1,1,0.5,0.5" MarginContent2="0" IsEnabled="False"/>
+        <Sobees_Infrastructure_Controls:BButtonRadius
+          x:Name="btnFollowing" 
+          Style="{DynamicResource BButtonRadiusStyleProfile}" 
+          CornerRadius="0,8,0,0"
+          Content="{Binding CurrentUser.FriendsCount, FallbackValue=123}"
+          Content2="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblFollowing}" BorderThickness="0.5,1,1,0.5" IsEnabled="False"/>
+        <Sobees_Infrastructure_Controls:BButtonRadius
+          x:Name="btnFavorite" 
+          Style="{DynamicResource BButtonRadiusStyleProfile}"
+          Content="{Binding CurrentUser.NbFavorites, FallbackValue=52}"
+          Content2="favorites" BorderThickness="1,0.5,0.5,0.5" IsEnabled="False"/>
+        <Sobees_Infrastructure_Controls:BButtonRadius
+          x:Name="btnTweets" 
+          Style="{DynamicResource BButtonRadiusStyleProfile}"
+          Click="ShowTweets" 
+          Command="{Binding ShowTweetsCommand}"
+          Content="{Binding CurrentUser.StatusUseCount, FallbackValue=112358}"
+          Content2="tweets"
+          BorderThickness="0.5,0.5,1,0.5"/>
+        <Sobees_Infrastructure_Controls:BButtonRadius
+          x:Name="btnShowLists" 
+          Style="{DynamicResource BButtonRadiusStyleProfile}" 
+          Content2="Show lists" 
+          CornerRadius="0,0,0,8"
+          Click="ShowLists" BorderThickness="1,0.5,0.5,1"/>
+        <Sobees_Infrastructure_Controls:BButtonRadius
+          x:Name="btnMoreInfo" 
+          Style="{DynamicResource BButtonRadiusStyleProfile}" 
+          Content="BButtonRadius" 
+          CornerRadius="0,0,8,0" Visibility="Collapsed"/>
+        <Sobees_Infrastructure_Controls:BToggleButtonRadius x:Name="btntMoreInfo" 
+        Content2="More info" 
+         Style ="{DynamicResource BToggleButtonRadiusStyleProfile}" CornerRadius="0,0,8,0" BorderThickness="0.5,0.5,1,1">
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Checked">
+              <ic:GoToStateAction StateName="vsViewMore"/>
+            </i:EventTrigger>
+            <i:EventTrigger EventName="Unchecked">
+              <ic:GoToStateAction StateName="vsHideMore"/>
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+        </Sobees_Infrastructure_Controls:BToggleButtonRadius>
+      </UniformGrid>
+      <DockPanel x:Name="grProfileDetail" Visibility="Collapsed">
+        <Separator Style="{DynamicResource SeparatorStyleLevel2}" Visibility="{Binding DetailsViewVisibility}" DockPanel.Dock="Top" Margin="0,5" />
+        <WrapPanel
+          Orientation="Horizontal"
+          DockPanel.Dock="Top">
+          <TextBlock Text="TimeZone: "
+            Margin="0,0,5,0"
+            Style="{DynamicResource TxtblStyleItemContent}" />
+          <TextBlock x:Name="txtBlTimeZone"
+            Text="{Binding CurrentUser.UserTimeZone, FallbackValue=Honolulu}"
+            Style="{DynamicResource TxtblStyleItemContent}" />
+          <TextBlock x:Name="txtBlUtcOffset"
+            Text="{Binding CurrentUser.UtcOffset, FallbackValue=18000}"
+            Style="{DynamicResource TxtblStyleItemContent}" Visibility="Collapsed" />
+
+        </WrapPanel>
+        <WrapPanel
+          Orientation="Horizontal" DockPanel.Dock="Top">
+          <TextBlock 
+            Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblTweetingsSince}"
+            Margin="0,0,5,0"
+            Style="{DynamicResource TxtblStyleItemContent}" />
+          <TextBlock x:Name="txtBlJoined"
+            Text="{Binding CurrentUser.CreatedAt, FallbackValue=12/12/2003}"
+            Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+        <WrapPanel
+          Orientation="Horizontal"
+          DockPanel.Dock="Top">
+          <TextBlock Text="Lang: "
+            Margin="0,0,5,0"
+            Style="{DynamicResource TxtblStyleItemContent}" />
+          <TextBlock x:Name="txtBllang"
+            Text="{Binding CurrentUser.Lang, FallbackValue=en}"
+            Style="{DynamicResource TxtblStyleItemContent}" />
+
+        </WrapPanel>
+        <ToggleButton IsChecked="{Binding CurrentUser.IsProtected}"
+          IsEnabled="False" Content="Protected?" DockPanel.Dock="Top" HorizontalAlignment="Left" Style="{DynamicResource BtntRightFalse}"/>
+        <ToggleButton IsChecked="{Binding CurrentUser.IsVerified}"
+          IsEnabled="False"
+          Content="Verified?" DockPanel.Dock="Top" HorizontalAlignment="Left" Style="{DynamicResource BtntRightFalse}" />
+        <Separator Style="{DynamicResource SeparatorStyleLevel2}" Visibility="{Binding DetailsViewVisibility}" DockPanel.Dock="Top" Margin="0,5" />
+      </DockPanel>
+    </StackPanel>
+    
+    <ContentControl x:Name="ccContent" Grid.Row="1" Margin="0,10,0,0" />
+  </Grid>
+</UserControl>

@@ -1,0 +1,7 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Tools.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Tools.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Infrastucture\Sobees.Tools.WPF\obj\Debug\Sobees.Tools.WPF.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Infrastucture\Sobees.Tools.WPF\obj\Debug\Sobees.Tools.WPF.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Infrastucture\Sobees.Tools.WPF\obj\Debug\Sobees.Tools.WPF.csproj.CopyComplete
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Infrastucture\Sobees.Tools.WPF\obj\Debug\Sobees.Tools.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\Infrastucture\Sobees.Tools.WPF\obj\Debug\Sobees.Tools.pdb

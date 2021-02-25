@@ -1,0 +1,9 @@
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BResolveUrlLibrary.dll.config
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BResolveUrlLibrary.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\References\Sobees.Library.BResolveUrlLibrary.pdb
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BResolveUrlLibrary\obj\Debug\BResolveUrlLibrary.csproj.App.config
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BResolveUrlLibrary\obj\Debug\BResolveUrlLibrary.csprojAssemblyReference.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BResolveUrlLibrary\obj\Debug\BResolveUrlLibrary.csproj.CoreCompileInputs.cache
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BResolveUrlLibrary\obj\Debug\BResolveUrlLibrary.csproj.CopyComplete
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BResolveUrlLibrary\obj\Debug\Sobees.Library.BResolveUrlLibrary.dll
+D:\Work\!deskNET\Sobees\Sobees\SourcesWPF_RTM_4_5\SharedLibraries\BResolveUrlLibrary\obj\Debug\Sobees.Library.BResolveUrlLibrary.pdb

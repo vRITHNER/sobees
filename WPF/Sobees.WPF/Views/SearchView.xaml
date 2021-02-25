@@ -1,0 +1,13 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Sobees.Views.SearchView"
+             DataContext="{Binding SearchViewModel, Source={StaticResource Locator}}" d:DesignWidth="74.833" d:DesignHeight="56.833">
+    <!--<DockPanel LastChildFill="True">
+    <Controls:UcSearchBox DockPanel.Dock="Top" />-->
+    <Controls:BServiceGrid Workspaces="{Binding BSearchWorkspaces}"
+                           BTemplate="{Binding BSearchWorkspaceGridTemplate}"
+                            />
+  <!--</DockPanel>-->
+</UserControl>

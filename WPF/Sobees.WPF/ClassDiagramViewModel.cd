@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="sobees.ViewModel.ViewsManagerViewModel">
+    <Position X="0.5" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAABAAAGAAAAAQAgAAAQAAAQEA=</HashCode>
+      <FileName>C:\Work\!deskNET\bDule\Beta\Sources\Silverlight\Sobees.SL\ViewModel\ViewsManagerViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sobees.ViewModel.SobeesViewModel">
+    <Position X="5.75" Y="18.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAABAAAAAAAgAAAEgAAAAQAAAAAA=</HashCode>
+      <FileName>C:\Work\!deskNET\bDule\Beta\Sources\Silverlight\sobees.SL\ViewModel\SobeesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sobees.ViewModel.SourceLoaderViewModel">
+    <Position X="11.75" Y="27" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CCAAAAAgAAAAAAAgEAAAAAAAAAAgAAEAAAAAgAAAAEA=</HashCode>
+      <FileName>C:\Work\!deskNET\bDule\Beta\Sources\Silverlight\Sobees.SL\ViewModel\SourceLoaderViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sobees.Infrastructure.ViewModelBase.BServiceWorkspaceViewModel">
+    <Position X="11.25" Y="18.5" Width="3.25" />
+    <TypeIdentifier />
+    <Lollipop Position="1.96" />
+  </Class>
+  <Class Name="Sobees.Infrastructure.ViewModelBase.BWorkspaceViewModel">
+    <Position X="8.75" Y="10.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Sobees.Infrastructure.ViewModelBase.BSettingsViewModel">
+    <Position X="3.25" Y="10.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Sobees.Infrastructure.ViewModelBase.BViewModelBase">
+    <Position X="6.75" Y="4.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GalaSoft.MvvmLight.ViewModelBase">
+    <Position X="6" Y="0.5" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="sobees.ViewModel.SettingsViewModel">
+    <Position X="3.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Work\!deskNET\bDule\Beta\Sources\Silverlight\Sobees.SL\ViewModel\SettingsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sobees.ViewModel.FirstLaunchControlViewModel">
+    <Position X="9" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Work\!deskNET\bDule\Beta\Sources\Silverlight\Sobees.SL\ViewModel\FirstLaunchControlViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

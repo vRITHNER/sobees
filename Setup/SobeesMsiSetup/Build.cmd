@@ -1,0 +1,1 @@
+msbuild /v:normal /p:OutDir=bin\Debug\ /p:platform=x86 /p:outputpath=bin\debug

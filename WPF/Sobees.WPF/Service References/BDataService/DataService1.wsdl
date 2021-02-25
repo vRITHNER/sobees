@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://sobeessql002.sobees.com/Silverlight/BDataService/DataService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://sobeessql002.sobees.com/Silverlight/BDataService/DataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://sobeessql002.sobees.com/Silverlight/BDataService/DataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/sobeesRemoteServiceDBModel" />
+      <xsd:import schemaLocation="http://sobeessql002.sobees.com/Silverlight/BDataService/DataService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://sobeessql002.sobees.com/Silverlight/BDataService/DataService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDataService_GetCheckServiceRunningString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheckServiceRunningString" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCheckServiceRunningString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheckServiceRunningStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveUserCredentialSettingFileAsXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserCredentialSettingFileAsXml" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveUserCredentialSettingFileAsXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserCredentialSettingFileAsXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveUserSettingFileAsXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserSettingFileAsXml" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveUserSettingFileAsXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserSettingFileAsXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserCredentialSettingFileAsXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserCredentialSettingFileAsXml" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserCredentialSettingFileAsXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserCredentialSettingFileAsXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserServiceCredentialByServiceUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserServiceCredentialByServiceUserId" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserServiceCredentialByServiceUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserServiceCredentialByServiceUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_AddUserServiceCredential_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserServiceCredential" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_AddUserServiceCredential_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserServiceCredentialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSocialNetworkServiceByServiceId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocialNetworkServiceByServiceId" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSocialNetworkServiceByServiceId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocialNetworkServiceByServiceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserSobeesToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSobeesToken" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserSobeesToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSobeesTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetServiceUserByServiceUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceUserByServiceUserId" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetServiceUserByServiceUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceUserByServiceUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserSettingFileAsXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSettingFileAsXml" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserSettingFileAsXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSettingFileAsXmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDataService">
+    <wsdl:operation name="GetCheckServiceRunningString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetCheckServiceRunningString" message="tns:IDataService_GetCheckServiceRunningString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetCheckServiceRunningStringResponse" message="tns:IDataService_GetCheckServiceRunningString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserCredentialSettingFileAsXml">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveUserCredentialSettingFileAsXml" message="tns:IDataService_SaveUserCredentialSettingFileAsXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveUserCredentialSettingFileAsXmlResponse" message="tns:IDataService_SaveUserCredentialSettingFileAsXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserSettingFileAsXml">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveUserSettingFileAsXml" message="tns:IDataService_SaveUserSettingFileAsXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveUserSettingFileAsXmlResponse" message="tns:IDataService_SaveUserSettingFileAsXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserCredentialSettingFileAsXml">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetUserCredentialSettingFileAsXml" message="tns:IDataService_GetUserCredentialSettingFileAsXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetUserCredentialSettingFileAsXmlResponse" message="tns:IDataService_GetUserCredentialSettingFileAsXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserServiceCredentialByServiceUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetUserServiceCredentialByServiceUserId" message="tns:IDataService_GetUserServiceCredentialByServiceUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetUserServiceCredentialByServiceUserIdResponse" message="tns:IDataService_GetUserServiceCredentialByServiceUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserServiceCredential">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/AddUserServiceCredential" message="tns:IDataService_AddUserServiceCredential_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/AddUserServiceCredentialResponse" message="tns:IDataService_AddUserServiceCredential_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSocialNetworkServiceByServiceId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetSocialNetworkServiceByServiceId" message="tns:IDataService_GetSocialNetworkServiceByServiceId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetSocialNetworkServiceByServiceIdResponse" message="tns:IDataService_GetSocialNetworkServiceByServiceId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSobeesToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetUserSobeesToken" message="tns:IDataService_GetUserSobeesToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetUserSobeesTokenResponse" message="tns:IDataService_GetUserSobeesToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceUserByServiceUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetServiceUserByServiceUserId" message="tns:IDataService_GetServiceUserByServiceUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetServiceUserByServiceUserIdResponse" message="tns:IDataService_GetServiceUserByServiceUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSettingFileAsXml">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetUserSettingFileAsXml" message="tns:IDataService_GetUserSettingFileAsXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetUserSettingFileAsXmlResponse" message="tns:IDataService_GetUserSettingFileAsXml_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDataService" type="tns:IDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCheckServiceRunningString">
+      <soap:operation soapAction="http://tempuri.org/IDataService/GetCheckServiceRunningString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserCredentialSettingFileAsXml">
+      <soap:operation soapAction="http://tempuri.org/IDataService/SaveUserCredentialSettingFileAsXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserSettingFileAsXml">
+      <soap:operation soapAction="http://tempuri.org/IDataService/SaveUserSettingFileAsXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserCredentialSettingFileAsXml">
+      <soap:operation soapAction="http://tempuri.org/IDataService/GetUserCredentialSettingFileAsXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserServiceCredentialByServiceUserId">
+      <soap:operation soapAction="http://tempuri.org/IDataService/GetUserServiceCredentialByServiceUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserServiceCredential">
+      <soap:operation soapAction="http://tempuri.org/IDataService/AddUserServiceCredential" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSocialNetworkServiceByServiceId">
+      <soap:operation soapAction="http://tempuri.org/IDataService/GetSocialNetworkServiceByServiceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSobeesToken">
+      <soap:operation soapAction="http://tempuri.org/IDataService/GetUserSobeesToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceUserByServiceUserId">
+      <soap:operation soapAction="http://tempuri.org/IDataService/GetServiceUserByServiceUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSettingFileAsXml">
+      <soap:operation soapAction="http://tempuri.org/IDataService/GetUserSettingFileAsXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DataService">
+    <wsdl:port name="BasicHttpBinding_IDataService" binding="tns:BasicHttpBinding_IDataService">
+      <soap:address location="http://sobeessql002.sobees.com/Silverlight/BDataService/DataService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

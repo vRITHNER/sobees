@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="Sobees.Settings.Views.UcNoAccounts"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+    >
+    <Grid>
+    <TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblNoAccounts}" />
+  </Grid>
+</UserControl>

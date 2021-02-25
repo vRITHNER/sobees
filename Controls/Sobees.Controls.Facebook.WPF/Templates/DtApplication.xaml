@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Sobees.Controls.Facebook.Templates.DtApplication"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converter="clr-namespace:Sobees.Controls.Facebook.Converters"
+             xmlns:templates="clr-namespace:Sobees.Controls.Facebook.Templates"
+             x:Name="ucDtApplication"
+             Tag="{Binding DataContext,ElementName=lstFacebook}" Unloaded="ucDtApplication_Unloaded">
+
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <converter:FacebookAppDescriptionConverter x:Key="FacebookAppDescriptionConverter" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+    <templates:DtListViewImage />
+    <TextBlock Text="{Binding Converter={StaticResource FacebookAppDescriptionConverter}}"
+               x:Name="AppDescription"
+               Style="{DynamicResource TxtblStyleItemContent}" />
+  </StackPanel>
+</UserControl>

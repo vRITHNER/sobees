@@ -1,0 +1,483 @@
+﻿<UserControl
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:localizeWpf="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+  xmlns:cls="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure"
+  xmlns:converters="clr-namespace:Sobees.Controls.Facebook.Converters"
+  xmlns:controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+  xmlns:sobeesInfrastructureControls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+  xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+  x:Class="Sobees.Controls.Facebook.Views.Profile"
+  x:Name="uCFaceProfile" mc:Ignorable="d" d:DesignWidth="341.93" d:DesignHeight="515.973">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <cls:NullVisibilityConverter x:Key="NullVisibilityConverter" />
+      <cls:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+      <converters:RelativeTimeConverter x:Key="RelativeTimeConverter" />
+      <Style x:Key="BButtonRadiusStyleProfile" TargetType="{x:Type sobeesInfrastructureControls:BButtonRadius}">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource BButtonLevel2Foreground}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type sobeesInfrastructureControls:BButtonRadius}">
+              <Grid MinWidth="100">
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualStateGroup.Transitions>
+                      <VisualTransition GeneratedDuration="00:00:00.1000000" />
+                    </VisualStateGroup.Transitions>
+                    <VisualState x:Name="MouseOver">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000"
+                                                       Storyboard.TargetName="Over"
+                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+
+                    </VisualState>
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Pressed" />
+                    <VisualState x:Name="Disabled" />
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border x:Name="Nrm" d:LayoutOverrides="Width, Height" CornerRadius="{TemplateBinding CornerRadius}"
+                        BorderBrush="{DynamicResource BButtonLevel2Border}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{DynamicResource BButtonLevel2Bg}" />
+                <Border x:Name="Over" CornerRadius="{TemplateBinding CornerRadius}"
+                        Background="{DynamicResource BButtonLevel2BgOver}"
+                        BorderBrush="{DynamicResource BButtonLevel2BorderOver}"
+                        BorderThickness="{TemplateBinding BorderThickness}" d:LayoutOverrides="Width, Height"
+                        Opacity="0" />
+                <StackPanel Orientation="Vertical" d:LayoutOverrides="Height" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
+                  <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                    RecognizesAccessKey="True" HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                                    Content="{TemplateBinding Content}" />
+                  <TextBlock FontSize="10.667" FontWeight="Normal" Text="{TemplateBinding Content2}"
+                             TextWrapping="Wrap" HorizontalAlignment="Center" />
+                </StackPanel>
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Padding" Value="5" />
+      </Style>
+      <Style x:Key="BToggleButtonRadiusStyleProfile"
+             TargetType="{x:Type sobeesInfrastructureControls:BToggleButtonRadius}">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource BButtonLevel2Foreground}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type sobeesInfrastructureControls:BToggleButtonRadius}">
+              <Grid MinWidth="100">
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualStateGroup.Transitions>
+                      <VisualTransition GeneratedDuration="00:00:00.1000000" />
+                    </VisualStateGroup.Transitions>
+                    <VisualState x:Name="MouseOver">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000"
+                                                       Storyboard.TargetName="Over"
+                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+
+                    </VisualState>
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Pressed" />
+                    <VisualState x:Name="Disabled" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="CheckStates">
+
+                    <VisualState x:Name="Checked">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000"
+                                                       Storyboard.TargetName="Checked1"
+                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000"
+                                                       Storyboard.TargetName="Nrm"
+                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+
+                    </VisualState>
+                    <VisualState x:Name="Unchecked" />
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border x:Name="Nrm" d:LayoutOverrides="Width, Height" CornerRadius="{TemplateBinding CornerRadius}"
+                        BorderBrush="{DynamicResource BButtonLevel2Border}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{DynamicResource BButtonLevel2Bg}" />
+                <Border x:Name="Over" CornerRadius="{TemplateBinding CornerRadius}"
+                        Background="{DynamicResource BButtonLevel2BgOver}"
+                        BorderBrush="{DynamicResource BButtonLevel2BorderOver}"
+                        BorderThickness="{TemplateBinding BorderThickness}" d:LayoutOverrides="Width, Height"
+                        Opacity="0" />
+                <Border x:Name="Checked1" CornerRadius="{TemplateBinding CornerRadius}"
+                        Background="{DynamicResource BButtonLevel2BgChecked}"
+                        BorderBrush="{DynamicResource BButtonLevel2BorderChecked}"
+                        BorderThickness="{TemplateBinding BorderThickness}" Opacity="0"
+                        d:LayoutOverrides="Width, Height" />
+                <StackPanel Orientation="Vertical" d:LayoutOverrides="Height" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
+                  <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                    RecognizesAccessKey="True" HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                                    Content="{TemplateBinding Content}" />
+                  <TextBlock FontSize="10.667" FontWeight="Normal" Text="{TemplateBinding Content2}"
+                             TextWrapping="Wrap" HorizontalAlignment="Center" />
+                </StackPanel>
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Padding" Value="5" />
+      </Style>
+
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <DockPanel Margin="0">
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="VisualStateGroup">
+        <VisualState x:Name="vsShowProfileFBDetail">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000"
+                                           Storyboard.TargetName="ProfileDetails"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+        <VisualState x:Name="vsHideProfileFBDetail" />
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    <StackPanel x:Name="ProfileInfo" VerticalAlignment="Top" DockPanel.Dock="Top">
+      <sobeesInfrastructureControls:BTextBlock x:Name="txtBlAboutMe"
+                                                 BText="{Binding CurrentUser.Description}"
+                                                 HorizontalAlignment="Left"
+                                                 Visibility="{Binding CurrentUser.Description, Converter={StaticResource NullVisibilityConverter}}"
+                                                 Style="{DynamicResource TxtblStyleItemContent}" />
+      <sobeesInfrastructureControls:BTextBlock x:Name="txtBlLocation2"
+                                                 Visibility="{Binding CurrentUser.Location, Converter={StaticResource NullVisibilityConverter}}"
+                                                 BText="{Binding CurrentUser.Location}"
+                                                 HorizontalAlignment="Left"
+                                                 Style="{DynamicResource TxtblStyleItemContent}" />
+      <Button x:Name="btnFacebookPage"
+              Content="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnFacebookPage}"
+              Tag="{Binding}"
+              Command="{Binding GoToWebCommand}"
+              CommandParameter="{Binding CurrentUser.ProfileUrl}"
+              Style="{DynamicResource BtnStyleFooterItem}"
+              Margin="0,0,0,10" />
+      <UniformGrid Rows="2" Columns="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5">
+        <sobeesInfrastructureControls:BButtonRadius
+          x:Name="btnBirthday"
+          Style="{DynamicResource BButtonRadiusStyleProfile}"
+          CornerRadius="8,0,0,0"
+          Content="{Binding CurrentUser.Birthday}"
+          Content2="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblBirthday}"
+          BorderThickness="1,1,0.5,0.5" MarginContent2="0" IsEnabled="False" FontSize="13.333" />
+        <sobeesInfrastructureControls:BButtonRadius
+          x:Name="btnOnline"
+          Style="{DynamicResource BButtonRadiusStyleProfile}"
+          CornerRadius="0,8,0,0"
+          Content2="Status" BorderThickness="0.5,1,1,0.5" IsEnabled="False">
+          <Button Content="Button"
+                  IsEnabled="{Binding CurrentUser.Online}"
+                  Style="{DynamicResource BtnOnline}" />
+
+        </sobeesInfrastructureControls:BButtonRadius>
+        <sobeesInfrastructureControls:BButtonRadius
+          x:Name="btnCountWall"
+          Style="{DynamicResource BButtonRadiusStyleProfile}"
+          Content="{Binding CurrentUser.WallCount}"
+          Content2="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblWallCount}"
+          BorderThickness="1,0.5,0.5,1" IsEnabled="False" CornerRadius="0,0,0,8" />
+        <sobeesInfrastructureControls:BToggleButtonRadius x:Name="btntMoreInfo"
+                                                            Content2="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblMoreInfo}"
+
+                                                            Style="{DynamicResource BToggleButtonRadiusStyleProfile}"
+                                                            CornerRadius="0,0,8,0" BorderThickness="0.5,0.5,1,1">
+          <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Checked">
+              <ic:GoToStateAction StateName="vsShowProfileFBDetail" />
+            </i:EventTrigger>
+            <i:EventTrigger EventName="Unchecked">
+              <ic:GoToStateAction StateName="vsHideProfileFBDetail" />
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+        </sobeesInfrastructureControls:BToggleButtonRadius>
+      </UniformGrid>
+      <Border x:Name="brdStats" Width="250" CornerRadius="5" BorderBrush="#FFBFBFBF" BorderThickness="1" Margin="0,10"
+              HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed">
+        <Border.Background>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFE2E2E2" Offset="1" />
+            <GradientStop Color="White" />
+          </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition MinHeight="40" />
+            <RowDefinition MinHeight="40" />
+
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+          </Grid.ColumnDefinitions>
+          <Path Stretch="Fill" Stroke="#FFCECECE" HorizontalAlignment="Right" Margin="0" Width="1" Grid.RowSpan="3"
+                Data="M93.112,0 L93.112,120" Height="80" />
+          <Path Stretch="Fill" Stroke="#FFCECECE" Margin="0" VerticalAlignment="Bottom" Height="1" Grid.ColumnSpan="2"
+                Data="M8,36.333333 L184.12693,36.333333" />
+          <StackPanel Visibility="{Binding CurrentUser.Birthday, Converter={StaticResource NullVisibilityConverter}}"
+                      Margin="0" VerticalAlignment="Center">
+            <TextBlock
+              Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblBirthday}"
+              FontSize="10"
+              HorizontalAlignment="Center" />
+            <TextBlock x:Name="txtBlFollowersCount"
+                       Text="{Binding CurrentUser.Birthday}"
+                       FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" />
+          </StackPanel>
+
+          <!--<TextBlock Text="Online"
+							Visibility="{Binding CurrentUser.Online, Converter={StaticResource boolToVisibilityConverter}}" VerticalAlignment="Center" HorizontalAlignment="Center" />-->
+          <StackPanel Grid.Row="1"
+                      Orientation="Vertical"
+                      d:LayoutOverrides="Height"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+            <TextBlock Text="Status"
+                       FontSize="10" HorizontalAlignment="Center" />
+          </StackPanel>
+          <Button
+            Grid.Column="1" d:LayoutOverrides="Height, GridBox" Padding="0"
+            Style="{DynamicResource BtnStyleProfileInfo}" HorizontalContentAlignment="Center">
+            <StackPanel>
+              <TextBlock x:Name="txtBlStatusCount"
+                         Text="{Binding CurrentUser.WallCount}"
+                         FontSize="18.667" FontWeight="Bold" HorizontalAlignment="Center" />
+              <TextBlock Text="Wall Post"
+                         FontSize="10" HorizontalAlignment="Center" FontWeight="Normal" />
+            </StackPanel>
+          </Button>
+          <ToggleButton Style="{DynamicResource BtntStyleProfileInfo}"
+                        Content="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblMoreInfo}"
+                        Grid.Column="1" Grid.Row="1">
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="Checked">
+                <ic:GoToStateAction StateName="vsShowProfileFBDetail" />
+              </i:EventTrigger>
+              <i:EventTrigger EventName="Unchecked">
+                <ic:GoToStateAction StateName="vsHideProfileFBDetail" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </ToggleButton>
+        </Grid>
+      </Border>
+    </StackPanel>
+    <ScrollViewer x:Name="ProfileDetails" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                  DockPanel.Dock="Top" MaxHeight="250" d:LayoutOverrides="GridBox" VerticalScrollBarVisibility="Auto"
+                  Visibility="Collapsed">
+      <StackPanel x:Name="spProfileDetails" Orientation="Vertical">
+        <Separator Style="{DynamicResource SeparatorStyleLevel2}" Margin="0,10" />
+        <WrapPanel x:Name="stkActivities"
+                   Orientation="Horizontal"
+                   Visibility="{Binding CurrentUser.FacebookActivities, Converter={StaticResource NullVisibilityConverter}}">
+          <TextBlock x:Name="txtblActivities"
+                     Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblActivities}"
+                     Margin="0,0,5,0"
+                     Style="{DynamicResource TxtblStyleItemContent}" />
+          <sobeesInfrastructureControls:BTextBlock x:Name="txtBlActivities"
+                                                     BText="{Binding CurrentUser.FacebookActivities}"
+                                                     Opacity="0.5"
+                                                     TextWrapping="Wrap"
+                                                     Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+
+        <WrapPanel x:Name="stkInterests"
+                   Orientation="Horizontal"
+                   Visibility="{Binding CurrentUser.FacebookInterest, Converter={StaticResource NullVisibilityConverter}}">
+          <TextBlock x:Name="txtblInterests"
+                     Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblInterests}"
+                     Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,5,0" />
+          <sobeesInfrastructureControls:BTextBlock x:Name="txtBlInterests"
+                                                     BText="{Binding CurrentUser.FacebookInterest}"
+                                                     Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+
+        <WrapPanel x:Name="stkMusic"
+                   Orientation="Horizontal"
+                   Visibility="{Binding CurrentUser.FacebookMusic, Converter={StaticResource NullVisibilityConverter}}">
+          <TextBlock x:Name="txtblMusic"
+                     Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblMusic}"
+                     Style="{DynamicResource TxtblStyleItemContent}"
+                     Margin="0,0,5,0" />
+          <sobeesInfrastructureControls:BTextBlock x:Name="txtBlMusic"
+                                                     BText="{Binding CurrentUser.FacebookMusic}"
+                                                     Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+
+        <WrapPanel x:Name="stkMovies"
+                   Orientation="Horizontal"
+                   Visibility="{Binding CurrentUser.FacebookMovies, Converter={StaticResource NullVisibilityConverter}}">
+          <TextBlock x:Name="txtblMovies"
+                     Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblMovies}"
+                     Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,5,0" />
+          <sobeesInfrastructureControls:BTextBlock x:Name="txtBlMovies"
+                                                     BText="{Binding CurrentUser.FacebookMovies}"
+                                                     Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+        <WrapPanel x:Name="stkBook"
+                   Orientation="Horizontal"
+                   Visibility="{Binding CurrentUser.FacebookBook, Converter={StaticResource NullVisibilityConverter}}">
+          <TextBlock x:Name="txtblBook"
+                     Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblBook}"
+                     Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,5,0" />
+          <sobeesInfrastructureControls:BTextBlock x:Name="txtBlBook"
+                                                     BText="{Binding CurrentUser.FacebookBook}"
+                                                     Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+        <WrapPanel x:Name="stkCompany"
+                   Orientation="Horizontal"
+                   Visibility="{Binding CurrentUser.FacebookCompany, Converter={StaticResource NullVisibilityConverter}}"
+                   d:LayoutOverrides="Width">
+          <TextBlock x:Name="txtblCompany"
+                     Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtBlCompany}"
+                     Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,5,0" />
+
+          <sobeesInfrastructureControls:BTextBlock x:Name="txtBlCompany"
+                                                     BText="{Binding CurrentUser.FacebookCompany}"
+                                                     Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+        <WrapPanel x:Name="stkFeatures"
+                   Orientation="Horizontal"
+                   Visibility="{Binding CurrentUser.FacebookFeatures, Converter={StaticResource NullVisibilityConverter}}"
+                   d:LayoutOverrides="Width">
+          <TextBlock x:Name="txtblFeatures"
+                     Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtBlFeatures}"
+                     Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,5,0" />
+          <sobeesInfrastructureControls:BTextBlock x:Name="txtBlFeatures"
+                                                     BText="{Binding CurrentUser.FacebookFeatures}"
+                                                     Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+        <WrapPanel x:Name="stkMission"
+                   Orientation="Horizontal"
+                   Visibility="{Binding CurrentUser.FacebookMission, Converter={StaticResource NullVisibilityConverter}}"
+                   d:LayoutOverrides="Width">
+          <TextBlock x:Name="txtblMission"
+                     Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtBlMission}"
+                     Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,5,0" />
+          <sobeesInfrastructureControls:BTextBlock x:Name="txtBlMission"
+                                                     BText="{Binding CurrentUser.FacebookMission}"
+                                                     Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+        <WrapPanel x:Name="stkProducts"
+                   Orientation="Horizontal"
+                   Visibility="{Binding CurrentUser.FacebookProducts, Converter={StaticResource NullVisibilityConverter}}"
+                   d:LayoutOverrides="Width">
+          <TextBlock x:Name="txtblProducts"
+                     Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtBlProducts}"
+                     Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,5,0" />
+
+          <sobeesInfrastructureControls:BTextBlock x:Name="txtBlProducts"
+                                                     BText="{Binding CurrentUser.FacebookProducts}"
+                                                     Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+        <WrapPanel x:Name="stkTv"
+                   Orientation="Horizontal"
+                   Visibility="{Binding CurrentUser.FacebookTv, Converter={StaticResource NullVisibilityConverter}}"
+                   d:LayoutOverrides="Width">
+          <TextBlock x:Name="txtblTv"
+                     Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtBlTv}"
+                     Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,5,0" />
+
+          <sobeesInfrastructureControls:BTextBlock x:Name="txtBlTv"
+                                                     BText="{Binding CurrentUser.FacebookTv}"
+                                                     Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+        <WrapPanel x:Name="stkPolitical"
+                   Orientation="Horizontal"
+                   Visibility="{Binding CurrentUser.FacebookPolitical, Converter={StaticResource NullVisibilityConverter}}"
+                   d:LayoutOverrides="Width">
+          <TextBlock x:Name="txtblPolitical"
+                     Text="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblPolitical}"
+                     Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,5,0" />
+
+          <sobeesInfrastructureControls:BTextBlock x:Name="txtBlPolitical"
+                                                     BText="{Binding CurrentUser.FacebookPolitical}"
+                                                     Style="{DynamicResource TxtblStyleItemContent}" />
+        </WrapPanel>
+        <!--<StackPanel x:Name="stkCount"
+					Orientation="Horizontal"
+					Visibility="{Binding CurrentUser.WallCount, Converter={StaticResource nullVisibilityConverter}}"
+					d:LayoutOverrides="Width">
+					<TextBlock x:Name="txtblCount"
+                     Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblWallCount}"
+					 Style="{DynamicResource TxtblStyleItemContent}" />
+						
+					<Controls:BTextBlock x:Name="txtBlCount"
+						BText="{Binding CurrentUser.WallCount}"
+						Style="{DynamicResource TxtblStyleItemContent}" />
+				</StackPanel>
+				<StackPanel x:Name="stkStatus"
+					Orientation="Horizontal"
+					Visibility="{Binding CurrentUser.LastStatus, Converter={StaticResource nullVisibilityConverter}}"
+					d:LayoutOverrides="Width">
+					<TextBlock x:Name="txtblStatus" Visibility="{Binding CurrentUser.LastStatus.PubDate, Converter={StaticResource nullVisibilityConverter}}"
+                     Text="{LocalizeWPF:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtLinkedinLastStatus}"
+					 Style="{DynamicResource TxtblStyleItemContent}" Margin="0,0,5,0" />
+						
+					<Controls:BTextBlock x:Name="txtBlStatus"
+						BText="{Binding CurrentUser.LastStatus.Title}"
+                        Visibility="{Binding CurrentUser.LastStatus.PubDate, Converter={StaticResource nullVisibilityConverter}}"
+						Style="{DynamicResource TxtblStyleItemContent}" />
+					<TextBlock x:Name="txtBlDate"
+						Text="{Binding CurrentUser.LastStatus.PubDate, Converter={StaticResource RelativeTimeConverter}}"
+                     Visibility="{Binding CurrentUser.LastStatus.PubDate, Converter={StaticResource nullVisibilityConverter}}"
+						Style="{DynamicResource TxtblStyleItemContent}" />
+				</StackPanel>-->
+      </StackPanel>
+    </ScrollViewer>
+    <Separator Style="{DynamicResource SeparatorStyleLevel2}" Margin="0,10" DockPanel.Dock="Top"
+               VerticalAlignment="Top" />
+    <Grid VerticalAlignment="Bottom" DockPanel.Dock="Top">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <TextBox
+        Text="{Binding StatusWall, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        TextWrapping="Wrap" />
+      <Button
+        Content="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblPostToWall}"
+        Command="{Binding PostToWallCommand}" Margin="5,0,0,0" d:LayoutOverrides="Width, Height" Grid.Column="1" />
+    </Grid>
+    <Separator Style="{DynamicResource SeparatorStyleLevel2}" DockPanel.Dock="Top" Margin="0,10" />
+    <ContentControl x:Name="contentControl"
+                    DockPanel.Dock="Top"
+                    Content="{Binding ProfileHomeViewModel}"
+                    ContentTemplate="{Binding ProfileHomeViewModel.DataTemplateView}" Margin="0,5,0,0" />
+  </DockPanel>
+</UserControl>

@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Sobees.Controls.Facebook.Views.Birthsday"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:templates="clr-namespace:Sobees.Controls.Facebook.Templates"
+             xmlns:controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure">
+  <UserControl.Resources>
+    <DataTemplate x:Key="DtFriends">
+      <templates:DtFriends />
+    </DataTemplate>
+  </UserControl.Resources>
+  <Grid>
+    <controls:BListBox ItemsSource="{Binding Birthday}" x:Name="lstFriends"
+                       ItemTemplate="{StaticResource DtFriends}" Style="{DynamicResource ListBoxStyleDeck}" />
+    <controls:UcNoDataToDisplay Visibility="{Binding IsAnyDataVisibility}" />
+  </Grid>
+</UserControl>

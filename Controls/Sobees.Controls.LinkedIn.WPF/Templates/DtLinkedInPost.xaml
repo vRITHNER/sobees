@@ -1,0 +1,218 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cache="clr-namespace:Sobees.Infrastructure.Cache;assembly=Sobees.Infrastructure"
+             xmlns:customControls="clr-namespace:Sobees.Controls.LinkedIn.Cls"
+             xmlns:localizeWpf="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:controls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             xmlns:converters="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure"
+             xmlns:cls="clr-namespace:Sobees.Controls.LinkedIn.Converters"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Sobees.Controls.LinkedIn.Templates.DtLinkedInPost">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <cls:LinkedInVisibilityTypeConverter x:Key="linkedInVisibilityTypeConverter" />
+      <cls:LinkedInTextConverter x:Key="linkedInTextConverter" />
+      <converters:RelativeTimeConverter x:Key="relativeTimeConverter" />
+      <DataTemplate x:Key="dtComments">
+        <StackPanel>
+          <Button Focusable="False"
+                  x:Name="btnUserNameComment"
+                  Content="{Binding User.NickName, FallbackValue=Odile_Crock}"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Center"
+                  Command="{Binding DataContext.OpenProfileCommand, ElementName=LstPosts}"
+                  CommandParameter="{Binding User.Id}"
+                  Foreground="{DynamicResource FBCommentForeground}"
+                  ToolTip="{Binding User.Description, FallbackValue=My_Job}" />
+          <controls:BTextBlock BText="{Binding Body, FallbackValue=My_Comment}"
+                               TextWrapping="Wrap"
+                               x:Name="txtBlComment"
+                               Grid.ColumnSpan="1"
+                               Grid.Column="1"
+                               HorizontalAlignment="Stretch"
+                               Grid.RowSpan="1"
+                               Grid.Row="2"
+                               VerticalAlignment="Top"
+                               Margin="5,0,0,0" />
+
+        </StackPanel>
+      </DataTemplate>
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <DockPanel x:Name="grLinkedin">
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="VisualStateGroup">
+        <VisualState x:Name="vsShowComment">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Duration="00:00:00.0010000"
+                                           Storyboard.TargetName="GrCommentLinkedin"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="00:00:00"
+                                      Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+        <VisualState x:Name="vsHideComment">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Duration="00:00:00.0010000"
+                                           Storyboard.TargetName="GrCommentLinkedin"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="00:00:00"
+                                      Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    <ContentControl x:Name="ControlAvatar"
+                    Style="{DynamicResource ContentControlStyleAvatar}">
+      <cache:BImage x:Name="imgAvatar"
+                    BCacheImage="{Binding User.ProfileImgUrl}"
+                    ImageKind="Small" />
+    </ContentControl>
+
+    <StackPanel Orientation="Vertical"
+                DockPanel.Dock="Top">
+      <Button x:Name="btnUserName"
+              Content="{Binding User.NickName}"
+              IsTabStop="False"
+              Command="{Binding DataContext.OpenProfileCommand, ElementName=LstPosts}"
+              CommandParameter="{Binding User.Id}"
+              ToolTip="{Binding User.Description}"
+              Style="{DynamicResource BtnStyleTitleItem}" />
+      <WrapPanel x:Name="WpContent"
+                 Orientation="Horizontal">
+        <customControls:BLinkedInTextBlock x:Name="TxtblMsg"
+                                           BText="{Binding ConverterParameter=CONN, Converter={StaticResource linkedInTextConverter}}"
+                                           TextWrapping="Wrap"
+                                           Style="{DynamicResource TxtblStyleItemContent}" />
+        <Button x:Name="BtnUserName2"
+                IsTabStop="False"
+                Command="{Binding DataContext.OpenProfileCommand, ElementName=LstPosts}"
+                CommandParameter="{Binding Users[0].Id}"
+                Content="{Binding Users[0].NickName, FallbackValue=SobeesLtd}"
+                Visibility="{Binding UpdateType, ConverterParameter=CONN, Converter={StaticResource linkedInVisibilityTypeConverter}}"
+                ToolTip="{Binding Users[0].Description, FallbackValue=ma_petite_description}"
+                Style="{DynamicResource BtnStyleTitleItem}" />
+      </WrapPanel>
+      <WrapPanel x:Name="WpInfo"
+                 Orientation="Horizontal">
+        <Button x:Name="TxtBlDate"
+                Content="{Binding PubDate, Converter={StaticResource relativeTimeConverter}}"
+                Command="{Binding DataContext.GoToWebCommand, ElementName=LstPosts}"
+                CommandParameter="{Binding User.Url}"
+                Style="{DynamicResource BtnStyleFooterItem}"
+                Margin="0,0,2,0" />
+        <TextBlock x:Name="Deco"
+                   Text=" - "
+                   Style="{DynamicResource TxtblStyleItemFooter}" />
+
+        <ToggleButton Focusable="False"
+                      x:Name="BtnComment"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="0"
+                      Content="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnComment}"
+                      Tag="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCloseTrends}"
+                      Style="{DynamicResource BtntStyleFooterItem}">
+          <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Checked">
+              <ic:GoToStateAction StateName="vsShowComment" />
+            </i:EventTrigger>
+            <i:EventTrigger EventName="Unchecked">
+              <ic:GoToStateAction StateName="vsHideComment" />
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+        </ToggleButton>
+
+
+      </WrapPanel>
+      <Grid x:Name="GrCommentLinkedin"
+            Margin="0,8,0,0"
+            Visibility="Collapsed">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Margin="0"
+                BorderThickness="0"
+                CornerRadius="0,0,10,10"
+                Grid.RowSpan="2"
+                Grid.Row="1"
+                Background="#FFC6DBEA" />
+        <Border Margin="0"
+                BorderThickness="0"
+                CornerRadius="10,10,0,0"
+                Grid.RowSpan="1"
+                Grid.Row="0"
+                Height="8"
+                VerticalAlignment="Top"
+                Background="#FFC6DBEA" />
+        <Path Stretch="Fill"
+              HorizontalAlignment="Left"
+              Margin="21.7,-6.8,0,0"
+              VerticalAlignment="Top"
+              Width="16.664"
+              Height="8.334"
+              Grid.RowSpan="1"
+              Data="M-2.8337277,9.5 L4.9166667,2.1666327 12.833626,9.5"
+              Fill="#FFC6DBEA" />
+
+        <TextBlock Grid.Row="0" x:Name="CommentTf"
+                   Text="{Binding CanPost, FallbackValue=-1}"
+                   Visibility="Collapsed" />
+        <controls:BListBox x:Name="ListboxComments"
+                           Focusable="False"
+                           ItemsSource="{Binding Comments}"
+                           Grid.RowSpan="1"
+                           Grid.Row="0"
+                           ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                           MaxHeight="200"
+                           Background="{x:Null}"
+                           BorderBrush="{x:Null}"
+                           BorderThickness="0"
+                           Padding="0"
+                           ItemTemplate="{StaticResource dtComments}"
+                           MinHeight="0"
+                           Margin="0,8,0,0" />
+        <!--<ListBox ItemsSource="{Binding Comments}"
+          		ItemTemplate="{StaticResource dtComments}" 
+          		VerticalAlignment="Stretch" 
+          		Margin="0" 
+          		d:LayoutOverrides="Height" MaxHeight="200" MinHeight="20" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>-->
+        <TextBox x:Name="TxtComment"
+                 AcceptsReturn="True"
+                 Margin="5,3"
+                 Grid.Row="1"
+                 MinHeight="35" />
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    d:LayoutOverrides="Width"
+                    HorizontalAlignment="Right"
+                    Margin="5">
+          <Button Content="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnComment}"
+                  VerticalAlignment="Bottom"
+                  HorizontalAlignment="Right"
+                  Command="{Binding DataContext.PostCommentCommand, ElementName=LstPosts}"
+                  CommandParameter="{Binding ElementName=TxtComment}"
+                  Margin="0,0,5,0" />
+          <Button Content="{localizeWpf:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCancel}"
+                  VerticalAlignment="Bottom"
+                  Click="ButtonClick" />
+        </StackPanel>
+      </Grid>
+    </StackPanel>
+  </DockPanel>
+</UserControl>

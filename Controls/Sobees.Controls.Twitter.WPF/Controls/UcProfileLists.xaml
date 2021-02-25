@@ -1,0 +1,47 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="Sobees.Controls.Twitter.Controls.UcProfileLists"
+    mc:Ignorable="d" d:DesignWidth="395.57" d:DesignHeight="285.9">
+    <UserControl.Resources>
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+    			<ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml"/>
+    		</ResourceDictionary.MergedDictionaries>
+    		<DataTemplate x:Key="dtList">
+    			<TextBlock Text="{Binding FullName}" />
+    		</DataTemplate>
+    	</ResourceDictionary>
+  </UserControl.Resources>
+  <Grid>
+  	<Grid.RowDefinitions>
+  		<RowDefinition Height="Auto"/>
+  		<RowDefinition/>
+  	</Grid.RowDefinitions>
+		<StackPanel>
+
+  		<Button Command="{Binding ShowOwnListCommand}" Margin="0,0,0,5">
+  			<StackPanel Orientation="Horizontal">
+  				<TextBlock Text="Lists Created by " />
+  				<TextBlock Text="{Binding CurrentUser.NickName, FallbackValue=Sobees}" />
+  			</StackPanel>
+  		</Button>
+
+  		<Button Command="{Binding ShowListsFollowingCommand}" Margin="0,0,0,5">
+  			<StackPanel Orientation="Horizontal">
+  				<TextBlock Text="Lists Following by " />
+  				<TextBlock Text="{Binding CurrentUser.NickName, FallbackValue=Sobees}" />
+  			</StackPanel>
+  		</Button>
+  		<Button Command="{Binding ShowListsInsideCommand}">
+  			<StackPanel Orientation="Horizontal">
+  				<TextBlock Text="Lists where " />
+  				<TextBlock Text="{Binding CurrentUser.NickName, FallbackValue=Sobees}" />
+  				<TextBlock Text=" is a member" />
+  			</StackPanel>
+  		</Button>
+  	</StackPanel>
+  	<ListBox ItemsSource="{Binding ListsToShow}"
+  		ItemTemplate="{StaticResource dtList}"
+  		Style="{DynamicResource ListBoxStyleDeck}" Margin="0" Grid.Row="4" />
+	</Grid>
+</UserControl>

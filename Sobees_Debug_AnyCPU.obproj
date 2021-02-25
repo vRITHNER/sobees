@@ -1,0 +1,28 @@
+<Project ProjectFileVersion="4" UseRelativePaths="True" CheckVersionsWhileResolvingAssemblies="True" DisabledFromMSBuild="False" ID="{f929b4d2-a6ba-4667-a8a5-c25f421782c9}">
+  <SearchDirectories>
+    <SearchDirectory Path=".\References" />
+    <SearchDirectory Path=".\packages" />
+  </SearchDirectories>
+  <OutputSettings OutputPath=".\Output\Debug" MainAssemblyPath="" RunAssemblyPath="" SNPath="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\sn.exe" SignToolPath="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\bin\signtool.exe" LicensingDLLPath="" OverwriteInputFiles="False" BuildID="" MapFilesLocation="" FullParamNamesInMappingFile="False">
+    <AdditionalAssemblies />
+  </OutputSettings>
+  <ExceptionReporting ExceptionReportingServiceURL="" TryToContinueOnException="True" LocalReportPath=".\Sobees_Debug_AnyCPU_ExceptionReports" ApplicationName="" CompanyName="" ShowUI="True" EnableSaveToFileButton="True" EnableSendReportButton="True" />
+  <ObfuscationSettings RenamingScheme="3" UseOverloadedFieldNames="False" UseOverloadedMethodNames="False" HonorObfuscationAttributes="True" ExcludeSerializedTypes="True" ProcessInlineStrings="True" ForceXAMLProcessingModeExclude="False" ForceRenameParams="False" SymbolPrefix="" SymbolSuffix="" FakeFields="" FakeTypes="" FakeMethods="" EncryptionActive="True" CompressionActive="True" RemoveAccessedThroughPropertyAttribute="False" />
+  <ObfuscationRules />
+  <InclusionExclusionRules>
+    <Entity FullName="[Sobees]Sobees.Cls.BDragGrid">
+      <Rule Targets="4095" Exclude="True" Features="1" Enabled="True" PatternTarget="0" PatternMatchesExactTypeOnly="True" />
+    </Entity>
+    <Entity FullName="[Sobees]Sobees.Cls.BServiceWorkspaceHelper">
+      <Rule Targets="4095" Exclude="True" Features="1" Enabled="True" PatternTarget="0" PatternMatchesExactTypeOnly="True" />
+    </Entity>
+  </InclusionExclusionRules>
+  <WarningSuppressions>
+    <WS ID="Sobees.Cls.BDragGrid.CcDrop(Object sender, DragEventArgs e)5483" />
+    <WS ID="Sobees.Cls.BServiceWorkspaceHelper.LoadServiceWorkspaceViewModel(Stream stream, String assemblyFilePath, BServiceWorkspace serviceWorkspace, BPosition positionInGrid, UserAccount account)1712" />
+    <WS ID="Sobees.Cls.BDragGrid.CcDrop(Object sender, DragEventArgs e)5472" />
+    <WS ID="Sobees.Cls.BServiceWorkspaceHelper.LoadServiceWorkspaceViewModel(Stream stream, String assemblyFilePath, BServiceWorkspace serviceWorkspace, BPosition positionInGrid, String serviceWorkspaceSettings)1712" />
+  </WarningSuppressions>
+  <Warnings SaveWarningsToFile="" FailOnUnsuppressedWarning="False" SaveSuppressedWarnings="True" SaveUnsuppressedWarnings="True" />
+  <Filters />
+</Project>

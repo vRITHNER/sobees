@@ -1,0 +1,130 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:Cls="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="Sobees.Controls.TwitterSearch.Views.Settings"
+             mc:Ignorable="d">
+  <UserControl.Resources>
+  	<ResourceDictionary>
+  		<ResourceDictionary.MergedDictionaries>
+  			<ResourceDictionary Source="/Sobees.Templates;Component/TemplateSettings.xaml"/>
+  			<ResourceDictionary Source="/Sobees.Templates;Component/Geometry.xaml"/>
+  		</ResourceDictionary.MergedDictionaries>
+  		<Cls:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+  	</ResourceDictionary>
+  </UserControl.Resources>
+	<DockPanel>
+		<GroupBox DockPanel.Dock="Top" Style="{DynamicResource GroupBoxStyleSettings}">
+		<GroupBox.Header>
+    			<StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+    				<Path
+    					Stretch="Fill"
+    					StrokeThickness="0"
+    					Height="16"
+    					Width="16"
+    					HorizontalAlignment="Left"
+    					Margin="0,0,5,0"
+						Fill="#FF595959" 
+						Data="{DynamicResource GeometryAngenage}" VerticalAlignment="Center" />
+    				<TextBlock
+    					Style="{DynamicResource TxtblStyleSettingsTitle}" Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=tabItemGeneral}" />
+    			</StackPanel>
+    		</GroupBox.Header>
+			<DockPanel Margin="0,5,0,0">
+				<CheckBox x:Name="ckbUseTwitterSearch"
+					IsChecked="{Binding IsUseTwitterSearch}"
+					Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=ckbUseTwitterSearch}"
+					Margin="0" DockPanel.Dock="Top" />
+				<StackPanel x:Name="spTwitterSearch" Orientation="Horizontal" Visibility="{Binding IsUseTwitterSearch, Converter={StaticResource boolToVisibilityConverter}}" Margin="0,0,0,5" DockPanel.Dock="Top">
+					<TextBlock VerticalAlignment="Center" Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblRefreshTimeTS}" />
+					<Slider x:Name="slRefreshTimeTS"
+						Minimum="1"
+						Maximum="30"
+						SmallChange="1"
+						IsSnapToTickEnabled="True"
+						Value="{Binding SlRefreshTimeTS, Mode=TwoWay}"
+						Width="Auto" Style="{DynamicResource SliderStyleSettingsTime}" Margin="5,0" />
+					<TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblRefreshMin}" VerticalAlignment="Center" />
+				</StackPanel>
+				<!--<CheckBox x:Name="ckbUseOneRiot"
+					IsChecked="{Binding IsUseOneRiot}"
+					Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=ckbUseOneRiot}"
+					Margin="0,10,0,0" DockPanel.Dock="Top" />-->
+				<!--<StackPanel x:Name="spOneRiot" Orientation="Horizontal"
+					Visibility="{Binding IsUseOneRiot, Converter={StaticResource boolToVisibilityConverter}}" Margin="0,0,0,5" DockPanel.Dock="Top">
+					<TextBlock VerticalAlignment="Center"
+						Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblRefreshTimeOR}"/>
+					<Slider x:Name="slRefreshTimeOR"
+						Minimum="1"
+						Maximum="30"
+						SmallChange="1"
+						IsSnapToTickEnabled="True"
+						Value="{Binding SlRefreshTimeOR, Mode=TwoWay}"
+						Width="Auto" Style="{DynamicResource SliderStyleSettingsTime}" Margin="5,0" />
+					<TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblRefreshMin}" VerticalAlignment="Center" />-->
+				<!--</StackPanel>-->
+        <StackPanel x:Name="spFriendFeed" Orientation="Horizontal"
+					Visibility="{Binding IsUseFriendFeed, Converter={StaticResource boolToVisibilityConverter}}" DockPanel.Dock="Top"/>
+        <!--<CheckBox x:Name="ckbUseFactery"
+					IsChecked="{Binding IsUseFactery}"
+					Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=ckbUseFactery}"
+					Margin="0,10,0,0" DockPanel.Dock="Top" />-->
+			</DockPanel>
+		</GroupBox>
+		<GroupBox DockPanel.Dock="Top" Style="{DynamicResource GroupBoxStyleSettings}">
+		<GroupBox.Header>
+    			<StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+    				<Path
+    					Stretch="Fill"
+    					StrokeThickness="0"
+    					Height="14"
+    					Width="18"
+    					HorizontalAlignment="Left"
+    					Margin="0,0,5,0"
+						Fill="#FF595959" 
+						Data="{DynamicResource GeometryRefresh}" />
+    				<TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnRefresh}"
+    					VerticalAlignment="Center"
+    					Style="{DynamicResource TxtblStyleSettingsTitle}" />
+    			</StackPanel>
+    		</GroupBox.Header>
+			<Grid Margin="0,5,0,0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="140"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblNumberResult}"
+					VerticalAlignment="Center"
+					TextWrapping="Wrap"/>
+				<Slider x:Name="slRpp"
+					Minimum="10"
+					Maximum="100"
+					SmallChange="1"
+					IsSnapToTickEnabled="True"
+					Value="{Binding Rpp, Mode=TwoWay}"
+					Width="Auto"
+					LargeChange="10" Style="{DynamicResource SliderStyleSettingsTime}" Margin="3,4" Grid.Column="1" />
+				<TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblResuls}"
+					 Grid.Column="2" VerticalAlignment="Center" />
+				<TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblNumberResultKeeped}"
+					VerticalAlignment="Center"
+					TextWrapping="Wrap" Grid.Row="1" />
+				<Slider x:Name="slMaxRpp"
+					Minimum="100"
+					Maximum="800"
+					SmallChange="10"
+					IsSnapToTickEnabled="True"
+					Value="{Binding MaxTweet, Mode=TwoWay}"
+					Width="Auto"
+					LargeChange="10" Style="{DynamicResource SliderStyleSettingsTime}" Margin="3,4" Grid.Row="1" Grid.Column="1" />
+				<TextBlock Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblResuls}"
+					 Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" />
+			</Grid>
+		</GroupBox>
+	</DockPanel>
+</UserControl>

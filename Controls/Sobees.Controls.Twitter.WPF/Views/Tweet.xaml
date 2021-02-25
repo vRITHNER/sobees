@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="Sobees.Controls.Twitter.Views.Tweet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="ucTweetDetails"
+             xmlns:cls="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure"
+             xmlns:converters="clr-namespace:Sobees.Controls.Twitter.Converters"
+             xmlns:customControls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             xmlns:templates="clr-namespace:Sobees.Infrastructure.Controls.Templates;assembly=Sobees.Infrastructure"
+             xmlns:controls="clr-namespace:Sobees.Controls.Twitter.Controls">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <cls:NullVisibilityConverter x:Key="nullVisibilityConverter" />
+      <cls:TwitpicVisibilityConverter x:Key="twitpicVisibilityConverter" />
+      <cls:RelativeTimeConverter x:Key="relativeTimeConverter" />
+      <cls:ViaButtonContentConverter x:Key="viaButtonContentConverter" />
+      <converters:InReplyToButtonContentConverter x:Key="inReplyToButtonContentConverter" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid x:Name="grid"
+        DataContext="{Binding TweetToShow}"
+        Background="{DynamicResource Level3Bg}">
+
+    <ContentControl Style="{StaticResource ControlStyleBgLevel3Bis}"
+                    Margin="2,8,2,2">
+
+      <DockPanel Margin="5,15,5,5">
+        <DockPanel DockPanel.Dock="Top">
+          <StackPanel x:Name="spAvatar"
+                      Orientation="Vertical"
+                      d:LayoutOverrides="Height"
+                      Margin="0,0,5,0">
+            <Grid x:Name="grAvatar"
+                  VerticalAlignment="Top"
+                  Height="55">
+              <Image x:Name="imgAvatar"
+                     Source="{Binding User.ProfileImgUrl}"
+                     Height="55"
+                     VerticalAlignment="Top"
+                     Width="55" />
+              <Button x:Name="btnRtUserName"
+                      Visibility="{Binding RetweeterUser, Converter={StaticResource nullVisibilityConverter}}"
+                      Command="{Binding DataContext.ShowUserProfileCommand, ElementName=ucTweetDetails}"
+                      CommandParameter="{Binding RetweeterUser}"
+                      ToolTip="{Binding RetweeterUser.NickName, FallbackValue=Sobees}"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Bottom"
+                      Style="{DynamicResource BtnNoStyle}">
+                <Image x:Name="imgAvatarRt"
+                       Source="{Binding RetweeterUser.ProfileImgUrl}"
+                       Visibility="{Binding RetweeterUser, Converter={StaticResource nullVisibilityConverter}}"
+                       Width="30"
+                       Height="30" />
+              </Button>
+              <Button x:Name="btnToUserName"
+                      Visibility="{Binding ToUser, Converter={StaticResource nullVisibilityConverter}}"
+                      Command="{Binding DataContext.ShowUserProfileCommand, ElementName=ucTweetDetails}"
+                      CommandParameter="{Binding ToUser}"
+                      Style="{DynamicResource BtnNoStyle}"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Bottom"
+                      ToolTip="{Binding ToUser.NickName, FallbackValue=Sobees}">
+                <Image x:Name="imgAvatarTo"
+                       Source="{Binding ToUser.ProfileImgUrl}"
+                       Visibility="{Binding ToUser, Converter={StaticResource nullVisibilityConverter}}"
+                       Width="30"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Bottom"
+                       Height="30" />
+              </Button>
+            </Grid>
+            <ToggleButton Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnTranslate}"
+                          IsChecked="{Binding IsTranslated, ElementName=txtBlContent}"
+                          Style="{StaticResource btntTranslateLevel2}"
+                          Margin="0,2,0,0" />
+          </StackPanel>
+          <WrapPanel Orientation="Horizontal"
+                     DockPanel.Dock="Top"
+                     d:LayoutOverrides="Width">
+            <Button x:Name="btnUserName"
+                    Content="{Binding User.NickName, FallbackValue=Sobees}"
+                    Command="{Binding DataContext.ShowUserProfileCommand, ElementName=ucTweetDetails}"
+                    CommandParameter="{Binding User}"
+                    Style="{DynamicResource BtnStyleTitleItem}" />
+          </WrapPanel>
+          <customControls:BTweetTextBlock x:Name="txtBlContent"
+                                          BText="{Binding Title}"
+                                          DockPanel.Dock="Top"
+                                          Style="{DynamicResource TxtblStyleItemContent}"
+                                          IsTranslated="False"
+                                          d:LayoutOverrides="Width" />
+          <WrapPanel Orientation="Horizontal"
+                     DockPanel.Dock="Top"
+                     d:LayoutOverrides="Width">
+            <Button x:Name="btnDate"
+                    Content="{Binding PubDate, Converter={StaticResource relativeTimeConverter}}"
+                    Command="{Binding DataContext.GoToTweetCommand, ElementName=ucTweetDetails}"
+                    CommandParameter="{Binding}"
+                    Style="{StaticResource BtnStyleFooterItem}" />
+            <TextBlock x:Name="txtBlVia"
+                       Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtBlVia}"
+                       Style="{StaticResource TxtblStyleItemFooter}" />
+            <Button Content="{Binding SourceName, Converter={StaticResource viaButtonContentConverter}}"
+                    Command="{Binding DataContext.GoToWebCommand, ElementName=ucTweetDetails}"
+                    CommandParameter="{Binding SourceName}"
+                    Style="{StaticResource BtnStyleFooterItem}" />
+            <Button Content="{Binding Converter={StaticResource inReplyToButtonContentConverter}}"
+                    Visibility="{Binding InReplyToUserName, Converter={StaticResource nullVisibilityConverter}}"
+                    Command="{Binding DataContext.GoToReplyToTweetCommand, ElementName=ucTweetDetails}"
+                    CommandParameter="{Binding}"
+                    Style="{StaticResource BtnStyleFooterItem}" />
+          </WrapPanel>
+        </DockPanel>
+        <controls:UcConversation  DataContext="{Binding DataContext, ElementName=ucTweetDetails}"
+                                  Visibility="{Binding InReplyToUserId, Converter={StaticResource nullVisibilityConverter}, ElementName=grid}"
+                                  DockPanel.Dock="Top" />
+        <customControls:YahooMapImage Longitude="{Binding User.Geolocation.Longitude, FallbackValue=0.0}"
+                                      Latitude="{Binding User.Geolocation.Latitude, FallbackValue=0.0}"
+                                      Visibility="{Binding User.Geolocation, Converter={StaticResource nullVisibilityConverter}, FallbackValue=Collapsed}"
+                                      DockPanel.Dock="Top"
+                                      Width="300"
+                                      Height="300"
+                                      HorizontalAlignment="Left" />
+        <customControls:PicturePreview Text="{Binding Title}"
+                                       DockPanel.Dock="Top"
+                                       Height="150"
+                                       HorizontalAlignment="Left"
+                                       Visibility="{Binding Title, Converter={StaticResource twitpicVisibilityConverter}}" />
+      </DockPanel>
+    </ContentControl>
+    <Button x:Name="btnCloseDetails"
+            Command="{Binding DataContext.CloseDetailsCommand, ElementName=ucTweetDetails}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Style="{DynamicResource BtnViewDetailMinimize}" />
+  </Grid>
+</UserControl>

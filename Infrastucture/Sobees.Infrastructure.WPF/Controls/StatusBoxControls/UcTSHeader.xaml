@@ -1,0 +1,129 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Commands="clr-namespace:Sobees.Infrastructure.Commands"
+             xmlns:Cls="clr-namespace:Sobees.Infrastructure.Converters"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="Sobees.Infrastructure.Controls.StatusBoxControls.UcTSHeader"
+             mc:Ignorable="d"
+             d:DesignWidth="219"
+             d:DesignHeight="74">
+  <UserControl.Resources>
+    <Cls:CheckedAccountConverter x:Key="checkedAccountConverter" />
+    <DataTemplate x:Key="dtAccountTwitter">
+      <CheckBox x:Name="chkInsideList"
+                Commands:BCommandManager.Command="{Binding DataContext.CheckInsideListCommand, ElementName=lstInsideComboBox}"
+                Commands:BCommandManager.CommandEventName="Click"
+                Content="{Binding Login}"
+                VerticalContentAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                FontSize="10.667">
+        <CheckBox.IsChecked>
+          <MultiBinding Converter="{StaticResource checkedAccountConverter}"
+                        ConverterParameter="Left"
+                        Mode="OneWay">
+            <Binding />
+            <Binding Path="DataContext.ListUserAccount"
+                     ElementName="lstInsideComboBox" />
+
+          </MultiBinding>
+        </CheckBox.IsChecked>
+      </CheckBox>
+    </DataTemplate>
+    <Style x:Key="ListBoxStyleTSSearch"
+           TargetType="{x:Type ListBox}">
+      <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+              Value="Auto" />
+      <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+              Value="Auto" />
+      <Setter Property="ScrollViewer.CanContentScroll"
+              Value="true" />
+      <Setter Property="VerticalContentAlignment"
+              Value="Center" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ListBox}">
+            <Border x:Name="Bd"
+                    SnapsToDevicePixels="true"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Padding="1">
+              <ScrollViewer Padding="{TemplateBinding Padding}"
+                            Focusable="false">
+                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+              </ScrollViewer>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsEnabled"
+                       Value="false">
+                <Setter Property="Background"
+                        TargetName="Bd"
+                        Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+              </Trigger>
+              <Trigger Property="IsGrouping"
+                       Value="true">
+                <Setter Property="ScrollViewer.CanContentScroll"
+                        Value="false" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="BorderThickness"
+              Value="0" />
+    </Style>
+    <Style x:Key="ListBoxItemStyleTS"
+           TargetType="{x:Type ListBoxItem}">
+
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ListBoxItem}">
+            <Border x:Name="Bd"
+                    SnapsToDevicePixels="true"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Padding="{TemplateBinding Padding}">
+              <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsSelected"
+                       Value="true">
+
+              </Trigger>
+              <MultiTrigger>
+                <MultiTrigger.Conditions>
+                  <Condition Property="IsSelected"
+                             Value="true" />
+                  <Condition Property="Selector.IsSelectionActive"
+                             Value="false" />
+                </MultiTrigger.Conditions>
+
+              </MultiTrigger>
+              <Trigger Property="IsEnabled"
+                       Value="false">
+
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+  </UserControl.Resources>
+
+  <ListBox x:Name="lstInsideComboBox"
+           IsSynchronizedWithCurrentItem="True"
+           ItemsSource="{Binding ListAccount}"
+           ItemTemplate="{StaticResource dtAccountTwitter}"
+           HorizontalContentAlignment="Stretch"
+           VerticalContentAlignment="Stretch"
+           Style="{DynamicResource ListBoxStyleTSSearch}"
+           ItemsPanel="{DynamicResource ItemsPanelTemplateWrap}"
+           Background="{DynamicResource Level2HeaderElongated}"
+           ItemContainerStyle="{StaticResource ListBoxItemStyleTS}" />
+
+</UserControl>

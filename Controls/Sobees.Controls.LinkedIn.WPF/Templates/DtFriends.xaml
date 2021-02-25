@@ -1,0 +1,42 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	xmlns:Sobees_Infrastructure_Cache="clr-namespace:Sobees.Infrastructure.Cache;assembly=Sobees.Infrastructure"
+	x:Class="Sobees.Controls.LinkedIn.Templates.DtFriends"
+	x:Name="UserControl"
+	d:DesignWidth="156.063" d:DesignHeight="95.88">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+	<DockPanel x:Name="dpLinkedin">
+		
+		<ContentControl x:Name="ControlAvatar"
+			Style="{StaticResource ContentControlStyleAvatar}" HorizontalAlignment="Stretch">
+			<Sobees_Infrastructure_Cache:BImage BCacheImage="{Binding ProfileImgUrl}"
+				ImageKind="Small" />
+		</ContentControl>
+		<StackPanel Orientation="Vertical" DockPanel.Dock="Top"
+                     >
+			<Button x:Name="btnName"
+				Content="{Binding NickName, FallbackValue=James Bond}"
+				IsTabStop="False"
+				Command="{Binding DataContext.OpenProfileCommand, ElementName=LstPosts}"
+				CommandParameter="{Binding Id}"
+				ToolTip="{Binding Description}" Style="{StaticResource BtnStyleTitleItem}"
+                    />
+			<TextBlock Text="{Binding Description, FallbackValue=A description?}"
+				Style="{StaticResource TxtblStyleItemContent}" />
+			<TextBlock Text="{Binding Location, FallbackValue=On a cloud}"                      
+				Style="{StaticResource TxtblStyleItemFooter}" />
+		</StackPanel>
+		
+	</DockPanel>
+</UserControl>

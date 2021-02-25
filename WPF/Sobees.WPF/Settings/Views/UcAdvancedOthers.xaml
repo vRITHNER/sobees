@@ -1,0 +1,39 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="Sobees.Settings.Views.UcAdvancedOthers"
+             mc:Ignorable="d" d:DesignWidth="378.14" d:DesignHeight="209.4">
+	<DockPanel>
+        
+		<StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+			<TextBlock x:Name="lblPort_Copy"
+				Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblSaveBDule}"
+                               VerticalAlignment="Center" Margin="0,0,10,0" />
+			<Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnSave}"
+				x:Name="btnExport"
+				Command="{Binding ExportConfigCommand}"
+                            />
+		</StackPanel>
+		<Separator DockPanel.Dock="Top" />
+		<StackPanel VerticalAlignment="Top" Orientation="Horizontal" DockPanel.Dock="Top">
+			<TextBlock x:Name="lblPort_Copy1"
+				Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblRestoreSettings}"
+                               VerticalAlignment="Center" Margin="0,0,10,0" />
+			<Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnRestore}"
+				x:Name="btnImport"
+				Command="{Binding ImportConfigCommand}" />
+		</StackPanel>
+		<Separator DockPanel.Dock="Top" />
+		<StackPanel VerticalAlignment="Top" Orientation="Horizontal">
+        
+			<TextBlock x:Name="lblPort_Copy2"
+				Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnClearCache}"
+				Margin="0,0,10,0" VerticalAlignment="Center" />
+        
+			<Button Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnClearCache}"
+				Command="{Binding ClearCacheCommand}" VerticalAlignment="Top" d:LayoutOverrides="Width" />
+
+		</StackPanel>
+
+	</DockPanel>
+</UserControl>

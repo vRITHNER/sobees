@@ -1,0 +1,63 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib" x:Class="Sobees.Infrastructure.Controls.UcSettings"
+    mc:Ignorable="d" d:DesignWidth="360.71" d:DesignHeight="428.56" Background="{DynamicResource BrushSettingsBg}"
+    >
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Sobees.Templates;Component/TemplateSettings.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	
+  
+		<Grid>
+	
+  
+		<Path Stretch="Fill"
+				Stroke="{x:Null}"
+				Data="M9.7821919,4.3221148 C10.685469,7.7550617 7.7895292,10.07 5.196,10.07 4.7132646,10.07 4.2475418,9.9957802 3.8092226,9.8579286 3.4794474,9.7542142 -1.1636962,14.894148 -1.4580224,14.722905 -3.1386502,15.463917 -4.8385538,13.955783 -4.1503013,12.233374 -4.4015735,11.860173 0.86896755,7.2041433 0.72892102,6.7649496 0.58031758,6.2989209 0.5,5.8015178 0.5,5.285 0.5,2.6423175 2.6024708,0.5 5.196,0.5 6.4481612,0.5 7.2640719,0.7612482&#xa;8.1059553,1.5752017 8.111135,1.5934335 5.2625282,3.0465304 5.2625282,3.0465304 5.2625282,3.0465304 5.1688252,5.1709204 5.1688252,5.1709204 5.1688252,5.1709204 7.0610207,6.1306616 7.0610207,6.1306616 7.0610207,6.1306616 9.5320133,4.3444832 9.7821919,4.3221148 z"
+				Height="300"
+				VerticalAlignment="Center"
+				Fill="#09000000"
+				HorizontalAlignment="Center"
+				Width="300"
+				RenderTransformOrigin="0.5,0.5"
+				Grid.Row="1"
+				Grid.RowSpan="4">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform ScaleX="-1" />
+						<SkewTransform />
+						<RotateTransform />
+						<TranslateTransform />
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+	
+  
+			<DockPanel>
+				<Border VerticalAlignment="Top" DockPanel.Dock="Top" Background="{DynamicResource BrushSettingsBg2}">
+					<TextBlock Text="{Binding Title, FallbackValue=Twitter Settings}"  Style="{StaticResource TxtblStyleSettingsGeneric}" Margin="5,5,0,5" />
+				</Border>
+				<Border VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Background="{DynamicResource BrushSettingsBg2}">
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,10,10">
+						<Button 
+							Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnSave}"
+							Command="{Binding SaveSettingsCommand}" Margin="0,0,5,0" />
+						<Button 
+							Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCancel}"
+							Command="{Binding CloseSettingsCommand}" />
+					</StackPanel>
+				</Border>
+				<ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+					<ContentControl ContentTemplate="{Binding SettingsControl}"
+						Content="{Binding CurrentViewModel}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="0" VerticalAlignment="Top" />
+				</ScrollViewer>
+			</DockPanel>
+	
+	</Grid>
+	
+</UserControl>

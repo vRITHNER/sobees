@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Sobees.Controls.Facebook.Templates.DtLink"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:templates="clr-namespace:Sobees.Controls.Facebook.Templates"
+             x:Name="ucDtLink"
+             Tag="{Binding DataContext,ElementName=lstFacebook}" Unloaded="ucDtLink_Unloaded">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/TemplateFacebook.xaml" />
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+    <Button
+      Content="{Binding Attachement.Name}"
+      x:Name="ImagePhoto"
+      Command="{Binding Tag.GoToWebCommand, ElementName=ucDtLink}"
+      CommandParameter="{Binding Attachement.Href}"
+      Style="{DynamicResource BtnStyleContentItem}" />
+    <TextBlock x:Name="txtblSource" Style="{DynamicResource TxtblStyleItemContent}">
+      <InlineUIContainer>
+        <ContentPresenter Content="{Binding Attachement.Caption}" />
+      </InlineUIContainer>
+    </TextBlock>
+    <TextBlock x:Name="txtblDescription"
+               Text="{Binding Attachement.Description}"
+               Style="{DynamicResource TxtblStyleItemContent}" />
+    <templates:DtListViewImage />
+
+  </StackPanel>
+</UserControl>

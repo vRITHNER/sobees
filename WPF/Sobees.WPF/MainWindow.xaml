@@ -1,0 +1,45 @@
+﻿<glass:GlassWindow xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   mc:Ignorable="presentationOptions d"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:presentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                   xmlns:controls="clr-namespace:Sobees.Controls"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:glass="clr-namespace:Sobees.Glass"
+                   xmlns:windows="clr-namespace:Sobees.Windows" xmlns:PopupSample="clr-namespace:Sobees"
+                   xmlns:views="clr-namespace:Sobees.Views" x:Class="Sobees.MainWindow"
+                   Width="1000"
+                   Height="600"
+                   MinHeight="280"
+                   AllowDrop="True"
+                   Background="Transparent"
+                   CaptionHeight="25"
+                   FrameThickness="{x:Null}"
+                   windows:WindowSettings.Save="True"
+                   PresentationTraceSources.TraceLevel="High"
+                   DataContext="{Binding SobeesViewModel, Source={StaticResource Locator}}"
+                   Title="sobees"
+                   Icon="/Resources/Images/iconSobees.png"
+                   FontFamily="{DynamicResource FontFamilyGeneric}">
+
+   <Grid x:Name="grMain">
+    <ContentControl ContentTemplate="{Binding ViewsManagerViewModel.DataTemplateView, Source={StaticResource Locator}}"
+                    Margin="0,0,0,0" />
+
+    <controls:BIcon x:Name="biAlert"
+                    IconViewModel="{Binding IconViewModel}"
+                    ServiceWorkspaces="{Binding ServiceWorkspaces}"
+                    d:LayoutOverrides="GridBox"
+                    Margin="0,0,8,8"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Width="222"
+                    Height="159" />
+    <views:PopupWindow x:Name="mainPopup"
+                             Width="350"
+                             Height="400"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             Visibility="{Binding VisibilityPopup}"/>
+  </Grid>
+</glass:GlassWindow>

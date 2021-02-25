@@ -1,0 +1,7 @@
+﻿<UserControl x:Class="Sobees.Infrastructure.Controls.UcNoDataToDisplayUpdate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Sobees.Infrastructure.Controls">
+  <Controls:UcWaiting IsAnimating="{Binding IsWaiting}"
+                      BorderBrush="Black" />
+</UserControl>

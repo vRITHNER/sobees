@@ -1,0 +1,91 @@
+﻿<UserControl
+  x:Class="Sobees.Controls.TwitterSearch.Views.UcTrends"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:Cls="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure"
+  xmlns:Controls="clr-namespace:Sobees.Controls.TwitterSearch.Controls"
+  xmlns:CustomControls="clr-namespace:Sobees.Infrastructure.Controls;assembly=Sobees.Infrastructure"
+  xmlns:System="clr-namespace:System;assembly=mscorlib"
+  xmlns:Templates="clr-namespace:Sobees.Controls.TwitterSearch.Templates"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  d:DesignHeight="214.843"
+  d:DesignWidth="296.54"
+  Background="{DynamicResource BgTransparentBlack}"
+  mc:Ignorable="d">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Cls:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+      <DataTemplate x:Key="dtTrends">
+        <Templates:DtTrending />
+      </DataTemplate>
+      <DataTemplate x:Key="dtAds">
+        <Templates:DtAds />
+      </DataTemplate>
+
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Border
+    Margin="20,0"
+    HorizontalAlignment="Stretch"
+    Style="{DynamicResource BorderStyleMsgWindowInService}">
+    <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+      <TextBlock
+        Opacity="0"
+        Style="{DynamicResource TxtblStyleItemContent}"
+        Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals,
+                           Dict=Resources,
+                           Key=txtblEnterSearch}"
+        Visibility="{Binding FirstSearch, Converter={StaticResource boolToVisibilityConverter}}" />
+      <CustomControls:UcSearchBox Visibility="{Binding FirstSearch, Converter={StaticResource boolToVisibilityConverter}}" />
+
+      <TextBlock
+        x:Name="txtblTrendingTopics1"
+        Margin="0,10"
+        Style="{DynamicResource TxtblStyleItemTitle}"
+        Text="{loc:LocText Assembly=Sobees.Configuration.BGlobals,
+                           Dict=Resources,
+                           Key=txtblTrendingTopics}" />
+      <ListBox
+        x:Name="lstInsideTrends"
+        Margin="0,0,0,10"
+        Padding="5,0,0,0"
+        ItemContainerStyle="{DynamicResource ListBoxItemEmpty}"
+        ItemTemplate="{StaticResource dtTrends}"
+        ItemsPanel="{DynamicResource ItemsPanelTemplateWrap}"
+        ItemsSource="{Binding ListTrends}"
+        Style="{DynamicResource ListBoxStyleEmpty}" />
+      <TextBlock
+        x:Name="txtblTrendingTopics1_Copy"
+        Margin="0,0,0,10"
+        Style="{DynamicResource TxtblStyleItemTitle}"
+        Text="Sponsored content"
+        Visibility="{Binding AddsVisibility}" />
+      <CustomControls:BListBox
+        x:Name="LstTweets"
+        MaxHeight="200"
+        HorizontalAlignment="Center"
+        HorizontalContentAlignment="Stretch"
+        ItemTemplate="{StaticResource dtAds}"
+        ItemsPanel="{DynamicResource ItemsPanelTemplateWrap}"
+        ItemsSource="{Binding ListAds}"
+        ScrollViewer.VerticalScrollBarVisibility="Auto"
+        Style="{DynamicResource ListBoxStyleEmpty}"
+        Visibility="{Binding AddsVisibility}" />
+      <Button
+        Margin="0,10,0,0"
+        HorizontalAlignment="Right"
+        Command="{Binding CloseTrendsCommand}"
+        Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals,
+                              Dict=Resources,
+                              Key=btnCloseTrends}"
+        Visibility="{Binding FirstSearch, ConverterParameter=false, Converter={StaticResource boolToVisibilityConverter}}" />
+    </StackPanel>
+
+
+  </Border>
+</UserControl>

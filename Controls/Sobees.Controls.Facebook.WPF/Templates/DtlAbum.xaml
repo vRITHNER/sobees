@@ -1,0 +1,33 @@
+﻿<UserControl
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:converter="clr-namespace:Sobees.Controls.Facebook.Converters"
+  xmlns:templates="clr-namespace:Sobees.Controls.Facebook.Templates"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:cls="clr-namespace:Sobees.Infrastructure.Converters;assembly=Sobees.Infrastructure"
+  x:Class="Sobees.Controls.Facebook.Templates.DtAlbum"
+  x:Name="ucDtlAlbum" Unloaded="ucDtlAlbum_Unloaded"
+  Tag="{Binding DataContext, ElementName=lstFacebook}" mc:Ignorable="d" d:DesignWidth="72.25" d:DesignHeight="65.67">
+
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Sobees.Templates;Component/Templates.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <converter:FacebookAppDescriptionConverter x:Key="FacebookAppDescriptionConverter" />
+      <cls:NullVisibilityConverter x:Key="NullVisibilityConverter" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+    <Button Content="{Binding Attachement.Name}"
+            x:Name="ImagePhoto"
+            Command="{Binding Tag.GoToWebCommand, ElementName=ucDtlAlbum}"
+            CommandParameter="{Binding Attachement.Href}"
+            Style="{DynamicResource BtnStyleContentItem}" />
+    <TextBlock Text="{Binding Attachement.Caption}"
+               x:Name="AppDescription" Style="{DynamicResource TxtblStyleItemContent}"
+               Visibility="{Binding Attachement.Caption, Converter={StaticResource NullVisibilityConverter}}" />
+    <templates:DtListViewImage />
+  </StackPanel>
+</UserControl>

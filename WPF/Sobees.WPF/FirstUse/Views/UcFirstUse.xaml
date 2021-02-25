@@ -1,0 +1,249 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:BLocalizeLib="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+             mc:Ignorable="d"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+             xmlns:Converter="clr-namespace:Sobees.Converters" x:Class="Sobees.FirstUse.Views.UcFirstUse"
+             d:DesignWidth="670"
+             d:DesignHeight="412.5">
+
+    <!--DataContext="{Binding FirstLaunchControlViewModel, Source={StaticResource Locator}}"-->
+    <UserControl.Resources>
+        <Converter:TypeServiceImageConverter x:Key="typeServiceImageConverter" />
+        <Converter:TypeServiceNameConverter x:Key="typeServiceNameConverter" />
+
+        <DataTemplate x:Key="dtService">
+            <StackPanel Orientation="Vertical">
+                <Image Source="{Binding Converter={StaticResource typeServiceImageConverter}}"
+                       Width="40"
+                       Height="40" />
+                <TextBlock Text="{Binding Converter={StaticResource typeServiceNameConverter}}"
+                           TextWrapping="NoWrap"
+                           FontSize="10.667"
+                           HorizontalAlignment="Center"
+                           MaxWidth="50"
+                           TextTrimming="CharacterEllipsis"
+                           Style="{DynamicResource TxtblStyleItemContent}" />
+            </StackPanel>
+        </DataTemplate>
+        <Style x:Key="ListBoxItemStyleServiceFirstUse"
+               TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="HorizontalContentAlignment"
+                    Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+            <Setter Property="VerticalContentAlignment"
+                    Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+            <Setter Property="Padding"
+                    Value="2,0,0,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Grid Margin="3">
+                            <Border x:Name="BdOver"
+                                    SnapsToDevicePixels="true"
+                                    CornerRadius="5"
+                                    Background="Transparent"
+                                    d:LayoutOverrides="Width, Height"
+                                    BorderThickness="1,1,0,0"
+                                    BorderBrush="White"
+                                    Opacity="0">
+                                <Border x:Name="BdOver_Copy"
+                                        SnapsToDevicePixels="true"
+                                        CornerRadius="5"
+                                        d:LayoutOverrides="Width, Height"
+                                        BorderThickness="0,0,1,1"
+                                        BorderBrush="#47000000" />
+                            </Border>
+                            <Border x:Name="BdOver_Copy1"
+                                    SnapsToDevicePixels="true"
+                                    CornerRadius="5"
+                                    Opacity="0"
+                                    BorderBrush="#6E000000"
+                                    BorderThickness="1,1,0,0"
+                                    d:LayoutOverrides="Width, Height">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1"
+                                                         StartPoint="0.5,0">
+                                        <GradientStop Color="#2D000000"
+                                                      Offset="0" />
+                                        <GradientStop Color="#35000000"
+                                                      Offset="1" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border x:Name="BdOver_Copy2"
+                                        SnapsToDevicePixels="true"
+                                        CornerRadius="5"
+                                        BorderBrush="#EDFFFFFF"
+                                        BorderThickness="0,0,1,1"
+                                        d:LayoutOverrides="Width, Height" />
+                            </Border>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              Margin="8" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Opacity"
+                                        TargetName="BdOver"
+                                        Value="1" />
+                            </Trigger>
+                            <Trigger Property="IsSelected"
+                                     Value="true">
+                                <Setter Property="Foreground"
+                                        Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" />
+                                <Setter Property="Opacity"
+                                        TargetName="BdOver_Copy1"
+                                        Value="1" />
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected"
+                                               Value="true" />
+                                    <Condition Property="Selector.IsSelectionActive"
+                                               Value="false" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Foreground"
+                                        Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+                            </MultiTrigger>
+                            <Trigger Property="IsEnabled"
+                                     Value="false">
+                                <Setter Property="Foreground"
+                                        Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <Binding Path="FirstLaunchControlViewModel"
+                 Source="{StaticResource Locator}" />
+    </UserControl.DataContext>
+    <Grid>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Loaded">
+                <ic:GoToStateAction StateName="vsIntro" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="vsIntro">
+                    <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                       Storyboard.TargetName="ccChooseService"
+                                                       Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                            <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                  Value="35" />
+                            <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                                  Value="35" />
+                            <SplineDoubleKeyFrame KeySpline="0,0,0.21,1"
+                                                  KeyTime="00:00:01.2000000"
+                                                  Value="0" />
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                       Storyboard.TargetName="ccChooseService"
+                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                            <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                  Value="0" />
+                            <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                                  Value="0" />
+                            <SplineDoubleKeyFrame KeySpline="0,0,0.21,1"
+                                                  KeyTime="00:00:01.2000000"
+                                                  Value="1" />
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                       Storyboard.TargetName="dockPanel"
+                                                       Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                            <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                  Value="10" />
+                            <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                                  Value="10" />
+                            <SplineDoubleKeyFrame KeySpline="0,0,0.11,1"
+                                                  KeyTime="00:00:01.2000000"
+                                                  Value="0" />
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                       Storyboard.TargetName="dockPanel"
+                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                            <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                  Value="0" />
+                            <SplineDoubleKeyFrame KeyTime="00:00:00.3000000"
+                                                  Value="0" />
+                            <SplineDoubleKeyFrame KeySpline="0,0,0.11,1"
+                                                  KeyTime="00:00:01.2000000"
+                                                  Value="1" />
+                        </DoubleAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <ContentControl x:Name="bg"
+                        Style="{DynamicResource ContentControlStyleBgPaper}"
+                        Grid.RowSpan="2" />
+        <ContentControl x:Name="WindowTitle"
+                        Style="{DynamicResource ContentControlStyleWindowTitle}" />
+        <ScrollViewer Margin="20,20,20,40"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DockPanel>
+                <ContentControl x:Name="ccChooseService"
+                                Style="{DynamicResource LabelContentControlTitleLevel1}"
+                                Content="{BLocalizeLib:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblConnectServices}"
+                                DockPanel.Dock="Top"
+                                HorizontalAlignment="Center"
+                                Margin="0,4,0,10" />
+
+
+
+                <DockPanel x:Name="dockPanel"
+                           DockPanel.Dock="Top"
+                           RenderTransformOrigin="0.5,0.5">
+                    <DockPanel.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </DockPanel.RenderTransform>
+                    <ListBox ItemsSource="{Binding Services}"
+                             x:Name="lstServices"
+                             ItemTemplate="{StaticResource dtService}"
+                             SelectionChanged="ListBox_SelectionChanged"
+                             DockPanel.Dock="Top"
+                             ItemsPanel="{DynamicResource ItemsPanelTemplateWrap}"
+                             Style="{DynamicResource ListBoxStyleEmpty}"
+                             HorizontalAlignment="Center"
+                             Margin="0,0,0,3"
+                             ItemContainerStyle="{DynamicResource ListBoxItemStyleServiceFirstUse}" />
+                    <Separator Margin="0,0,0,20"
+                               Style="{DynamicResource SeparatorStyleLevel2}"
+                               DockPanel.Dock="Top" />
+                    <TextBlock Text="{BLocalizeLib:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblFreeVersion5Services}"
+                               Visibility="{Binding MaxServicesVisibility}"
+                               HorizontalAlignment="Center"
+                               DockPanel.Dock="Top"
+                               Style="{DynamicResource TxtblStyleItemContent}"
+                               Margin="0,0,0,10" />
+                    <ContentControl x:Name="ccConnectService"
+                                    DockPanel.Dock="Top"
+                                    VerticalAlignment="Top" />
+                </DockPanel>
+            </DockPanel>
+        </ScrollViewer>
+        <Button Content="{BLocalizeLib:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnCloseTrends}"
+                Background="Pink"
+                HorizontalAlignment="Right"
+                Command="{Binding CloseFirstUseCommand}"
+                VerticalAlignment="Bottom"
+                Margin="0,0,10,10"
+                d:LayoutOverrides="VerticalAlignment" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,104 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:loc="clr-namespace:Sobees.Library.BLocalizeLib;assembly=Sobees.Library.BLocalizeLib"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Commands="clr-namespace:Sobees.Infrastructure.Commands;assembly=Sobees.Infrastructure"
+    xmlns:Cls="clr-namespace:Sobees.Controls.Twitter.Converters" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="Sobees.Controls.Twitter.Controls.UcAvatar"
+             x:Name="ucAvatar"
+    Tag="{Binding DataContext, ElementName=LstTweets}" mc:Ignorable="d" Unloaded="ucAvatar_Unloaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Sobees.Templates;Component/TemplateButtonAvatar.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Cls:DeleteButtonVisibilityConverter x:Key="deleteButtonVisibilityConverter" />
+            <Cls:FavoriteButtonVisibilityConverter x:Key="favoriteButtonVisibilityConverter" />
+            <Cls:UnFavoriteButtonVisibilityConverter x:Key="unfavoriteButtonVisibilityConverter" />
+
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <Grid x:Name="grAvatar">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnReplies"
+            Command="{Binding Tag.ReplyCommand, ElementName=ucAvatar}"
+            CommandParameter="{Binding}"
+            ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnReply}" 
+			Style="{DynamicResource BtnCommandTwitter}">
+            <Path Style="{DynamicResource PathStyleRepliesInAvatar}"/>
+        </Button>
+        <Button x:Name="btnReTweet"
+            Command="{Binding Tag.ReTweetCommand, ElementName=ucAvatar}"
+            CommandParameter="{Binding}"
+            Grid.Row="8"
+            ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnRetweet}" Style="{DynamicResource BtnCommandTwitter}">
+            <Path Style="{DynamicResource PathStyleRetweetInAvatar}"/>
+        </Button>
+        <Button x:Name="btnDirectMessage"
+            Grid.Column="1"
+            Command="{Binding Tag.DMCommand, ElementName=ucAvatar}"
+            CommandParameter="{Binding}"
+            ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnDM}" 
+			Style="{DynamicResource BtnCommandTwitter}">
+            <Path  Style="{DynamicResource PathStyleDMInAvatar}"/>
+        </Button>
+        <ComboBox Grid.Row="1"
+              Grid.Column="2"
+              Commands:BCommandManager.Command="{Binding Tag.MenuActionCommand, ElementName=ucAvatar}"
+              Commands:BCommandManager.CommandEventName="SelectionChanged"
+              Commands:BCommandManager.CommandParameter="{Binding}"
+              >
+            <ComboBoxItem x:Name="ReplyToAll"
+                    Tag="ReplyToAll"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtReplyToAll}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtReplyToAll}"
+                    />
+            <ComboBoxItem x:Name="Favorit"
+                    Tag="Favorit"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnFavorit}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnFavorit}"
+                    />
+            <ComboBoxItem x:Name="UnFavorit"
+                    Tag="UnFavorit"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnUnFavorites}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnUnFavorites}"
+                    />
+            
+            <ComboBoxItem x:Name="DeleteTweet"
+                    Tag="DeleteTweet"
+                    Visibility="{Binding Converter={StaticResource deleteButtonVisibilityConverter}}"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnDeleteTweet}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnDeleteTweet}" />
+
+
+            <ComboBoxItem x:Name="Follow"
+                    Tag="Follow"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtbkFollow}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtbkFollow}" />
+            <ComboBoxItem x:Name="Unfollow"
+                    Tag="UnFollow"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtbkUnfollow}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtbkUnfollow}" />
+            <ComboBoxItem x:Name="Addtolist"
+                    Tag="AddToList"
+                    ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblAddToList}"
+                    Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=txtblAddToList}" />
+            <ComboBoxItem x:Name="ReportSpam"
+                          Tag="ReportSpam"
+                          ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnReportSpam}"
+                          Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnReportSpam}" />
+            <ComboBoxItem  x:Name="Block"
+                     Tag="Block"
+                     ToolTip="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnBlockUser}"
+                     Content="{loc:LocText Assembly=Sobees.Configuration.BGlobals, Dict=Resources, Key=btnBlockUser}" />
+        </ComboBox>
+
+    </Grid>
+</UserControl>
