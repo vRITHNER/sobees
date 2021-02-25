@@ -96,13 +96,6 @@ namespace Sobees.Infrastructure.Controls.StatusBoxControls {
         
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal System.Delegate _CreateDelegate(System.Type delegateType, string handler) {
-            return System.Delegate.CreateDelegate(delegateType, this, handler);
-        }
-        
-        [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
@@ -115,6 +108,30 @@ namespace Sobees.Infrastructure.Controls.StatusBoxControls {
             return;
             case 2:
             this.txtTweet = ((Sobees.Infrastructure.Controls.BTextBox)(target));
+            
+            #line 19 "..\..\..\..\Controls\StatusBoxControls\UcTwStatusBox.xaml"
+            this.txtTweet.KeyDown += new System.Windows.Input.KeyEventHandler(this.txtKeywords1_KeyDown);
+            
+            #line default
+            #line hidden
+            
+            #line 24 "..\..\..\..\Controls\StatusBoxControls\UcTwStatusBox.xaml"
+            this.txtTweet.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.txtTweet_TextChanged);
+            
+            #line default
+            #line hidden
+            
+            #line 25 "..\..\..\..\Controls\StatusBoxControls\UcTwStatusBox.xaml"
+            this.txtTweet.FocusableChanged += new System.Windows.DependencyPropertyChangedEventHandler(this.btnRetweet_IsVisibleChanged);
+            
+            #line default
+            #line hidden
+            
+            #line 26 "..\..\..\..\Controls\StatusBoxControls\UcTwStatusBox.xaml"
+            this.txtTweet.PreviewKeyDown += new System.Windows.Input.KeyEventHandler(this.txtTweet_PreviewKeyDown);
+            
+            #line default
+            #line hidden
             return;
             case 3:
             this.txtblTweetCount = ((System.Windows.Controls.TextBlock)(target));

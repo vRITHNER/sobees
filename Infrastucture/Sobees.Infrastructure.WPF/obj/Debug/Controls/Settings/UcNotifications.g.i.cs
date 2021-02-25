@@ -224,13 +224,6 @@ namespace Sobees.Infrastructure.Controls.Settings {
         
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal System.Delegate _CreateDelegate(System.Type delegateType, string handler) {
-            return System.Delegate.CreateDelegate(delegateType, this, handler);
-        }
-        
-        [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
@@ -261,6 +254,12 @@ namespace Sobees.Infrastructure.Controls.Settings {
             return;
             case 8:
             this.txtAlertWords = ((Sobees.Infrastructure.Controls.BTextBox)(target));
+            
+            #line 134 "..\..\..\..\Controls\Settings\UcNotifications.xaml"
+            this.txtAlertWords.KeyUp += new System.Windows.Input.KeyEventHandler(this.txtAlertWords_KeyUp);
+            
+            #line default
+            #line hidden
             return;
             case 9:
             this.btnAddAlertWords = ((System.Windows.Controls.Button)(target));
@@ -276,6 +275,12 @@ namespace Sobees.Infrastructure.Controls.Settings {
             return;
             case 13:
             this.txtAlertUsers = ((Sobees.Infrastructure.Controls.BTextBox)(target));
+            
+            #line 187 "..\..\..\..\Controls\Settings\UcNotifications.xaml"
+            this.txtAlertUsers.KeyUp += new System.Windows.Input.KeyEventHandler(this.txtAlertUsers_KeyUp);
+            
+            #line default
+            #line hidden
             return;
             case 14:
             this.btnAddAlertUsers = ((System.Windows.Controls.Button)(target));
@@ -291,6 +296,12 @@ namespace Sobees.Infrastructure.Controls.Settings {
             return;
             case 18:
             this.txtAlertRemovedWords = ((Sobees.Infrastructure.Controls.BTextBox)(target));
+            
+            #line 242 "..\..\..\..\Controls\Settings\UcNotifications.xaml"
+            this.txtAlertRemovedWords.KeyUp += new System.Windows.Input.KeyEventHandler(this.txtAlertRemovedWords_KeyUp);
+            
+            #line default
+            #line hidden
             return;
             case 19:
             this.btnAddAlertRemovedWords = ((System.Windows.Controls.Button)(target));
